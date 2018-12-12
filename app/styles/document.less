@@ -1,0 +1,101 @@
+main.document {
+    display: inline-block;
+    width: 100%;
+    padding: 2.5em;
+    text-align: left;
+    background-color: @shade-color;
+    .container {
+        width: 75%;
+        margin: 0 auto;
+    }
+    h1 {
+        width: 100%;
+        margin: 0;
+        font-size: 2em;
+        line-height: 1em;
+        margin-bottom: 1.5em;
+        color: rgb(93, 60, 246);
+        text-align: left;
+    }
+    h3 {
+        width: 100%;
+        margin: 0;
+        margin-top: .5em;
+        margin-bottom: 1em;
+        color: rgb(158, 119, 255);
+        font-weight: bold;
+        text-align: left;
+        letter-spacing: -.015em;
+    }
+    section {
+        display: block;
+        .clearfix;
+        .block {
+            margin-bottom: 2.5em;
+            p {
+                line-height: 1.75em;
+            }
+            ol, ul {
+              margin: 0;
+              margin-bottom: 1em;
+              padding-left: 2em;
+            }
+        }
+    }
+}
+
+/* Responsive Metrics */
+
+/* Window Width < 480 */
+@media only screen and (max-width: 479px) {
+    .document {
+        .container {
+            width: 90%;
+        }
+    }
+}
+
+/* 480 ≤ Window Width < 768 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .document {
+        .container {
+            width: 75%;
+        }
+    }
+}
+
+/* 768 ≤ Window Width < 1024 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .document {
+        .container {
+            width: 90%;
+        }
+    }
+}
+
+/* 1024 ≤ Window Width < 1152 */
+@media only screen and (min-width: 1024px) and (max-width: 1151px) {
+    .document {
+        .container {
+            width: 85%;
+        }
+    }
+}
+
+/* 1152 ≤ Window Width < 1280 */
+@media only screen and (min-width: 1152px) and (max-width: 1280px) {
+    .document {
+        .container {
+            width: 80%;
+        }
+    }
+}
+
+/* 1280 ≤ Window Width < 1440 */
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+    .document {
+        .container {
+            width: 75%;
+        }
+    }
+}

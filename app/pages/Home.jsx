@@ -1,0 +1,136 @@
+import React from 'react';
+import {Link} from 'react-router-dom';
+
+import Main from '../components/Main';
+import Headline from '../components/Headline';
+import Hero from './home/Hero';
+
+export default class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.setActiveTab = this.setActiveTab.bind(this);
+    }
+    componentDidMount() {
+  		let sliders = document.getElementsByClassName('slider');
+  		for(let i = 0; i < sliders.length; i++) {
+  			simpleslider.getSlider({
+  				container: sliders[i],
+  				transitionTime: 1,
+  				delay: 3.5,
+  				init: 100,
+  				show: 0,
+  				end: -100,
+  				unit: '%'
+  			});
+  		}
+    }
+    setActiveTab(index) {
+        let tabs = document.getElementById('tabs').children;
+        let views = document.getElementById('views').children;
+        for(let i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove('active');
+            views[i].classList.remove('active');
+        }
+        tabs[index - 1].classList.add('active');
+        views[index - 1].classList.add('active');
+    }
+    render() {
+        return (
+            <Main id="home" data-page="home">
+                <Hero />
+                <main>
+                    <section className="introduction">
+                        <div className="container">
+                            <div className="preview">
+                                <div className="slider">
+                                    <img src="https://via.placeholder.com/1000x500/e0e0e0/fff?text=01" />
+                                    <img src="https://via.placeholder.com/1000x500/e0e0e0/fff?text=02" />
+                                    <img src="https://via.placeholder.com/1000x500/e0e0e0/fff?text=03" />
+                                    <img src="https://via.placeholder.com/1000x500/e0e0e0/fff?text=04" />
+                                    <img src="https://via.placeholder.com/1000x500/e0e0e0/fff?text=05" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="promotion">
+                        <div className="container">
+                            <Headline title="Welcoming Tumblr users!" subtitle="3 months free. Service continuity guaranteed. " />
+                            <p>
+                                Services come and go. We’ve been in business for 10+ years continuing service.
+                                <br />
+                                We won’t sell or censor your data — ever.
+                            </p>
+                            <button>start yours</button>
+                        </div>
+                    </section>
+                    <img className="separator" src="app/images/illustrations/character-left-separator.png" />
+                    <section className="information">
+                        <div className="container">
+                            <h3>More than all you need!</h3>
+                            <ul>
+                                <li>
+                                    <b>Modern Design</b>
+                                    <p>GROU.PS v2 looks gorgeous and it comes with only the basic features making it super simple for you and your members to use.</p>
+                                </li>
+                                <li>
+                                    <b>Open Source</b>
+                                    <p>Our code is open source. You can always start a hosted version here at Grou.ps, and if you're not happy with the services, export your data and continue on your own where you left off.</p>
+                                </li>
+                                <li>
+                                    <b>Developer-Friendly</b>
+                                    <p>Embed Grou.ps features in a single tag on your existing website, or access it programmatically via Javascript and/or mobile languages.</p>
+                                </li>
+                                <li>
+                                    <b>No Gimmicks Pricing</b>
+                                    <p>$8 per month. No annuals, no hidden fees. Simple as can be. Service continuity guaranteed. We won’t sell or censor your data — ever.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <img className="separator" src="app/images/illustrations/character-middle-separator.png" />
+                    <section className="information">
+                        <div className="container">
+                            <h3>This is the privacy you have asked for!</h3>
+                            <ul>
+                                <li>
+                                    <b>Dutch Privacy</b>
+                                    <p>GROU.PS servers are located in the Netherlands, and in accordance with Dutch privacy laws, we commit to never disclosing any data unauthorized or tracking your usage.</p>
+                                </li>
+                                <li>
+                                    <b>Anonymous Accounts</b>
+                                    <p>In accordance with GDPR, we require only a valid email address to get you started. By default, we do not keep any IP logs which can be linked to your account. Your privacy comes first.</p>
+                                </li>
+                                <li>
+                                    <b>In-Transit Encryption</b>
+                                    <p>All communications are secured automatically with in-transit encryption. This means no 3rd party can intrude, decrypt and read your contents. Grou.ps can be put behind Tor for additional security.</p>
+                                </li>
+                                <li>
+                                    <b>Export/Import Data</b>
+                                    <p>Your data is yours. You can always export and/or import your data with no vendor lock-in.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <img className="separator" src="app/images/illustrations/character-right-separator.png" />
+                    {/*
+                    <section className="promotion">
+                        <div className="container">
+                            <h2>Welcoming Tumblr users!</h2>
+                            <p>Move to a privacy-friendly place. 3 months free.</p>
+                            <button>start yours</button>
+                        </div>
+                    </section>
+                    */}
+                    <section className="indication">
+                        <div className="container">
+                            <div className="brand">
+                                <img className="logo" src="app/images/identity/grou.ps-logo.svg" />
+                                <p>is proudly open source.</p>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </Main>
+        )
+    }
+}
