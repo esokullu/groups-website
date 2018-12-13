@@ -13,7 +13,7 @@ export default class Hero extends React.Component {
                 <div className="container">
                     <Animation />
                     <Headline title="Express Yourselves" subtitle="Create your censorship-free social network" />
-                    <p>Grou.ps offers you the comfort of being at home by providing private and censorship-free open source social platform where you actually own your own data.</p>
+                    <p>Grou.ps offers you the comfort of being at home by providing a private and censorship-free open source social platform where you actually own your own data.</p>
                     <button>Let's get started!</button>
                 </div>
             </header>
