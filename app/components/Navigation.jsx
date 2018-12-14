@@ -88,6 +88,7 @@ export default class Navigation extends React.Component {
                         </svg>
                     </a>
                     <ul id="menu">
+                    {/*
                         <li>
                             <NavLink className="home" exact to="/" activeClassName="active" onClick={this.handleToggle}>
                                 Home
@@ -98,6 +99,7 @@ export default class Navigation extends React.Component {
                                 Pricing
                             </NavLink>
                         </li>
+                    */}
                         {/*
                         <li>
                             <NavLink className="blog" to="/blog" activeClassName="active" onClick={this.handleToggle}>
