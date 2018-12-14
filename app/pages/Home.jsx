@@ -43,11 +43,10 @@ export default class Home extends React.Component {
                         <div className="container">
                             <div className="preview">
                                 <div className="slider">
-                                    <img src="https://via.placeholder.com/1000x500/e0e0e0/fff?text=01" />
-                                    <img src="https://via.placeholder.com/1000x500/e0e0e0/fff?text=02" />
-                                    <img src="https://via.placeholder.com/1000x500/e0e0e0/fff?text=03" />
-                                    <img src="https://via.placeholder.com/1000x500/e0e0e0/fff?text=04" />
-                                    <img src="https://via.placeholder.com/1000x500/e0e0e0/fff?text=05" />
+                                    <img src="app/images/screenshots/home.png" />
+                                    <img src="app/images/screenshots/forum.png" />
+                                    <img src="app/images/screenshots/members.png" />
+                                    <img src="app/images/screenshots/theme.png" />
                                 </div>
                             </div>
                         </div>

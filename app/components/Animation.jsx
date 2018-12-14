@@ -6,6 +6,7 @@ const items = {
             source: 'ui-profile.png',
             order: 1,
             width: 58.7,
+            opacity: .6,
             position: {
                 top: 0,
                 left: 20.65
@@ -106,6 +107,7 @@ export default class Animation extends React.Component {
                     style={{
                         zIndex: item.order || 1,
                         width: item.width + '%',
+                        opacity: item.opacity,
                         top: item.position.top + '%',
                         left: item.position.left + '%'
                     }}
