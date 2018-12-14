@@ -6,6 +6,7 @@ import Pricing from './pages/Pricing';
 import Login from './pages/Login';
 import Error from './pages/Error';
 import Legal from './pages/Legal';
+import Setup from './pages/Setup';
 
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -101,6 +102,9 @@ export default class App extends React.Component {
                     }/>
                     <Route path="/pricing" render={(props) =>
                         <Pricing session={this.state.session}/>
+                    }/>
+                    <Route path="/setup" render={(props) =>
+                        <Setup />
                     }/>
                     <Route path="/login" render={(props) =>
                         <Login

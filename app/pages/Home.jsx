@@ -55,7 +55,7 @@ export default class Home extends React.Component {
                         <div className="container">
                             <Headline title="Welcoming Tumblr users!" subtitle="3 months free. Service continuity guaranteed. " />
                             <p>
-                                Services come and go. We’ve been in business for 10+ years continuing service.
+                                Services come and go. We’ve been in business for 10+ years continuous service.
                                 <br />
                                 We won’t sell or censor your data — ever.
                             </p>
@@ -65,15 +65,15 @@ export default class Home extends React.Component {
                     <img className="separator" src="app/images/illustrations/character-left-separator.png" />
                     <section className="information">
                         <div className="container">
-                            <h3>More than all you need!</h3>
+                            <h3>Everything you need!</h3>
                             <ul>
                                 <li>
                                     <b>Modern Design</b>
-                                    <p>GROU.PS v2 looks gorgeous and it comes with only the basic features making it super simple for you and your members to use.</p>
+                                    <p>TO GROU.PS v2 looks gorgeous and it's super-simple for you and your members to use.</p>
                                 </li>
                                 <li>
                                     <b>Open Source</b>
-                                    <p>Our code is open source. You can always start a hosted version here at Grou.ps, and if you're not happy with the services, export your data and continue on your own where you left off.</p>
+                                    <p>Our code is open source. You can always start a hosted version here at Grou.ps, and if you're not happy with the service you can easily export your data and continue elsewhere - exactly where you left off.</p>
                                 </li>
                                 <li>
                                     <b>Developer-Friendly</b>
@@ -101,7 +101,7 @@ export default class Home extends React.Component {
                                 </li>
                                 <li>
                                     <b>In-Transit Encryption</b>
-                                    <p>All communications are secured automatically with in-transit encryption. This means no 3rd party can intrude, decrypt and read your contents. Grou.ps can be put behind Tor for additional security.</p>
+                                    <p>All communications are secured automatically with in-transit encryption. This means no 3rd party can intrude, decrypt and read your content. Grou.ps can be put behind Tor for additional security.</p>
                                 </li>
                                 <li>
                                     <b>Export/Import Data</b>
