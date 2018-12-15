@@ -44,9 +44,9 @@ export default class Home extends React.Component {
                             <div className="preview">
                                 <div className="slider">
                                     <img src="app/images/screenshots/home.png" />
-                                    <img src="app/images/screenshots/forum.png" />
                                     <img src="app/images/screenshots/members.png" />
-                                    {/*<img src="app/images/screenshots/theme.png" />*/}
+                                    <img src="app/images/screenshots/forum.png" />
+                                    <img src="app/images/screenshots/theme.png" />
                                 </div>
                             </div>
                         </div>
