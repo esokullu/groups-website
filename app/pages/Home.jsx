@@ -89,7 +89,7 @@ export default class Home extends React.Component {
                     <img className="separator" src="app/images/illustrations/character-middle-separator.png" />
                     <section className="information">
                         <div className="container">
-                            <h3>This is the privacy you have asked for</h3>
+                            <h3>Privacy you have asked for</h3>
                             <ul>
                                 <li>
                                     <b>🇳🇱 Dutch Privacy</b>
