@@ -53,10 +53,10 @@ export default class Home extends React.Component {
                     </section>
                     <section className="promotion">
                         <div className="container">
-                            <Headline title="Welcoming Tumblr users!" subtitle="First month free. Service continuity guaranteed. " />
+                            <Headline title="Welcoming Tumblr users" subtitle="First month free. Service continuity guaranteed. " />
                             <p>
                                 Services come and go. We’ve been in business for 10+ years continuous service.
-                                <br />
+                                
                                 We won’t sell or censor your data — ever.
                             </p>
                             <button>start yours</button>
@@ -65,22 +65,22 @@ export default class Home extends React.Component {
                     <img className="separator" src="app/images/illustrations/character-left-separator.png" />
                     <section className="information">
                         <div className="container">
-                            <h3>Everything you need!</h3>
+                            <h3>Everything you need</h3>
                             <ul>
                                 <li>
-                                    <b>Modern Design</b>
-                                    <p>Grou.ps v2 looks gorgeous and it's super-simple for you and your members to use.</p>
+                                    <b>👌 Modern Design</b>
+                                    <p>Grou.ps v2 looks gorgeous and it's super-simple for you and your members to use. Plus, it's written in Bootstrap 4, so it's easy to find/make new responsive templates.</p>
                                 </li>
                                 <li>
-                                    <b>Open Source</b>
+                                    <b>😇 Open Source</b>
                                     <p>Our code is open source. You can always start a hosted version here at Grou.ps, and if you're not happy with the service you can easily export your data and continue elsewhere - exactly where you left off.</p>
                                 </li>
                                 <li>
-                                    <b>Developer-Friendly</b>
+                                    <b>🤓 Developer-Friendly</b>
                                     <p>Embed Grou.ps features in a single tag on your existing website, or access it programmatically via Javascript and/or mobile languages.</p>
                                 </li>
                                 <li>
-                                    <b>No Gimmicks Pricing</b>
+                                    <b>🤯 No Gimmicks Pricing</b>
                                     <p>$8 per month. No annuals, no hidden fees. Simple as can be. Service continuity guaranteed. We won’t sell or censor your data — ever.</p>
                                 </li>
                             </ul>
@@ -89,22 +89,22 @@ export default class Home extends React.Component {
                     <img className="separator" src="app/images/illustrations/character-middle-separator.png" />
                     <section className="information">
                         <div className="container">
-                            <h3>This is the privacy you have asked for!</h3>
+                            <h3>Privacy you have asked for</h3>
                             <ul>
                                 <li>
-                                    <b>Dutch Privacy</b>
+                                    <b>🇳🇱 Dutch Privacy</b>
                                     <p>Grou.ps servers are located in the Netherlands, and in accordance with Dutch privacy laws, we commit to never disclosing any data unauthorized or tracking your usage.</p>
                                 </li>
                                 <li>
-                                    <b>Anonymous Accounts</b>
+                                    <b>🙈 Anonymous Accounts</b>
                                     <p>In accordance with GDPR, we require only a valid email address to get you started. By default, we do not keep any IP logs which can be linked to your account. Your privacy comes first.</p>
                                 </li>
                                 <li>
-                                    <b>In-Transit Encryption</b>
+                                    <b>🧐 In-Transit Encryption</b>
                                     <p>All communications are secured automatically with in-transit encryption. This means no 3rd party can intrude, decrypt and read your content. Grou.ps can be put behind Tor for additional security.</p>
                                 </li>
                                 <li>
-                                    <b>Export/Import Data</b>
+                                    <b>📦 Export/Import Data</b>
                                     <p>Your data is yours. You can always export and/or import your data with no vendor lock-in.</p>
                                 </li>
                             </ul>
