@@ -11,7 +11,7 @@ export default class Footer extends React.Component {
             <footer>
                 <div className="container">
                     <div className="message">
-                        built with <em className="love icon"></em> in <strong>Reno</strong> and <strong>Istanbul</strong>
+                        built with <em className="love icon"></em> globally
                     </div>
                     <div className="links">
                         <span className="credit">
