@@ -53,7 +53,7 @@ export default class Home extends React.Component {
                     </section>
                     <section className="promotion">
                         <div className="container">
-                            <Headline title="Welcoming Tumblr users!" subtitle="3 months free. Service continuity guaranteed. " />
+                            <Headline title="Welcoming Tumblr users!" subtitle="First month free. Service continuity guaranteed. " />
                             <p>
                                 Services come and go. We’ve been in business for 10+ years continuous service.
                                 <br />
@@ -69,7 +69,7 @@ export default class Home extends React.Component {
                             <ul>
                                 <li>
                                     <b>Modern Design</b>
-                                    <p>TO GROU.PS v2 looks gorgeous and it's super-simple for you and your members to use.</p>
+                                    <p>Grou.ps v2 looks gorgeous and it's super-simple for you and your members to use.</p>
                                 </li>
                                 <li>
                                     <b>Open Source</b>
@@ -93,7 +93,7 @@ export default class Home extends React.Component {
                             <ul>
                                 <li>
                                     <b>Dutch Privacy</b>
-                                    <p>GROU.PS servers are located in the Netherlands, and in accordance with Dutch privacy laws, we commit to never disclosing any data unauthorized or tracking your usage.</p>
+                                    <p>Grou.ps servers are located in the Netherlands, and in accordance with Dutch privacy laws, we commit to never disclosing any data unauthorized or tracking your usage.</p>
                                 </li>
                                 <li>
                                     <b>Anonymous Accounts</b>

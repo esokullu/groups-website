@@ -1,7 +1,7 @@
 {
   "name": "grou.ps",
   "version": "1.0.0",
-  "description": "Express Yourself! Build censorship-free social networks.",
+  "description": "Express Yourselves! Create your censorship-free social network.",
   "scripts": {
     "start": "[[ $NODE_ENV == 'production' ]] && npm run start:production || npm run start:development",
     "start:production": "npm run build && node https.js",
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/phonetworks/groups-website.git"
   },
-  "author": "GROU.PS Inc.",
+  "author": "Grou.ps Inc.",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/phonetworks/groups-website/issues"
