@@ -53,7 +53,7 @@ export default class Home extends React.Component {
                     </section>
                     <section className="promotion">
                         <div className="container">
-                            <Headline title="Welcoming Tumblr users!" subtitle="First month free. Service continuity guaranteed. " />
+                            <Headline title="Welcoming Tumblr users" subtitle="First month free. Service continuity guaranteed. " />
                             <p>
                                 Services come and go. We’ve been in business for 10+ years continuous service.
                                 
@@ -65,7 +65,7 @@ export default class Home extends React.Component {
                     <img className="separator" src="app/images/illustrations/character-left-separator.png" />
                     <section className="information">
                         <div className="container">
-                            <h3>Everything you need!</h3>
+                            <h3>Everything you need</h3>
                             <ul>
                                 <li>
                                     <b>👌 Modern Design</b>
@@ -89,7 +89,7 @@ export default class Home extends React.Component {
                     <img className="separator" src="app/images/illustrations/character-middle-separator.png" />
                     <section className="information">
                         <div className="container">
-                            <h3>This is the privacy you have asked for!</h3>
+                            <h3>This is the privacy you have asked for</h3>
                             <ul>
                                 <li>
                                     <b>🇳🇱 Dutch Privacy</b>
