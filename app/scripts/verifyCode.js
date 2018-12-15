@@ -1,8 +1,8 @@
 import request from './request.js';
+import login from './login.js';
 
-//groups_name, groups_title, site, pass, mail, theme, color, verification, callback
-export default function(groups_name, groups_title, site, pass, mail, theme, color, callback) {
-    request('POST', 'signup.php', {
+export default function(groupsId, name, url, password, email, theme, color, verification, callback) {
+    request('POST', 'verify.php', {
         groups_name: groups_name,
         groups_title: groups_title,
         site: site,
@@ -10,13 +10,18 @@ export default function(groups_name, groups_title, site, pass, mail, theme, colo
         color: color,
         mail: mail,
         pass: pass,
+        verification: verification,
         groups_v2: 1
     }, function(response) {
         if(response.success) {
-            callback(false);
+            login(mail, pass, function() {
+                callback(false);
+            });
         }
         else{
             callback(true, response);
         }
     });
 }
+
+

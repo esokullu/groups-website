@@ -16,6 +16,8 @@ import checkSession from './scripts/checkSession.js';
 import destroySession from './scripts/destroySession.js';
 import getClient from './scripts/getClient.js';
 import signup from '../app/scripts/signup';
+import verifyCode from '../app/scripts/verifyCode';
+import resendVerification from '../app/scripts/resendVerification';
 
 import './styles/common.less';
 
@@ -30,6 +32,8 @@ export default class App extends React.Component {
         this.setClient = this.setClient.bind(this);
         this.unsetClient = this.unsetClient.bind(this);
         this.handleSignUp = this.handleSignUp.bind(this);
+        this.handleVerifyCode = this.handleVerifyCode.bind(this);
+        this.handleResendVerification = this.handleResendVerification.bind(this);
     }
     componentWillMount() {
         //WARNING: Document not loaded. Do not use "document" here.
@@ -80,10 +84,23 @@ export default class App extends React.Component {
         });
         destroySession();
     }
-    handleSignUp(url, password, email, theme, color, callback){
+    handleSignUp(groupsId, name, url, password, email, theme, color, callback){
         let self = this;
-        signup(url, password, email, theme, color,function(error, response){
+        signup(groupsId, name, url, password, email, theme, color, function(error, response){
             // self.setClient();
+            callback(error,response);
+        })
+    }
+    handleVerifyCode(groupsId, name, url, password, email, theme, color, verificationCode, callback){
+        let self = this;
+        verifyCode(groupsId, name, url, password, email, theme, color, verificationCode, function(error,response){
+            self.setClient();
+            callback(error,response);
+        })
+    }
+    handleResendVerification(email, callback){
+        let self = this;
+        resendVerification(email, function(error,response){
             callback(error,response);
         })
     }
@@ -104,7 +121,12 @@ export default class App extends React.Component {
                         <Pricing session={this.state.session}/>
                     }/>
                     <Route path="/setup" render={(props) =>
-                        <Setup />
+                        <Setup
+                            client={this.state.client}
+                            handleSignUp={this.handleSignUp}
+                            handleVerifyCode={this.handleVerifyCode}
+                            handleResendVerification={this.handleResendVerification}
+                        />
                     }/>
                     <Route path="/login" render={(props) =>
                         <Login
