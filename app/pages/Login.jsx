@@ -199,7 +199,7 @@ export default class Login extends React.Component {
                         {currentView === "forgotpasswordIntiated" &&
                             <div className="container">
                                 <div className="form">
-                                    <Headline title="You will recieve an Email soon" />
+                                    <Headline title="You will recieve an Email soon" />                                
                                 </div>
                             </div>
                         }
