@@ -56,7 +56,7 @@ export default class Home extends React.Component {
                             <Headline title="Welcoming Tumblr users!" subtitle="First month free. Service continuity guaranteed. " />
                             <p>
                                 Services come and go. We’ve been in business for 10+ years continuous service.
-                                <br />
+                                
                                 We won’t sell or censor your data — ever.
                             </p>
                             <button>start yours</button>
