@@ -69,7 +69,7 @@ export default class Home extends React.Component {
                             <ul>
                                 <li>
                                     <b>👌 Modern Design</b>
-                                    <p>Grou.ps v2 looks gorgeous and it's super-simple for you and your members to use.</p>
+                                    <p>Grou.ps v2 looks gorgeous and it's super-simple for you and your members to use. Plus, it's written in Bootstrap 4, so it's easy to find/make new responsive templates.</p>
                                 </li>
                                 <li>
                                     <b>😇 Open Source</b>
