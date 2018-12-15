@@ -11,7 +11,7 @@ export default class Footer extends React.Component {
             <footer>
                 <div className="container">
                     <div className="message">
-                        built with <em className="love icon"></em> in 3 continents
+                        built with <em className="love icon"></em> in three continents
                     </div>
                     <div className="links">
                         <span className="credit">
