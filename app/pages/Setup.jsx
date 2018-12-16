@@ -390,10 +390,10 @@ export default class Setup extends React.Component {
     }
     handleCardInputFocus = ({ target }) => {
         this.setState({
-          focused: target.name,
+            focused: target.name,
         });
-      };
-      handleCardInputChange = ({ target }) => {
+    };
+    handleCardInputChange = ({ target }) => {
         let targetValue = target.value;
         if (target.name === 'number') {
             targetValue = targetValue.replace(/ /g, '').substring(0,16)
@@ -672,10 +672,10 @@ export default class Setup extends React.Component {
                                 <input id="charge" className="hidden" type="submit" />
                     </form> */}
                     <div className="content">
-                        <input name="number" onKeyDown={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
-                        <input name="name" onKeyDown={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
-                        <input name="expiry" onKeyDown={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
-                        <input name="cvc" onKeyDown={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
+                        <input name="number" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
+                        <input name="name" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
+                        <input name="expiry" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
+                        <input name="cvc" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
                     </div>
                 </div>
                 </section>
