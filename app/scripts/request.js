@@ -38,7 +38,7 @@ export default function(method, path, data, callback) {
 			})
 		}
 	})
-	.catch(error => callback({
+	.catch(error => console.log(error) && callback({
 		success: false,
 		reason: "There is some error. Please try again later.",
 		body: null
