@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import Animation from '../../components/Animation';
 import Headline from '../../components/Headline';
@@ -14,7 +15,7 @@ export default class Hero extends React.Component {
                     <Animation />
                     <Headline title="Express Yourselves" subtitle="Create your censorship-free social network" />
                     <p>Grou.ps provides a private and censorship-free open source social platform, where you actually own your own data.</p>
-                    <button>Let's get started!</button>
+                    <button><Link to="/setup">Let's get started!</Link></button>
                 </div>
             </header>
         )

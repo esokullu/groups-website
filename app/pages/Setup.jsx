@@ -21,15 +21,24 @@ export default class Setup extends React.Component {
                 },
                 {
                     id: 'set-name',
-                    label: 'Continue'
+                    label: 'Continue',
+                    demo: true,
+                    illustration: 'character-left-holder.png',
+                    color: 'rgb(0, 188, 75)'
                 },
                 {
                     id: 'set-theme',
-                    label: 'Continue'
+                    label: 'Continue',
+                    demo: true,
+                    illustration: 'character-middle-holder.png',
+                    color: 'rgb(245, 64, 0)'
                 },
                 {
                     id: 'set-color',
-                    label: 'Continue'
+                    label: 'Continue',
+                    demo: true,
+                    illustration: 'character-right-holder.png',
+                    color: 'rgb(217, 114, 255)'
                 },
                 {
                     id: 'set-credentials',
@@ -533,7 +542,7 @@ export default class Setup extends React.Component {
                         <div className="content">
                             <div className="input-with-prefix">
                                 <label>gr.ps/</label>
-                                <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="your_unique_groups_id" />
+                                <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="your_unique_group_name" />
                             </div>
                         </div>
                     </div>
@@ -679,18 +688,20 @@ export default class Setup extends React.Component {
                     </div>
                 </section>
                 }
-                {(this.state.steps[this.state.step].id == 'set-name' || this.state.steps[this.state.step].id == 'set-theme' || this.state.steps[this.state.step].id == 'set-color') &&
+                {this.state.steps[this.state.step].demo &&
                 <section className="preview">
                     <div className="container">
-                        <p className="teaser">Your group will look like this:</p>
+                        <img className="illustration" src={'/app/images/illustrations/' + this.state.steps[this.state.step].illustration} />
                         <div className="demo">
+                            <p className="teaser" style={{color: this.state.steps[this.state.step].color}}>Your group will look like this:</p>
                             <nav style={{backgroundColor: this.state.color}}>
                                 <b>{this.state.name.length > 0 ? this.state.name : 'My Group'}</b>
                                 <ul>
                                     <li>Home</li>
                                     <li>Members</li>
                                     <li>Groups</li>
-                                    <li>Foru</li>
+                                    <li>Forum</li>
+                                    <li>Inbox</li>
                                 </ul>
                             </nav>
                             <main style={{backgroundColor: this.state.theme == 'dark' ? 'rgb(63, 63, 63)' : 'rgb(247, 249, 251)'}}>

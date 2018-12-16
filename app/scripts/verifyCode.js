@@ -14,7 +14,7 @@ export default function(groupsId, name, url, password, email, theme, color, veri
         groups_v2: 1
     }, function(response) {
         if(response.success) {
-            login(mail, pass, function() {
+            login(email, password, function() {
                 callback(false);
             });
         }
