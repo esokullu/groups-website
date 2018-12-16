@@ -533,7 +533,7 @@ export default class Setup extends React.Component {
                         <div className="content">
                             <div className="input-with-prefix">
                                 <label>gr.ps/</label>
-                                <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="your_unique_groups_id" />
+                                <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="your_unique_group_name" />
                             </div>
                         </div>
                     </div>
