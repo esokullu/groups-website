@@ -49,7 +49,7 @@ export default class Setup extends React.Component {
                 },
                 {
                     id: 'go-back-home',
-                    label: 'Go To Your Dashboard'
+                    label: 'Go to your network'
                 }
             ],
             step: 0,
@@ -97,6 +97,7 @@ export default class Setup extends React.Component {
         this.handleCardInputFocus = this.handleCardInputFocus.bind(this);
         this.handleCardInputChange = this.handleCardInputChange.bind(this);
         this.moveForward = this.moveForward.bind(this);
+        this.redirectToNetwork = this.redirectToNetwork.bind(this);
         this.RedirectToSettings = this.RedirectToSettings.bind(this);
         this.changeverificationCode = this.changeverificationCode.bind(this);
         this.onKeyDownVerificationCode = this.onKeyDownVerificationCode.bind(this);
@@ -450,10 +451,14 @@ export default class Setup extends React.Component {
             });
         })
     }
-    RedirectToSettings(){
+    RedirectToSettings() {
         this.setState({
             redirectToSettings: true
         })
+    }
+    redirectToNetwork() {
+        let domain = 'https://gr.ps';
+        window.location.href = domain + '/' + this.state.groupsId;
     }
     createInstance() {
         let loadingButton = this.refs.loadingButton;
@@ -722,7 +727,7 @@ export default class Setup extends React.Component {
                         </button>
                         }
                         {this.state.step == this.state.steps.length - 1 &&
-                        <button onClick={this.RedirectToSettings}>
+                        <button onClick={this.redirectToNetwork}>
                             {this.state.steps[this.state.step].label}
                         </button>
                         }
