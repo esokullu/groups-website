@@ -54,6 +54,7 @@ module.exports = ({ base }) => {
 
         devServer: {
             historyApiFallback: true,
+            disableHostCheck: true,
         },
 
         plugins: isClient ? [
