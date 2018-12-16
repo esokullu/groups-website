@@ -168,7 +168,6 @@ export default class Login extends React.Component {
                                     </ul>
                                 </div>
                                 }
-                                <img className="illustration" src="/app/images/illustrations/graphjs-mascot-login.png" />
                                 <form>
                                     <input ref="email" type="text" defaultValue="" placeholder="Enter your email" />
                                     <input ref="password" type="password" defaultValue="" placeholder="Enter your password" />
