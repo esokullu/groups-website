@@ -32,7 +32,7 @@ export default class App extends React.Component {
         this.setClient = this.setClient.bind(this);
         this.unsetClient = this.unsetClient.bind(this);
         this.handleSignUp = this.handleSignUp.bind(this);
-        this.handleVerifyCode = this..bind(this);
+        this.handleVerifyCode = this.handleVerifyCode.bind(this);
         this.handleResendVerification = this.handleResendVerification.bind(this);
     }
     componentWillMount() {
