@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {TwitterPicker} from 'react-color';
 import {Redirect, Link} from 'react-router-dom';
 import Cards from 'react-credit-cards';
-import Steps, { Step } from 'rc-steps';
 import Payment from 'payment';
 //import mixpanel from 'mixpanel-browser';
 import authorizePayment from '../scripts/authorizePayment';
