@@ -2,7 +2,7 @@ import {apiWeb, apiSandbox} from './apiPaths.js';
 
 export default function(method, path, data, callback) {
 	// The original endpoint: let target = apiWeb + '/' + path;
-	let target = apiSandbox + '/' + path;
+	let target = apiWeb + '/' + path;
 	let requestHeaders = new Headers();
 	requestHeaders.append('Content-Type', 'application/json');
 
