@@ -93,12 +93,13 @@ export default class Navigation extends React.Component {
                                 Home
                             </NavLink>
                         </li>
+                        
+                        {/*
                         <li>
                             <NavLink className="pricing" to="/pricing" activeClassName="active" onClick={this.handleToggle}>
                                 Pricing
                             </NavLink>
                         </li>
-                        {/*
                         <li>
                             <NavLink className="blog" to="/blog" activeClassName="active" onClick={this.handleToggle}>
                                 Blog
