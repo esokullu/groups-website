@@ -467,7 +467,7 @@ export default class Setup extends React.Component {
         let name = encodeURI(this.state.name);
         let url = encodeURI(domain + '/' + this.state.groupsId);
         let theme = encodeURI(this.state.theme);
-        let color = encodeURI(this.state.color.substr(1));
+        let color = encodeURI(this.state.color);
         let email = encodeURI(this.state.email);
         let password = encodeURI(this.state.password);
         let self = this;
