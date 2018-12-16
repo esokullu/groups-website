@@ -14,7 +14,7 @@ import deleteMember from '../../scripts/deleteMember';
 // import setPasswordGjs from '../../scripts/setPasswordGjs';
 // import moderatePendingComment from '../../scripts/moderatePendingComment';
 // import setModeration from '../../scripts/setModeration';
-// import reboot from '../../scripts/reboot';
+import reboot from '../../scripts/reboot';
 import MembersTable from '../../components/MembersTable';
 
 export default class Instance extends React.Component {
@@ -37,7 +37,7 @@ export default class Instance extends React.Component {
         // this.handleCommentModerate = this.handleCommentModerate.bind(this);
         this.deleteUser = this.deleteUser.bind(this);
         // this.changePassword = this.changePassword.bind(this);
-        // this.handleRebootSubmit = this.handleRebootSubmit.bind(this);
+        this.handleRebootSubmit = this.handleRebootSubmit.bind(this);
     }
     componentWillMount() {
         this.setItemProperties(this.props.list, this.props.item);
@@ -249,22 +249,22 @@ export default class Instance extends React.Component {
     //         self.refs.submitModeration.classList.remove('loading');
     //     }
     // }
-    // handleRebootSubmit(event) {
-    //     event.preventDefault();
-    //     let self = this;
-    //     let uuid = self.state.configuration.uuid;
-    //     self.refs.submitReboot.classList.add('loading');
-    //     reboot(uuid, function(response) {
-    //         if(response.success) {
-    //             self.refs.submitReboot.classList.remove('loading');
-    //             self.refs.submitReboot.classList.add('done');
-    //             setTimeout(function() {
-    //                 self.refs.submitReboot.classList.remove('done');
-    //             }, 120000);
-    //             self.props.update(self.state.parent);
-    //         }
-    //     });
-    // }
+    handleRebootSubmit(event) {
+        event.preventDefault();
+        let self = this;
+        let uuid = self.state.configuration.uuid;
+        self.refs.submitReboot.classList.add('loading');
+        reboot(uuid, function(response) {
+            if(response.success) {
+                self.refs.submitReboot.classList.remove('loading');
+                self.refs.submitReboot.classList.add('done');
+                setTimeout(function() {
+                    self.refs.submitReboot.classList.remove('done');
+                }, 120000);
+                self.props.update(self.state.parent);
+            }
+        });
+    }
     // handleColorSubmit(event) {
     //     event.preventDefault();
     //     let self = this;
@@ -379,20 +379,6 @@ export default class Instance extends React.Component {
                         </form>
                     </section>
                     }
-                    {this.props.item == 'reboot' &&
-                    <section className="reboot">
-                        <form className="narrow options">
-                            <p>Would you like to reboot your instance?</p>
-                            <fieldset>
-                                <button ref="submitReboot" onClick={this.handleRebootSubmit}>
-                                    <span className="idle">Reboot</span>
-                                    <span className="success">Success</span>
-                                </button>
-                            </fieldset>
-                            <small>This may take about 2 minutes to complete.</small>
-                        </form>
-                    </section>
-                    }
                     {this.props.item == 'moderation' &&
                     <section className="moderation">
                         <form className="narrow options">
@@ -440,10 +426,29 @@ export default class Instance extends React.Component {
                         }
                     </section>
                     } */}
+                    {this.props.item == 'reboot' &&
+                    <section className="reboot">
+                        <form className="narrow options">
+                            <p>Would you like to reboot your instance?</p>
+                            <fieldset>
+                                <button ref="submitReboot" onClick={this.handleRebootSubmit}>
+                                    <span className="idle">Reboot</span>
+                                    <span className="success">Success</span>
+                                </button>
+                            </fieldset>
+                            <small>This may take about 2 minutes to complete.</small>
+                        </form>
+                    </section>
+                    }
                     {this.props.item == 'members' &&
                     <section className="members">
                         <MembersTable members={this.state.configuration.members} deleteUser={this.deleteUser} />
                     </section>
+                    }
+                    {this.props.item == "adminpassword" &&
+                        <section className="adminpassword">
+                        The password you use to log in to this administration panel, and the passwords on your instance(s) are different. The admin password for this instance is: %s
+                        </section>
                     }
                     <section className="demo" style={{display: (this.props.item == 'color' || this.props.item == 'theme') ? 'block' : 'none'}}>
                         <h3>Preview</h3>

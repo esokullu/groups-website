@@ -63,8 +63,6 @@ export default class App extends React.Component {
                     session: true
                 });
                 getClient(function(response) {
-                    console.log("getClient")
-                    console.log(response);
                     if(response.success) {
                         let client = {
                             id: response.body.id,
@@ -75,8 +73,6 @@ export default class App extends React.Component {
                             instances: []
                         };
                         getInstances(function(response) {
-                            console.log("getInstances")
-                            console.log(response)
                             if(response.success) {
                                 response.body.forEach(function(item) {
                                     console.log('A: runs once')
@@ -93,7 +89,6 @@ export default class App extends React.Component {
                                         pendingComments: []
                                     }
                                     checkModeration(item.uuid, client.account.graphjsHash, function(response) {
-                                        console.log("CHECK MOD")
                                         if(response.success) {
                                             instance.moderated = response.body;
                                             fetchAllMembers(item.uuid, client.account.graphjsHash, function(response) {

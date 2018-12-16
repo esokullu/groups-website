@@ -11,6 +11,7 @@ import Instance from './settings/Instance';
 export default class Settings extends React.Component {
     constructor(props) {
         super(props);
+        
         this.state = {
             id: undefined,
             account: undefined,
@@ -63,11 +64,6 @@ export default class Settings extends React.Component {
                         label: "Subscriptions",
                         id: "subscriptions",
                         parent: id
-                    },
-                    {
-                        label: "Admin Password",
-                        id:"admin-password",
-                        parent:id
                     }
                 ]
             });
@@ -119,12 +115,12 @@ export default class Settings extends React.Component {
                 label: "Reboot",
                 id: "reboot",
                 parent: family
+            }),
+            instancesMenu.push({
+                label: "Admin Password",
+                id:"adminpassword",
+                parent:family
             });
-            // instancesMenu.push({
-            //     label: "Code",
-            //     id: "code",
-            //     parent: family
-            // });
         });
         this.setState({
             instancesMenu: instancesMenu
@@ -167,7 +163,7 @@ export default class Settings extends React.Component {
                 <Account account={this.state.account} instances={this.state.instances} item={['credentials', 'subscriptions'].includes(params.item) ? params.item : 'credentials'} list={this.state.accountMenu} update={this.handleAccountUpdate} />
                 }
                 {params.category == 'instances' &&
-                <Instance instances={this.state.instances} item={['url', 'theme', 'color', 'code', 'moderation', 'reboot', 'members'].includes(params.item) ? params.item : 'code'} list={this.state.instancesMenu} update={this.handleInstanceUpdate} />
+                <Instance instances={this.state.instances} item={['adminpassword', 'reboot', 'members'].includes(params.item) ? params.item : 'code'} list={this.state.instancesMenu} update={this.handleInstanceUpdate} />
                 }
                 {((params.category == undefined)) &&
                 <Summary />

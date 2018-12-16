@@ -6,9 +6,6 @@ export default function(callback) {
 	request('GET', 'instances.php', {
 		token: token
 	}, function(response) {
-		console.log("GET INSTANCES>PHPP")
-		console.log(response);
-
 		callback(response);
 	});
 }
