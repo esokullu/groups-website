@@ -654,8 +654,8 @@ export default class Setup extends React.Component {
                             focused={this.state.focused}
                         />
                     </div>
-                    <h3>Enter your card details for an uninterrupted experience</h3>
-                    <p>You won't be charged until your site is in production mode with more than 200 objects (users, comments etc.) created. It's only $8/month after that.</p>
+                    <h3>No Gimmicks Pricing!</h3>
+                    <p>It's $8 per month. 1 month free trial. Cancel anytime.</p>
                     {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                                 <input type="hidden" name="cmd" value="_s-xclick" />
@@ -682,7 +682,7 @@ export default class Setup extends React.Component {
                         <p>
                             You should get an email from us soon.
                             <br />
-                            Meanwhile, initiate your GraphJS components by adding this code into your HTML, just before the end of body tag.
+                            Visit your network at https://gr.ps/{this.state.groupsId}
                         </p>
                     </div>
                 </section>
