@@ -530,7 +530,7 @@ export default class Setup extends React.Component {
         return (
             <Main id="setup" data-page="setup" className="setup-or-pricing">
                 <div className="steps">
-                    <div className="indicator" style={{width: this.state.step / this.state.steps.length * 100 + '%'}}></div>
+                    <div className="indicator" style={{width: this.state.step / (this.state.steps.length - 1) * 100 + '%'}}></div>
                 </div>
                 {this.state.failMessages.length > 0 &&
                 <section className="warning">
