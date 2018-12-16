@@ -3,13 +3,13 @@ import login from './login.js';
 
 export default function(groupsId, name, url, password, email, theme, color, verification, callback) {
     request('POST', 'verify.php', {
-        groups_name: groups_name,
-        groups_title: groups_title,
-        site: site,
+        groups_name: groupsId,
+        groups_title: name,
+        site: url,
         theme: theme,
         color: color,
-        mail: mail,
-        pass: pass,
+        mail: email,
+        pass: password,
         verification: verification,
         groups_v2: 1
     }, function(response) {
