@@ -1,7 +1,8 @@
-import {apiWeb} from './apiPaths.js';
+import {apiWeb, apiSandbox} from './apiPaths.js';
 
 export default function(method, path, data, callback) {
-	let target = apiWeb + '/' + path;
+	// The original endpoint: let target = apiWeb + '/' + path;
+	let target = apiSandbox + '/' + path;
 	let requestHeaders = new Headers();
 	requestHeaders.append('Content-Type', 'application/json');
 
@@ -11,7 +12,7 @@ export default function(method, path, data, callback) {
 	}
 	if(data.hasOwnProperty('resetToken')) {
 		data.token = data.resetToken
-		delete data.resetToken;		
+		delete data.resetToken;
 	}
 	let parameters = {
 	    method: method,
@@ -41,7 +42,7 @@ export default function(method, path, data, callback) {
 		console.log(error)
 		callback({
 		success: false,
-		reason: "There is some error, Please try again later",
+		reason: "There is some error. Please try again later.",
 		body: null
 	})});
 }
