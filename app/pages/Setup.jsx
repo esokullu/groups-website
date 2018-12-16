@@ -687,7 +687,7 @@ export default class Setup extends React.Component {
                         <p>
                             You should get an email from us soon.
                             <br />
-                            Visit your network at https://gr.ps/{this.state.groupsId}
+                            Visit your network at <a href={'https://gr.ps/' + this.state.groupsId}>{'https://gr.ps/' + this.state.groupsId}</a>
                         </p>
                     </div>
                 </section>
