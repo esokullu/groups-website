@@ -94,7 +94,7 @@ export default class Navigation extends React.Component {
                             </NavLink>
                         </li>
                         <li>
-                            <a className="pricing" href="https://github.com/phonetworks/grou-ps-v2" >
+                            <a href="https://github.com/phonetworks/grou-ps-v2" target="_blank">
                                 Open Source
                             </a>
                         </li>
