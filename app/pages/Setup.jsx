@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {TwitterPicker} from 'react-color';
 import {Redirect, Link} from 'react-router-dom';
 import Cards from 'react-credit-cards';
-import Steps, { Step } from 'rc-steps';
 import Payment from 'payment';
 //import mixpanel from 'mixpanel-browser';
 import authorizePayment from '../scripts/authorizePayment';
@@ -50,7 +49,7 @@ export default class Setup extends React.Component {
                 },
                 {
                     id: 'go-back-home',
-                    label: 'Go To Your Dashboard'
+                    label: 'Go to your network'
                 }
             ],
             step: 0,
@@ -98,6 +97,7 @@ export default class Setup extends React.Component {
         this.handleCardInputFocus = this.handleCardInputFocus.bind(this);
         this.handleCardInputChange = this.handleCardInputChange.bind(this);
         this.moveForward = this.moveForward.bind(this);
+        this.redirectToNetwork = this.redirectToNetwork.bind(this);
         this.RedirectToSettings = this.RedirectToSettings.bind(this);
         this.changeverificationCode = this.changeverificationCode.bind(this);
         this.onKeyDownVerificationCode = this.onKeyDownVerificationCode.bind(this);
@@ -390,10 +390,10 @@ export default class Setup extends React.Component {
     }
     handleCardInputFocus = ({ target }) => {
         this.setState({
-          focused: target.name,
+            focused: target.name,
         });
-      };
-      handleCardInputChange = ({ target }) => {
+    };
+    handleCardInputChange = ({ target }) => {
         let targetValue = target.value;
         if (target.name === 'number') {
             targetValue = targetValue.replace(/ /g, '').substring(0,16)
@@ -451,10 +451,14 @@ export default class Setup extends React.Component {
             });
         })
     }
-    RedirectToSettings(){
+    RedirectToSettings() {
         this.setState({
             redirectToSettings: true
         })
+    }
+    redirectToNetwork() {
+        let domain = 'https://gr.ps';
+        window.location.href = domain + '/' + this.state.groupsId;
     }
     createInstance() {
         let loadingButton = this.refs.loadingButton;
@@ -463,7 +467,7 @@ export default class Setup extends React.Component {
         let name = encodeURI(this.state.name);
         let url = encodeURI(domain + '/' + this.state.groupsId);
         let theme = encodeURI(this.state.theme);
-        let color = encodeURI(this.state.color.substr(1));
+        let color = encodeURI(this.state.color);
         let email = encodeURI(this.state.email);
         let password = encodeURI(this.state.password);
         let self = this;
@@ -526,7 +530,7 @@ export default class Setup extends React.Component {
         return (
             <Main id="setup" data-page="setup" className="setup-or-pricing">
                 <div className="steps">
-                    <div className="indicator" style={{width: this.state.step / this.state.steps.length * 100 + '%'}}></div>
+                    <div className="indicator" style={{width: this.state.step / (this.state.steps.length - 1) * 100 + '%'}}></div>
                 </div>
                 {this.state.failMessages.length > 0 &&
                 <section className="warning">
@@ -541,7 +545,7 @@ export default class Setup extends React.Component {
                         <h3>Let's start with your Grou.ps ID...</h3>
                         <div className="content">
                             <div className="input-with-prefix">
-                                <label>gr.ps/</label>
+                                <label>https://gr.ps/</label>
                                 <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="your_unique_group_name" />
                             </div>
                         </div>
@@ -655,8 +659,8 @@ export default class Setup extends React.Component {
                             focused={this.state.focused}
                         />
                     </div>
-                    <h3>Enter your card details for an uninterrupted experience</h3>
-                    <p>You won't be charged until your site is in production mode with more than 200 objects (users, comments etc.) created. It's only $8/month after that.</p>
+                    <h3>No Gimmicks Pricing!</h3>
+                    <p>It's $8 per month. 1 month free trial. Cancel anytime.</p>
                     {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                                 <input type="hidden" name="cmd" value="_s-xclick" />
@@ -668,10 +672,10 @@ export default class Setup extends React.Component {
                                 <input id="charge" className="hidden" type="submit" />
                     </form> */}
                     <div className="content">
-                        <input name="number" onKeyDown={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
-                        <input name="name" onKeyDown={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
-                        <input name="expiry" onKeyDown={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
-                        <input name="cvc" onKeyDown={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
+                        <input name="number" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
+                        <input name="name" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
+                        <input name="expiry" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
+                        <input name="cvc" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
                     </div>
                 </div>
                 </section>
@@ -683,7 +687,7 @@ export default class Setup extends React.Component {
                         <p>
                             You should get an email from us soon.
                             <br />
-                            Meanwhile, initiate your GraphJS components by adding this code into your HTML, just before the end of body tag.
+                            Visit your network at <a href={'https://gr.ps/' + this.state.groupsId}>{'https://gr.ps/' + this.state.groupsId}</a>
                         </p>
                     </div>
                 </section>
@@ -723,7 +727,7 @@ export default class Setup extends React.Component {
                         </button>
                         }
                         {this.state.step == this.state.steps.length - 1 &&
-                        <button onClick={this.RedirectToSettings}>
+                        <button onClick={this.redirectToNetwork}>
                             {this.state.steps[this.state.step].label}
                         </button>
                         }
