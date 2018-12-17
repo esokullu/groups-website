@@ -52,7 +52,7 @@ export default class Setup extends React.Component {
                     label: 'Go to your network'
                 }
             ],
-            step: 5,
+            step: 0,
             groupsId: '',
             name: '',
             url: 'http://localhost',
