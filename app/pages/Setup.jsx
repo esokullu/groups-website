@@ -175,7 +175,6 @@ export default class Setup extends React.Component {
             failMessages: []
         });
         window.scrollTo(0, 0);
-        this.handleFocus();
     }
     changeGroupsId(event) {
         let groupsId = event.currentTarget.value;
@@ -409,9 +408,11 @@ export default class Setup extends React.Component {
         //Payment.formatCardCVC(document.querySelector('[name="cvc"]'));
     };
     setCardPayment() {
+        let loadingButton = this.refs.loadingButton;
+        this.setState({loadingButton: true});
         const {email, holder, number, expiry, cvc} = this.state;
         let failMessages = [];
-        if(holder.length === 0 || holder.indexOf(' ') === -1 ){
+        if(holder.length === 0 || holder.indexOf(' ') === -1){
             failMessages.push('Please enter your full name');
         } else if(expiry.length !== 4 && expiry.length !== 6){
             failMessages.push('Expiry date is not valid');
@@ -425,26 +426,34 @@ export default class Setup extends React.Component {
             this.setState({
                 failMessages
             });
+            this.setState({loadingButton: false});
             return;
         }
-
+        let domain = 'https://gr.ps';
         const data = {
             "mail": email,
             "name": holder,
             "number": number,
             "expiry":expiry.substr(0, 2)  + '/' + expiry.substr(2),
-            "cvc": cvc
+            "cvc": cvc,
+            "site": domain + '/' + this.state.groupsId,
+            "pass": this.state.password,
+            "theme": this.state.theme,
+            "color": this.state.color
         }
         let self = this;
         authorizePayment(data,function(response){
             let failMessages = [];
             if(response && response.success === true){
                 self.moveForward();
+                self.setState({loadingButton: false});
                 return;
             }else if(typeof response.body === 'object'){
                 failMessages = Object.values(response.body).map(a => a.required);
+                self.setState({loadingButton: false});
             }else {
                 failMessages = ['There is an error. Please try again.']
+                self.setState({loadingButton: true});
             }
             self.setState({
                 failMessages
@@ -649,35 +658,36 @@ export default class Setup extends React.Component {
                 }
                 {this.state.steps[this.state.step].id == 'set-payment' &&
                 <section id="set-payment">
-                <div className="container">
-                    <div className="content">
-                        <Cards
-                            number={this.state.number}
-                            name={this.state.holder}
-                            expiry={this.state.expiry}
-                            cvc={this.state.cvc}
-                            focused={this.state.focused}
-                        />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+                    <div className="container">
+                        <div className="content">
+                            <Cards
+                                number={this.state.number}
+                                name={this.state.holder}
+                                expiry={this.state.expiry}
+                                cvc={this.state.cvc}
+                                focused={this.state.focused}
+                            />
+                        </div>
+                        <h3>No Gimmicks Pricing!</h3>
+                        <p>It's $8 per month. 1 month free trial. Cancel anytime.</p>
+                        {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                                    <input type="hidden" name="cmd" value="_s-xclick" />
+                                    <input type="hidden" name="hosted_button_id" value="GKL77PW743J2W" />
+                                    <input type="hidden" name="on0" value="" />
+                                    <input type="hidden" name="currency_code" value="USD" />
+                                    <input type="hidden" name="os0" value={this.state.payment.charAt(0).toUpperCase() + this.state.payment.substr(1)} />
+                                    <input type="hidden" name="custom" value={this.state.email} />
+                                    <input id="charge" className="hidden" type="submit" />
+                        </form> */}
+                        <div className="content">
+                            <input name="number" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
+                            <input name="holder" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
+                            <input name="expiry" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
+                            <input name="cvc" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
+                        </div>
                     </div>
-                    <h3>No Gimmicks Pricing!</h3>
-                    <p>It's $8 per month. 1 month free trial. Cancel anytime.</p>
-                    {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                                <input type="hidden" name="cmd" value="_s-xclick" />
-                                <input type="hidden" name="hosted_button_id" value="GKL77PW743J2W" />
-                                <input type="hidden" name="on0" value="" />
-                                <input type="hidden" name="currency_code" value="USD" />
-                                <input type="hidden" name="os0" value={this.state.payment.charAt(0).toUpperCase() + this.state.payment.substr(1)} />
-                                <input type="hidden" name="custom" value={this.state.email} />
-                                <input id="charge" className="hidden" type="submit" />
-                    </form> */}
-                    <div className="content">
-                        <input name="number" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
-                        <input name="holder" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
-                        <input name="expiry" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
-                        <input name="cvc" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
-                    </div>
-                </div>
                 </section>
                 }
                 {this.state.steps[this.state.step].id == 'go-back-home' &&
@@ -723,7 +733,7 @@ export default class Setup extends React.Component {
                         }
                         {this.state.step != this.state.steps.length - 1 &&
                         <button ref="next" onClick={this.changeStep} className="next" data-step="next">
-                            <i ref="loadingButton"></i> <span>{this.state.steps[this.state.step].label}</span>
+                            <i className={this.state.loadingButton ? 'fa fa-spinner fa-spin' : ''} ref="loadingButton"></i> <span>{this.state.steps[this.state.step].label}</span>
                         </button>
                         }
                         {this.state.step == this.state.steps.length - 1 &&
