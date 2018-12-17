@@ -440,7 +440,9 @@ export default class Setup extends React.Component {
             "site": domain + '/' + this.state.groupsId,
             "pass": this.state.password,
             "theme": this.state.theme,
-            "color": this.state.color
+            "color": this.state.color,
+            "groups_name": this.state.groupsId,
+            "groups_title": this.state.name
         }
         let self = this;
         authorizePayment(data,function(response){
