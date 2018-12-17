@@ -65,11 +65,11 @@ export default class Setup extends React.Component {
             payment: 'monthly',
             failMessages: [],
             failModalMessages:[],
-            number: "",
-            name: "",
-            expiry: "",
-            cvc: "",
-            focused: "",
+            number: '',
+            holder: '',
+            expiry: '',
+            cvc: '',
+            focused: '',
             redirectToSettings:false
         }
         this.handleKey = this.handleKey.bind(this);
@@ -409,9 +409,9 @@ export default class Setup extends React.Component {
         //Payment.formatCardCVC(document.querySelector('[name="cvc"]'));
     };
     setCardPayment() {
-        const {email, name, number, expiry, cvc} = this.state;
+        const {email, holder, number, expiry, cvc} = this.state;
         let failMessages = [];
-        if(name.length === 0 || name.indexOf(' ') === -1 ){
+        if(holder.length === 0 || holder.indexOf(' ') === -1 ){
             failMessages.push('Please enter your full name');
         } else if(expiry.length !== 4 && expiry.length !== 6){
             failMessages.push('Expiry date is not valid');
@@ -430,7 +430,7 @@ export default class Setup extends React.Component {
 
         const data = {
             "mail": email,
-            "name": name,
+            "name": holder,
             "number": number,
             "expiry":expiry.substr(0, 2)  + '/' + expiry.substr(2),
             "cvc": cvc
@@ -653,7 +653,7 @@ export default class Setup extends React.Component {
                     <div className="content">
                         <Cards
                             number={this.state.number}
-                            name={this.state.name}
+                            name={this.state.holder}
                             expiry={this.state.expiry}
                             cvc={this.state.cvc}
                             focused={this.state.focused}
@@ -673,7 +673,7 @@ export default class Setup extends React.Component {
                     </form> */}
                     <div className="content">
                         <input name="number" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
-                        <input name="name" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
+                        <input name="holder" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
                         <input name="expiry" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
                         <input name="cvc" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
                     </div>
