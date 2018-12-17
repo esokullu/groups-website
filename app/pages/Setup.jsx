@@ -431,6 +431,7 @@ export default class Setup extends React.Component {
         }
         let domain = 'https://gr.ps';
         const data = {
+            "groups_v2": 1,
             "mail": email,
             "name": holder,
             "number": number,
