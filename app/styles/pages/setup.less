@@ -69,6 +69,46 @@
             max-width: 25em;
             margin: 0 auto;
             text-align: center;
+            &.double {
+                max-width: 52em;
+                .clearfix;
+                & > * {
+                    float: left;
+                    width: 25em;
+                    margin-top: 0;
+                    margin-right: 2em;
+                    & > * {
+                        margin-bottom: .5em;
+                        &.rccs {
+                            padding: 0;
+                        }
+                        &.secure {
+                            margin: 0;
+                            padding: 0;
+                            &::before {
+                                content: "";
+                                display: inline-block;
+                                position: relative;
+                                top: 0.15em;
+                                width: 1.5em;
+                                height: 1.5em;
+                                background-image: url(/app/images/icons/secure-icon.png);
+                                background-repeat: no-repeat;
+                                background-position: center center;
+                                background-size: contain;
+                                margin-right: .25em;
+                            }
+                            img {
+                                height: .9em;
+                                margin-left: .25em;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
             & > * {
                 margin-top: 1em;
                 &:first-child {
@@ -375,6 +415,17 @@
                     max-width: 35em;
                 }
             }
+            .content {
+                &.double {
+                    max-width: 25em;
+                    & > * {
+                        margin-bottom: 1em;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -394,11 +445,22 @@
                     max-width: 35em;
                 }
             }
+            .content {
+                &.double {
+                    max-width: 25em;
+                    & > * {
+                        margin-bottom: 1em;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
-/* 480 ≤ Window Width < 768 */
+/* 768 ≤ Window Width < 1024 */
 @media only screen and (min-width: 767px) and (max-width: 1023px) {
     .setup-or-pricing {
         section {

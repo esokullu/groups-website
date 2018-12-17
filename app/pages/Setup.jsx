@@ -52,7 +52,7 @@ export default class Setup extends React.Component {
                     label: 'Go to your network'
                 }
             ],
-            step: 0,
+            step: 5,
             groupsId: '',
             name: '',
             url: 'http://localhost',
@@ -660,15 +660,6 @@ export default class Setup extends React.Component {
                 <section id="set-payment">
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                     <div className="container">
-                        <div className="content">
-                            <Cards
-                                number={this.state.number}
-                                name={this.state.holder}
-                                expiry={this.state.expiry}
-                                cvc={this.state.cvc}
-                                focused={this.state.focused}
-                            />
-                        </div>
                         <h3>No Gimmicks Pricing!</h3>
                         <p>It's $8 per month. 1 month free trial. Cancel anytime.</p>
                         {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
@@ -681,11 +672,26 @@ export default class Setup extends React.Component {
                                     <input type="hidden" name="custom" value={this.state.email} />
                                     <input id="charge" className="hidden" type="submit" />
                         </form> */}
-                        <div className="content">
-                            <input name="number" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
-                            <input name="holder" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
-                            <input name="expiry" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
-                            <input name="cvc" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
+                        <div className="double content">
+                            <div className="left">
+                                <Cards
+                                    number={this.state.number}
+                                    name={this.state.holder}
+                                    expiry={this.state.expiry}
+                                    cvc={this.state.cvc}
+                                    focused={this.state.focused}
+                                />
+                            </div>
+                            <div className="right">
+                                <input name="number" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
+                                <input name="holder" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
+                                <input name="expiry" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
+                                <input name="cvc" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
+                                <p className="secure">
+                                    Securely processed by
+                                    <img src="/app/images/external/authorize.net-logo.png" />
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
