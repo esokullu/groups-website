@@ -1,19 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import isURL from 'is-url';
-//import isIP from 'is-ip';
-import {Tooltip} from 'react-tippy';
-// import setMode from '../../scripts/setMode';
-
 export default class Menu extends React.Component {
     constructor(props) {
         super(props);
         this.willChange = false;
         this.toggleCluster = this.toggleCluster.bind(this);
         this.handleActiveItem = this.handleActiveItem.bind(this);
-        // this.handleMode = this.handleMode.bind(this);
-        this.validateURL = this.validateURL.bind(this);
     }
     componentDidMount() {
         this.handleActiveItem();
@@ -73,42 +66,6 @@ export default class Menu extends React.Component {
                 link && link.click();
             }
         }
-    }
-    // handleMode(event) {
-    //     let switcher = event.target;
-    //     switcher.disabled = true;
-    //     let mode = switcher.checked ? 'on': 'off';
-    //     self = this;
-    //     if(!switcher.checked || this.validateURL(switcher.dataset.url)) {
-    //       setMode(switcher.dataset.id, mode, function(response) {
-    //           if(response.success) {
-    //               self.props.update();
-    //           } else {
-    //               switcher.checked = !switcher.checked;
-    //           }
-    //       });
-    //     } else {
-    //         switcher.checked = !switcher.checked;
-    //     }
-    //     switcher.disabled = false;
-    // }
-    validateURL(url) {
-      let shortURL = url.replace('https://', '');
-      shortURL = shortURL.replace('http://', '');
-      shortURL = shortURL.replace('www.', '');
-      shortURL = shortURL.replace(/\/+$/, '');
-      if(['localhost', '127.0.0.1'].includes(shortURL)) {
-          alert(url + ' is not a valid production URL/IP. Please change it before activating Production Mode.')
-          return false;
-      }
-      if(!isURL(url) && 
-            //!isIP(shortURL)
-            /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(shortURL)
-            ) {
-          alert(url + ' is not a valid URL/IP!')
-          return false;
-      }
-      return true;
     }
     render() {
         return (

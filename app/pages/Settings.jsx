@@ -86,26 +86,6 @@ export default class Settings extends React.Component {
                 url: item.url,
                 live: item.production
             });
-            // instancesMenu.push({
-            //     label: "URL",
-            //     id: "url",
-            //     parent: family
-            // });
-            // instancesMenu.push({
-            //     label: "Theme",
-            //     id: "theme",
-            //     parent: family
-            // });
-            // instancesMenu.push({
-            //     label: "Color",
-            //     id: "color",
-            //     parent: family
-            // });
-            // instancesMenu.push({
-            //     label: "Moderation",
-            //     id: "moderation",
-            //     parent: family
-            // });
             instancesMenu.push({
                 label: "Members",
                 id: "members",
