@@ -103,6 +103,7 @@ export default class Setup extends React.Component {
         this.onKeyDownVerificationCode = this.onKeyDownVerificationCode.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.resendVerification = this.resendVerification.bind(this);
+        this.toggleOverlay = this.toggleOverlay.bind(this);
     }
     componentDidMount() {
         document.addEventListener('keydown', this.handleKey);
@@ -531,6 +532,11 @@ export default class Setup extends React.Component {
         let loadingButton = this.refs.loadingButton;
         ReactDOM.findDOMNode(loadingButton).classList.remove("fa", "fa-spinner", "fa-spin");
     }
+    toggleOverlay(name) {
+        let overlay = this.refs['overlay-' + name];
+        overlay.style.display = overlay.style.display === 'none'
+            ? 'block' : 'none';
+    }
     render() {
         if(
             this.state.redirectToSettings
@@ -664,7 +670,8 @@ export default class Setup extends React.Component {
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                     <div className="container">
                         <h3>No Gimmicks Pricing!</h3>
-                        <p>It's $8 per month. 1 month free trial. Cancel anytime.</p>
+                        <p>It's $8 per month. 1 month free trial. Cancel anytime.
+                        <br /><a onClick={() => this.toggleOverlay('free')}>Interested in free options?</a></p>
                         {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                                     <input type="hidden" name="cmd" value="_s-xclick" />
@@ -694,6 +701,18 @@ export default class Setup extends React.Component {
                                     Securely processed by
                                     <img src="/app/images/external/authorize.net-logo.png" />
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div ref="overlay-free" className="overlay" style={{display: 'none'}}>
+                        <div className="container">
+                            <div>
+                                <h1>Did somebody say "free option"?</h1>
+                                <p>TL;DR We don't offer free hosting, but the <a href="https://github.com/phonetworks/graphjs-server/tree/groupsv2" target="_blank">software</a> is free, so you can grab and <a href="https://github.com/phonetworks/graphjs-server/blob/groupsv2/README.md" target="_blank">host it on your own</a> easily.</p>
+                                <p>Every Grou.ps network is hosted on a dedicated instance; therefore there is a hosting fee associated with them. This architecture ensures the platform runs on the same <a href="https://github.com/phonetworks/graphjs-server/tree/groupsv2" target="_blank">free open source code that we've published on Github</a>, and gives you the flexibility to import/export data at any time you want. This way, you have the liberty to host the instance on your own. We believe this is important because it guarantees you can always get the best price should you decide to run the network on your own, and you control your data. Plus, this allows us to provide fanatical support to people who actually appreciate and pay for what we do.</p>
+                                <p>If you'd like to learn more about "hosting the instance on your own" option, check out the <a href="https://github.com/phonetworks/graphjs-server/blob/groupsv2/README.md" target="_blank">server</a> and <a href="https://github.com/phonetworks/grou-ps-v2/blob/master/README.md" target="_blank">server</a> docs. There is a one-click Heroku installer which allows you run the open source code (same as we do) on Salesforce's Heroku platform, which is free with limitations (the instances will be shut down after a few minutes of inactivity, and your network will fail during warm-up periods). Please note, there's no guarantee that Salesforce will always continue with this free option either. At some point, you may be forced to move. The history shows that free services tend to go premium  (<a href="https://www.emresokullu.com" target="_blank">been there done that 😔</a>) or sell your data (we're looking at you, Facebook) to survive.</p>
+                                <br /><br /><br />
+                                <a onClick={() => this.toggleOverlay('free')}>← Go back to Payment</a>
                             </div>
                         </div>
                     </div>

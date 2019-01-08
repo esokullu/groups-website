@@ -40,6 +40,24 @@
         & + section {
             padding-top: 0;
         }
+        .overlay {
+            overflow: auto;
+            font-size: 1.15em;
+            line-height: 1.35em;
+            .container {
+                display: block;
+                & > * {
+                    max-width: 960px;
+                    margin: 0 auto;
+                }
+                h1 {
+                    line-height: 1.35em;
+                }
+                p {
+                    text-align: left;
+                }
+            }
+        }
         h3 {
             width: 100%;
             color: @primary-color;
