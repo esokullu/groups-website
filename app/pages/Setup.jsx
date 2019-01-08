@@ -65,11 +65,11 @@ export default class Setup extends React.Component {
             payment: 'monthly',
             failMessages: [],
             failModalMessages:[],
-            number: "",
-            name: "",
-            expiry: "",
-            cvc: "",
-            focused: "",
+            number: '',
+            holder: '',
+            expiry: '',
+            cvc: '',
+            focused: '',
             redirectToSettings:false
         }
         this.handleKey = this.handleKey.bind(this);
@@ -103,6 +103,7 @@ export default class Setup extends React.Component {
         this.onKeyDownVerificationCode = this.onKeyDownVerificationCode.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.resendVerification = this.resendVerification.bind(this);
+        this.toggleOverlay = this.toggleOverlay.bind(this);
     }
     componentDidMount() {
         document.addEventListener('keydown', this.handleKey);
@@ -175,7 +176,6 @@ export default class Setup extends React.Component {
             failMessages: []
         });
         window.scrollTo(0, 0);
-        this.handleFocus();
     }
     changeGroupsId(event) {
         let groupsId = event.currentTarget.value;
@@ -409,9 +409,11 @@ export default class Setup extends React.Component {
         //Payment.formatCardCVC(document.querySelector('[name="cvc"]'));
     };
     setCardPayment() {
-        const {email, name, number, expiry, cvc} = this.state;
+        let loadingButton = this.refs.loadingButton;
+        this.setState({loadingButton: true});
+        const {email, holder, number, expiry, cvc} = this.state;
         let failMessages = [];
-        if(name.length === 0 || name.indexOf(' ') === -1 ){
+        if(holder.length === 0 || holder.indexOf(' ') === -1){
             failMessages.push('Please enter your full name');
         } else if(expiry.length !== 4 && expiry.length !== 6){
             failMessages.push('Expiry date is not valid');
@@ -425,26 +427,37 @@ export default class Setup extends React.Component {
             this.setState({
                 failMessages
             });
+            this.setState({loadingButton: false});
             return;
         }
-
+        let domain = 'https://gr.ps';
         const data = {
+            "groups_v2": 1,
             "mail": email,
-            "name": name,
+            "name": holder,
             "number": number,
             "expiry":expiry.substr(0, 2)  + '/' + expiry.substr(2),
-            "cvc": cvc
+            "cvc": cvc,
+            "site": domain + '/' + this.state.groupsId,
+            "pass": this.state.password,
+            "theme": this.state.theme,
+            "color": this.state.color,
+            "groups_name": this.state.groupsId,
+            "groups_title": this.state.name
         }
         let self = this;
         authorizePayment(data,function(response){
             let failMessages = [];
             if(response && response.success === true){
                 self.moveForward();
+                self.setState({loadingButton: false});
                 return;
             }else if(typeof response.body === 'object'){
                 failMessages = Object.values(response.body).map(a => a.required);
+                self.setState({loadingButton: false});
             }else {
                 failMessages = ['There is an error. Please try again.']
+                self.setState({loadingButton: true});
             }
             self.setState({
                 failMessages
@@ -518,6 +531,11 @@ export default class Setup extends React.Component {
         })
         let loadingButton = this.refs.loadingButton;
         ReactDOM.findDOMNode(loadingButton).classList.remove("fa", "fa-spinner", "fa-spin");
+    }
+    toggleOverlay(name) {
+        let overlay = this.refs['overlay-' + name];
+        overlay.style.display = overlay.style.display === 'none'
+            ? 'block' : 'none';
     }
     render() {
         if(
@@ -649,35 +667,55 @@ export default class Setup extends React.Component {
                 }
                 {this.state.steps[this.state.step].id == 'set-payment' &&
                 <section id="set-payment">
-                <div className="container">
-                    <div className="content">
-                        <Cards
-                            number={this.state.number}
-                            name={this.state.name}
-                            expiry={this.state.expiry}
-                            cvc={this.state.cvc}
-                            focused={this.state.focused}
-                        />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+                    <div className="container">
+                        <h3>No Gimmicks Pricing!</h3>
+                        <p>It's $8 per month. 1 month free trial. Cancel anytime.
+                        <br /><a onClick={() => this.toggleOverlay('free')}>Interested in free options?</a></p>
+                        {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                                    <input type="hidden" name="cmd" value="_s-xclick" />
+                                    <input type="hidden" name="hosted_button_id" value="GKL77PW743J2W" />
+                                    <input type="hidden" name="on0" value="" />
+                                    <input type="hidden" name="currency_code" value="USD" />
+                                    <input type="hidden" name="os0" value={this.state.payment.charAt(0).toUpperCase() + this.state.payment.substr(1)} />
+                                    <input type="hidden" name="custom" value={this.state.email} />
+                                    <input id="charge" className="hidden" type="submit" />
+                        </form> */}
+                        <div className="double content">
+                            <div className="left">
+                                <Cards
+                                    number={this.state.number}
+                                    name={this.state.holder}
+                                    expiry={this.state.expiry}
+                                    cvc={this.state.cvc}
+                                    focused={this.state.focused}
+                                />
+                            </div>
+                            <div className="right">
+                                <input name="number" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
+                                <input name="holder" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
+                                <input name="expiry" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
+                                <input name="cvc" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
+                                <p className="secure">
+                                    Securely processed by
+                                    <img src="/app/images/external/authorize.net-logo.png" />
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h3>No Gimmicks Pricing!</h3>
-                    <p>It's $8 per month. 1 month free trial. Cancel anytime.</p>
-                    {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                                <input type="hidden" name="cmd" value="_s-xclick" />
-                                <input type="hidden" name="hosted_button_id" value="GKL77PW743J2W" />
-                                <input type="hidden" name="on0" value="" />
-                                <input type="hidden" name="currency_code" value="USD" />
-                                <input type="hidden" name="os0" value={this.state.payment.charAt(0).toUpperCase() + this.state.payment.substr(1)} />
-                                <input type="hidden" name="custom" value={this.state.email} />
-                                <input id="charge" className="hidden" type="submit" />
-                    </form> */}
-                    <div className="content">
-                        <input name="number" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={19} placeholder="Card Number" />
-                        <input name="name" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
-                        <input name="expiry" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
-                        <input name="cvc" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
+                    <div ref="overlay-free" className="overlay" style={{display: 'none'}}>
+                        <div className="container">
+                            <div>
+                                <h1>Did somebody say "free option"?</h1>
+                                <p>TL;DR We don't offer free hosting, but the <a href="https://github.com/phonetworks/graphjs-server/tree/groupsv2" target="_blank">software</a> is free, so you can grab and <a href="https://github.com/phonetworks/graphjs-server/blob/groupsv2/README.md" target="_blank">host it on your own</a> easily.</p>
+                                <p>Every Grou.ps network is hosted on a dedicated instance; therefore there is a hosting fee associated with them. This architecture ensures the platform runs on the same <a href="https://github.com/phonetworks/graphjs-server/tree/groupsv2" target="_blank">free open source code that we've published on Github</a>, and gives you the flexibility to import/export data at any time you want. This way, you have the liberty to host the instance on your own. We believe this is important because it guarantees you can always get the best price should you decide to run the network on your own, and you control your data. Plus, this allows us to provide fanatical support to people who actually appreciate and pay for what we do.</p>
+                                <p>If you'd like to learn more about "hosting the instance on your own" option, check out the <a href="https://github.com/phonetworks/graphjs-server/blob/groupsv2/README.md" target="_blank">server</a> and <a href="https://github.com/phonetworks/grou-ps-v2/blob/master/README.md" target="_blank">client</a> docs. There is a one-click Heroku installer which allows you run the open source code (same as we do) on Salesforce's Heroku platform, which is free with limitations (the instances will be shut down after a few minutes of inactivity, and your network will fail during warm-up periods). Please note, there's no guarantee that Salesforce will always continue with this free option either. At some point, you may be forced to move. The history shows that free services tend to go premium  (<a href="https://www.emresokullu.com" target="_blank">been there done that 😔</a>) or sell your data (we're looking at you, Facebook) to survive.</p>
+                                <br /><br /><br />
+                                <a onClick={() => this.toggleOverlay('free')}>← Go back to Payment</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
                 </section>
                 }
                 {this.state.steps[this.state.step].id == 'go-back-home' &&
@@ -723,7 +761,7 @@ export default class Setup extends React.Component {
                         }
                         {this.state.step != this.state.steps.length - 1 &&
                         <button ref="next" onClick={this.changeStep} className="next" data-step="next">
-                            <i ref="loadingButton"></i> <span>{this.state.steps[this.state.step].label}</span>
+                            <i className={this.state.loadingButton ? 'fa fa-spinner fa-spin' : ''} ref="loadingButton"></i> <span>{this.state.steps[this.state.step].label}</span>
                         </button>
                         }
                         {this.state.step == this.state.steps.length - 1 &&

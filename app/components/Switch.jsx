@@ -69,7 +69,7 @@ export default class Switch extends React.Component {
         } else {
             return (
                 <div id="identity" className={(this.state.open ? 'open ' : '') + (this.state.items.length > 1 ? ' switch' : '')}>
-                    <ul className="button">
+                    <ul>
                         {this.state.items.map((item, key) =>
                         <li key={key} data-id={item.id} data-target={item.target} onClick={this.state.items.length > 1 ? this.handleClick : this.simulateClick}>
                             <img src={'app/images/identity/' + item.id + '-logo-light.svg'} />

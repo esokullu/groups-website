@@ -59,9 +59,7 @@ export default class Home extends React.Component {
 
                                 We won’t sell or censor your data — ever.
                             </p>
-                            <button>
-                                <Link to="/setup">start yours</Link>
-                            </button>
+                            <Link to="/setup" className="button">start yours</Link>
                         </div>
                     </section>
                     <img className="separator" src="app/images/illustrations/character-left-separator.png" />
