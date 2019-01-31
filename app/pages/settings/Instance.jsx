@@ -3,12 +3,14 @@ import Main from '../../components/Main';
 import generateRandomKey from '../../scripts/generateRandomKey';
 import deleteMember from '../../scripts/deleteMember';
 import reboot from '../../scripts/reboot';
+import fetchAdminPassword from '../../scripts/fetchAdminPassword';
 import MembersTable from '../../components/MembersTable';
 
 export default class Instance extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            adminPassword:"N/A",
             failMessages: [],
             successMessages: []
         }
@@ -18,6 +20,15 @@ export default class Instance extends React.Component {
     }
     componentWillMount() {
         this.setItemProperties(this.props.list, this.props.item);
+    }
+    componentDidMount() {
+        const self = this;
+        let uuid = self.state.configuration.uuid;
+        fetchAdminPassword(uuid, function(response) {
+            self.setState({
+                adminPassword: response.success ? response.body.password: "N/A"
+            })
+        });
     }
     componentWillReceiveProps(nextProps) {
         if(nextProps.item != this.state.id) {
@@ -139,7 +150,7 @@ export default class Instance extends React.Component {
                     }
                     {this.props.item == "adminpassword" &&
                         <section className="adminpassword">
-                        The password you use to log in to this administration panel, and the passwords on your instance(s) are different. The admin password for this instance is: %s
+                        The password you use to log in to this administration panel, and the passwords on your instance(s) are different. The admin password for this instance is: {this.state.adminPassword}
                         </section>
                     }
                     <section className="demo" style={{display: (this.props.item == 'color' || this.props.item == 'theme') ? 'block' : 'none'}}>
