@@ -113,18 +113,26 @@ export default class Navigation extends React.Component {
                         */}
                         {this.props.session &&
                         <li>
+                            <NavLink className="settings" to="/settings" activeClassName="active" onClick={this.handleToggle}>
+                                Settings
+                            </NavLink>
+                        </li>
+                        }
+                        {this.props.session &&
+                        <li>
                             <a className="logout" onClick={this.handleLogout}>
                                 Logout
                             </a>
                         </li>
                         }
-                        {/*this.props.session ||
+                        {
+                        this.props.session ||
                         <li>
                             <NavLink className="login" to="/login" activeClassName="active" onClick={this.handleToggle}>
                                 Login
                             </NavLink>
                         </li>
-                        */}
+                        }
                         <li>
                             <NavLink className="setup" to="/setup" className="outstanding" activeClassName="active" onClick={this.handleToggle}>
                                 Get Started

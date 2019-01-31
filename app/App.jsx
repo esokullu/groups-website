@@ -3,6 +3,7 @@ import {Switch, Route, Link} from 'react-router-dom';
 
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
+import Settings from './pages/Settings';
 import Login from './pages/Login';
 import Error from './pages/Error';
 import Legal from './pages/Legal';
@@ -16,6 +17,10 @@ import checkSession from './scripts/checkSession.js';
 import destroySession from './scripts/destroySession.js';
 import getClient from './scripts/getClient.js';
 import signup from '../app/scripts/signup';
+import getInstances from './scripts/getInstances.js';
+import fetchAllMembers from './scripts/fetchAllMembers.js';
+import checkModeration from './scripts/checkModeration.js'
+import fetchModerationQueue from './scripts/fetchModerationQueue.js'
 import verifyCode from '../app/scripts/verifyCode';
 import resendVerification from '../app/scripts/resendVerification';
 
@@ -62,9 +67,62 @@ export default class App extends React.Component {
                         let client = {
                             id: response.body.id,
                             account: {
-                                email: response.body.email
-                            }
+                                email: response.body.email,
+                                graphjsHash: response.body.graphjsHash
+                            },
+                            instances: []
                         };
+                        getInstances(function(response) {
+                            if(response.success) {
+                                response.body.forEach(function(item) {
+                                    console.log('A: runs once')
+                                    let instance = {
+                                        id: item.id,
+                                        uuid: item.uuid,
+                                        subscription: item.is_subscribed,
+                                        production: item.is_production,
+                                        url: item.site.url,
+                                        theme: item.theme,
+                                        color: item.color.charAt(0) == '#' ? item.color : '#' + item.color,
+                                        hash: client.account.graphjsHash,
+                                        moderated: false,
+                                        pendingComments: []
+                                    }
+                                    checkModeration(item.uuid, client.account.graphjsHash, function(response) {
+                                        if(response.success) {
+                                            instance.moderated = response.body;
+                                            fetchAllMembers(item.uuid, client.account.graphjsHash, function(response) {
+                                                if(response.success) {
+                                                    instance.members = response.body? response.body[0] : [];
+                                                    console.log('B: runs once')
+                                                    fetchModerationQueue(item.uuid, client.account.graphjsHash, function(response) {
+                                                        console.log('C: runs twice') // This is probably caused by cors / preflight response
+                                                        if(response.success) {
+                                                            instance.pendingComments = response.body;
+                                                        }
+
+                                                        client['instances'].push(instance);
+                                                        self.setState({
+                                                            client: client,
+                                                            print: generateRandomKey()
+                                                        });
+                                                    });
+                                                }
+                                            });
+                                        }
+                                        else {
+                                            client['instances'].push(instance);
+                                            self.setState({
+                                                client: client,
+                                                print: generateRandomKey()
+                                            });
+                                        }
+                                    });
+
+                                });
+
+                            }
+                        });
                     }
                     else {
                         self.unsetClient();
@@ -126,6 +184,24 @@ export default class App extends React.Component {
                             handleSignUp={this.handleSignUp}
                             handleVerifyCode={this.handleVerifyCode}
                             handleResendVerification={this.handleResendVerification}
+                        />
+                    }/>
+                    <Route path="/settings/:category/:identifier/:item?" render={(props) =>
+                        <Settings
+                            session={this.state.session}
+                            client={this.state.client}
+                            params={props.match.params}
+                            print={this.state.print}
+                            setClient={this.setClient}
+                        />
+                    }/>
+                    <Route path="/settings" render={(props) =>
+                        <Settings
+                            session={this.state.session}
+                            client={this.state.client}
+                            params={props.match.params}
+                            print={this.state.print}
+                            setClient={this.setClient}
                         />
                     }/>
                     <Route path="/login" render={(props) =>
