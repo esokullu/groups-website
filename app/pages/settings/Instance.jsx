@@ -24,7 +24,7 @@ export default class Instance extends React.Component {
     componentDidMount() {
         const self = this;
         let uuid = self.state.configuration.uuid;
-        fetchAdminPassword(uuid, function(response) {
+        fetchAdminPassword(function(response) {
             self.setState({
                 adminPassword: response.success ? response.body.password: "N/A"
             })
