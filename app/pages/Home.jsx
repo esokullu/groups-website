@@ -51,6 +51,7 @@ export default class Home extends React.Component {
                             </div>
                         </div>
                     </section>
+                    {/*}
                     <section className="promotion">
                         <div className="container">
                             <Headline title="Welcoming Tumblr users" subtitle="First month free. Service continuity guaranteed. " />
@@ -62,6 +63,7 @@ export default class Home extends React.Component {
                             <Link to="/setup" className="button">start yours</Link>
                         </div>
                     </section>
+                    */}
                     <img className="separator" src="app/images/illustrations/character-left-separator.png" />
                     <section className="information">
                         <div className="container">
