@@ -31,8 +31,11 @@ export default class Pricing extends React.Component {
                     <div className="container">
                         <section id="set-payment">
                         <div className="container">
+                        {/*
                             <img className="illustration" src="/app/images/illustrations/graphjs-mascot-payment.png" />
-                            <h3>Choose a plan</h3>
+                        */}
+                           
+                            <h2>Choose a plan</h2>
                             <div className="content" style={{maxWidth: "65em", marginTop: "2em"}}>
                             <div className="react-pricing-table">
                                 <div className="Grid">
@@ -42,14 +45,14 @@ export default class Pricing extends React.Component {
                                                 id="basic-header"
                                                 className="basic-header"
                                             >
-                                            Free Forever
+                                            Bronze
                                             </li>
-                                            <li className="tag">$0/month</li>
-                                            <div><li className=""> Free for testing</li></div>
-                                            <div><li className=""> Sleeps after 30 mins inactivity</li></div>
-                                            <div><li className=""> Max 200 objects [*]</li></div>
+                                            <li className="tag">$8/month</li>
+                                            <div><li className=""> 200 members</li></div>
+                                            <div><li className=""> 0.5GB compute power</li></div>
+                                            <div><li className=""> Daily Digest Emails</li></div>
+                                            <div><li className="text-line-through"> Custom Domain</li></div>
                                             <div><li className=""> Data Export</li></div>
-                                            <div><li className="text-line-through"> Weekly Backups</li></div>
                                             <li className="grey">
                                                 <button
                                                     type="button"
@@ -67,14 +70,14 @@ export default class Pricing extends React.Component {
                                                 className="highlighted-header"
                                                 style={{backgroundColor: 'rgb(93, 60, 246)'}}
                                             >
-                                                Basic
+                                                Silver
                                             </li>
-                                            <li className="tag">$8/month</li>
-                                            <div><li className=""> Production mode. Never Sleeps.</li></div>
-                                            <div><li className=""> Dedicated 1GB instance</li></div>
-                                            <div><li className=""> No limits on # of objects</li></div>
+                                            <li className="tag">$24/month</li>
+                                            <div><li className=""> 500 members</li></div>
+                                            <div><li className=""> 0.5GB compute power</li></div>
+                                            <div><li className=""> Daily Digest Emails</li></div>
+                                            <div><li className=""> Custom Domain</li></div>
                                             <div><li className=""> Data Export</li></div>
-                                            <div><li className=""> Weekly Backups</li></div>
                                             <li className="grey">
                                             <button
                                                 type="button"
@@ -89,24 +92,22 @@ export default class Pricing extends React.Component {
                                     </div>
                                     <div className="Grid-cell">
                                         <ul className="price basic-border">
-                                            <li id="basic-header" className="basic-header">Pro</li>
-                                            <li className="tag">Ask</li>
-                                            <div><li className=""> Everything in Basic</li></div>
-                                            <div><li className=""> Large Dedicated Instance(s)</li></div>
-                                            <div><li className=""> Performance SLA </li></div>
-                                            <div><li className=""> Data Export &amp; Import</li></div>
-                                            <div><li className=""> Tier-1 Support </li></div>
+                                            <li id="basic-header" className="basic-header">Gold</li>
+                                            <li className="tag">$80/month</li>
+                                            <div><li className=""> 2000 members</li></div>
+                                            <div><li className=""> 1GB compute power</li></div>
+                                            <div><li className=""> Daily Digest Emails</li></div>
+                                            <div><li className=""> Custom Domain</li></div>
+                                            <div><li className=""> Data Export</li></div>
                                             <li className="grey">
-                                                <button
-                                                    type="button"
-                                                    className="button-submit"
-                                                    style={{backgroundColor: 'rgb(93, 60, 246)'}}
-                                                    onClick={() => GraphJS.showMessagesComposer({
-                                                        id: "4371996e166e6cc3771f2dbbb2b09c52", anonymity: "on"
-                                                    })}
-                                                >
-                                                        Contact
-                                                </button>
+                                            <button
+                                                type="button"
+                                                className="button-submit"
+                                                style={{backgroundColor: 'rgb(93, 60, 246)'}}
+                                                onClick={this.handlePlanClick}
+                                            >
+                                                SIGN UP
+                                            </button>
                                             </li>
                                         </ul>
                                     </div>
@@ -125,7 +126,10 @@ export default class Pricing extends React.Component {
                             </div>
                         </div>
                         */}
-                    <p>[*] An object is any user, comment or write activity on the instance.</p>
+                    <p>Sign up annual plans for two months free!</p>
+                    <p>We also have enterprise accounts. <a href="#" onClick={() => GraphJS.showMessagesComposer({
+                                                        id: "4371996e166e6cc3771f2dbbb2b09c52", anonymity: "on"
+                                                    })}>Contact</a>.</p>
                     </section>
 
                     </div>
