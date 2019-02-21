@@ -7,8 +7,15 @@ export default class Pricing extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handlePlanClick = this.handlePlanClick.bind(this);
-
+        this.state = {
+            planType: 'monthly'
+        }
+    }
+    handlePlanTypeChange = () => {
+        const planType = this.state.planType === 'monthly' ? 'annual' : 'monthly';
+        this.setState({
+            planType
+        })
     }
     handlePlanClick = (e) => {
         e.preventDefault();
@@ -16,7 +23,7 @@ export default class Pricing extends React.Component {
             window.location.href="/settings";
             return;
         }
-        window.location.href="/setup";
+        window.location.href=`/setup?plan=${e.target.name}-${this.state.planType}`;
     }
     render() {
         //import  from 'react-pricing-table';
@@ -36,6 +43,24 @@ export default class Pricing extends React.Component {
                         */}
                            
                             <h2>Choose a plan</h2>
+                            <div className="pricing-plan-type-buttons">
+                                <button 
+                                    onClick={this.handlePlanTypeChange} 
+                                    type="button"
+                                    className="button-submit monthly-button"
+                                    disabled = {this.state.planType === 'monthly'}
+                                >
+                                    Monthly
+                                </button>
+                                <button 
+                                    onClick={this.handlePlanTypeChange}
+                                    type="button"
+                                    className="button-submit annual-button"
+                                    disabled = {this.state.planType === 'annual'}
+                                >
+                                    Annual
+                                </button>
+                            </div>
                             <div className="content" style={{maxWidth: "65em", marginTop: "2em"}}>
                             <div className="react-pricing-table">
                                 <div className="Grid">
@@ -47,7 +72,15 @@ export default class Pricing extends React.Component {
                                             >
                                             Bronze
                                             </li>
-                                            <li className="tag">$8/month</li>
+                                            {
+                                                this.state.planType === "monthly" ? 
+                                                <li className="tag">$8/month</li> :
+                                                (<li className="tag">
+                                                    <div className="non-offer-price text-line-through">$96/year</div>
+                                                    <div>$80/year</div>
+                                                </li>)
+                                                
+                                            }
                                             <div><li className=""> 200 members</li></div>
                                             <div><li className=""> 0.5GB compute power</li></div>
                                             <div><li className=""> Daily Digest Emails</li></div>
@@ -57,6 +90,7 @@ export default class Pricing extends React.Component {
                                                 <button
                                                     type="button"
                                                     className="button-submit"
+                                                    name="bronze"
                                                     style={{backgroundColor: 'rgb(93, 60, 246)'}}
                                                     onClick={this.handlePlanClick}
                                                 >
@@ -72,7 +106,14 @@ export default class Pricing extends React.Component {
                                             >
                                                 Silver
                                             </li>
-                                            <li className="tag">$24/month</li>
+                                            {
+                                                this.state.planType === "monthly" ? 
+                                                <li className="tag">$24/month</li> :
+                                                (<li className="tag">
+                                                    <div className="non-offer-price text-line-through">$288/year</div>
+                                                    <div>$240/year</div>
+                                                </li>)   
+                                            }
                                             <div><li className=""> 500 members</li></div>
                                             <div><li className=""> 0.5GB compute power</li></div>
                                             <div><li className=""> Daily Digest Emails</li></div>
@@ -82,6 +123,7 @@ export default class Pricing extends React.Component {
                                             <button
                                                 type="button"
                                                 className="button-submit"
+                                                name="silver"
                                                 style={{backgroundColor: 'rgb(93, 60, 246)'}}
                                                 onClick={this.handlePlanClick}
                                             >
@@ -93,7 +135,14 @@ export default class Pricing extends React.Component {
                                     <div className="Grid-cell">
                                         <ul className="price basic-border">
                                             <li id="basic-header" className="basic-header">Gold</li>
-                                            <li className="tag">$80/month</li>
+                                            {
+                                                this.state.planType === "monthly" ? 
+                                                <li className="tag">$80/month</li> :
+                                                (<li className="tag">
+                                                    <div className="non-offer-price text-line-through">$960/year</div>
+                                                    <div>$800/year</div>
+                                                </li>)   
+                                            }
                                             <div><li className=""> 2000 members</li></div>
                                             <div><li className=""> 1GB compute power</li></div>
                                             <div><li className=""> Daily Digest Emails</li></div>
@@ -103,6 +152,7 @@ export default class Pricing extends React.Component {
                                             <button
                                                 type="button"
                                                 className="button-submit"
+                                                name="gold"
                                                 style={{backgroundColor: 'rgb(93, 60, 246)'}}
                                                 onClick={this.handlePlanClick}
                                             >
@@ -126,7 +176,6 @@ export default class Pricing extends React.Component {
                             </div>
                         </div>
                         */}
-                    <p>Sign up annual plans for two months free!</p>
                     <p>We also have enterprise accounts. <a href="#" onClick={() => GraphJS.showMessagesComposer({
                                                         id: "4371996e166e6cc3771f2dbbb2b09c52", anonymity: "on"
                                                     })}>Contact</a>.</p>

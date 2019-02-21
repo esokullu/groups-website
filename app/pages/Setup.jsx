@@ -70,7 +70,8 @@ export default class Setup extends React.Component {
             expiry: '',
             cvc: '',
             focused: '',
-            redirectToSettings:false
+            redirectToSettings:false,
+            planType: null
         }
         this.handleKey = this.handleKey.bind(this);
         this.handleFocus = this.handleFocus.bind(this);
@@ -109,7 +110,18 @@ export default class Setup extends React.Component {
         document.addEventListener('keydown', this.handleKey);
         this.handleFocus();
         //mixpanel.init("9d82ff27cc34276822a9baeecbdd87fa");
+        const planType = this.getUrlParameter(this.props.queryString,'plan')
+        this.setState({
+            planType
+        })
     }
+    
+    getUrlParameter = (queryString,name) => {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(queryString);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
     componentWillReceiveProps(nextProps) {
         if(nextProps.client != this.props.client) {
             if(nextProps.client) {

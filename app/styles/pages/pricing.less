@@ -204,6 +204,22 @@
           padding: 2em 0 0 2em;
         }
       }
+      /* pricing plan buttons */
+      .pricing-plan-type-buttons {
+         text-align: center;
+         button {
+           background-color: rgb(93, 60, 246);
+           margin: 3em 0 0 0;
+         }
+         .monthly-button{
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+         }
+         .annual-button{
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+         }
+      }
 
       /* Style the list */
       .price {
@@ -270,7 +286,10 @@
           margin-bottom: 10px;
           cursor: pointer;
       }
-
+      .non-offer-price {
+        font-size: 0.5em;
+        height: 2em;
+      }
       .text-line-through{
         text-decoration: line-through;
       }

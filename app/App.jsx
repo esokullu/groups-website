@@ -184,6 +184,7 @@ export default class App extends React.Component {
                             handleSignUp={this.handleSignUp}
                             handleVerifyCode={this.handleVerifyCode}
                             handleResendVerification={this.handleResendVerification}
+                            queryString = {props.location.search}
                         />
                     }/>
                     <Route path="/settings/:category/:identifier/:item?" render={(props) =>
