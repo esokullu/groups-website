@@ -85,6 +85,14 @@ export default class Home extends React.Component {
                                     <b>🤯 No Gimmicks Pricing</b>
                                     <p>$8 per month. No annuals, no hidden fees. Simple as can be. Service continuity guaranteed. We won’t sell or censor your data — ever.</p>
                                 </li>
+                                <li>
+                                    <b>👩‍🎤 Custom Domain Name</b>
+                                    <p>Host your community under your own domain name for a real sense of belongingness among your members.</p>
+                                </li>
+                                <li>
+                                    <b>📦 Export/Import Data</b>
+                                    <p>Your data is yours. You can always export and/or import your data with no vendor lock-in.</p>
+                                </li>
                             </ul>
                         </div>
                     </section>
@@ -106,8 +114,8 @@ export default class Home extends React.Component {
                                     <p>All communications are secured automatically with in-transit encryption. This means no 3rd party can intrude, decrypt and read your content. Grou.ps can be put behind Tor for additional security.</p>
                                 </li>
                                 <li>
-                                    <b>📦 Export/Import Data</b>
-                                    <p>Your data is yours. You can always export and/or import your data with no vendor lock-in.</p>
+                                    <b>💵 Bitcoin Payments</b>
+                                    <p>Pay your subscription fee by Bitcoin and leave absolutely no trace behind.</p>
                                 </li>
                             </ul>
                         </div>
