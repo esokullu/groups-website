@@ -52,7 +52,7 @@ export default class Pricing extends React.Component {
                                             <div><li className=""> 0.5GB compute power</li></div>
                                             <div><li className=""> Daily Digest Emails</li></div>
                                             <div><li className="text-line-through"> Custom Domain</li></div>
-                                            <div><li className=""> Data Export</li></div>
+                                            <div><li className="text-line-through"> Bitcoin Accepted</li></div>
                                             <li className="grey">
                                                 <button
                                                     type="button"
@@ -77,7 +77,7 @@ export default class Pricing extends React.Component {
                                             <div><li className=""> 0.5GB compute power</li></div>
                                             <div><li className=""> Daily Digest Emails</li></div>
                                             <div><li className=""> Custom Domain</li></div>
-                                            <div><li className=""> Data Export</li></div>
+                                            <div><li className="text-line-through"> Bitcoin Accepted</li></div>
                                             <li className="grey">
                                             <button
                                                 type="button"
@@ -98,7 +98,7 @@ export default class Pricing extends React.Component {
                                             <div><li className=""> 1GB compute power</li></div>
                                             <div><li className=""> Daily Digest Emails</li></div>
                                             <div><li className=""> Custom Domain</li></div>
-                                            <div><li className=""> Data Export</li></div>
+                                            <div><li className=""> Bitcoin Accepted</li></div>
                                             <li className="grey">
                                             <button
                                                 type="button"
