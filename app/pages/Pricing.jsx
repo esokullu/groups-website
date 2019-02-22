@@ -1,10 +1,7 @@
 import React from 'react';
-
-
 import Main from '../components/Main';
 
 export default class Pricing extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -47,16 +44,20 @@ export default class Pricing extends React.Component {
                                 <button 
                                     onClick={this.handlePlanTypeChange} 
                                     type="button"
-                                    className="button-submit monthly-button"
-                                    disabled = {this.state.planType === 'monthly'}
+                                    className={
+                                        "button-submit monthly-button"+
+                                        (this.state.planType === 'monthly' ? " selected" : "")
+                                    }
                                 >
                                     Monthly
                                 </button>
                                 <button 
                                     onClick={this.handlePlanTypeChange}
                                     type="button"
-                                    className="button-submit annual-button"
-                                    disabled = {this.state.planType === 'annual'}
+                                    className={
+                                        "button-submit annual-button"+
+                                        (this.state.planType === 'annual' ? " selected" : "")
+                                    }
                                 >
                                     Annual
                                 </button>
