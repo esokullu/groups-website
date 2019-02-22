@@ -24,9 +24,8 @@ export default class Careers extends React.Component {
                             <img src="/app/images/photos/careers.jpg" />
                     </div>
                     <div className="container" style={textContainerStyle}>
-                            <p>Part of the <a href="https://www.groups-inc.com" target="_blank">Grou.ps Inc</a> family, GraphJS is dedicated to make the web social and meaningful.</p>
-                            <p>We build tools for ordinary web/frontend developers to create social web experiences hassle-free without heavy backend work.</p>
-                            <p>Grou.ps Inc. has been around for over 12+ years, and is here to stay for decades more to come. Grou.ps Inc is an equal opportunity employer. GraphJS offers both stability and the startup culture, together. Some other unique benefits are:</p>
+                            <p>Grou.ps is dedicated to giving an uncensored voice to online communities all around the world. We've been doing this for the last 12+ years, and we're here for decades more to come.</p>
+                            <p>Grou.ps Inc. is ideal for job-seekers looking for both stability, and the startup culture, together at the same time. Some other unique benefits are:</p>
                             <ul>
                                 <li>We are distributed. Geographic boundaries won't limit you from participating.</li>
                                 <li>All our work is open source and liberally licensed for derivatives.</li>
