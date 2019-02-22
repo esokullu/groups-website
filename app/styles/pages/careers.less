@@ -1,0 +1,44 @@
+.main-accordian {
+    max-width: 800px;
+    margin:0 auto;
+}
+.main-collapsible {
+    background-image: linear-gradient(#9e77ff 0%, #5d3cf6 100%);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid;
+    text-align: left;
+    border-radius: 0;
+    text-transform: none;
+  }
+  
+  .main-active, .main-collapsible:hover {
+    background-color: #555;
+  }
+  
+  .main-collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .main-active:after {
+    content: "\2212";
+  }
+  
+  .main-content {
+    padding: 0px 40px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #fafafa;
+    .accordain-content {
+        padding: 20px 0;
+        line-height: 1.6;
+    }
+  }

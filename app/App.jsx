@@ -7,6 +7,7 @@ import Settings from './pages/Settings';
 import Login from './pages/Login';
 import Error from './pages/Error';
 import Legal from './pages/Legal';
+import Careers from './pages/Careers';
 import Setup from './pages/Setup';
 
 import Navigation from './components/Navigation';
@@ -215,6 +216,9 @@ export default class App extends React.Component {
                         <Legal
                             params={props.match.params}
                         />
+                    }/>
+                    <Route path="/careers" render={(props) =>
+                        <Careers/>
                     }/>
                     <Route render={(props) =>
                         <Error />

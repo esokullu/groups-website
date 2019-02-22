@@ -17,7 +17,8 @@ export default class Footer extends React.Component {
                         <span className="credit">
                             &copy;{year} <a href="https://www.groups-inc.com" target="_blank">Grou.ps Inc.</a>
                         </span>
-                        &middot;<Link className="link" to="/legal">Legal</Link>
+                        &middot; <Link className="link" to="/careers">Careers</Link>
+                        &middot; <Link className="link" to="/legal">Legal</Link>
                     </div>
                 </div>
             </footer>
