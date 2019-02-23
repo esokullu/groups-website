@@ -102,6 +102,11 @@ export default class Settings extends React.Component {
                 id:"adminpassword",
                 parent:family
             });
+            instancesMenu.push({
+                label: "Export",
+                id:"export",
+                parent:family
+            });
         });
         this.setState({
             instancesMenu: instancesMenu
@@ -147,7 +152,7 @@ export default class Settings extends React.Component {
                 <Account account={this.state.account} instances={this.state.instances} item={['credentials', 'subscriptions'].includes(params.item) ? params.item : 'credentials'} list={this.state.accountMenu} update={this.handleAccountUpdate} />
                 }
                 {params.category == 'instances' &&
-                <Instance instances={this.state.instances} item={['adminpassword', 'reboot', 'members'].includes(params.item) ? params.item : 'code'} list={this.state.instancesMenu} update={this.handleInstanceUpdate} />
+                <Instance instances={this.state.instances} item={['adminpassword', 'reboot', 'members','export'].includes(params.item) ? params.item : 'code'} list={this.state.instancesMenu} update={this.handleInstanceUpdate} />
                 }
                 {((params.category == undefined)) &&
                 <Summary />

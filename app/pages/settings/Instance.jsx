@@ -153,6 +153,11 @@ export default class Instance extends React.Component {
                         The password you use to log in to this administration panel, and the passwords on your instance(s) are different. The admin password for this instance is: {this.state.adminPassword}
                         </section>
                     }
+                    {this.props.item == "export" &&
+                        <section className="export">
+                           <a href="https://www.groups-inc.com/contact.html">Contact Us</a>
+                        </section>
+                    }
                     <section className="demo" style={{display: (this.props.item == 'color' || this.props.item == 'theme') ? 'block' : 'none'}}>
                         <h3>Preview</h3>
                         <graphjs-forum-list id="component" max-width="50em" limit={5}></graphjs-forum-list>
