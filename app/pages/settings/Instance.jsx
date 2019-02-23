@@ -5,6 +5,8 @@ import deleteMember from '../../scripts/deleteMember';
 import reboot from '../../scripts/reboot';
 import fetchAdminPassword from '../../scripts/fetchAdminPassword';
 import MembersTable from '../../components/MembersTable';
+import {TwitterPicker} from 'react-color';
+import setBasics from '../../scripts/setBasics';
 
 export default class Instance extends React.Component {
     constructor(props) {
@@ -17,6 +19,9 @@ export default class Instance extends React.Component {
         this.setItemProperties = this.setItemProperties.bind(this);
         this.deleteUser = this.deleteUser.bind(this);
         this.handleRebootSubmit = this.handleRebootSubmit.bind(this);
+        this.handleBasicsSubmit = this.handleBasicsSubmit.bind(this);
+        this.changeTheme = this.changeTheme.bind(this);
+        this.changeColor = this.changeColor.bind(this);
     }
     componentWillMount() {
         this.setItemProperties(this.props.list, this.props.item);
@@ -58,6 +63,7 @@ export default class Instance extends React.Component {
                     configuration: {
                         id: instance.id,
                         uuid: instance.uuid,
+                        groupsTitle: instance.groupsTitle,
                         theme: instance.theme,
                         color: instance.color,
                         url: instance.url,
@@ -111,6 +117,44 @@ export default class Instance extends React.Component {
             });
         }
     }
+    changeTheme(event) {
+        let configuration = this.state.configuration;
+        configuration['theme'] = event.currentTarget.id;
+        this.setState({
+            configuration: configuration
+        });
+    }
+    changeColor(color) {
+        let configuration = this.state.configuration;
+        configuration['color'] = color.hex;
+        this.setState({
+            configuration: configuration
+        });
+    }
+    handleBasicsSubmit(event){
+        event.preventDefault();
+        let self = this;
+        let uuid = self.state.configuration.uuid;
+        // let id = self.state.configuration.id;
+        let groupsTitle = self.refs.groupsTitle.value;
+        let theme = self.state.configuration.theme;
+        let color = self.state.configuration.color;
+        self.refs.submitBasics.classList.add('loading');
+        setBasics(uuid, {
+            groupsTitle,
+            theme,
+            color
+        }, function(response) {
+            if(response.success) {
+                self.refs.submitBasics.classList.remove('loading');
+                self.refs.submitBasics.classList.add('done');
+                setTimeout(function() {
+                    self.refs.submitBasics.classList.remove('done');
+                }, 2500);
+                self.props.update(self.state.parent);
+            }
+        });
+    }
     render() {
         return (
             <Main data-page="instance">
@@ -156,6 +200,39 @@ export default class Instance extends React.Component {
                     {this.props.item == "export" &&
                         <section className="export">
                            <a href="https://www.groups-inc.com/contact.html">Contact Us</a>
+                        </section>
+                    }
+                    {this.props.item == "basics" &&
+                        <section className="basics">
+                            <form className="narrow options">
+                                <fieldset>
+                                    <h3>Title</h3>
+                                    <input 
+                                        ref="groupsTitle" 
+                                        id="groupsTitle"
+                                        type="text" 
+                                        placeholder="Enter your groups Title" 
+                                        defaultValue={this.state.configuration.groupsTitle} 
+                                    />
+                                    <h3>Theme</h3>
+                                    <div className="radiobutton">
+                                        <span>
+                                            <input onChange={this.changeTheme} type="radio" name="theme" id="light" defaultChecked={this.state.configuration.theme == 'light'} />
+                                            <label htmlFor="light">Light</label>
+                                        </span>
+                                        <span>
+                                            <input onChange={this.changeTheme} type="radio" name="theme" id="dark" defaultChecked={this.state.configuration.theme == 'dark'} />
+                                            <label htmlFor="dark">Dark</label>
+                                        </span>
+                                    </div>
+                                    <h3>Color</h3>
+                                    <TwitterPicker onChange={this.changeColor} color={this.state.configuration.color} width="204px" triangle="hide" colors={['#FFAD0A', '#FF8421', '#F92F39', '#ED2D96', '#8B5EFF', '#5D3CF6', '#007FFF', '#00C3D8', '#00C853', '#6F879F']} />
+                                    <button ref="submitBasics" onClick={this.handleBasicsSubmit}>
+                                        <span className="idle">Save Changes</span>
+                                        <span className="success">Saved</span>
+                                    </button>
+                                </fieldset>
+                            </form>
                         </section>
                     }
                     <section className="demo" style={{display: (this.props.item == 'color' || this.props.item == 'theme') ? 'block' : 'none'}}>
