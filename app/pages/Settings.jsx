@@ -80,6 +80,7 @@ export default class Settings extends React.Component {
             label = label.replace(/\/$/, '');
             let family = label.replace('.', '-');
             instancesMenu.push({
+                groupsTitle : item.groupsTitle,
                 label: label,
                 family: family,
                 toggle: true,
