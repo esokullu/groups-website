@@ -84,6 +84,7 @@ export default class App extends React.Component {
                                         let instance = {
                                             id: item.id,
                                             uuid: item.uuid,
+                                            groupsTitle : item.groups_title,
                                             subscription: item.is_subscribed,
                                             production: item.is_production,
                                             url: item.site.url,

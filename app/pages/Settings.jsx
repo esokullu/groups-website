@@ -88,6 +88,11 @@ export default class Settings extends React.Component {
                 live: item.production
             });
             instancesMenu.push({
+                label: "Basics",
+                id: "basics",
+                parent: family
+            }),
+            instancesMenu.push({
                 label: "Members",
                 id: "members",
                 parent: family
@@ -152,7 +157,7 @@ export default class Settings extends React.Component {
                 <Account account={this.state.account} instances={this.state.instances} item={['credentials', 'subscriptions'].includes(params.item) ? params.item : 'credentials'} list={this.state.accountMenu} update={this.handleAccountUpdate} />
                 }
                 {params.category == 'instances' &&
-                <Instance instances={this.state.instances} item={['adminpassword', 'reboot', 'members','export'].includes(params.item) ? params.item : 'code'} list={this.state.instancesMenu} update={this.handleInstanceUpdate} />
+                <Instance instances={this.state.instances} item={['basics','adminpassword', 'reboot', 'members','export'].includes(params.item) ? params.item : 'code'} list={this.state.instancesMenu} update={this.handleInstanceUpdate} />
                 }
                 {((params.category == undefined)) &&
                 <Summary />
