@@ -74,54 +74,64 @@ export default class App extends React.Component {
                             instances: []
                         };
                         getInstances(function(response) {
-                            if(response.success) {
-                                response.body.forEach(function(item) {
-                                    console.log('A: runs once')
-                                    let instance = {
-                                        id: item.id,
-                                        uuid: item.uuid,
-                                        subscription: item.is_subscribed,
-                                        production: item.is_production,
-                                        url: item.site.url,
-                                        theme: item.theme,
-                                        color: item.color.charAt(0) == '#' ? item.color : '#' + item.color,
-                                        hash: client.account.graphjsHash,
-                                        moderated: false,
-                                        pendingComments: []
-                                    }
-                                    checkModeration(item.uuid, client.account.graphjsHash, function(response) {
-                                        if(response.success) {
-                                            instance.moderated = response.body;
-                                            fetchAllMembers(item.uuid, client.account.graphjsHash, function(response) {
-                                                if(response.success) {
-                                                    instance.members = response.body? response.body[0] : [];
-                                                    console.log('B: runs once')
-                                                    fetchModerationQueue(item.uuid, client.account.graphjsHash, function(response) {
-                                                        console.log('C: runs twice') // This is probably caused by cors / preflight response
-                                                        if(response.success) {
-                                                            instance.pendingComments = response.body;
-                                                        }
+                            if(response.success && response.body) {
+                                const Instances = response.body.filter(function(item) {
+                                    return item.is_groups
+                                });
+                                if(Instances.length > 0){
+                                    response.body.forEach(function(item) {
+                                        console.log('A: runs once')
+                                        let instance = {
+                                            id: item.id,
+                                            uuid: item.uuid,
+                                            subscription: item.is_subscribed,
+                                            production: item.is_production,
+                                            url: item.site.url,
+                                            theme: item.theme,
+                                            color: item.color.charAt(0) == '#' ? item.color : '#' + item.color,
+                                            hash: client.account.graphjsHash,
+                                            moderated: false,
+                                            pendingComments: []
+                                        }
+                                        checkModeration(item.uuid, client.account.graphjsHash, function(response) {
+                                            if(response.success) {
+                                                instance.moderated = response.body;
+                                                fetchAllMembers(item.uuid, client.account.graphjsHash, function(response) {
+                                                    if(response.success) {
+                                                        instance.members = response.body? response.body[0] : [];
+                                                        console.log('B: runs once')
+                                                        fetchModerationQueue(item.uuid, client.account.graphjsHash, function(response) {
+                                                            console.log('C: runs twice') // This is probably caused by cors / preflight response
+                                                            if(response.success) {
+                                                                instance.pendingComments = response.body;
+                                                            }
 
-                                                        client['instances'].push(instance);
-                                                        self.setState({
-                                                            client: client,
-                                                            print: generateRandomKey()
+                                                            client['instances'].push(instance);
+                                                            self.setState({
+                                                                client: client,
+                                                                print: generateRandomKey()
+                                                            });
                                                         });
-                                                    });
-                                                }
-                                            });
-                                        }
-                                        else {
-                                            client['instances'].push(instance);
-                                            self.setState({
-                                                client: client,
-                                                print: generateRandomKey()
-                                            });
-                                        }
+                                                    }
+                                                });
+                                            }
+                                            else {
+                                                client['instances'].push(instance);
+                                                self.setState({
+                                                    client: client,
+                                                    print: generateRandomKey()
+                                                });
+                                            }
+                                        });
+
                                     });
 
-                                });
-
+                                } else {
+                                    self.setState({
+                                        client: client,
+                                        print: generateRandomKey()
+                                    });
+                                }
                             }
                         });
                     }

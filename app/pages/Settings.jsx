@@ -7,6 +7,7 @@ import Menu from './settings/Menu';
 import Summary from './settings/Summary';
 import Account from './settings/Account';
 import Instance from './settings/Instance';
+import MessagesBanner from './settings/MessagesBanner';
 
 export default class Settings extends React.Component {
     constructor(props) {
@@ -134,8 +135,11 @@ export default class Settings extends React.Component {
     render() {
         let params = this.props.params;
         if (this.props.session) {
-            return this.props.client
-            ? <Main id="settings" data-page="settings">
+             if(!this.props.client){
+                return <Main loading={true} />
+             }
+             return (this.props.client.instances && this.props.client.instances.length > 0)
+             ? (<Main id="settings" data-page="settings">
                 <Sidebar ref="sidebar">
                     <Menu params={params} accountMenuItems={this.state.accountMenu} instancesMenuItems={this.state.instancesMenu} close={this.handleSidebar} update={this.props.setClient} />
                 </Sidebar>
@@ -148,10 +152,19 @@ export default class Settings extends React.Component {
                 {((params.category == undefined)) &&
                 <Summary />
                 }
-            </Main>
-            : <Main loading={true} />
+            </Main>)
+            : <MessagesBanner client={this.props.client} />
         } else {
-            return <Redirect to="/" />;
+            var canUseDOM = (
+    	    	typeof window !== 'undefined' &&
+    		    window.document &&
+    		    window.document.createElement
+    	    );
+    	    if(canUseDOM) {
+                return <Redirect to="/" />;
+    	    } else {
+    	        return <Main loading={true} />;
+    	    }
         }
     }
 }
