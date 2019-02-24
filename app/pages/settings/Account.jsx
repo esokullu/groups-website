@@ -358,9 +358,11 @@ export default class Account extends React.Component {
                                         <b>URL:</b> {item.url}
                                     </div>
                                 </div>
+                                {/*
                                 {item.subscription ||
                                 <a onClick={this.handleExistingInstance} data-id={item.uuid} className="warning">This instance is inactive. Click to activate!</a>
                                 }
+                                */}
                                 {/* {item.subscription ||
                                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                                     <input type="hidden" name="cmd" value="_s-xclick" />
