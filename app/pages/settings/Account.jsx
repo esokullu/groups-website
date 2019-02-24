@@ -335,7 +335,7 @@ export default class Account extends React.Component {
                                 {this.state.failMessages.map((failMessage, key) => <li key={key}>{failMessage}</li>)}
                             </ul>
                         </div>}
-                        <p>{'You have ' + this.props.instances.length + ' GraphJS instance(s).'}</p>
+                        <p>{'You have ' + this.props.instances.length + ' Grou.ps site(s).'}</p>
                         <ul>
                             {this.props.instances.map((item, key) =>
                             <li key={key}>
@@ -375,9 +375,13 @@ export default class Account extends React.Component {
                             </li>
                             )}
                         </ul>
-                        {/*<Link to="/setup">
+                        {/*
+                        <Link to="/setup">
                             <button>Add New Instance</button>
-                        </Link>*/}
+                        </Link>
+                        */}
+                        <p>To make changes (cancel, update card) please log in to <a href="https://www.billingportal.com/s/graphjs" target="_blank">BillingPortal.com</a>, our payment processor.</p>
+                        <p>Should you have any questions, please contact us at <a href="https://www.groups-inc.com/contact.html" target="_blank">https://www.groups-inc.com/contact.html</a>.</p>
                     </section>
                     }
                 </div>
