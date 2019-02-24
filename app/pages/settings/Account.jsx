@@ -380,7 +380,7 @@ export default class Account extends React.Component {
                             <button>Add New Instance</button>
                         </Link>
                         */}
-                        <p>To make changes (cancel, update card) please log in to <a href="https://www.billingportal.com/s/graphjs" target="_blank">BillingPortal.com</a>, our payment processor.</p>
+                        <p>To make changes (cancel, update card, invoices) please log in to <a href="https://www.billingportal.com/s/graphjs" target="_blank">BillingPortal.com</a>, our payment processor.</p>
                         <p>Should you have any questions, please contact us at <a href="https://www.groups-inc.com/contact.html" target="_blank">https://www.groups-inc.com/contact.html</a>.</p>
                     </section>
                     }
