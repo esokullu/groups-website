@@ -177,9 +177,7 @@ export default class Pricing extends React.Component {
                             </div>
                         </div>
                         */}
-                    <p>We also have enterprise accounts. <a href="#" onClick={() => GraphJS.showMessagesComposer({
-                                                        id: "4371996e166e6cc3771f2dbbb2b09c52", anonymity: "on"
-                                                    })}>Contact</a>.</p>
+                    <p>We also have enterprise accounts. Please <a href="https://www.groups-inc.com/contact.html" target="_blank">contact</a> for more information.</p>
                     </section>
 
                     </div>
