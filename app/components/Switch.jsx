@@ -17,6 +17,7 @@ export default class Switch extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.simulateClick = this.simulateClick.bind(this);
         this.orderItems = this.orderItems.bind(this);
+        this.handleHoverOff = this.handleHoverOff.bind(this);
     }
     componentDidMount() {
         this.setState({
@@ -63,12 +64,17 @@ export default class Switch extends React.Component {
             }
         }
     }
+    handleHoverOff(){
+        this.setState({
+            open: false
+        });
+    }
     render() {
         if (this.state.redirect === true) {
             return <Redirect to="/" />;
         } else {
             return (
-                <div id="identity" className={(this.state.open ? 'open ' : '') + (this.state.items.length > 1 ? ' switch' : '')}>
+                <div id="identity" className={(this.state.open ? 'open ' : '') + (this.state.items.length > 1 ? ' switch' : '')}  onMouseLeave={this.handleHoverOff}>
                     <ul>
                         {this.state.items.map((item, key) =>
                         <li key={key} data-id={item.id} data-target={item.target} onClick={this.state.items.length > 1 ? this.handleClick : this.simulateClick}>
