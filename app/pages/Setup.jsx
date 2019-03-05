@@ -682,7 +682,7 @@ export default class Setup extends React.Component {
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                     <div className="container">
                         <h3>No Gimmicks Pricing!</h3>
-                        <p>It's $8 per month. 1 month free trial. Cancel anytime.
+                        <p>It's $8 per month. Two weeks free trial. Cancel anytime.
                         <br /><a onClick={() => this.toggleOverlay('free')}>Interested in free options?</a></p>
                         {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
