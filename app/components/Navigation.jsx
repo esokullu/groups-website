@@ -123,7 +123,7 @@ export default class Navigation extends React.Component {
                         {this.props.session &&
                         <li>
                             <a className="logout" onClick={this.handleLogout}>
-                                Logout
+                                Log out
                             </a>
                         </li>
                         }
@@ -131,7 +131,7 @@ export default class Navigation extends React.Component {
                         this.props.session ||
                         <li>
                             <NavLink className="login" to="/login" activeClassName="active" onClick={this.handleToggle}>
-                                Login
+                                Log in
                             </NavLink>
                         </li>
                         }
