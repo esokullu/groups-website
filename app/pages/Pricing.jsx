@@ -95,7 +95,7 @@ export default class Pricing extends React.Component {
                                                     style={{backgroundColor: 'rgb(93, 60, 246)'}}
                                                     onClick={this.handlePlanClick}
                                                 >
-                                                    SIGN UP
+                                                    START FREE TRIAL
                                                 </button></li>
                                         </ul>
                                     </div>
@@ -128,7 +128,7 @@ export default class Pricing extends React.Component {
                                                 style={{backgroundColor: 'rgb(93, 60, 246)'}}
                                                 onClick={this.handlePlanClick}
                                             >
-                                                SIGN UP
+                                                START FREE TRIAL
                                             </button>
                                             </li>
                                         </ul>
@@ -177,6 +177,9 @@ export default class Pricing extends React.Component {
                             </div>
                         </div>
                         */}
+                    
+                    <p>All plans come with a free trial</p>
+                    <p>You may also download and run the free open source Grou.ps from <a href="https://github.com/phonetworks/grou-ps-v2"  target="_blank">https://github.com/phonetworks/grou-ps-v2</a>.</p>
                     <p>We also have enterprise accounts. Please <a href="https://www.groups-inc.com/contact.html" target="_blank">contact</a> for more information.</p>
                     </section>
 
