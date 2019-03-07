@@ -90,6 +90,7 @@ export default class Settings extends React.Component {
                 family: family,
                 toggle: true,
                 uuid: item.uuid,
+                groupsName: item.groupsName,
                 id:item.id,
                 url: item.url,
                 live: item.production

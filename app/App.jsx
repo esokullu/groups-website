@@ -85,6 +85,7 @@ export default class App extends React.Component {
                                             id: item.id,
                                             uuid: item.uuid,
                                             groupsTitle : item.groups_title,
+                                            groupsName: item.groups_name,
                                             subscription: item.is_subscribed,
                                             production: item.is_production,
                                             url: item.site.url,

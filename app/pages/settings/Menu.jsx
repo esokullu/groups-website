@@ -85,7 +85,7 @@ export default class Menu extends React.Component {
                 </div>
                 : <Link key={key} to={'/settings/instances/' + item.parent + '/' + item.id} className={'link' + (item.parent ? ' submenu ' + '_' + item.parent.replace(/[:.]/g,'-') + '-item' : '')} onClick={this.changeActive} data-label={item.label} data-parent={item.parent || ''}>{item.label}</Link>
                 )}
-                <a target="_blank" href={"https://gr.ps/"+this.props.instancesMenuItems[0].id} className={"link" + (' submenu ' + '_' + this.props.instancesMenuItems[0].family.replace(/[:.]/g,'-') + '-item')}>Visit</a>
+                <a target="_blank" href={"https://gr.ps/"+this.props.instancesMenuItems[0].groupsName} className={"link" + (' submenu ' + '_' + this.props.instancesMenuItems[0].family.replace(/[:.]/g,'-') + '-item')}>Visit</a>
                 <h4>Account</h4>
                 {
                     this.props.accountMenuItems.map((item, key) =>
