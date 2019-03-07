@@ -65,6 +65,11 @@ export default class Settings extends React.Component {
                         label: "Subscriptions",
                         id: "subscriptions",
                         parent: id
+                    },
+                    {
+                        label: "Tickets",
+                        id: "tickets",
+                        parent: id
                     }
                 ]
             });
@@ -155,7 +160,7 @@ export default class Settings extends React.Component {
                     <Menu params={params} accountMenuItems={this.state.accountMenu} instancesMenuItems={this.state.instancesMenu} close={this.handleSidebar} update={this.props.setClient} />
                 </Sidebar>
                 {params.category == 'account' &&
-                <Account account={this.state.account} instances={this.state.instances} item={['credentials', 'subscriptions'].includes(params.item) ? params.item : 'credentials'} list={this.state.accountMenu} update={this.handleAccountUpdate} />
+                <Account account={this.state.account} instances={this.state.instances} item={['credentials', 'subscriptions','tickets'].includes(params.item) ? params.item : 'credentials'} list={this.state.accountMenu} update={this.handleAccountUpdate} />
                 }
                 {params.category == 'instances' &&
                 <Instance instances={this.state.instances} item={['basics','adminpassword', 'reboot', 'members','export'].includes(params.item) ? params.item : 'code'} list={this.state.instancesMenu} update={this.handleInstanceUpdate} />

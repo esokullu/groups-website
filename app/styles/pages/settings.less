@@ -224,6 +224,163 @@
                 }
             }
         }
+        .tickets {
+            .tickets-table {
+                button {
+                    max-width: 20em;
+                }
+                table {
+                    width: 100%;
+                    max-width: 36em;
+                    padding: 0.8em 0;
+                    tr {
+                        text-align: left;
+                    }
+                    td, th {
+                        padding: 0.8em 0;
+                    }
+                }
+                ul {
+                    display: inline-block;
+                    color: #8f9ca9;
+                    padding: 1em 0;
+                    width: 100%;
+                    margin-bottom: 1em;
+                }
+                li {
+                    display: inline-block;
+                    a {
+                        color:#8f9ca9;;
+                    }
+                }
+                li:not(:first-child):not(:last-child){
+                    margin:0 0.5em;
+                }
+                li:first-child, li:last-child {
+                    margin:0.5em;
+                }
+                li.active {
+                    border-bottom:1px solid;
+                    text-align: center;
+                    height: 1.5em;
+                    width: 1em;
+                }
+                .break a {
+                    cursor: default;
+                }
+            }
+            .hide {
+                display:none;
+            }
+            .Modal-overlay {
+                display: table;
+                position: fixed;
+                z-index: 1000;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100vh;
+                padding:2em;
+                background-color: rgba(0,0,0,0.85);
+                .content {
+                    background: white;
+                    padding: 2em;
+                    width: 100%;
+                    max-width: 40em;
+                    margin: 28vh auto 0;
+                    text-align: center;
+                    textarea {
+                        height: 10em;
+                    }
+                    button {
+                        max-width: 10em;
+                        margin:2em 0.5em 0;
+                    }
+                }
+            }
+            .ticket-modal {
+                .content {
+                    margin:6vh auto 0;
+                    text-align: left;
+                    position: relative;
+                    .ticket-details > * {
+                        margin:0.6em 0;
+                    }
+                    .ticket-messages {
+                        height: 18em;
+                        overflow-y: auto;
+                        border: 1px solid rgba(0,0,0,0.1);
+                        margin-bottom: 1em;
+                        text-align: center;
+                        ul {
+                            margin:0;
+                            font-size: 0.9em;
+                            li {
+                                width: 100%;
+                                margin: 0.6em 0;
+                                font-weight: bold;
+                                position: relative;
+                                .time {
+                                    font-size: 0.8em;
+                                    font-weight: normal;
+                                    margin-bottom: 0.5em;
+                                }
+                                > div {
+                                    border-radius: 0.5em;
+                                    padding: 0.5em;
+                                    line-height: 1.6em;
+                                    max-width: 24em;
+                                }
+                            }
+                            .ticket-message > div {
+                                width: 23em;
+                                background: #f5f5f5;
+                                margin: 0.5em auto; 
+                            }
+                            .customer-message > div {
+                                .background-color-states(@primary-color);
+                                color: white;
+                                float: right;
+                                text-align: right;
+                                margin-right: 0.5em;
+                                &:after {
+                                    position: absolute;
+                                    right: 1em;
+                                    top: -1.5em;
+                                    color: #5d3cf6;
+                                    content: "Me :";
+                                }
+                            }
+                            .support-message > div {
+                                .background-color-states(@primary-color);
+                                color: white;
+                                float: left;
+                                text-align: left;
+                                margin-left: 1em;
+                                &:after {
+                                    position: absolute;
+                                    left: 1.5em;
+                                    top: -1.5em;
+                                    color: #5d3cf6;
+                                    content: "Support :";
+                                }  
+                            }
+                        }
+                    }
+                    .close-btn {
+                        position: absolute;
+                        top: 0;
+                        right: 2em;
+                        width: 3em;
+                    }
+                    textarea {
+                        height: 5em;
+                    }
+                }
+            }
+        }
         .options {
             max-width: 50em;
             &.narrow {

@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import Main from '../../components/Main';
+import TicketsTable from '../../components/TicketsTable';
 
 import generateRandomKey from '../../scripts/generateRandomKey';
 import setEmail from '../../scripts/setEmail';
@@ -385,6 +386,13 @@ export default class Account extends React.Component {
                         <p>To make changes (cancel, update card, invoices) please log in to <a href="https://www.billingportal.com/s/graphjs" target="_blank">BillingPortal.com</a>, our payment processor.</p>
                         <p>Should you have any questions, please contact us at <a href="https://www.groups-inc.com/contact.html" target="_blank">https://www.groups-inc.com/contact.html</a>.</p>
                     </section>
+                    }
+                    {
+                        this.state.id == 'tickets' &&
+                            <section className="tickets options">
+                                <h1>{this.state.label}</h1>
+                                <TicketsTable/>
+                            </section>
                     }
                 </div>
             </Main>

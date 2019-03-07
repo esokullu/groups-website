@@ -28,7 +28,8 @@ export default function(method, path, data, callback) {
 		if(response.status.code == 'success') {
 			callback({
 				success: true,
-				body: response.body
+				body: response.body,
+				pagination: response.pagination ? response.pagination : null
 			})
 		} else {
 			callback({
