@@ -86,8 +86,8 @@ export default class Home extends React.Component {
                                     <p>$8 per month. No annuals, no hidden fees. Simple as can be. Service continuity guaranteed. We won’t sell or censor your data — ever.</p>
                                 </li>
                                 <li>
-                                    <b>👩‍🎤 Custom Domain Name</b>
-                                    <p>Host your community under your own domain name for a real sense of belongingness among your members.</p>
+                                    <b>👩‍🎤 Expressive</b>
+                                    <p>Host your community under your own domain name. Use HTML/CSS/Javascript and Bootstrap to further customize your network.</p>
                                 </li>
                                 <li>
                                     <b>📦 Export/Import Data</b>
@@ -115,7 +115,7 @@ export default class Home extends React.Component {
                                 </li>
                                 <li>
                                     <b>💵 Bitcoin Payments</b>
-                                    <p>Pay your subscription fee by Bitcoin and leave absolutely no trace behind.</p>
+                                    <p>This is 21<sup>st</sup> century. Pay your subscription fee by Bitcoin. Available only with Gold Annual plan.</p>
                                 </li>
                             </ul>
                         </div>
