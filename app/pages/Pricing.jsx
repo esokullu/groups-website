@@ -5,7 +5,7 @@ export default class Pricing extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            planType: 'monthly'
+            planType: 'annual'
         }
     }
     handlePlanTypeChange = () => {
@@ -40,7 +40,18 @@ export default class Pricing extends React.Component {
                         */}
                            
                             <h2>Choose a plan</h2>
+                            <p>💰 Annual plans cost you 2 months less.</p>
                             <div className="pricing-plan-type-buttons">
+                                <button
+                                    onClick={this.handlePlanTypeChange}
+                                    type="button"
+                                    className={
+                                        "button-submit annual-button"+
+                                        (this.state.planType === 'annual' ? " selected" : "")
+                                    }
+                                >
+                                    <span className="valuable">Annual</span>
+                                </button>
                                 <button 
                                     onClick={this.handlePlanTypeChange} 
                                     type="button"
@@ -50,16 +61,6 @@ export default class Pricing extends React.Component {
                                     }
                                 >
                                     Monthly
-                                </button>
-                                <button 
-                                    onClick={this.handlePlanTypeChange}
-                                    type="button"
-                                    className={
-                                        "button-submit annual-button"+
-                                        (this.state.planType === 'annual' ? " selected" : "")
-                                    }
-                                >
-                                    Annual
                                 </button>
                             </div>
                             <div className="content" style={{maxWidth: "65em", marginTop: "2em"}}>
@@ -99,13 +100,13 @@ export default class Pricing extends React.Component {
                                                 </button></li>
                                         </ul>
                                     </div>
-                                    <div className="Grid-cell">
+                                    <div className="Grid-cell highlighted">
                                         <ul className="price basic-border">
                                             <li id="highlighted-header"
-                                                className="highlighted-header"
-                                                style={{backgroundColor: 'rgb(93, 60, 246)'}}
+                                                className="basic-header"
                                             >
                                                 Silver
+                                                <i>the most selected option</i>
                                             </li>
                                             {
                                                 this.state.planType === "monthly" ? 

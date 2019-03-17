@@ -9,6 +9,36 @@ import authorizePayment from '../scripts/authorizePayment';
 
 import Main from '../components/Main';
 
+const paymentPlans = {
+    "bronze-monthly": {
+        price: '$8',
+        each: 'month'
+    },
+    "silver-monthly": {
+        price: '$24',
+        each: 'month'
+    },
+    "gold-monthly": {
+        price: '$80',
+        each: 'month'
+    },
+    "bronze-annual": {
+        price: '$80',
+        full: '$96',
+        each: 'year'
+    },
+    "silver-annual": {
+        price: '$240',
+        full: '$288',
+        each: 'year'
+    },
+    "gold-annual": {
+        price: '$800',
+        full: '$960',
+        each: 'year'
+    }
+}
+
 export default class Setup extends React.Component {
     constructor(props) {
         super(props);
@@ -73,6 +103,8 @@ export default class Setup extends React.Component {
             redirectToSettings:false,
             planType: null
         }
+        this.getUrlParameter = this.getUrlParameter.bind(this);
+        this.getQuote = this.getQuote.bind(this);
         this.handleKey = this.handleKey.bind(this);
         this.handleFocus = this.handleFocus.bind(this);
         this.changeStep = this.changeStep.bind(this);
@@ -115,13 +147,6 @@ export default class Setup extends React.Component {
             planType
         })
     }
-    
-    getUrlParameter = (queryString,name) => {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(queryString);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-    };
     componentWillReceiveProps(nextProps) {
         if(nextProps.client != this.props.client) {
             if(nextProps.client) {
@@ -141,6 +166,34 @@ export default class Setup extends React.Component {
     }
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKey, true);
+    }
+    getUrlParameter(queryString,name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(queryString);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+    getQuote(plan) {
+        let defaultQuote = <p>
+            You pay $0 for 2 weeks. Then it's <b>$8</b> per month. Cancel anytime.
+            <br />
+            <a onClick={() => this.toggleOverlay('free')}>Interested in free options?</a>
+        </p>;
+        if(plan && plan !== '') {
+            let details = paymentPlans[plan];
+            if(details) {
+                return <p>
+                    It's <span>{
+                      details.full
+                        ? <b><del>{details.full}</del> <ins>{details.price}</ins></b>
+                        : <b>{details.price}</b>
+                    }</span> per <span>{details.each || 'month'}</span>, starting after the trial period.
+                </p>
+            }
+        } else {
+            return defaultQuote;
+        }
+        
     }
     handleKey(event) {
         if (event.key === 'Escape' || event.keyCode === 27) {
@@ -682,8 +735,8 @@ export default class Setup extends React.Component {
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                     <div className="container">
                         <h3>No Gimmicks Pricing!</h3>
-                        <p>It's $8 per month. Two weeks free trial. Cancel anytime.
-                        <br /><a onClick={() => this.toggleOverlay('free')}>Interested in free options?</a></p>
+                        {this.getQuote(this.state.planType)}
+                        
                         {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                                     <input type="hidden" name="cmd" value="_s-xclick" />
