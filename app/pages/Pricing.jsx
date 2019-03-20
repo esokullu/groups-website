@@ -5,7 +5,7 @@ export default class Pricing extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            planType: 'annual'
+            planType: 'monthly'
         }
     }
     handlePlanTypeChange = () => {
@@ -40,7 +40,7 @@ export default class Pricing extends React.Component {
                         */}
                            
                             <h2>Choose a plan</h2>
-                            <p>💰 Annual plans cost you 2 months less.</p>
+                            <p>💰 Switch to annual and get two months free!</p>
                             <div className="pricing-plan-type-buttons">
                                 <button
                                     onClick={this.handlePlanTypeChange}
