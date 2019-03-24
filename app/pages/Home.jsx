@@ -51,19 +51,20 @@ export default class Home extends React.Component {
                             </div>
                         </div>
                     </section>
-                    {/*}
+                    
                     <section className="promotion">
                         <div className="container">
-                            <Headline title="Welcoming Tumblr users" subtitle="First month free. Service continuity guaranteed. " />
+                            <Headline title="Welcoming Google+ users" subtitle="First month free. Service continuity guaranteed. " />
                             <p>
                                 Services come and go. We’ve been in business for 10+ years continuous service.
 
-                                We won’t sell or censor your data — ever.
+                                You retain the freedom to easily switch from Grou.ps SaaS to <a href="https://github.com/phonetworks/grou-ps-v2" target="_blank">self-hosted</a>. We do not believe in locking users into their choices.
+
                             </p>
-                            <Link to="/setup" className="button">start yours</Link>
+                            <Link to="/setup" className="button">start free trial</Link>
                         </div>
                     </section>
-                    */}
+                    
                     <img className="separator" src="app/images/illustrations/character-left-separator.png" />
                     <section className="information">
                         <div className="container">
@@ -121,15 +122,18 @@ export default class Home extends React.Component {
                         </div>
                     </section>
                     <img className="separator" src="app/images/illustrations/character-right-separator.png" />
-                    {/*
+                    
                     <section className="promotion">
                         <div className="container">
-                            <h2>Welcoming Tumblr users!</h2>
-                            <p>Move to a privacy-friendly place. 3 months free.</p>
-                            <button>start yours</button>
+                            <h2>Welcoming Google+ users!</h2>
+                            <p>Service continuity guaranteed. Open source version available.</p>
+                            {/*<button>start yours</button>*/}
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
                         </div>
                     </section>
-                    */}
+                    
                     <section className="indication">
                         <div className="container">
                             <div className="brand">
