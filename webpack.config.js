@@ -7,17 +7,20 @@ const extractLess = new ExtractTextPlugin({
     filename: 'app/build/bundle.css'
 });
 
-module.exports = ({ base }) => {
+module.exports = ({base}) => {
     const nodeEnv = process.env.NODE_ENV || 'development';
     const isProduction = nodeEnv === 'production';
-    const isClient = base === 'client' ? true : false
+    const isClient = base === 'client';
 
     return {
         devtool: isProduction ? false : 'eval-source-map',
 
-        entry: isClient
-            ? { client: path.join(__dirname, './app/client.jsx'), vendor: ['react', 'react-dom'] }
-            : { server: path.join(__dirname, './app/server.js') },
+        entry: isClient? {
+            client: path.join(__dirname, './app/client.jsx'),
+            vendor: ['react', 'react-dom']
+        } : {
+            server: path.join(__dirname, './app/server.js')
+        },
 
         output: {
             path: path.resolve(__dirname),
@@ -26,6 +29,9 @@ module.exports = ({ base }) => {
         },
 
         resolve: {
+            alias: {
+                '~': path.join(__dirname, './app')
+            },
             extensions: ['*', '.js', '.jsx']
         },
 
@@ -53,14 +59,15 @@ module.exports = ({ base }) => {
         },
 
         devServer: {
-            historyApiFallback: true,
-            disableHostCheck: true,
+            historyApiFallback: true
         },
 
         plugins: isClient ? [
             new webpack.DefinePlugin({
                 ONSERVER: false,
-                'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
+                'process.env': {
+                    NODE_ENV: JSON.stringify(nodeEnv)
+                }
             }),
             new HtmlWebpackPlugin({
                 template: 'app/template.html',
@@ -93,7 +100,9 @@ module.exports = ({ base }) => {
         ] : [
             new webpack.DefinePlugin({
                 ONSERVER: true,
-                'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
+                'process.env': {
+                    NODE_ENV: JSON.stringify(nodeEnv)
+                }
             }),
             extractLess
         ]
