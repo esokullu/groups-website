@@ -6,7 +6,7 @@ export default class Footer extends React.Component {
         super(props);
     }
     render() {
-        let year = (new Date()).getFullYear;
+        let year = new Date().getFullYear();
         return (
             <footer>
                 <div className="container">
