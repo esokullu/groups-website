@@ -6,7 +6,7 @@ export default function(uuid, basics, callback) {
 	request('PUT', 'instances.php', {
 		uuid: uuid,
 		token: token,
-		groups_title: basics.groupsTitle,
+		groups_title: basics.title,
 		theme: basics.theme,
 		color: basics.color
 	}, function(response) {

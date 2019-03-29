@@ -1,0 +1,72 @@
+ul.conversation {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    &.boxed {
+        padding: 1em;
+        border: 1px dotted fade(black, 10%);
+        border-radius: 1em;
+    }
+    li {
+        display: block;
+        width: 100%;
+        margin-bottom: 1em;
+        .clearfix;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        &.inbound {
+            div {
+                float: left;
+                text-align: left;
+                color: white;
+                background-color: @primary-color;
+            }
+        }
+        &.outbound {
+            div {
+                float: right;
+                text-align: right;
+                color: @text-color-normal;
+                background-color: white;
+            }
+        }
+        div {
+            display: inline-block;
+            width: auto;
+            max-width: 75%;
+            padding: .75em 1em .5em 1em;
+            border-radius: .5em;
+        }
+        b {
+            color: @text-color-normal;
+        }
+        a {
+            .text-color-states(@secondary-color);
+            &.previous, &.next {
+                width: 0;
+                height: 0;
+                border-width: .35em;
+                border-style: solid;
+                .border-color-states(@secondary-color);
+                border-top-color: transparent !important;
+                border-bottom-color: transparent !important;
+            }
+            &.previous {
+                border-left-width: 0;
+            }
+            &.next {
+                border-right-width: 0;
+            }
+        }
+    }
+    time {
+        display: block;
+        margin-top: .5em;
+        font-size: .75em;
+        opacity: .5;
+    }
+}

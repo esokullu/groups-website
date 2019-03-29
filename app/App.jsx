@@ -89,8 +89,8 @@ export default class App extends React.Component {
                                         let instance = {
                                             id: item.id,
                                             uuid: item.uuid,
-                                            groupsTitle : item.groups_title,
-                                            groupsName: item.groups_name,
+                                            title : item.groups_title,
+                                            name: item.groups_name,
                                             subscription: item.is_subscribed,
                                             production: item.is_production,
                                             url: item.site.url,
@@ -128,9 +128,7 @@ export default class App extends React.Component {
                                                 });
                                             }
                                         });
-
                                     });
-
                                 } else {
                                     self.setState({
                                         client: client,
@@ -200,7 +198,7 @@ export default class App extends React.Component {
                             handleSignUp={this.handleSignUp}
                             handleVerifyCode={this.handleVerifyCode}
                             handleResendVerification={this.handleResendVerification}
-                            queryString = {props.location.search}
+                            queryString={props.location.search}
                         />
                     }/>
                     <Route path="/settings/:category/:identifier/:item?" render={(props) =>

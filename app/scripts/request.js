@@ -11,12 +11,12 @@ export default function(method, path, data, callback) {
 		delete data.token;
 	}
 	if(data.hasOwnProperty('resetToken')) {
-		data.token = data.resetToken
+		data.token = data.resetToken;
 		delete data.resetToken;
 	}
 	let parameters = {
 	    method: method,
-	    mode: "cors",
+	    mode: 'cors',
 	    headers: requestHeaders
 	}
 	if(data && Object.keys(data).length > 0) {
@@ -25,7 +25,7 @@ export default function(method, path, data, callback) {
 	fetch(target, parameters)
 	.then(response => response.json())
 	.then(response => {
-		if(response.status.code == 'success') {
+		if(response.status.code === 'success') {
 			callback({
 				success: true,
 				body: response.body,
@@ -40,8 +40,8 @@ export default function(method, path, data, callback) {
 		}
 	})
 	.catch(error => console.log(error) && callback({
-        success: false,
-        reason: "There is some error. Please try again later.",
-        body: null
-    }))
+    success: false,
+    reason: 'There is an error, please try again later.',
+    body: null
+  }));
 }

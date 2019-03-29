@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import {TwitterPicker} from 'react-color';
 import {Redirect, Link} from 'react-router-dom';
@@ -90,17 +90,23 @@ export default class Setup extends React.Component {
             color: '#6F879F',
             email: '',
             password: '',
-            verificationStatus:null,
-            verificationCode:'      ',
+            verificationStatus: null,
+            verificationCode: '      ',
             payment: 'monthly',
             failMessages: [],
-            failModalMessages:[],
+            failModalMessages: [],
             number: '',
             holder: '',
             expiry: '',
             cvc: '',
+            billing_address: '',
+            billing_city: '',
+            billing_state: '',
+            billing_zip: '',
+            billing_country: '',
             focused: '',
-            redirectToSettings:false,
+            redirectToSettings: false,
+            paymentError: false,
             planType: null
         }
         this.getUrlParameter = this.getUrlParameter.bind(this);
@@ -355,11 +361,6 @@ export default class Setup extends React.Component {
         }
     }
     checkCondition(condition, message) {
-        // Monitor results
-        console.log({
-          condition: condition,
-          message: condition ? 'OK' : message
-        });
         if(condition) {
             if(this.state.failMessages.includes(message)) {
                 let failMessages = this.state.failMessages;
@@ -476,7 +477,11 @@ export default class Setup extends React.Component {
     setCardPayment() {
         let loadingButton = this.refs.loadingButton;
         this.setState({loadingButton: true});
-        const {email, holder, number, expiry, cvc} = this.state;
+        const {
+            url, password, theme, color, email, name, groupsId, // General information
+            holder, number, expiry, cvc, // Required card information
+            billing_address, billing_city, billing_state, billing_zip, billing_country // Specially requested card information
+        } = this.state;
         let failMessages = [];
         if(holder.length === 0 || holder.indexOf(' ') === -1){
             failMessages.push('Please enter your full name');
@@ -486,6 +491,16 @@ export default class Setup extends React.Component {
             failMessages.push('Please enter valid card number');
         } else if(cvc.length < 3){
             failMessages.push('Please enter valid CVC number');
+        } else if(this.state.paymentError) {
+            if(
+                billing_address.length < 1 ||
+                billing_city.length < 1 ||
+                billing_state.length < 1 ||
+                billing_zip.length < 1 ||
+                billing_country.length < 1
+            ) {
+                failMessages.push('Please enter address-related information');
+            }
         }
 
         if(failMessages.length > 0 ){
@@ -495,36 +510,47 @@ export default class Setup extends React.Component {
             this.setState({loadingButton: false});
             return;
         }
+        
         let domain = 'https://gr.ps';
         const data = {
-            "groups_v2": 1,
-            "mail": email,
-            "name": holder,
-            "number": number,
-            "expiry":expiry.substr(0, 2)  + '/' + expiry.substr(2),
-            "cvc": cvc,
-            "site": domain + '/' + this.state.groupsId,
-            "pass": this.state.password,
-            "theme": this.state.theme,
-            "color": this.state.color,
-            "groups_name": this.state.groupsId,
-            "groups_title": this.state.name
+            groups_v2: 1, groups_name: groupsId, groups_title: name,
+            theme, color, site: domain + '/' + groupsId, mail: email, pass: password,
+            name: holder, number, cvc, expiry: expiry.substr(0, 2)  + '/' + expiry.substr(2),
+            // Add address information if requested
+            ...(this.state.paymentError
+                ? {billing_address, billing_city, billing_state, billing_zip, billing_country}
+                : {}
+            )
         }
-        let self = this;
-        authorizePayment(data,function(response){
+        
+        this.setState({
+            failMessages: []
+        });
+        
+        authorizePayment(data, (response) => {
             let failMessages = [];
-            if(response && response.success === true){
-                self.moveForward();
-                self.setState({loadingButton: false});
+            if(response && response.success) {
+                this.setState({
+                    paymentError: false,
+                    loadingButton: false
+                });
+                this.moveForward();
                 return;
-            }else if(typeof response.body === 'object'){
-                failMessages = Object.values(response.body).map(a => a.required);
-                self.setState({loadingButton: false});
-            }else {
-                failMessages = ['There is an error. Please try again.']
-                self.setState({loadingButton: true});
+            } else {
+                if(this.state.paymentError) {
+                    this.setState({
+                        loadingButton: false
+                    });
+                    failMessages.push('Payment is declined again.');
+                } else {
+                    this.setState({
+                        paymentError: true,
+                        loadingButton: false
+                    });
+                    failMessages.push('Payment is declined. Please provide address information and try again.');
+                }
             }
-            self.setState({
+            this.setState({
                 failMessages
             });
         })
@@ -706,7 +732,7 @@ export default class Setup extends React.Component {
                                         Enter the 6-digit verification code sent to your email
                                         <div>
                                         {
-                                            [...Array(6)].map((digit,digitIndex) => (
+                                            [...Array(6)].map((digit, digitIndex) => (
                                                 <input
                                                     onChange={this.changeverificationCode}
                                                     onKeyDown={this.onKeyDownVerificationCode}
@@ -722,6 +748,7 @@ export default class Setup extends React.Component {
                                         <button ref="next" onClick={this.changeStep} className="next" data-step="next">
                                             <i ref="loadingButtonModal"></i> <span>{this.state.steps[this.state.step].label}</span>
                                         </button>
+                                        <small>Please check your SPAM folder if you can't find it.</small>
                                         <a onClick={this.closeModal}>Change Email</a>
                                         <a onClick={this.resendVerification}>Resend Email</a>
                                     </div>
@@ -762,6 +789,15 @@ export default class Setup extends React.Component {
                                 <input name="holder" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="text" placeholder="Name" />
                                 <input name="expiry" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" placeholder="Valid Thru" />
                                 <input name="cvc" onChange={this.handleCardInputChange} onFocus={this.handleCardInputFocus}  type="tel" maxLength={4} placeholder="CVC"/>
+                                {this.state.paymentError &&
+                                    <Fragment>
+                                        <input name="billing_address" onChange={this.handleCardInputChange} type="text" placeholder="Billing address" />
+                                        <input name="billing_city" onChange={this.handleCardInputChange} type="text" placeholder="City" />
+                                        <input name="billing_state" onChange={this.handleCardInputChange} type="text" placeholder="State/Province/County" />
+                                        <input name="billing_zip" onChange={this.handleCardInputChange} type="text" placeholder="ZIP Code"/>
+                                        <input name="billing_country" onChange={this.handleCardInputChange} type="text" placeholder="Country"/>
+                                    </Fragment>
+                                }
                                 <p className="secure">
                                     Securely processed by
                                     <img src="/app/images/external/authorize.net-logo.png" />

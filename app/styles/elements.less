@@ -56,11 +56,11 @@ b {
 svg {
     pointer-events: none;
 }
-input, textarea, button, .button {
+input, textarea, button {
     width: 100%;
     padding: .75em 1em;
     border: none;
-    .border-radius(@border-radius-medium);
+    .border-radius(@border-radius-small);
     outline: none;
 }
 input, textarea {
@@ -187,7 +187,7 @@ button, .button {
     .single-line-text;
     text-transform: uppercase;
     .transition(background-color .35s ease);
-    .background-color-states(@default-color);
+    .background-color-states(@primary-color);
     &[disabled] {
         opacity: .5;
     }
@@ -195,6 +195,9 @@ button, .button {
         background-image: linear-gradient(-45deg, transparent 25%, rgba(0, 0, 0, .1) 25%, rgba(0, 0, 0, .1) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, .1) 75%);
         background-size: 2.5em 2.5em;
         .animation(loading-stripes 10s infinite linear);
+    }
+    &.danger {
+        .background-color-states(@danger-color);
     }
     &.arrow {
         &::after {
@@ -212,6 +215,10 @@ button, .button {
     }
 }
 form {
+    fieldset {
+        padding: 0;
+        border: 0;
+    }
     input, textarea {
         position: relative;
         margin-bottom: .5em;
