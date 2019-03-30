@@ -1,6 +1,10 @@
+// Modules
 import React from 'react';
-import Main from '../../components/Main';
 
+// Components
+import Main from '~/components/Main';
+
+// Page: Settigns > Summary
 export default class Summary extends React.Component {
     constructor(props) {
         super(props);

@@ -97,6 +97,16 @@
     }
 }
 
+.border-color-states(@color) {
+    border-color: @color;
+    &:hover {
+        border-color: tint(@color, 10%);
+    }
+    &:active {
+        border-color: shade(@color, 10%);
+    }
+}
+
 .background-color-states(@color) {
     background-color: @color;
     &:hover {

@@ -1,0 +1,36 @@
+ul.pagination {
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    height: 2em;
+    li {
+        display: inline-block;
+        position: relative;
+        width: auto;
+        height: inherit;
+        padding: .5em;
+        vertical-align: top;
+        b {
+            color: @primary-color;
+        }
+        a {
+            display: inline-block;
+            .text-color-states(@secondary-color);
+            &.previous, &.next {
+                width: 0;
+                height: 0;
+                border-width: .35em;
+                border-style: solid;
+                .border-color-states(@secondary-color);
+                border-top-color: transparent !important;
+                border-bottom-color: transparent !important;
+            }
+            &.previous {
+                border-left-width: 0;
+            }
+            &.next {
+                border-right-width: 0;
+            }
+        }
+    }
+}

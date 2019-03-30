@@ -2,6 +2,20 @@
     display: inline-block;
     width: 100%;
     background-color: @shade-color;
+    .unavailable {
+        text-align: center;
+    }
+    iframe {
+        width: 100%;
+        max-width: 50em;
+        margin: 0;
+        margin-top: 1em;
+        margin-bottom: 0;
+        border: none;
+        border: 1em solid white;
+        .box-shadow(0 0 0.75em fade(black, 10%));
+        border-radius: @border-radius-small;
+    }
     & > main {
         section {
             display: block;
@@ -19,13 +33,6 @@
                 }
                 p {
                     line-height: 1.75em;
-                }
-                iframe{
-                    width: 100%;
-                    max-width: 50em;
-                    margin: 0;
-                    margin-bottom: 0;
-                    border: none;
                 }
                 .code-block {
                     padding: .35em .65em;
@@ -128,13 +135,6 @@
                     }
                 }
             }
-            iframe{
-                width: 100%;
-                max-width: 50em;
-                margin: 0;
-                margin-bottom: 0;
-                border: none;
-            }
         }
         .credentials {
             form {
@@ -224,161 +224,25 @@
                 }
             }
         }
+        .cancellation {
+            button {
+                display: block;
+                width: calc(20em * 10 / 9);
+                margin-top: 1.5em;
+                .background-color-states(@primary-color);
+            }
+            .reason {
+                max-width: 20em;
+                margin-top: 1em;
+                .explanation {
+                    margin-top: 1em;
+                }
+            }
+        }
         .tickets {
-            .tickets-table {
-                button {
-                    max-width: 20em;
-                }
-                table {
-                    width: 100%;
-                    max-width: 36em;
-                    padding: 0.8em 0;
-                    tr {
-                        text-align: left;
-                    }
-                    td, th {
-                        padding: 0.8em 0;
-                    }
-                }
-                ul {
-                    display: inline-block;
-                    color: #8f9ca9;
-                    padding: 1em 0;
-                    width: 100%;
-                    margin-bottom: 1em;
-                }
-                li {
-                    display: inline-block;
-                    a {
-                        color:#8f9ca9;;
-                    }
-                }
-                li:not(:first-child):not(:last-child){
-                    margin:0 0.5em;
-                }
-                li:first-child, li:last-child {
-                    margin:0.5em;
-                }
-                li.active {
-                    border-bottom:1px solid;
-                    text-align: center;
-                    height: 1.5em;
-                    width: 1em;
-                }
-                .break a {
-                    cursor: default;
-                }
-            }
-            .hide {
-                display:none;
-            }
-            .Modal-overlay {
-                display: table;
-                position: fixed;
-                z-index: 1000;
-                top: 0;
-                right: 0;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100vh;
-                padding:2em;
-                background-color: rgba(0,0,0,0.85);
-                .content {
-                    background: white;
-                    padding: 2em;
-                    width: 100%;
-                    max-width: 40em;
-                    margin: 28vh auto 0;
-                    text-align: center;
-                    textarea {
-                        height: 10em;
-                    }
-                    button {
-                        max-width: 10em;
-                        margin:2em 0.5em 0;
-                    }
-                }
-            }
-            .ticket-modal {
-                .content {
-                    margin:6vh auto 0;
-                    text-align: left;
-                    position: relative;
-                    .ticket-details > * {
-                        margin:0.6em 0;
-                    }
-                    .ticket-messages {
-                        height: 18em;
-                        overflow-y: auto;
-                        border: 1px solid rgba(0,0,0,0.1);
-                        margin-bottom: 1em;
-                        text-align: center;
-                        ul {
-                            margin:0;
-                            font-size: 0.9em;
-                            li {
-                                width: 100%;
-                                margin: 0.6em 0;
-                                font-weight: bold;
-                                position: relative;
-                                .time {
-                                    font-size: 0.8em;
-                                    font-weight: normal;
-                                    margin-bottom: 0.5em;
-                                }
-                                > div {
-                                    border-radius: 0.5em;
-                                    padding: 0.5em;
-                                    line-height: 1.6em;
-                                    max-width: 24em;
-                                }
-                            }
-                            .ticket-message > div {
-                                width: 23em;
-                                background: #f5f5f5;
-                                margin: 0.5em auto; 
-                            }
-                            .customer-message > div {
-                                .background-color-states(@primary-color);
-                                color: white;
-                                float: right;
-                                text-align: right;
-                                margin-right: 0.5em;
-                                &:after {
-                                    position: absolute;
-                                    right: 1em;
-                                    top: -1.5em;
-                                    color: #5d3cf6;
-                                    content: "Me :";
-                                }
-                            }
-                            .support-message > div {
-                                .background-color-states(@primary-color);
-                                color: white;
-                                float: left;
-                                text-align: left;
-                                margin-left: 1em;
-                                &:after {
-                                    position: absolute;
-                                    left: 1.5em;
-                                    top: -1.5em;
-                                    color: #5d3cf6;
-                                    content: "Support :";
-                                }  
-                            }
-                        }
-                    }
-                    .close-btn {
-                        position: absolute;
-                        top: 0;
-                        right: 2em;
-                        width: 3em;
-                    }
-                    textarea {
-                        height: 5em;
-                    }
-                }
+            .conversation {
+                overflow: auto;
+                max-height: 30em;
             }
         }
         .options {
@@ -386,6 +250,33 @@
             &.narrow {
                 width: 100%;
                 max-width: 20em;
+            }
+            button {
+                width: auto;
+                .background-color-states(@primary-color);
+                margin-left: .5em;
+                &:first-of-type {
+                    margin-left: 0;
+                }
+                &.danger {
+                    .background-color-states(@danger-color);
+                }
+                &.done {
+                    .background-color-states(@success-color);
+                    & > .success {
+                        display: inline;
+                    }
+                    & > .idle {
+                        display: none;
+                    }
+                }
+                & > .success {
+                    display: none;
+                }
+            }
+            a {
+                display: inline-block;
+                color: @secondary-color;
             }
             p {
                 font-size: 1.25em;
@@ -398,9 +289,6 @@
                 display: inline-block;
                 font-size: 1em;
                 margin-top: .5em;
-            }
-            #groupsTitle {
-                margin-top:0 !important;
             }
             .radiobutton {
                 margin-bottom: 1.5em;
@@ -447,45 +335,34 @@
                 margin: 0;
                 .no-padding;
                 border: none;
+                & + fieldset {
+                    margin-top: 2.5em;
+                }
                 & > * {
                     margin-bottom: .5em;
                     &:last-child {
                         margin-bottom: 0;
                     }
                 }
-                button {
-                    .background-color-states(@primary-color);
-                    &.done {
-                        .background-color-states(@success-color);
-                        & > .success {
-                            display: inline;
-                        }
-                        & > .idle {
-                            display: none;
-                        }
-                    }
-                    & > .success {
-                        display: none;
-                    }
+                h3 {
+                    margin-bottom: 0;
                 }
                 a {
-                    display: inline-block;
                     width: 100%;
-                    color: @secondary-color;
                     font-size: .95em;
                     text-align: center;
                 }
             }
         }
-        .demo {
+        .preview {
             width: 100%;
-            margin-top: 5%;
-            & > .graphjs-root {
-                margin: 0;
-                pointer-events: none;
+            .demo {
+                & > * {
+                    margin: 0;
+                    pointer-events: none;
+                }
             }
         }
-        
         pre {
             padding: 0;
             border: none;
@@ -494,16 +371,6 @@
                 .background-color-states(rgb(93, 60, 246)) !important;
             }
         }
-    }
-}
-
-.settings-message {
-    padding: 5em 1em;
-    max-width: 50em;
-    margin: 0 auto;
-    .warning-message {
-        background: #f9ecf0;
-        padding: 1em;
     }
 }
 

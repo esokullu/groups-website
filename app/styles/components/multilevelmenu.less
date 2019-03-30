@@ -1,0 +1,76 @@
+.multi-level-menu {
+    width: 15em;
+    color: black;
+    .mlm-list {
+        display: none;
+        position: relative;
+        width: inherit;
+        margin: 0;
+        padding: 0;
+        padding-top: 1em;
+        list-style: none;
+        &.mlm-main {
+            display: block;
+            transition: left .5s ease;
+        }
+        &.mlm-visible {
+            display: block;
+        }
+        .mlm-item {
+            width: inherit;
+            a {
+                display: block;
+                width: inherit;
+                padding: .5em .5em .5em 1.5em;
+                opacity: .8;
+                font-weight: bold;
+                transition: opacity .25s ease;
+                cursor: pointer;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            &.mlm-back {
+                display: block;
+                a {
+                    text-transform: uppercase;
+                    &:before {
+                        content: "◀";
+                        display: inline-block;
+                        width: 1.5em;
+                        margin-left: -1.5em;
+                        font-size: .5em;
+                        vertical-align: top;
+                        opacity: .75;
+                    }
+                }
+            }
+            &.mlm-forward {
+                display: block;
+                a {
+                    &:after {
+                        content: "➞";
+                        display: inline-block;
+                        float: right;
+                        width: auto;
+                        font-size: 1em;
+                        vertical-align: top;
+                        opacity: 0;
+                        transition: opacity .25s ease;
+                    }
+                    &:hover {
+                        &:after {
+                            opacity: .5;
+                        }
+                    }
+                }
+            }
+        }
+        .mlm-list {
+            position: absolute;
+            top: 0;
+            width: inherit;
+            left: 100%;
+        }
+    }
+}

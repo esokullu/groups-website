@@ -9,8 +9,8 @@ export default class Switch extends React.Component {
             redirect: false,
             open: false,
             items: [{
-                id: "",
-                target: "Nothing to Select"
+                id: '',
+                target: 'Nothing to Select'
             }],
             active: null
         };
@@ -64,7 +64,7 @@ export default class Switch extends React.Component {
             }
         }
     }
-    handleHoverOff(){
+    handleHoverOff() {
         this.setState({
             open: false
         });
@@ -78,7 +78,7 @@ export default class Switch extends React.Component {
                     <ul>
                         {this.state.items.map((item, key) =>
                         <li key={key} data-id={item.id} data-target={item.target} onClick={this.state.items.length > 1 ? this.handleClick : this.simulateClick}>
-                            <img src={'app/images/identity/' + item.id + '-logo-light.svg'} />
+                            {item.content}
                         </li>
                         )}
                     </ul>

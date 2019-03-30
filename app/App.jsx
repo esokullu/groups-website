@@ -1,32 +1,38 @@
+// Modules
 import React from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 
+// Components
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+
+// Pages
 import Home from './pages/Home';
-import Pricing from './pages/Pricing';
+import Setup from './pages/Setup';
 import Settings from './pages/Settings';
+import Pricing from './pages/Pricing';
 import Login from './pages/Login';
 import Error from './pages/Error';
 import Legal from './pages/Legal';
 import Careers from './pages/Careers';
-import Setup from './pages/Setup';
 
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-
+// Scripts
 import generateRandomKey from './scripts/generateRandomKey.js';
 import checkSession from './scripts/checkSession.js';
 import destroySession from './scripts/destroySession.js';
-import getClient from './scripts/getClient.js';
-import signup from '../app/scripts/signup';
 import getInstances from './scripts/getInstances.js';
+import getClient from './scripts/getClient.js';
+import checkModeration from './scripts/checkModeration.js';
 import fetchAllMembers from './scripts/fetchAllMembers.js';
-import checkModeration from './scripts/checkModeration.js'
-import fetchModerationQueue from './scripts/fetchModerationQueue.js'
+import fetchModerationQueue from './scripts/fetchModerationQueue.js';
+import signup from '../app/scripts/signup';
 import verifyCode from '../app/scripts/verifyCode';
 import resendVerification from '../app/scripts/resendVerification';
 
+// Styles
 import './styles/common.less';
 
+// Application
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -56,7 +62,7 @@ export default class App extends React.Component {
     componentWillUpdate() {
         window.scrollTo(0, 0);
     }
-    setClient() {
+    setClient(callback) {
         let self = this;
         checkSession(function(response) {
             if(response.success) {
@@ -80,17 +86,16 @@ export default class App extends React.Component {
                                 });
                                 if(Instances.length > 0){
                                     response.body.forEach(function(item) {
-                                        console.log('A: runs once')
                                         let instance = {
                                             id: item.id,
                                             uuid: item.uuid,
-                                            groupsTitle : item.groups_title,
-                                            groupsName: item.groups_name,
+                                            title : item.groups_title,
+                                            name: item.groups_name,
                                             subscription: item.is_subscribed,
                                             production: item.is_production,
                                             url: item.site.url,
                                             theme: item.theme,
-                                            color: item.color.charAt(0) == '#' ? item.color : '#' + item.color,
+                                            color: item.color.charAt(0) === '#' ? item.color : '#' + item.color,
                                             hash: client.account.graphjsHash,
                                             moderated: false,
                                             pendingComments: []
@@ -101,9 +106,7 @@ export default class App extends React.Component {
                                                 fetchAllMembers(item.uuid, client.account.graphjsHash, function(response) {
                                                     if(response.success) {
                                                         instance.members = response.body? response.body[0] : [];
-                                                        console.log('B: runs once')
                                                         fetchModerationQueue(item.uuid, client.account.graphjsHash, function(response) {
-                                                            console.log('C: runs twice') // This is probably caused by cors / preflight response
                                                             if(response.success) {
                                                                 instance.pendingComments = response.body;
                                                             }
@@ -125,9 +128,7 @@ export default class App extends React.Component {
                                                 });
                                             }
                                         });
-
                                     });
-
                                 } else {
                                     self.setState({
                                         client: client,
@@ -136,8 +137,8 @@ export default class App extends React.Component {
                                 }
                             }
                         });
-                    }
-                    else {
+                        callback && callback();
+                    } else {
                         self.unsetClient();
                         //window.alert("You were logged out. Please refresh this page and try again.");
                     }
@@ -197,7 +198,7 @@ export default class App extends React.Component {
                             handleSignUp={this.handleSignUp}
                             handleVerifyCode={this.handleVerifyCode}
                             handleResendVerification={this.handleResendVerification}
-                            queryString = {props.location.search}
+                            queryString={props.location.search}
                         />
                     }/>
                     <Route path="/settings/:category/:identifier/:item?" render={(props) =>

@@ -1,9 +1,12 @@
 import request from './request.js';
 import getToken from './getToken.js';
 
-export default function(page, limit, callback) {
+export default function(id, reason, explanation, callback) {
 	let token = getToken();
-	request('GET', 'service-tickets.php?limit=' + limit + '&page=' + page, {
+	request('POST', 'cancel.php', {
+		id: id,
+		reason: reason,
+		explanation: explanation,
 		token: token
 	}, function(response) {
 		callback(response);

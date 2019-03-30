@@ -26,7 +26,7 @@ export default function(path, data, uuid, graphjsHash, callback) {
 			})
 		}
 	})
-	.catch(error => callback({
+	.catch(error => console.log(error) && callback({
 		success: false
-	})/*console.error(error)*/);
+	}));
 }

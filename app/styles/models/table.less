@@ -1,0 +1,74 @@
+table.table {
+    width: 100%;
+    text-align: left;
+    thead {
+        color: @primary-color;
+        .bold-font;
+        tr {
+            th {
+                padding: .5em .75em;
+                .single-line-text;
+                border-bottom: 2px solid fade(black, 5%);
+            }
+        }
+    }
+    tbody {
+        .regular-font;
+        tr {
+            background-color: transparent;
+            .transition(background-color .15s ease);
+            &:hover {
+                background-color: fade(black, 2.5%);
+            }
+            &:nth-child(2n) {
+                background-color: fade(@secondary-color, 5%);
+                &:hover {
+                    background-color: fade(@secondary-color, 10%);
+                }
+            }
+            td {
+                .single-line-text;
+                &:first-of-type {
+                    width: 100%;
+                }
+                padding: .75em .75em;
+                .centered {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    svg {
+                        width: inherit;
+                    }
+                }
+                a {
+                    .text-color-states(@primary-color);
+                    .transition(color .15s ease);
+                    &.idle {
+                        .text-color-states(@text-color-normal) !important;
+                    }
+                    &.danger {
+                        .text-color-states(@danger-color);
+                        .icon-color-states(@danger-color);
+                        svg {
+                            height: 1em;
+                            vertical-align: middle;
+                        }
+                    }
+                    &.arrow {
+                        &:after {
+                            content: "→";
+                            opacity: .5;
+                            margin-left: .25em;
+                            .transition(margin-left .15s ease);
+                        }
+                        &:hover {
+                            &:after {
+                                margin-left: .5em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
