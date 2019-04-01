@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import Main from '../components/Main';
-import Headline from '../components/Headline';
-import Hero from './home/Hero';
+import Main from '~/components/Main';
+import Hero from '~/components/Hero';
+import Headline from '~/components/Headline';
+import Animation from '~/components/Animation';
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -37,7 +38,12 @@ export default class Home extends React.Component {
     render() {
         return (
             <Main id="home" data-page="home">
-                <Hero />
+                <Hero>
+                    <Animation />
+                    <Headline title="Express Yourselves" subtitle="Create your censorship-free social network" />
+                    <p>Grou.ps provides a private and censorship-free open source social platform, where you actually own your own data.</p>
+                    <Link to="/setup" className="button">Let's get started!</Link>
+                </Hero>
                 <main>
                     <section className="introduction">
                         <div className="container">

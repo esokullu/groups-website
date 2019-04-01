@@ -1,0 +1,46 @@
+header.hero {
+    padding-top: 1em;
+    padding-bottom: 3em;
+    text-align: center;
+    background-image: linear-gradient(0deg, fade(@default-color, 7.5%) 0%, white 50%);
+    img {
+        width: 65%;
+        margin: 0 auto;
+        margin-bottom: .5em;
+    }
+}
+
+/* Responsive Metrics */
+
+/* Window Width < 480 */
+@media only screen and (max-width: 479px) {
+    header.hero {
+        img {
+            width: 100%;
+            margin-top: .5em;
+            margin-bottom: 1.5em;
+        }
+    }
+}
+
+/* 480 ≤ Window Width < 768 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    header.hero {
+        img {
+            width: 90%;
+            margin-top: .5em;
+            margin-bottom: 1.5em;
+        }
+    }
+}
+
+/* 768 ≤ Window Width < 1024 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    header.hero {
+        img {
+            width: 80%;
+            margin-top: .5em;
+            margin-bottom: 1.5em;
+        }
+    }
+}

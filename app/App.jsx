@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 
 // Pages
 import Home from './pages/Home';
+import Docs from '~/pages/Docs';
 import Setup from './pages/Setup';
 import Settings from './pages/Settings';
 import Pricing from './pages/Pricing';
@@ -192,6 +193,11 @@ export default class App extends React.Component {
                     <Route path="/pricing" render={(props) =>
                         <Pricing session={this.state.session}/>
                     }/>
+                    <Route path="/docs/:category?/:item?" render={(props) =>
+                        <Docs
+                            params={props.match.params}
+                        />
+                    }/>
                     <Route path="/setup" render={(props) =>
                         <Setup
                             client={this.state.client}
@@ -229,6 +235,9 @@ export default class App extends React.Component {
                         <Legal
                             params={props.match.params}
                         />
+                    }/>
+                    <Route path="/faq" render={(props) =>
+                        <Redirect to="/docs/faq/" state={{status: 301}} />
                     }/>
                     <Route path="/careers" render={(props) =>
                         <Careers/>
