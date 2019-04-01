@@ -1,0 +1,51 @@
+.collapsible-list {
+    & > ul {
+        margin: 0;
+        margin-bottom: 2em;
+        padding: 0;
+        list-style: none;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        & > li {
+            margin-top: 1.5em !important;
+            margin-bottom: 2em;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            &.collapsed {
+                &::before {
+                    content: '\25BC';
+                }
+                & > a {
+                    color: @text-color-strong !important;
+                }
+                & > div {
+                    display: block;
+                }
+            }
+            &::before {
+                content: '\25BA';
+                display: inline-block;
+                width: 1.5em;
+                font-size: .65em;
+                text-align: left;
+                vertical-align: top;
+            }
+            & > a {
+                color: @text-color-strong;
+                font-size: 1.2em;
+                .bold-font;
+                .transition(color .35s ease);
+                &:hover {
+                    color: @text-color-normal;
+                }
+            }
+            & > div {
+                display: none;
+                padding-left: 1.5em;
+                margin-top: .75em;
+            }
+        }
+    }
+}

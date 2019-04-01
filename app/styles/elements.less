@@ -186,8 +186,9 @@ button, .button {
     .bold-font;
     .single-line-text;
     text-transform: uppercase;
-    .transition(background-color .35s ease);
+    .border-radius(@border-radius-medium);
     .background-color-states(@primary-color);
+    .transition(background-color .35s ease);
     &[disabled] {
         opacity: .5;
     }
@@ -230,6 +231,9 @@ form {
         & + button {
             margin-top: .25em;
         }
+    }
+    button, .button {
+        .border-radius(@border-radius-small);
     }
     .option {
         display: block;

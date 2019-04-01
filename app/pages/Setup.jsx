@@ -181,7 +181,7 @@ export default class Setup extends React.Component {
     };
     getQuote(plan) {
         let defaultQuote = <p>
-            You pay $0 for 2 weeks. Then it's <b>$8</b> per month. Cancel anytime.
+            You pay $0 for one month. Then it's <b>$8</b> per month. Cancel anytime.
             <br />
             <a onClick={() => this.toggleOverlay('free')}>Interested in free options?</a>
         </p>;

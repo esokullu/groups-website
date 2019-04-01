@@ -1,21 +1,21 @@
+// Modules
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export default class Error extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <main data-page="error">
-                <section>
-                    <div className="container">
-                        <h1>Four-oh-four</h1>
-                        <p role="message">We couldn't find the page you requested.</p>
-                        <Link className="button" to="/">Go to Grou.ps home page</Link>
-                    </div>
-                </section>
-            </main>
-        )
-    }
-}
+// Components
+import Main from '~/components/Main';
+import Hero from '~/components/Hero';
+import Headline from '~/components/Headline';
+
+// Page: Error
+const Error = () => (
+    <Main id="error" data-page="error">
+        <Hero>
+            <img src="/app/images/illustrations/404.png" />
+            <Headline title="Oops! It's a four-oh-four." subtitle="The page you requested is not found." />
+            <Link to="/">← Go back to Grou.ps home page</Link>
+        </Hero>
+    </Main>
+)
+
+export default Error;
