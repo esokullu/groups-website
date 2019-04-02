@@ -143,11 +143,13 @@ export default class Navigation extends React.Component {
                             </NavLink>
                         </li>
                         }
+                        {this.props.session ||
                         <li>
                             <NavLink className="setup" to="/setup" className="outstanding" activeClassName="active" onClick={this.handleToggle}>
                                 Get Started
                             </NavLink>
                         </li>
+                        }
                     </ul>
                 </div>
             </nav>
