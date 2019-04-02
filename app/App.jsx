@@ -15,6 +15,7 @@ import Pricing from './pages/Pricing';
 import Login from './pages/Login';
 import Error from './pages/Error';
 import Legal from './pages/Legal';
+import Pay from '~/pages/Pay';
 import Careers from './pages/Careers';
 
 // Scripts
@@ -238,6 +239,9 @@ export default class App extends React.Component {
                     }/>
                     <Route path="/faq" render={(props) =>
                         <Redirect to="/docs/faq/" state={{status: 301}} />
+                    }/>
+                    <Route path="/pay" render={(props) =>
+                        <Pay {...props} />
                     }/>
                     <Route path="/careers" render={(props) =>
                         <Careers/>
