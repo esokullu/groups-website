@@ -70,6 +70,10 @@ export default class Setup extends React.Component {
                     color: 'rgb(217, 114, 255)'
                 },
                 {
+                    id: 'set-description',
+                    label: 'Continue'
+                },
+                {
                     id: 'set-credentials',
                     label: 'Continue'
                 },
@@ -85,6 +89,7 @@ export default class Setup extends React.Component {
             step: 0,
             groupsId: '',
             name: '',
+            description: '',
             url: 'http://localhost',
             theme: 'light',
             color: '#6F879F',
@@ -116,6 +121,7 @@ export default class Setup extends React.Component {
         this.changeStep = this.changeStep.bind(this);
         this.changeGroupsId = this.changeGroupsId.bind(this);
         this.changeName = this.changeName.bind(this);
+        this.changeDescription = this.changeDescription.bind(this);
         this.changeTheme = this.changeTheme.bind(this);
         this.changeColor = this.changeColor.bind(this);
         this.changeEmail = this.changeEmail.bind(this);
@@ -125,6 +131,7 @@ export default class Setup extends React.Component {
         this.checkStep = this.checkStep.bind(this);
         this.setGroupsId = this.setGroupsId.bind(this);
         this.setName = this.setName.bind(this);
+        this.setDescription = this.setDescription.bind(this);
         this.setEmail = this.setEmail.bind(this);
         this.setPassword = this.setPassword.bind(this);
         this.setCredentials = this.setCredentials.bind(this);
@@ -260,6 +267,12 @@ export default class Setup extends React.Component {
             name: name
         });
     }
+    changeDescription(event) {
+        let description = event.currentTarget.value;
+        this.setState({
+            description: description
+        });
+    }
     changeTheme(event) {
         let theme = event.currentTarget.id;
         this.setState({
@@ -346,6 +359,9 @@ export default class Setup extends React.Component {
             case 'set-color':
                 return true; // Already set
                 break;
+            case 'set-description':
+                return this.setDescription();
+                break;
             case 'set-credentials':
                 return this.state.client ? this.skipCredentials() : this.setCredentials();
                 break;
@@ -405,6 +421,12 @@ export default class Setup extends React.Component {
         let maximumLengthCondition = this.state.name.length < 32;
         return this.checkCondition(minimumLengthCondition, minimumLengthMessage) &&
             this.checkCondition(maximumLengthCondition, maximumLengthMessage);
+    }
+    setDescription() {
+        // Maximum length
+        let maximumLengthMessage = 'Description is too long!';
+        let maximumLengthCondition = this.state.description.length < 255;
+        return this.checkCondition(maximumLengthCondition, maximumLengthMessage);
     }
     setEmail() {
         let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -478,7 +500,7 @@ export default class Setup extends React.Component {
         let loadingButton = this.refs.loadingButton;
         this.setState({loadingButton: true});
         const {
-            url, password, theme, color, email, name, groupsId, // General information
+            url, password, theme, color, email, name, groupsId, description, // General information
             holder, number, expiry, cvc, // Required card information
             billing_address, billing_city, billing_state, billing_zip, billing_country // Specially requested card information
         } = this.state;
@@ -513,7 +535,7 @@ export default class Setup extends React.Component {
         
         let domain = 'https://gr.ps';
         const data = {
-            groups_v2: 1, groups_name: groupsId, groups_title: name,
+            groups_v2: 1, groups_name: groupsId, groups_title: name, groups_description: description,
             theme, color, site: domain + '/' + groupsId, mail: email, pass: password,
             name: holder, number, cvc, expiry: expiry.substr(0, 2)  + '/' + expiry.substr(2),
             // Add address information if requested
@@ -569,6 +591,7 @@ export default class Setup extends React.Component {
         let domain = 'https://gr.ps';
         let groupsId = encodeURI(this.state.groupsId);
         let name = encodeURI(this.state.name);
+        let description = encodeURI(this.state.description);
         let url = encodeURI(domain + '/' + this.state.groupsId);
         let theme = encodeURI(this.state.theme);
         let color = encodeURI(this.state.color);
@@ -577,7 +600,7 @@ export default class Setup extends React.Component {
         let self = this;
         if(!self.state.verificationStatus){
             ReactDOM.findDOMNode(loadingButton).classList.add("fa", "fa-spinner", "fa-spin");
-            this.props.handleSignUp(groupsId, name, url, password, email, theme, color, function(error, response) {
+            this.props.handleSignUp(groupsId, name, description, url, password, email, theme, color, function(error, response) {
                 ReactDOM.findDOMNode(loadingButton).classList.remove("fa", "fa-spinner", "fa-spin");
                 if(error){
                     let failMessages = [response.reason]
@@ -696,6 +719,19 @@ export default class Setup extends React.Component {
                         <h3>...and your group's color</h3>
                         <div className="content">
                             <TwitterPicker onChange={this.changeColor} color={this.state.color} width="204px" triangle="hide" colors={['#FFAD0A', '#FF8421', '#F92F39', '#ED2D96', '#8B5EFF', '#5D3CF6', '#007FFF', '#00C3D8', '#00C853', '#6F879F']} />
+                        </div>
+                    </div>
+                </section>
+                }
+                {this.state.steps[this.state.step].id == 'set-description' &&
+                <section id="set-description">
+                    <div className="container">
+                        <h3>What about a simple description?</h3>
+                        <div className="content">
+                            <textarea ref="description" onChange={this.changeDescription} type="text" value={this.state.description} placeholder="Enter a description" />
+                            <div>
+                                255 characters max. You can leave it blank.
+                            </div>
                         </div>
                     </div>
                 </section>

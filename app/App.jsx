@@ -158,9 +158,9 @@ export default class App extends React.Component {
         });
         destroySession();
     }
-    handleSignUp(groupsId, name, url, password, email, theme, color, callback){
+    handleSignUp(groupsId, name, description, url, password, email, theme, color, callback) {
         let self = this;
-        signup(groupsId, name, url, password, email, theme, color, function(error, response){
+        signup(groupsId, name, description, url, password, email, theme, color, function(error, response) {
             // self.setClient();
             callback(error,response);
         })
