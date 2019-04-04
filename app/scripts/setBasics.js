@@ -7,6 +7,7 @@ export default function(uuid, basics, callback) {
 		uuid: uuid,
 		token: token,
 		groups_title: basics.title,
+		groups_description: basics.description,
 		theme: basics.theme,
 		color: basics.color
 	}, function(response) {

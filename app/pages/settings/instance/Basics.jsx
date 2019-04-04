@@ -11,10 +11,12 @@ export default class Basics extends React.Component {
         super(props);
         this.state = {
             title: this.props.configuration.title || '',
+            description: this.props.configuration.description || '',
             theme: this.props.configuration.theme,
             color: this.props.configuration.color
         }
         this.updateTitleInput = this.updateTitleInput.bind(this);
+        this.updateDescriptionInput = this.updateDescriptionInput.bind(this);
         this.updateThemeInput = this.updateThemeInput.bind(this);
         this.updateColorInput = this.updateColorInput.bind(this);
         this.handleBasicsSubmit = this.handleBasicsSubmit.bind(this);
@@ -22,6 +24,10 @@ export default class Basics extends React.Component {
     updateTitleInput(event) {
         let title = event.target.value;
         this.setState({title});
+    }
+    updateDescriptionInput(event) {
+        let description = event.target.value;
+        this.setState({description});
     }
     updateThemeInput(event) {
         let theme = event.target.id;
@@ -36,16 +42,15 @@ export default class Basics extends React.Component {
         let uuid = this.props.configuration.uuid;
         let basics = this.state;
         this.refs.submitButton.classList.add('loading');
-        let self = this;
-        setBasics(uuid, basics, function(response) {
+        setBasics(uuid, basics, (response) => {
             if(response.success) {
-                self.refs.submitButton.classList.remove('loading');
-                self.refs.submitButton.classList.add('done');
-                setTimeout(function() {
-                    self.refs.submitButton.classList.remove('done');
+                this.refs.submitButton.classList.remove('loading');
+                this.refs.submitButton.classList.add('done');
+                setTimeout(() => {
+                    this.refs.submitButton.classList.remove('done');
                 }, 2500);
-                self.props.reconfigure({...basics});
-                self.props.update();
+                this.props.reconfigure({...basics});
+                this.props.update();
             }
         });
     }
@@ -61,6 +66,15 @@ export default class Basics extends React.Component {
                           value={this.state.title}
                           placeholder="Enter title of your site"
                           onChange={this.updateTitleInput} />
+                  </fieldset>
+                  <fieldset className="description">
+                      <h3>Description</h3>
+                      <textarea
+                          ref="description"
+                          rows="5"
+                          value={this.state.description}
+                          placeholder="Enter site description"
+                          onChange={this.updateDescriptionInput} />
                   </fieldset>
                   <fieldset className="theme">
                       <h3>Theme</h3>
