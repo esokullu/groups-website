@@ -600,7 +600,7 @@ export default class Setup extends React.Component {
         let self = this;
         if(!self.state.verificationStatus){
             ReactDOM.findDOMNode(loadingButton).classList.add("fa", "fa-spinner", "fa-spin");
-            this.props.handleSignUp(groupsId, name, description, url, password, email, theme, color, function(error, response) {
+            this.props.handleSignUp(groupsId, name, url, password, email, theme, color, function(error, response) {
                 ReactDOM.findDOMNode(loadingButton).classList.remove("fa", "fa-spinner", "fa-spin");
                 if(error){
                     let failMessages = [response.reason]
@@ -619,7 +619,7 @@ export default class Setup extends React.Component {
                 let loadingButtonModal = this.refs.loadingButtonModal;
                 ReactDOM.findDOMNode(loadingButtonModal).classList.add("fa", "fa-spinner", "fa-spin");
                 let verificationCode = encodeURI(this.state.verificationCode);
-                this.props.handleVerifyCode(groupsId, name, url, password, email, theme, color, verificationCode, function(error, response) {
+                this.props.handleVerifyCode(groupsId, name, url, password, email, theme, color, verificationCode, description, function(error, response) {
                     ReactDOM.findDOMNode(loadingButtonModal).classList.remove("fa", "fa-spinner", "fa-spin");
                     if(error){
                         let failModalMessages = [response.reason]
