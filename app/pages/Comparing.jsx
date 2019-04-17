@@ -23,7 +23,7 @@ const animationConfig = {
         {
             source: 'facebook-logo.png',
             order: 2,
-            width: 8,
+            width: 9,
             initial: {
                 top: 50,
                 left: 0,
@@ -53,7 +53,7 @@ const animationConfig = {
         {
             source: 'groups-logo.png',
             order: 2,
-            width: 10,
+            width: 12,
             initial: {
                 top: 50,
                 left: 100,
