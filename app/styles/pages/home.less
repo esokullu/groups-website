@@ -274,9 +274,8 @@
 }
 
 /* 480 ≤ Window Width < 768 */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: @viewport-xs) and (max-width: @viewport-md - 1) {
     #home {
-        font-size: 14px;
         .container {
             width: 75%;
         }
@@ -324,9 +323,8 @@
 }
 
 /* 768 ≤ Window Width < 1024 */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: @viewport-xs) and (max-width: @viewport-md - 1) {
     #home {
-        font-size: 15px;
         .container {
             width: 90%;
         }
@@ -341,9 +339,8 @@
 }
 
 /* 1024 ≤ Window Width < 1152 */
-@media only screen and (min-width: 1024px) and (max-width: 1151px) {
+@media only screen and (min-width: @viewport-md) and (max-width: @viewport-l - 1) {
     #home {
-        font-size: 16px;
         .container {
             width: 85%;
         }
@@ -351,9 +348,8 @@
 }
 
 /* 1152 ≤ Window Width < 1280 */
-@media only screen and (min-width: 1152px) and (max-width: 1280px) {
+@media only screen and (min-width: @viewport-l) and (max-width: @viewport-xl) {
     #home {
-        font-size: 17px;
         .container {
             width: 80%;
         }
@@ -361,25 +357,10 @@
 }
 
 /* 1280 ≤ Window Width < 1440 */
-@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+@media only screen and (min-width: @viewport-xl) and (max-width: @viewport-xxl) {
     #home {
-        font-size: 18px;
         .container {
             width: 75%;
         }
-    }
-}
-
-/* 1440 ≤ Window Width < 1680 */
-@media only screen and (min-width: 1440px) and (max-width: 1679px) {
-    #home {
-        font-size: 19px;
-    }
-}
-
-/* 1680 ≤ Window Width */
-@media only screen and (min-width: 1680px) {
-    #home {
-        font-size: 20px;
     }
 }
