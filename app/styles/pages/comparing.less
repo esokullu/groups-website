@@ -89,7 +89,7 @@
                 margin-top: 5em;
             }
             &#comparing-table {
-                svg {
+                .groups-logo svg {
                     top: 0.9em;
                     height: 1.5em;
                     position: relative;
@@ -108,9 +108,18 @@
                         z-index: 1;
                         box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
 
-                        &.keys .header {
-                            color: @primary-color;
-                        }
+                        &.keys {
+                            .header {
+                                color: @primary-color;
+                                
+                            }
+
+                            .features-list {
+                                .feature {
+                                    font-weight: normal;
+                                }
+                            }
+                        } 
 
                         .header {
                             border-bottom: 1px solid rgba(105, 123, 140, 0.25);
@@ -137,11 +146,12 @@
                         }
 
                         .features-list {
-                            margin-top: 2em 0;
+                            margin: 2.5em 0;
 
                             .feature {
                                 margin-bottom: 2em;
                                 font-size: .85em;
+                                font-weight: bold;
                             }
                         }
                     }
