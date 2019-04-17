@@ -95,6 +95,7 @@ export default class App extends React.Component {
                                             name: item.groups_name,
                                             subscription: item.is_subscribed,
                                             production: item.is_production,
+                                            description: item.description,
                                             url: item.site.url,
                                             theme: item.theme,
                                             color: item.color.charAt(0) === '#' ? item.color : '#' + item.color,
