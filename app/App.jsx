@@ -158,16 +158,16 @@ export default class App extends React.Component {
         });
         destroySession();
     }
-    handleSignUp(groupsId, name, url, password, email, theme, color, callback){
+    handleSignUp(groupsId, name, url, password, email, theme, color, callback) {
         let self = this;
-        signup(groupsId, name, url, password, email, theme, color, function(error, response){
+        signup(groupsId, name, url, password, email, theme, color, function(error, response) {
             // self.setClient();
             callback(error,response);
         })
     }
-    handleVerifyCode(groupsId, name, url, password, email, theme, color, verificationCode, callback){
+    handleVerifyCode(groupsId, name, url, password, email, theme, color, verificationCode, description, callback){
         let self = this;
-        verifyCode(groupsId, name, url, password, email, theme, color, verificationCode, function(error,response){
+        verifyCode(groupsId, name, url, password, email, theme, color, verificationCode, description, function(error,response){
             self.setClient();
             callback(error,response);
         })

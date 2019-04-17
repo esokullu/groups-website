@@ -1,10 +1,11 @@
 import request from './request.js';
 import login from './login.js';
 
-export default function(groupsId, name, url, password, email, theme, color, verification, callback) {
+export default function(groupsId, name, url, password, email, theme, color, verification, groups_description, callback) {
     request('POST', 'verify.php', {
         groups_name: groupsId,
         groups_title: name,
+        groups_description: groups_description,
         site: url,
         theme: theme,
         color: color,
