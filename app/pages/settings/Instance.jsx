@@ -63,6 +63,7 @@ export default class Instance extends React.Component {
                     title: instance.title,
                     theme: instance.theme,
                     color: instance.color,
+                    description: instance.description,
                     url: instance.url,
                     moderated: instance.moderated,
                     members: instance.members || {},
