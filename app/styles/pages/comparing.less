@@ -50,7 +50,6 @@
         padding-top: 1em;
         padding-bottom: 6em;
         text-align: center;
-        background-image: linear-gradient(0deg, fade(@default-color, 7.5%) 0%, white 50%);
         &.hero {
             display: block;
             position: relative;
@@ -71,6 +70,7 @@
             display: block;
             width: 65%;
             margin: 5em auto;
+            margin-top: -10em;
         }
         section {
             height: auto;
@@ -79,6 +79,9 @@
                 content: '';
                 display: block;
                 clear: both;
+            }
+            &.promotion {
+                margin-top: 5em;
             }
             &#comparing-table {
                 svg {
@@ -89,23 +92,23 @@
                 .comparing-table {
                     display: flex;
                     justify-content: center;
-                    margin-top: -2em;
+                    margin-top: 2em;
 
                     &-item {
                         flex-direction: column;
-                        flex: 1;
+                        flex: 0 1 15em;
                         background-color: white;
                         margin: 1em -0.75em;
-                        border: 1px solid #DADEE2;
                         border-radius: 1em;
                         z-index: 1;
+                        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
 
                         &.keys .header {
                             color: @primary-color;
                         }
 
                         .header {
-                            border-bottom: 1px solid @text-color-weak;
+                            border-bottom: 1px solid rgba(105, 123, 140, 0.25);
                             padding-bottom: .5em;
                             color: @text-color-strong;
                             font-family: "ITC Avant Garde Std", sans-serif;
@@ -119,19 +122,20 @@
                         &.highlighted {
                             z-index: 5;
                             margin: 0;
-                            background-color: #7963F3;
+                            background: linear-gradient(112.59deg, #5D3CF6 12.17%, #9E77FF 93.48%);
                             color: white;
 
                             .header {
+                                border-bottom: 1px solid white;
                                 padding-bottom: .6em;
                             }
                         }
 
                         .features-list {
-                            margin-top: 2em;
+                            margin-top: 2em 0;
 
                             .feature {
-                                margin-bottom: 1.5em;
+                                margin-bottom: 2em;
                                 font-size: .85em;
                             }
                         }

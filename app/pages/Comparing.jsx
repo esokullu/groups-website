@@ -131,14 +131,13 @@ export default class Comparing extends React.Component {
                         </div>
                     </section>
 
-                    <img className="separator" src="app/images/illustrations/character-left-separator.png" />
                     <section className="promotion">
                         <div className="container">
                             <h3>The choice is clear</h3>
                             <Link to="/setup" className="button">start free trial</Link>
                         </div>
                     </section>
-
+                    <img className="separator" src="app/images/illustrations/character-left-sitting.png" />
                     <section className="indication">
                         <div className="container">
                             <div className="brand">
