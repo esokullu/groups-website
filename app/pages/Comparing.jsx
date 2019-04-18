@@ -87,13 +87,15 @@ export default class Comparing extends React.Component {
                                 <div className="comparing-table-item keys">
                                     <div className="header">Specifications</div>
                                     <div className="features-list">
-                                        <div className="feature">Color</div>
-                                        <div className="feature">Full Page Editing (git)</div>
-                                        <div className="feature">Plug & Play</div>
+                                        <div className="feature">Annoying Ads</div>
+                                        <div className="feature">Selling your data</div>
+                                        <div className="feature">Themes</div>
+                                        <div className="feature">Full Template Editing</div>
+                                        <div className="feature">Plug & Play Features</div>
                                         <div className="feature">Full API</div>
                                         <div className="feature">Data Export</div>
                                         <div className="feature">Open Source</div>
-                                        <div className="feature">Domain Name</div>
+                                        <div className="feature">Custom Domain Name</div>
                                         <div className="feature">Privacy (Tor)</div>
                                     </div>
                                 </div>
@@ -104,19 +106,23 @@ export default class Comparing extends React.Component {
                                         </svg>
                                     </div>
                                     <div className="features-list">
-                                        <div className="feature">✅ Yes!</div>
-                                        <div className="feature">✅ Yes!</div>
-                                        <div className="feature">✅ Yes!</div>
-                                        <div className="feature">✅ Yes!</div>
-                                        <div className="feature">✅ Yes!</div>
-                                        <div className="feature">✅ Yes!</div>
-                                        <div className="feature">✅ Yes!</div>
-                                        <div className="feature">✅ Yes!</div>
+                                        <div className="feature">❌</div>
+                                        <div className="feature">❌</div>
+                                        <div className="feature">✅</div>
+                                        <div className="feature">✅</div>
+                                        <div className="feature">✅</div>
+                                        <div className="feature">✅</div>
+                                        <div className="feature">✅</div>
+                                        <div className="feature">✅</div>
+                                        <div className="feature">✅</div>
+                                        <div className="feature">✅</div>
                                     </div>
                                 </div>
                                 <div className="comparing-table-item">
                                     <div className="header">Facebook groups</div>
                                     <div className="features-list">
+                                        <div className="feature">✅</div>
+                                        <div className="feature">✅</div>
                                         <div className="feature">❌</div>
                                         <div className="feature">❌</div>
                                         <div className="feature">❌</div>
