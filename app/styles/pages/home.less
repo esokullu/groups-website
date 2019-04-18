@@ -68,7 +68,7 @@
             .headline {
               position: relative;
                 z-index: 2;
-                margin-top: -.75em;
+                margin-top: 2em;
             }
 
         }
@@ -112,6 +112,8 @@
                     width: 100%;
                     margin: 0;
                     .clearfix;
+                    padding-inline-end: 2em;
+                    padding-inline-start: 2em;
                     li {
                         float: left;
                         width: 48%;
@@ -374,6 +376,14 @@
 @media only screen and (min-width: 1440px) and (max-width: 1679px) {
     #home {
         font-size: 19px;
+        header {
+            &.hero {
+                .headline {
+                    margin-top: -.75em;
+                }
+    
+            }
+        }
     }
 }
 
@@ -381,5 +391,13 @@
 @media only screen and (min-width: 1680px) {
     #home {
         font-size: 20px;
+        header {
+            &.hero {
+                .headline {
+                    margin-top: -.75em;
+                }
+    
+            }
+        }
     }
 }
