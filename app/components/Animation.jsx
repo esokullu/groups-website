@@ -69,6 +69,11 @@ export default class Animation extends React.Component {
             stage: 'initial'
         }
     }
+
+    static defaultProps = {
+        animationConfig: items
+    }
+
     componentDidMount() {
         setTimeout(() =>
             this.setState({
@@ -78,14 +83,14 @@ export default class Animation extends React.Component {
     }
     render() {
         let stage = this.state.stage;
-        let background = items.background;
-        let staticItems = items.staticItems;
-        let animatedItems = items.animatedItems;
+        let background = this.props.animationConfig.background;
+        let staticItems = this.props.animationConfig.staticItems;
+        let animatedItems = this.props.animationConfig.animatedItems;
         return (
             <div
                 ref="animation"
                 className="animation"
-                style={background ? {backgroundImage: 'url("/app/images/illustrations/' + background.source + '")'} : {}}
+                style={background ? { backgroundImage: 'url("/app/images/illustrations/' + background.source + '")' } : {}}
             >
                 {animatedItems.map((item, index) =>
                 <img

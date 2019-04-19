@@ -1,6 +1,7 @@
 // Modules
 import React from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
+import 'react-tippy/dist/tippy.css';
 
 // Components
 import Navigation from './components/Navigation';
@@ -33,6 +34,7 @@ import resendVerification from '../app/scripts/resendVerification';
 
 // Styles
 import './styles/common.less';
+import Comparing from './pages/Comparing';
 
 // Application
 export default class App extends React.Component {
@@ -192,6 +194,9 @@ export default class App extends React.Component {
                     <Route exact path="/" render={(props) =>
                         <Home />
                     }/>
+                    <Route exact path="/comparing" render={(props) =>
+                        <Comparing />
+                    } />
                     <Route path="/pricing" render={(props) =>
                         <Pricing session={this.state.session}/>
                     }/>
