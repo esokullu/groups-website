@@ -5,6 +5,9 @@ import Main from '~/components/Main';
 import Hero from '~/components/Hero';
 import Headline from '~/components/Headline';
 import Animation from '~/components/Animation';
+import {
+    Tooltip,
+  } from 'react-tippy';
 
 const animationConfig = {
     staticItems: [
@@ -87,14 +90,30 @@ export default class Comparing extends React.Component {
                                 <div className="comparing-table-item keys">
                                     <div className="header">Specifications</div>
                                     <div className="features-list">
-                                        <div className="feature">Color</div>
-                                        <div className="feature">Full Page Editing (git)</div>
-                                        <div className="feature">Plug & Play</div>
-                                        <div className="feature">Full API</div>
-                                        <div className="feature">Data Export</div>
-                                        <div className="feature">Open Source</div>
-                                        <div className="feature">Domain Name</div>
-                                        <div className="feature">Privacy (Tor)</div>
+                                        <Tooltip title="Lorem Ipsum ✅" arrow="true">
+                                            <div className="feature">Color</div>
+                                        </Tooltip>
+                                        <Tooltip title="Lorem Ipsum ✅" arrow="true">
+                                            <div className="feature">Full Page Editing (git)</div>
+                                        </Tooltip>
+                                        <Tooltip title="Lorem Ipsum ✅" arrow="true">
+                                            <div className="feature">Plug & Play</div>
+                                        </Tooltip>
+                                        <Tooltip title="Lorem Ipsum ✅" arrow="true">
+                                            <div className="feature">Full API</div>
+                                        </Tooltip>
+                                        <Tooltip title="Lorem Ipsum ✅" arrow="true">
+                                            <div className="feature">Data Export</div>
+                                        </Tooltip>
+                                        <Tooltip title="Lorem Ipsum ✅" arrow="true">
+                                            <div className="feature">Open Source</div>
+                                        </Tooltip>
+                                        <Tooltip title="Lorem Ipsum ✅" arrow="true">
+                                            <div className="feature">Domain Name</div>
+                                        </Tooltip>
+                                        <Tooltip title="Lorem Ipsum ✅" arrow="true">
+                                            <div className="feature">Privacy (Tor)</div>
+                                        </Tooltip>
                                     </div>
                                 </div>
                                 <div className="comparing-table-item highlighted">

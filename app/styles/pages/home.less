@@ -368,7 +368,7 @@
 }
 
 /* 1440 ≤ Window Width < 1680 */
-@media only screen and (min-width: 1440px) and (max-width: 1679px) {
+@media only screen and (min-width: @viewport-xxl) and (max-width: @viewport-xxxl - 1) {
     #home {
         font-size: 19px;
         header {
@@ -383,7 +383,7 @@
 }
 
 /* 1680 ≤ Window Width */
-@media only screen and (min-width: 1680px) {
+@media only screen and (min-width: @viewport-xxxl) {
     #home {
         font-size: 20px;
         header {
