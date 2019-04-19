@@ -5,6 +5,9 @@ import Main from '~/components/Main';
 import Hero from '~/components/Hero';
 import Headline from '~/components/Headline';
 import Animation from '~/components/Animation';
+import {
+    Tooltip,
+  } from 'react-tippy';
 
 const animationConfig = {
     staticItems: [
@@ -87,16 +90,36 @@ export default class Comparing extends React.Component {
                                 <div className="comparing-table-item keys">
                                     <div className="header">Specifications</div>
                                     <div className="features-list">
-                                        <div className="feature">Annoying Ads</div>
-                                        <div className="feature">Selling your data</div>
-                                        <div className="feature">Themes</div>
-                                        <div className="feature">Full Template Editing</div>
-                                        <div className="feature">Plug & Play Features</div>
-                                        <div className="feature">Full API</div>
-                                        <div className="feature">Data Export</div>
-                                        <div className="feature">Open Source</div>
-                                        <div className="feature">Custom Domain Name</div>
-                                        <div className="feature">Privacy (Tor)</div>
+                                        <Tooltip title="At Grou.ps, we don't show ads. But you're free to show advertising to your members." arrow="true">
+                                            <div className="feature">Annoying Ads</div>
+                                        </Tooltip>
+                                        <Tooltip title="Our business model is straightforward. We charge a small subscription fee. Your data is yours. 😇" arrow="true">
+                                            <div className="feature">Selling your data</div>
+                                        </Tooltip>
+                                        <Tooltip title="Unlike Facebook Groups, Grou.ps is not one-size-fits-all. You can change the look'n feel of your network in click of a button." arrow="true">
+                                            <div className="feature">Themes</div>
+                                        </Tooltip>
+                                        <Tooltip title="In addition to themes, you may also fully customize your Grou.ps template. All changes are tracked via git, so it's easy to go back in time." arrow="true">
+                                            <div className="feature">Full Template Editing</div>
+                                        </Tooltip>
+                                        <Tooltip title="Exclusive to Grou.ps, you may port any page of your network to a Drupal/Wordpress site just by copy/pasting a simple HTML tag." arrow="true">
+                                            <div className="feature">Plug & Play Features</div>
+                                        </Tooltip>
+                                        <Tooltip title="Grou.ps comes with rich API. Nothing like you've seen before. 💪" arrow="true">
+                                            <div className="feature">Full API</div>
+                                        </Tooltip>
+                                        <Tooltip title="With Grou.ps, it is possible to export the full database. Try that with Facebook Groups 🙄" arrow="true">
+                                            <div className="feature">Data Export</div>
+                                        </Tooltip>
+                                        <Tooltip title="Grou.ps is open source. So you can also run it on your own servers. Try that with Facebook Groups 🙄" arrow="true">
+                                            <div className="feature">Open Source</div>
+                                        </Tooltip>
+                                        <Tooltip title="Put your group under your domain name, and earn reputation/SEO love for your own website, not Facebook!" arrow="true">
+                                            <div className="feature">Custom Domain Name</div>
+                                        </Tooltip>
+                                        <Tooltip title="Facebook Groups is a product of Facebook Inc, if you didn't know... The same company which *accidentally* scraped your contact list, and known to store your passwords in plaintext format 🤦‍♀️ And we're 100% confident they won't put your network behind Tor for added privacy." arrow="true">
+                                            <div className="feature">Privacy (and Tor)</div>
+                                        </Tooltip>
                                     </div>
                                 </div>
                                 <div className="comparing-table-item highlighted">

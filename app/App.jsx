@@ -1,6 +1,7 @@
 // Modules
 import React from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
+import 'react-tippy/dist/tippy.css';
 
 // Components
 import Navigation from './components/Navigation';
