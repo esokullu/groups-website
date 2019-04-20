@@ -81,7 +81,7 @@ export default class Comparing extends React.Component {
             <Main id='comparing' data-page='comparing'>
                 <Hero>
                     <Animation animationConfig={animationConfig} />
-                    <Headline title="Grou.ps vs Facebook Groups" subtitle="Check out our comparison" />
+                    <Headline title="Grou.ps vs Facebook Groups" subtitle="Why pay $8/month, right?" />
                 </Hero>
                 <main>
                     <section id="comparing-table">
