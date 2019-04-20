@@ -57,7 +57,7 @@ export default class Home extends React.Component {
                             </div>
                         </div>
                     </section>
-                    
+                    {/* 
                     <section className="promotion">
                         <div className="container">
                             <Headline title="Welcoming Google+ users" subtitle="First month free. Service continuity guaranteed. " />
@@ -70,7 +70,7 @@ export default class Home extends React.Component {
                             <Link to="/setup" className="button">start free trial</Link>
                         </div>
                     </section>
-                    
+                    */}
                     <img className="separator" src="app/images/illustrations/character-left-separator.png" />
                     <section className="information">
                         <div className="container">
@@ -128,18 +128,18 @@ export default class Home extends React.Component {
                         </div>
                     </section>
                     <img className="separator" src="app/images/illustrations/character-right-separator.png" />
-                    
+                    {/*
                     <section className="promotion">
                         <div className="container">
                             <h2>Welcoming Google+ users!</h2>
                             <p>Service continuity guaranteed. Open source version available.</p>
-                            {/*<button>start yours</button>*/}
+                            <button>start yours</button>*
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                         </div>
                     </section>
-                    
+                    */}
                     <section className="indication">
                         <div className="container">
                             <div className="brand">
