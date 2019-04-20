@@ -142,7 +142,7 @@ export default class Comparing extends React.Component {
                                     </div>
                                 </div>
                                 <div className="comparing-table-item">
-                                    <div className="header">Facebook groups</div>
+                                    <div className="header">Facebook Groups</div>
                                     <div className="features-list">
                                         <div className="feature">✅</div>
                                         <div className="feature">✅</div>
