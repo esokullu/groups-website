@@ -106,7 +106,7 @@ export default class Pricing extends React.Component {
                                                 className="basic-header"
                                             >
                                                 Silver
-                                                <i>the most selected option</i>
+                                                <i>the most popular option</i>
                                             </li>
                                             {
                                                 this.state.planType === "monthly" ? 
