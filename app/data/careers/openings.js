@@ -12,6 +12,12 @@ const openings = [
                 )
             },
             {
+                label: "Software Engineering",
+                content: (
+                    <p>If you're experienced in real-time application using PHP 7 (and ReactPHP) and/or Typescript/Ecmascript6 (with Node.js) we need you. Due to large volume of applications, we cannot consider resume or Github repo only applications. If you make a PR at <a href="https://github.com/phonetworks" target="_blank">https://github.com/phonetworks</a>, not only you'd be contributing to an open source project, but also proving your capabilities and showing your enthusiasm. Thanks in advance! </p>
+                )
+            },
+            {
                 label: 'Product Manager',
                 content: (
                     <Fragment>

@@ -26,11 +26,13 @@ const Careers = () => (
                         <li>We are distributed. Geographic boundaries won't limit you from participating.</li>
                         <li>All our work is open source and liberally licensed for derivatives.</li>
                         <li>No BS. Our job listings and processes are straightforward. We don't need a resume. Just send us your LinkedIn profile and/or a link to your portfolio, and we'll evaluate. A cover letter is a huge plus.</li>
-                        <li>Response guaranteed. Yes or no. We'll let you know in 7 days.</li>
+                        <li><span style={{textDecoration: "line-through"}}>Response guaranteed. Yes or no. We'll let you know in 7 days.</span> (we apologize but we are unable to keep this promise!)</li>
                     </ul>
                     <p>If you're interested, please apply below.</p>
                     <h3>Current Openings</h3>
                     <CollapsibleList content={openings} />
+                    <p>&nbsp;</p>
+                    <p>Can't find the role you're looking for? Take a look at other remote-friendly companies at <a target="_blank" href="https://remoteintech.company/">https://remoteintech.company/</a></p>
                 </section>
             </div>
         </main>
