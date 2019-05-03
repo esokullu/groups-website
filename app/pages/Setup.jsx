@@ -49,15 +49,17 @@ export default class Setup extends React.Component {
                     label: 'Continue'
                 },
                 {
+                    id: 'set-description',
+                    label: 'Continue',
+                    demo: true,
+                    illustration: 'character-left-holder.png',
+                },
+                {
                     id: 'set-visual-view',
                     label: 'Continue',
                     demo: true,
                     illustration: 'character-middle-holder.png',
                     color: 'rgb(245, 64, 0)'
-                },
-                {
-                    id: 'set-description',
-                    label: 'Continue'
                 },
                 {
                     id: 'set-credentials',
@@ -337,10 +339,10 @@ export default class Setup extends React.Component {
                 return this.setGroupsId();
                 break;
             case 'set-visual-view':
-                return this.setName();
+                return true;
                 break;
             case 'set-description':
-                return this.setDescription();
+                return this.setDescription() && this.setName();
                 break;
             case 'set-credentials':
                 return this.state.client ? this.skipCredentials() : this.setCredentials();
@@ -670,10 +672,6 @@ export default class Setup extends React.Component {
                         <h3>Now choose how you group will look like</h3>
                         <div className="content">
                             <div className="input-with-prefix">
-                                <label>Name</label>
-                                <input ref="id" onChange={this.changeName} type="text" value={this.state.name} placeholder="My Group" />
-                            </div>
-                            <div className="input-with-prefix">
                                 <div className="label">Theme</div>
                                 <div className="input radiobutton">
                                     <span>
@@ -699,9 +697,16 @@ export default class Setup extends React.Component {
                 {this.state.steps[this.state.step].id == 'set-description' &&
                 <section id="set-description">
                     <div className="container">
-                        <h3>What about a simple description?</h3>
+                        <h3>What about name and description?</h3>
                         <div className="content">
-                            <textarea ref="description" onChange={this.changeDescription} type="text" value={this.state.description} placeholder="Enter a description" />
+                            <div className="input-with-prefix">
+                                <label>Name</label>
+                                <input ref="id" onChange={this.changeName} type="text" value={this.state.name} placeholder="My Group" />
+                            </div>
+                            <div className="input-with-prefix">
+                                <div className="label">Description</div>
+                                <textarea className="input" ref="description" onChange={this.changeDescription} type="text" value={this.state.description} placeholder="Enter a description" />
+                            </div>
                             <div>
                                 255 characters max. You can leave it blank.
                             </div>
