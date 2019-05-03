@@ -49,25 +49,11 @@ export default class Setup extends React.Component {
                     label: 'Continue'
                 },
                 {
-                    id: 'set-name',
-                    label: 'Continue',
-                    demo: true,
-                    illustration: 'character-left-holder.png',
-                    color: 'rgb(0, 188, 75)'
-                },
-                {
-                    id: 'set-theme',
+                    id: 'set-visual-view',
                     label: 'Continue',
                     demo: true,
                     illustration: 'character-middle-holder.png',
                     color: 'rgb(245, 64, 0)'
-                },
-                {
-                    id: 'set-color',
-                    label: 'Continue',
-                    demo: true,
-                    illustration: 'character-right-holder.png',
-                    color: 'rgb(217, 114, 255)'
                 },
                 {
                     id: 'set-description',
@@ -350,14 +336,8 @@ export default class Setup extends React.Component {
             case 'set-groups-id':
                 return this.setGroupsId();
                 break;
-            case 'set-name':
+            case 'set-visual-view':
                 return this.setName();
-                break;
-            case 'set-theme':
-                return true; // Already set
-                break;
-            case 'set-color':
-                return true; // Already set
                 break;
             case 'set-description':
                 return this.setDescription();
@@ -684,41 +664,34 @@ export default class Setup extends React.Component {
                     </div>
                 </section>
                 }
-                {this.state.steps[this.state.step].id == 'set-name' &&
-                <section id="set-name">
+                {this.state.steps[this.state.step].id == 'set-visual-view' &&
+                <section id="set-visual-view">
                     <div className="container">
-                        <h3>...and your group's display name</h3>
+                        <h3>Now choose how you group will look like</h3>
                         <div className="content">
-                            <input ref="id" onChange={this.changeName} type="text" value={this.state.name} placeholder="My Group" />
-                        </div>
-                    </div>
-                </section>
-                }
-                {this.state.steps[this.state.step].id == 'set-theme' &&
-                <section id="set-theme">
-                    <div className="container">
-                        <h3>Now choose your group's theme...</h3>
-                        <div className="content">
-                            <div className="radiobutton">
-                                <span>
-                                    <input onChange={this.changeTheme} type="radio" name="theme" id="light" checked={this.state.theme == 'light'} />
-                                    <label htmlFor="light">Light</label>
-                                </span>
-                                <span>
-                                    <input onChange={this.changeTheme} type="radio" name="theme" id="dark" checked={this.state.theme == 'dark'} />
-                                    <label htmlFor="dark">Dark</label>
-                                </span>
+                            <div className="input-with-prefix">
+                                <label>Name</label>
+                                <input ref="id" onChange={this.changeName} type="text" value={this.state.name} placeholder="My Group" />
                             </div>
-                        </div>
-                    </div>
-                </section>
-                }
-                {this.state.steps[this.state.step].id == 'set-color' &&
-                <section id="set-color">
-                    <div className="container">
-                        <h3>...and your group's color</h3>
-                        <div className="content">
-                            <TwitterPicker onChange={this.changeColor} color={this.state.color} width="204px" triangle="hide" colors={['#FFAD0A', '#FF8421', '#F92F39', '#ED2D96', '#8B5EFF', '#5D3CF6', '#007FFF', '#00C3D8', '#00C853', '#6F879F']} />
+                            <div className="input-with-prefix">
+                                <div className="label">Theme</div>
+                                <div className="input radiobutton">
+                                    <span>
+                                        <input onChange={this.changeTheme} type="radio" name="theme" id="light" checked={this.state.theme == 'light'} />
+                                        <label htmlFor="light">Light</label>
+                                    </span>
+                                    <span>
+                                        <input onChange={this.changeTheme} type="radio" name="theme" id="dark" checked={this.state.theme == 'dark'} />
+                                        <label htmlFor="dark">Dark</label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="input-with-prefix">
+                                <div className="label">Color</div>
+                                <div className="input">
+                                    <TwitterPicker onChange={this.changeColor} color={this.state.color} width="204px" triangle="hide" colors={['#FFAD0A', '#FF8421', '#F92F39', '#ED2D96', '#8B5EFF', '#5D3CF6', '#007FFF', '#00C3D8', '#00C853', '#6F879F']} />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
