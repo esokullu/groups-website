@@ -88,7 +88,7 @@ export default class Comparing extends React.Component {
                 <Hero>
                     <Animation animationConfig={animationConfig} />
                     <Headline title="Grou.ps vs Facebook Groups" subtitle="Why pay $8/month, right?" />
-                    <a className="lightbox-toggle" onClick={() => this.toggleOverlay('compare')}>🔗 Compare with Buddypress, Mastodon and others...</a>
+                    <a className="lightbox-toggle" onClick={() => this.toggleOverlay('compare')}>🔗 you may also compare with Buddypress, Mastodon and others...</a>
                 </Hero>
                 <main>
                     <section id="comparing-table">
