@@ -9,6 +9,7 @@ export default class Footer extends React.Component {
         let year = new Date().getFullYear();
         return (
             <footer>
+                <img className="clouds" src="/app/images/illustrations/clouds.png" />
                 <div className="container">
                     <div className="message">
                         built with <em className="love icon"></em> in three continents

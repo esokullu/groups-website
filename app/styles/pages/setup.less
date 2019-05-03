@@ -152,7 +152,7 @@
                 & > * {
                     float: left;
                 }
-                label {
+                & > label, .label {
                   width: 35%;
                   height: 2em;
                   padding-right: 1%;
@@ -161,12 +161,20 @@
                   line-height: 2em;
                   text-align: right;
                 }
-                input {
-                    width: 65%;
+                & > input, .input {
+                    width: calc(65% - 1em);
+                    margin-left: 1em;
+                }
+
+                .input {
+                    text-align: left;
+                }
+
+                input[type="radio"] {
+                    height: 2.5em;
                 }
             }
             .radiobutton {
-                margin-bottom: 1.5em;
                 text-align: center;
                 span {
                     &:first-child {
@@ -182,7 +190,6 @@
                 }
             }
             .twitter-picker {
-                margin: 0 auto;
                 input {
                     box-sizing: border-box !important;
                     width: 144px !important;
