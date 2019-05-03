@@ -705,7 +705,7 @@ export default class Setup extends React.Component {
                             </div>
                             <div className="input-with-prefix">
                                 <div className="label">Description</div>
-                                <textarea className="input" ref="description" onChange={this.changeDescription} type="text" value={this.state.description} placeholder="Enter a description" />
+                                <textarea className="input" ref="description" onChange={this.changeDescription} type="text" value={this.state.description} placeholder="What's your purpose? Why should people join?" />
                             </div>
                             <div>
                                 255 characters max. You can leave it blank.
