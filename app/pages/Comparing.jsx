@@ -88,7 +88,7 @@ export default class Comparing extends React.Component {
                 <Hero>
                     <Animation animationConfig={animationConfig} />
                     <Headline title="Grou.ps vs Facebook Groups" subtitle="Why pay $8/month, right?" />
-                    <a className="lightbox-toggle" onClick={() => this.toggleOverlay('compare')}>Compare with mastodon</a>
+                    <a className="lightbox-toggle" onClick={() => this.toggleOverlay('compare')}>🔗 Compare with Buddypress, Mastodon and others...</a>
                 </Hero>
                 <main>
                     <section id="comparing-table">
@@ -185,12 +185,12 @@ export default class Comparing extends React.Component {
                 <div ref="overlay-compare" className="overlay" style={{display: 'none'}}>
                     <div className="container">
                         <div>
-                            <h1>Did somebody say "free option"?</h1>
-                            <p>TL;DR We don't offer free hosting, but the <a href="https://github.com/phonetworks/graphjs-server/tree/groupsv2" target="_blank">software</a> is free, so you can grab and <a href="https://github.com/phonetworks/graphjs-server/blob/groupsv2/README.md" target="_blank">host it on your own</a> easily.</p>
-                            <p>Every Grou.ps network is hosted on a dedicated instance; therefore there is a hosting fee associated with them. This architecture ensures the platform runs on the same <a href="https://github.com/phonetworks/graphjs-server/tree/groupsv2" target="_blank">free open source code that we've published on Github</a>, and gives you the flexibility to import/export data at any time you want. This way, you have the liberty to host the instance on your own. We believe this is important because it guarantees you can always get the best price should you decide to run the network on your own, and you control your data. Plus, this allows us to provide fanatical support to people who actually appreciate and pay for what we do.</p>
-                            <p>If you'd like to learn more about "hosting the instance on your own" option, check out the <a href="https://github.com/phonetworks/graphjs-server/blob/groupsv2/README.md" target="_blank">server</a> and <a href="https://github.com/phonetworks/grou-ps-v2/blob/master/README.md" target="_blank">client</a> docs. There is a one-click Heroku installer which allows you run the open source code (same as we do) on Salesforce's Heroku platform, which is free with limitations (the instances will be shut down after a few minutes of inactivity, and your network will fail during warm-up periods). Please note, there's no guarantee that Salesforce will always continue with this free option either. At some point, you may be forced to move. The history shows that free services tend to go premium  (<a href="https://www.emresokullu.com" target="_blank">been there done that 😔</a>) or sell your data (we're looking at you, Facebook) to survive.</p>
+                            <h1>Compare with others....</h1>
+                            <p>Grou.ps is not the only open source social networking software out there. There are many great efforts visioning the same, replacing Facebook with something more privacy-concerned. Buddypress, Mastodon are just a couple of some of your options.</p>
+                            <p>What sets us apart is our 10+ years in experience in building online communities, some with more than millions of members. Our social software is created in a unique scale-out architecture which ensures your network will perform seamlessly  once it reaches huge amounts of traffic, following and popularity. Plus, it will cost much less than others to to operate it. </p>
+                            <p>How do we do that? Grou.ps is written in a unique way with an in-memory graph datastore.This is not like anything you've seen before. For more info check out https://github.com/phonetworks/pho-microkernel and https://github.com/phonetworks/benchmarks.</p>
                             <br /><br /><br />
-                            <a onClick={() => this.toggleOverlay('compare')}>← Go back to Payment</a>
+                            <a onClick={() => this.toggleOverlay('compare')}>← Close this</a>
                         </div>
                     </div>
                 </div>
