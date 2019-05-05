@@ -16,7 +16,7 @@ export default class Footer extends React.Component {
     randomQuote() {
         let ls = [
             "Si la jeunesse savait, si la vieillesse pouvait - Henri Estienne",
-            "Truth happens - Red Hat",
+            "Truth happens - anonymous",
             "Stay foolish, stay hungry - Steve Jobs",
             "What's very dangerous is not to evolve - Jeff Bezos",
             "Why join the navy if you can be a pirate? - Steve Jobs",
