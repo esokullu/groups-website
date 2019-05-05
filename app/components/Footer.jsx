@@ -51,7 +51,7 @@ export default class Footer extends React.Component {
             "You can recognize a pioneer by the arrows in his back - Beverly Rubik",
             "If you want to innovate, you have to be willing to be misunderstood for long periods of time - Jeff Bezos",
             "I am thankful to those who said NO to me, it is because of them I did it myself -Albert Einstein",
-            "If friendship is your weakest point, then you are the strongest person in the old - Abraham Lincoln",
+            "If friendship is your weakest point, then you are the strongest person in the world - Abraham Lincoln",
             "It always seems impossible until it's done - Nelson Mandela",
             "I am fundamentally an optimist. Whether that comes from nature or nurture, I cannot say. Part of being optimistic is keeping one’s head pointed toward the sun, one’s feet moving forward. There were many dark moments when my faith in humanity was sorely tested, but I would not and could not give myself up to despair. That way lays defeat and death. - Nelson Mandela",
             "We believe that technology is at its very best; at its most empowering when it disappears. - Jonathan Ive",
