@@ -188,10 +188,10 @@ export default class Comparing extends React.Component {
                             <h1>Compare with others....</h1>
                             <p>Grou.ps is not the only open source social networking software out there. There are many great efforts visioning the same, replacing Facebook with something more privacy-concerned. Buddypress, Mastodon are just a couple of some of your options.</p>
                             <p>What sets us apart is our 10+ years in experience in building online communities, some with more than millions of members. Our social software is created in a unique scale-out architecture which ensures your network will perform seamlessly  once it reaches huge amounts of traffic, following and popularity. Plus, it will cost much less than others to operate. </p>
-                            <p>How do we do that? Grou.ps is written in a unique way with an in-memory graph datastore. This is *NOT* like anything you've seen before.  Also, we look cooler - we think :)</p>
+                            <p>How do we do that? Grou.ps is written in a unique way with an in-memory graph datastore. This is *NOT* like anything you've seen before. Thus, the difference between Grou.ps and other open source stacks is similar to the difference between hosting files on a regular disk vs OpenStack, or MySQL vs MongoDB. Also, we look cooler - we think :)</p>
                             <p>For more information, check out https://github.com/phonetworks/pho-microkernel and https://github.com/phonetworks/benchmarks for benchmarks.</p>
                             <br /><br /><br />
-                            <a onClick={() => this.toggleOverlay('compare')}>← Close this</a>
+                            <a onClick={() => this.toggleOverlay('compare')}>Close This</a>
                         </div>
                     </div>
                 </div>
