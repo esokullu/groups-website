@@ -71,7 +71,8 @@ export default class Footer extends React.Component {
             "It's what you do in the dark that puts you in the light - Under Armour",
             "You have power over your mind, not outside events. Realize this, and you will find strength - Marcus Aurelius",
             "And remember, where you have a concentration of power in a few hands, all too frequently men with the mentality of gangsters get control. History has proven that. All power corrupts; absolute power corrupts absolutely - Sir John Dalberg-Acton",
-            "Ideally never absorb information without predicting it first. Then you can update both 1) your knowledge but also 2) your generative model - Andrej Karpathy"
+            "Ideally never absorb information without predicting it first. Then you can update both 1) your knowledge but also 2) your generative model - Andrej Karpathy",
+            "If you want to go fast, go alone. If you want to go far, go together - anonymous"
         ];
         let this_quote = ls[this.rand(0, ls.length-1)];
         console.log(this_quote);
