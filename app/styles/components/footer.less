@@ -10,7 +10,7 @@ footer {
     font-size: 1em;
     line-height: 1.5em;
     background-color: @primary-color;
-    .transition(all .35s ease);
+    .transition(all 0.35s ease);
     text-align: center;
     border-top: 1px solid fade(@default-color, 15%);
     bottom: 0;
@@ -32,42 +32,49 @@ footer {
 
     .message {
         font-size: 1.5em;
-        margin: 3em 4em;
-        em {
-            font-style: normal;
-            &.icon {
-                &::after {
-                    color: white;
-                }
-                &.love {
-                    &::after {
-                        content: "\2665";
-                    }
-                }
-            }
+        margin: 3em 4em 0.5em;
+        position: relative;
+        display: inline-block;
+        &::before,
+        &::after {
+            position: absolute;
+            color: #f1efe6;
+            font-size: 4em;
         }
-        strong {
-            color: white;
+
+        &::before {
+            content: '“';
+            left: -0.5em;
+            top: 0em;
         }
+
+        &::after {
+            content: '”';
+            right: -0.5em;
+            bottom: 0em;
+        }
+    }
+    .author {
+        margin-bottom: 2em;
     }
     .links {
         margin-bottom: 1em;
         a {
-            margin-right: .5em;
+            margin-right: 0.5em;
             color: fade(white, 85%);
-            padding-bottom: .5em;
+            padding-bottom: 0.5em;
             border-bottom-width: 1px;
             border-bottom-style: dotted;
             border-bottom-color: transparent;
-            .transition(all .15s ease);
+            .transition(all 0.15s ease);
             &:hover {
                 color: white;
-                padding-bottom: .15em;
+                padding-bottom: 0.15em;
                 border-bottom-color: fade(white, 50%);
             }
         }
         .link {
-            margin: 0 .5em;
+            margin: 0 0.5em;
             &:last-child {
                 margin-right: 0 !important;
             }
@@ -117,7 +124,6 @@ footer {
 
     footer {
         margin-top: 0;
-
 
         .clouds {
             top: 0;
