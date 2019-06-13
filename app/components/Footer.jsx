@@ -282,6 +282,11 @@ export default class Footer extends React.Component {
                 quote:
                     'If you want to go fast, go alone. If you want to go far, go together',
                 author: 'an African proverb'
+            },
+            {
+                quoute:
+                    'Where there\'s hope, there\'s life. It fills us with fresh courage and makes us strong again',
+                author: 'Anne Frank'
             }
         ];
         let this_quote = ls[this.rand(0, ls.length - 1)];
