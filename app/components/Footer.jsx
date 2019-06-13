@@ -284,7 +284,7 @@ export default class Footer extends React.Component {
                 author: 'an African proverb'
             },
             {
-                quoute:
+                quote:
                     'Where there\'s hope, there\'s life. It fills us with fresh courage and makes us strong again',
                 author: 'Anne Frank'
             }
