@@ -142,7 +142,6 @@ export default class Setup extends React.Component {
     componentDidMount() {
         document.addEventListener('keydown', this.handleKey);
         this.handleFocus();
-        //mixpanel.init("9d82ff27cc34276822a9baeecbdd87fa");
         const planType = this.getUrlParameter(this.props.queryString,'plan')
         this.setState({
             planType
