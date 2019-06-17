@@ -1,4 +1,4 @@
-import {apiWeb} from './apiPaths.js';
+import {apiGjs} from './apiPaths.js';
 
 export default function(path, data, uuid, graphjsHash, callback) {
 	// https://stackoverflow.com/questions/14525178/is-there-any-native-function-to-convert-json-to-url-parameters
