@@ -1,0 +1,82 @@
+.flat-menu {
+    width: 15em;
+    color: black;
+    padding-top: 2em !important;
+    overscroll-behavior-y: none;
+
+    .menu-item {
+        text-align: left;
+    }
+
+    .top-level-item {
+        font-size: 1.2em;
+        font-weight: normal;
+        color: @text-color-weak;
+        margin: .5em;
+        
+        + .children-wrapper {
+            display: none;
+        }
+
+        &.active-top-item {
+            + .children-wrapper {
+                display: block;
+            }
+        }
+
+        a:hover, span:hover {
+            background-color: @shade-color;
+            border-radius: @border-radius-medium;
+        }
+
+        a, span {
+            display: block;
+            padding: .5em;
+            cursor: pointer;
+            color: @text-color-weak !important;
+        }
+
+        a.selected {
+            background-color: @shade-color;
+            border-radius: @border-radius-medium;
+        }
+    }
+
+    .children-wrapper {
+        .sub-level-item, .sub-level-label {
+            text-align: left;
+            font-size: 1em;
+            margin: 0.25em 1em;
+        }
+
+        .sub-level-item {
+            a {
+                padding: 0.25em 1em;
+                display: block;
+            }
+            a:hover {
+                background-color: @shade-color;
+                border-radius: @border-radius-medium;
+            }
+            a.selected {
+                background-color: @shade-color;
+                border-radius: @border-radius-medium;
+            }
+        }
+
+        .sub-level-label {
+            padding: 0.25em 1em;
+            margin-top: 1em;
+            font-weight: bold;
+        }
+    }
+
+    .top-level-label {
+        font-weight: bold;
+        font-size: 1.5em;
+        padding-left: .8em;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        cursor: default;
+    }
+}

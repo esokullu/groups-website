@@ -1,11 +1,11 @@
 // Modules
-import React, {Fragment} from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import React, { Fragment } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 // Components
 import Main from '~/components/Main';
 import Sidebar from '~/components/Sidebar';
-import MultiLevelMenu from '~/components/MultiLevelMenu';
+import FlatMenu from '~/components/FlatMenu';
 
 // Pages
 import Summary from './settings/Summary';
@@ -29,27 +29,30 @@ export default class Settings extends React.Component {
         this.handleActiveItem = this.handleActiveItem.bind(this);
         this.handleSidebar = this.handleSidebar.bind(this);
         this.triggerMenuItem = this.triggerMenuItem.bind(this);
+        this.handleInstanceChange = this.handleInstanceChange.bind(this);
     }
     componentWillMount() {
         this.props.client && this.setState({
             id: this.props.client.id,
             account: this.props.client.account,
-            instances: this.props.client.instances
+            instances: this.props.client.instances,
+            selectedInstanceIdx: this.state.selectedInstanceIdx || 0
         });
     }
     componentWillReceiveProps(nextProps) {
-        if(nextProps.print !== this.props.print) {
+        if (nextProps.print !== this.props.print) {
             nextProps.client && this.setState({
                 id: nextProps.client.id,
                 account: nextProps.client.account,
-                instances: nextProps.client.instances
+                instances: nextProps.client.instances,
+                selectedInstanceIdx: this.state.selectedInstanceIdx || 0
             });
         }
     }
-    handleActiveItem({id, label, passive}) {
-        if(!passive) {
+    handleActiveItem({ id, label, passive }) {
+        if (!passive) {
             this.setState({
-                menu: {id, label}
+                menu: { id, label }
             });
             this.handleSidebar();
         }
@@ -59,25 +62,39 @@ export default class Settings extends React.Component {
     }
     triggerMenuItem() {
         // Click related menu item to initiate subpages
-        let {category, identifier, item} = this.props.params;
-        let path =  '/settings';
+        let { category, identifier, item } = this.props.params;
+        let path = '/settings';
         path += category ? '/' + category : '';
         path += identifier && item ? '/' + identifier + '/' + item : '';
         let link = document.querySelector('a[href="' + path + '"]');
         link && link.click();
     }
+    handleInstanceChange(event) {
+        this.setState({ selectedInstanceIdx: +event.target.value });
+    }
     render() {
         let params = this.props.params;
         if (this.props.session) {
-            if(!this.props.client){
-               return <Main loading={true} />
+            if (!this.props.client) {
+                return <Main loading={true} />
             }
+            const selectedInstance = this.state.instances[this.state.selectedInstanceIdx] || {};
             return (
                 <Main id="settings" data-page="settings">
                     {this.props.client.instances && this.props.client.instances.length > 0
                         ? <Fragment>
                             <Sidebar ref="sidebar">
-                                <MultiLevelMenu
+                                <div class="instance-selection">
+                                    <h4>Current instance</h4>
+                                    <div className="dropdown">
+                                        <select onChange={this.handleInstanceChange} value={this.state.selectedInstanceIdx}>
+                                            {this.state.instances.map((instance, idx) => {
+                                                return (<option key={`${instance.title}-${idx}`} value={idx}>{instance.title}</option>)
+                                            })}
+                                        </select>
+                                    </div>
+                                </div>
+                                <FlatMenu
                                     data={menu(
                                         // Account data
                                         {
@@ -85,14 +102,10 @@ export default class Settings extends React.Component {
                                         },
                                         // Instances data
                                         {
-                                            list: this.state.instances.map(instance => ({
-                                                slug: instance.name,
-                                                title: instance.title
-                                            }))
+                                            slug: selectedInstance.name,
+                                            title: selectedInstance.title,
                                         }
-                                    )}
-                                    onMount={this.triggerMenuItem}
-                                    callback={this.handleActiveItem} />
+                                    )} />
                             </Sidebar>
                             {params.category === 'account' && (
                                 params.item
@@ -115,7 +128,7 @@ export default class Settings extends React.Component {
                                     : <Redirect to="/settings" />
                             )}
                             {(params.category === undefined) &&
-                            <Summary />
+                                <Summary />
                             }
                         </Fragment>
                         : <Unavailable
@@ -129,7 +142,7 @@ export default class Settings extends React.Component {
                 window.document &&
                 window.document.createElement
             );
-            if(canUseDOM) {
+            if (canUseDOM) {
                 return <Redirect to="/" />;
             } else {
                 return <Main loading={true} />;

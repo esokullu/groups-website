@@ -1,83 +1,76 @@
 // Modules
-import React, {Fragment} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Fragment } from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 // Data
-const menu = (account = {}, instances = {}) => ({
-    children: [
-        // Instance
-        {
-            label: 'Instances',
-            id: 'instance-settings',
-            children: instances.list.map(instance => (
-                {
-                    label: instance.title,
-                    id: instance.slug,
-                    children: [
-                        {
-                            label: 'Basics',
-                            id: 'basics',
-                            content: <Link to={'/settings/instances/' + instance.slug + '/basics'}>Basics</Link>
-                        },
-                        {
-                            label: 'Administration',
-                            id: 'administration',
-                            children: [
-                                {
-                                    label: 'Members',
-                                    id: 'members',
-                                    content: <Link to={'/settings/instances/' + instance.slug + '/members'}>Members</Link>
-                                },
-                                {
-                                    label: 'Password',
-                                    id: 'password',
-                                    content: <Link to={'/settings/instances/' + instance.slug + '/password'}>Password</Link>
-                                }
-                            ]
-                        },
-                        {
-                            label: 'Export',
-                            id: 'export',
-                            content: <Link to={'/settings/instances/' + instance.slug + '/export'}>Export</Link>
-                        },
-                        {
-                            label: 'Reboot',
-                            id: 'reboot',
-                            content: <Link to={'/settings/instances/' + instance.slug + '/reboot'}>Reboot</Link>
-                        },
-                        {
-                            label: 'Visit',
-                            id: 'visit',
-                            content: <a href={'https://gr.ps/' + instance.slug} target="_blank">Visit</a>
-                        }
-                    ]
-                }
-            ))
-        },
-        // Account
-        {
-            label: 'Account',
-            id: 'account-settings',
-            children: [
-                {
-                    label: 'Credentials',
-                    id: 'credentials',
-                    content: <Link to={'/settings/account/' + account.id + '/credentials'}>Credentials</Link>
-                },
-                {
-                    label: 'Subscriptions',
-                    id: 'subscriptions',
-                    content: <Link to={'/settings/account/' + account.id + '/subscriptions'}>Subscriptions</Link>
-                }
-            ]
-        },
-        // Help
-        {
-            label: 'Help',
-            id: 'tickets',
-            content: <Link to={'/settings/account/' + account.id + '/tickets'}>Help</Link>
-        }
-    ]
-})
+const menu = (account = {}, instance = {}) => ([
+    {
+        label: 'Basics',
+        id: 'basics',
+        content: <NavLink exact to={'/settings/instances/' + instance.slug + '/basics'}>Basics</NavLink>,
+        type: 'top-level-item',
+    },
+    {
+        label: 'Administration',
+        id: 'administration',
+        type: 'top-level-item',
+        children: [
+            {
+                label: 'Members',
+                id: 'members',
+                content: <NavLink exact to={'/settings/instances/' + instance.slug + '/members'}>Members</NavLink>
+            },
+            {
+                label: 'Password',
+                id: 'password',
+                content: <NavLink exact to={'/settings/instances/' + instance.slug + '/password'}>Password</NavLink>
+            }
+        ]
+    },
+    {
+        label: 'Export',
+        id: 'export',
+        content: <NavLink exact to={'/settings/instances/' + instance.slug + '/export'}>Export</NavLink>,
+        type: 'top-level-item',
+    },
+    {
+        label: 'Reboot',
+        id: 'reboot',
+        content: <NavLink exact to={'/settings/instances/' + instance.slug + '/reboot'}>Reboot</NavLink>,
+        type: 'top-level-item',
+    },
+    {
+        label: 'Visit',
+        id: 'visit',
+        content: <a href={'https://gr.ps/' + instance.slug} target="_blank">Visit</a>,
+        type: 'top-level-item',
+    },
+    // Account
+    {
+        label: 'Account',
+        id: 'account-settings',
+        type: 'top-level-item',
+        children: [
+            {
+                label: 'Credentials',
+                id: 'credentials',
+                content: <NavLink exact to={'/settings/account/' + account.id + '/credentials'}>Credentials</NavLink>
+            },
+            {
+                label: 'Subscriptions',
+                id: 'subscriptions',
+                content: <NavLink exact to={'/settings/account/' + account.id + '/subscriptions'}>Subscriptions</NavLink>
+            }
+        ]
+    },
+    // Help
+    {
+        label: 'Help',
+        id: 'tickets',
+        type: 'top-level-item',
+        content: <NavLink exact to={'/settings/account/' + account.id + '/tickets'}>Help</NavLink>
+    }
+])
 
 export default menu;
