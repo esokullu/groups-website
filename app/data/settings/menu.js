@@ -6,6 +6,11 @@ import { NavLink } from 'react-router-dom';
 // Data
 const menu = (account = {}, instance = {}) => ([
     {
+        id: 'instance_settings',
+        label: 'Instance Settings',
+        type: 'top-level-label'
+    },
+    {
         label: 'Basics',
         id: 'basics',
         content: <NavLink exact to={'/settings/instances/' + instance.slug + '/basics'}>Basics</NavLink>,
@@ -45,6 +50,11 @@ const menu = (account = {}, instance = {}) => ([
         id: 'visit',
         content: <a href={'https://gr.ps/' + instance.slug} target="_blank">Visit</a>,
         type: 'top-level-item',
+    },
+    {
+        id: 'account_settings',
+        label: 'Account Settings',
+        type: 'top-level-label'
     },
     // Account
     {
