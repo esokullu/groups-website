@@ -1,6 +1,6 @@
 // Modules
 import React from 'react';
-import {Switch, Route, Link} from 'react-router-dom';
+import { Switch, Route, Link, Redirect } from 'react-router-dom';
 import 'react-tippy/dist/tippy.css';
 
 // Components
@@ -54,10 +54,10 @@ export default class App extends React.Component {
     componentWillMount() {
         //WARNING: Document not loaded. Do not use "document" here.
         var canUseDOM = !!(
-    		typeof window !== 'undefined' &&
-    		window.document &&
-    		window.document.createElement
-    	);
+            typeof window !== 'undefined' &&
+            window.document &&
+            window.document.createElement
+        );
         canUseDOM && this.setClient();
     }
     componentDidMount() {
@@ -68,13 +68,13 @@ export default class App extends React.Component {
     }
     setClient(callback) {
         let self = this;
-        checkSession(function(response) {
-            if(response.success) {
+        checkSession(function (response) {
+            if (response.success) {
                 self.setState({
                     session: true
                 });
-                getClient(function(response) {
-                    if(response.success) {
+                getClient(function (response) {
+                    if (response.success) {
                         let client = {
                             id: response.body.id,
                             account: {
@@ -83,17 +83,17 @@ export default class App extends React.Component {
                             },
                             instances: []
                         };
-                        getInstances(function(response) {
-                            if(response.success && response.body) {
-                                const Instances = response.body.filter(function(item) {
+                        getInstances(function (response) {
+                            if (response.success && response.body) {
+                                const Instances = response.body.filter(function (item) {
                                     return item.is_groups
                                 });
-                                if(Instances.length > 0){
-                                    response.body.forEach(function(item) {
+                                if (Instances.length > 0) {
+                                    response.body.forEach(function (item) {
                                         let instance = {
                                             id: item.id,
                                             uuid: item.uuid,
-                                            title : item.groups_title,
+                                            title: item.groups_title,
                                             name: item.groups_name,
                                             subscription: item.is_subscribed,
                                             production: item.is_production,
@@ -105,14 +105,14 @@ export default class App extends React.Component {
                                             moderated: false,
                                             pendingComments: []
                                         }
-                                        checkModeration(item.uuid, client.account.graphjsHash, function(response) {
-                                            if(response.success) {
+                                        checkModeration(item.uuid, client.account.graphjsHash, function (response) {
+                                            if (response.success) {
                                                 instance.moderated = response.body;
-                                                fetchAllMembers(item.uuid, client.account.graphjsHash, function(response) {
-                                                    if(response.success) {
-                                                        instance.members = response.body? response.body[0] : [];
-                                                        fetchModerationQueue(item.uuid, client.account.graphjsHash, function(response) {
-                                                            if(response.success) {
+                                                fetchAllMembers(item.uuid, client.account.graphjsHash, function (response) {
+                                                    if (response.success) {
+                                                        instance.members = response.body ? response.body[0] : [];
+                                                        fetchModerationQueue(item.uuid, client.account.graphjsHash, function (response) {
+                                                            if (response.success) {
                                                                 instance.pendingComments = response.body;
                                                             }
 
@@ -163,22 +163,22 @@ export default class App extends React.Component {
     }
     handleSignUp(groupsId, name, url, password, email, theme, color, callback) {
         let self = this;
-        signup(groupsId, name, url, password, email, theme, color, function(error, response) {
+        signup(groupsId, name, url, password, email, theme, color, function (error, response) {
             // self.setClient();
-            callback(error,response);
+            callback(error, response);
         })
     }
-    handleVerifyCode(groupsId, name, url, password, email, theme, color, verificationCode, description, callback){
+    handleVerifyCode(groupsId, name, url, password, email, theme, color, verificationCode, description, callback) {
         let self = this;
-        verifyCode(groupsId, name, url, password, email, theme, color, verificationCode, description, function(error,response){
+        verifyCode(groupsId, name, url, password, email, theme, color, verificationCode, description, function (error, response) {
             self.setClient();
-            callback(error,response);
+            callback(error, response);
         })
     }
-    handleResendVerification(email, callback){
+    handleResendVerification(email, callback) {
         let self = this;
-        resendVerification(email, function(error,response){
-            callback(error,response);
+        resendVerification(email, function (error, response) {
+            callback(error, response);
         })
     }
     render() {
@@ -189,22 +189,22 @@ export default class App extends React.Component {
                         session={this.state.session}
                         logout={this.unsetClient}
                     />
-                }/>
+                } />
                 <Switch>
                     <Route exact path="/" render={(props) =>
                         <Home />
-                    }/>
+                    } />
                     <Route exact path="/comparing" render={(props) =>
                         <Comparing />
                     } />
                     <Route path="/pricing" render={(props) =>
-                        <Pricing session={this.state.session}/>
-                    }/>
+                        <Pricing session={this.state.session} />
+                    } />
                     <Route path="/docs/:category?/:item?" render={(props) =>
                         <Docs
                             params={props.match.params}
                         />
-                    }/>
+                    } />
                     <Route path="/setup" render={(props) =>
                         <Setup
                             client={this.state.client}
@@ -213,7 +213,7 @@ export default class App extends React.Component {
                             handleResendVerification={this.handleResendVerification}
                             queryString={props.location.search}
                         />
-                    }/>
+                    } />
                     <Route path="/settings/:category/:identifier/:item?" render={(props) =>
                         <Settings
                             session={this.state.session}
@@ -222,7 +222,7 @@ export default class App extends React.Component {
                             print={this.state.print}
                             setClient={this.setClient}
                         />
-                    }/>
+                    } />
                     <Route path="/settings" render={(props) =>
                         <Settings
                             session={this.state.session}
@@ -231,30 +231,30 @@ export default class App extends React.Component {
                             print={this.state.print}
                             setClient={this.setClient}
                         />
-                    }/>
+                    } />
                     <Route path="/login" render={(props) =>
                         <Login
                             session={this.state.session}
                             setClient={this.setClient}
                         />
-                    }/>
+                    } />
                     <Route exact path="/legal/:category?" render={(props) =>
                         <Legal
                             params={props.match.params}
                         />
-                    }/>
+                    } />
                     <Route path="/faq" render={(props) =>
-                        <Redirect to="/docs/faq/" state={{status: 301}} />
-                    }/>
+                        <Redirect to="/docs/faq/" state={{ status: 301 }} />
+                    } />
                     <Route path="/pay" render={(props) =>
                         <Pay {...props} />
-                    }/>
+                    } />
                     <Route path="/careers" render={(props) =>
-                        <Careers/>
-                    }/>
+                        <Careers />
+                    } />
                     <Route render={(props) =>
                         <Error />
-                    }/>
+                    } />
                 </Switch>
                 <Footer />
             </div>

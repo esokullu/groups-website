@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import Switch from './Switch';
 
@@ -21,7 +21,7 @@ export default class Navigation extends React.Component {
                             <span class="beta-wrapper"> beta 🙀</span>
                         </React.Fragment>
                     )
-                },{
+                }, {
                     id: 'graphjs',
                     target: 'https://graphjs.com',
                     content: (
@@ -50,10 +50,10 @@ export default class Navigation extends React.Component {
         let currentScrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
         let navigation = document.getElementById('navigation');
         let navigationHeight = navigation.offsetHeight;
-        if(this.state.scrollTop > navigationHeight) {
-            if(this.state.scrollTop > currentScrollTop) {
+        if (this.state.scrollTop > navigationHeight) {
+            if (this.state.scrollTop > currentScrollTop) {
                 navigation.classList.remove('up');
-            } else if(this.state.scrollTop < currentScrollTop) {
+            } else if (this.state.scrollTop < currentScrollTop) {
                 navigation.classList.add('up');
                 this.state.open && this.setState({
                     open: false
@@ -65,7 +65,7 @@ export default class Navigation extends React.Component {
         });
     }
     handleToggle(event) {
-        if(event && event.target.id === 'toggle') {
+        if (event && event.target.id === 'toggle') {
             event.preventDefault();
             this.setState({
                 open: !this.state.open
@@ -79,7 +79,7 @@ export default class Navigation extends React.Component {
     handleLogout() {
         this.props.logout(); // Logout anyway
         this.handleToggle();
-        logout('id', function() {
+        logout('id', function () {
             console.log('Logged out!');
         });
     }
@@ -90,12 +90,12 @@ export default class Navigation extends React.Component {
                     <Switch items={this.state.links} />
                     <a id="toggle" onClick={this.handleToggle}>
                         <svg className="open" fill="white" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlnsXlink="https://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="106.925 6.163 41.27 32.386" xmlSpace="preserve">
-                            <path d="M145.248,6.163h-35.375c-1.628,0-2.948,1.319-2.948,2.948c0,1.628,1.32,2.947,2.948,2.947h35.375 c1.628,0,2.947-1.319,2.947-2.947C148.195,7.483,146.875,6.163,145.248,6.163z"/>
-                            <path d="M145.248,19.408h-35.375c-1.628,0-2.948,1.319-2.948,2.948c0,1.628,1.32,2.947,2.948,2.947h35.375 c1.628,0,2.947-1.319,2.947-2.947C148.195,20.728,146.875,19.408,145.248,19.408z"/>
-                            <path d="M148.195,35.601c0-1.628-1.319-2.947-2.947-2.947h-35.375c-1.628,0-2.948,1.319-2.948,2.947 c0,1.629,1.32,2.948,2.948,2.948h35.375C146.875,38.549,148.195,37.23,148.195,35.601z"/>
+                            <path d="M145.248,6.163h-35.375c-1.628,0-2.948,1.319-2.948,2.948c0,1.628,1.32,2.947,2.948,2.947h35.375 c1.628,0,2.947-1.319,2.947-2.947C148.195,7.483,146.875,6.163,145.248,6.163z" />
+                            <path d="M145.248,19.408h-35.375c-1.628,0-2.948,1.319-2.948,2.948c0,1.628,1.32,2.947,2.948,2.947h35.375 c1.628,0,2.947-1.319,2.947-2.947C148.195,20.728,146.875,19.408,145.248,19.408z" />
+                            <path d="M148.195,35.601c0-1.628-1.319-2.947-2.947-2.947h-35.375c-1.628,0-2.948,1.319-2.948,2.947 c0,1.629,1.32,2.948,2.948,2.948h35.375C146.875,38.549,148.195,37.23,148.195,35.601z" />
                         </svg>
                         <svg className="close" fill="white" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlnsXlink="https://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 595.28 467.72" xmlSpace="preserve">
-                            <path d="M498.265,374.175L357.953,233.863L498.275,93.541L518.316,73.5c16.605-16.604,16.604-43.51,0-60.115 s-43.531-16.604-60.125-0.011L438.15,33.415L297.828,173.738L157.504,33.415l-20.041-20.041c-16.604-16.605-43.51-16.604-60.115,0 s-16.604,43.531-0.011,60.125L97.379,93.54l140.323,140.323L97.39,374.175l-20.04,20.041c-16.605,16.605-16.616,43.521-0.001,60.137 c16.604,16.604,43.521,16.594,60.126-0.012l20.041-20.039l140.312-140.312L438.14,434.3l20.041,20.041 c16.604,16.605,43.521,16.615,60.136,0c16.604-16.604,16.595-43.52-0.011-60.125L498.265,374.175z"/>
+                            <path d="M498.265,374.175L357.953,233.863L498.275,93.541L518.316,73.5c16.605-16.604,16.604-43.51,0-60.115 s-43.531-16.604-60.125-0.011L438.15,33.415L297.828,173.738L157.504,33.415l-20.041-20.041c-16.604-16.605-43.51-16.604-60.115,0 s-16.604,43.531-0.011,60.125L97.379,93.54l140.323,140.323L97.39,374.175l-20.04,20.041c-16.605,16.605-16.616,43.521-0.001,60.137 c16.604,16.604,43.521,16.594,60.126-0.012l20.041-20.039l140.312-140.312L438.14,434.3l20.041,20.041 c16.604,16.605,43.521,16.615,60.136,0c16.604-16.604,16.595-43.52-0.011-60.125L498.265,374.175z" />
                         </svg>
                     </a>
                     <ul id="menu">
@@ -109,20 +109,22 @@ export default class Navigation extends React.Component {
                                 Compare
                             </NavLink>
                         </li>
-                        
+
                         <li>
                             <a href="https://github.com/phonetworks/grou-ps-v2" target="_blank">
                                 Open Source
                             </a>
                         </li>
-                        
-                        {/*
-                        <li>
+                        {/* <li>
                             <NavLink className="pricing" to="/pricing" activeClassName="active" onClick={this.handleToggle}>
                                 Pricing
                             </NavLink>
-                        </li>
-                        */}
+                        </li> */}
+                        {/* <li>
+                            <NavLink className="faq" to="/docs/faq" exact activeClassName="active" onClick={this.handleToggle}>
+                                FAQ
+                            </NavLink>
+                        </li> */}
                         {/*
                         <li>
                             <NavLink className="blog" to="/blog" activeClassName="active" onClick={this.handleToggle}>
@@ -131,33 +133,33 @@ export default class Navigation extends React.Component {
                         </li>
                         */}
                         {this.props.session &&
-                        <li>
-                            <NavLink className="settings" to="/settings" activeClassName="active" onClick={this.handleToggle}>
-                                Settings
+                            <li>
+                                <NavLink className="settings" to="/settings" activeClassName="active" onClick={this.handleToggle}>
+                                    Settings
                             </NavLink>
-                        </li>
+                            </li>
                         }
                         {this.props.session &&
-                        <li>
-                            <a className="logout" onClick={this.handleLogout}>
-                                Log out
+                            <li>
+                                <a className="logout" onClick={this.handleLogout}>
+                                    Log out
                             </a>
-                        </li>
+                            </li>
                         }
                         {
-                        this.props.session ||
-                        <li>
-                            <NavLink className="login" to="/login" activeClassName="active" onClick={this.handleToggle}>
-                                Log in
+                            this.props.session ||
+                            <li>
+                                <NavLink className="login" to="/login" activeClassName="active" onClick={this.handleToggle}>
+                                    Log in
                             </NavLink>
-                        </li>
+                            </li>
                         }
                         {this.props.session ||
-                        <li>
-                            <NavLink className="setup" to="/setup" className="outstanding" activeClassName="active" onClick={this.handleToggle}>
-                                Get Started
+                            <li>
+                                <NavLink className="setup" to="/setup" className="outstanding" activeClassName="active" onClick={this.handleToggle}>
+                                    Get Started
                             </NavLink>
-                        </li>
+                            </li>
                         }
                     </ul>
                 </div>
