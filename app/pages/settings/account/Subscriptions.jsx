@@ -13,7 +13,7 @@ export default class Subscriptions extends React.Component {
             failMessages: []
         }
         this.handleCancellation = this.handleCancellation.bind(this);
-        this.handleNewInstance = this.handleNewInstance.bind(this);
+        //this.handleNewInstance = this.handleNewInstance.bind(this);
         this.handleExistingInstance = this.handleExistingInstance.bind(this);
     }
     handleCancellation(id) {
@@ -23,6 +23,7 @@ export default class Subscriptions extends React.Component {
             });
         }
     }
+    /*
     handleNewInstance(event) {
         event.preventDefault();
         let self = this;
@@ -35,6 +36,7 @@ export default class Subscriptions extends React.Component {
             });
         }
     }
+    */
     handleExistingInstance(event) {
         event.preventDefault();
         document.getElementById('charge').click();

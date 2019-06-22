@@ -5,6 +5,7 @@ import Select from 'react-select';
 
 // Scripts
 import cancel from '~/scripts/cancel';
+import unsubscribe from '../../../scripts/unsubscribe';
 
 // Page: Settings > Account > Cancellation
 export default class Cancellation extends React.Component {
@@ -48,7 +49,7 @@ export default class Cancellation extends React.Component {
             }
         });
         if(code!="other") {
-            cancel(this.state.instance.id, code, "", (response) => {
+            unsubscribe(this.state.instance.uuid, code, "", (response) => {
                 if(!response.success)  {
                     //target.classList.remove('loading');
                     alert('An unknown problem occured. Please try again.')
@@ -61,7 +62,7 @@ export default class Cancellation extends React.Component {
         let {instance, reason} = this.state;
         target.classList.add('loading');
         
-        cancel(instance.id, reason.code, reason.explanation, (response) => {
+        unsubscribe(instance.uuid, reason.code, reason.explanation, (response) => {
             if(response.success) {
                 target.classList.remove('loading');
                 this.setState({
