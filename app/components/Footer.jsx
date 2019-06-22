@@ -290,7 +290,7 @@ export default class Footer extends React.Component {
             }
         ];
         let this_quote = ls[this.rand(0, ls.length - 1)];
-        console.log(this_quote);
+        //console.log(this_quote);
         return this_quote;
     }
     render() {

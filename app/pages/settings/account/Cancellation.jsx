@@ -24,7 +24,7 @@ export default class Cancellation extends React.Component {
             },
             {
                 value: 'difficult',
-                label: 'It\'s difficult. I have troubles using it.'
+                label: 'It\'s difficult. I have trouble using it.'
             },
             {
                 value: 'other',
@@ -47,21 +47,20 @@ export default class Cancellation extends React.Component {
                 code
             }
         });
+        if(code!="other") {
+            cancel(this.state.instance.id, code, "", (response) => {
+                if(!response.success)  {
+                    //target.classList.remove('loading');
+                    alert('An unknown problem occured. Please try again.')
+                }
+            });
+        }
     }
     handleReasonSubmit(event) {
         let {target} = event;
         let {instance, reason} = this.state;
         target.classList.add('loading');
-
-        // Fake result
-        setTimeout(() => {
-            target.classList.remove('loading');
-            this.setState({
-                done: true
-            });
-        }, 1000);
-
-        /*
+        
         cancel(instance.id, reason.code, reason.explanation, (response) => {
             if(response.success) {
                 target.classList.remove('loading');
@@ -73,7 +72,7 @@ export default class Cancellation extends React.Component {
                 alert('An unknown problem occured. Please try again.')
             }
         });
-        */
+        
     }
     render() {
         let {instance, reason} = this.state;
@@ -100,7 +99,7 @@ export default class Cancellation extends React.Component {
                                 </div>
                                 <div className="block">
                                     <h3>Before you go...</h3>
-                                    <p>We'd love to know your reason to cancel.</p>
+                                    <p>Please let us know why you are cancelling.</p>
                                     <Select
                                         className="reason"
                                         options={this.options}
@@ -131,16 +130,17 @@ export default class Cancellation extends React.Component {
                                                     }
                                                 })}
                                                 placeholder={
-                                                    reason.explanation && reason.explanation.length >= 10
-                                                        ? 'Please explain your problem'
-                                                        : 'Please explain... (10 characters min.)'
+                                                    reason.explanation /*&& reason.explanation.length >= 10*/
+                                                        ? 'Please explain...'
+                                                        : 'Please explain... (255 characters max.)'
                                                 } />
-                                            {reason.explanation && reason.explanation.length >= 10 &&
+                                            {reason.explanation && reason.explanation.length <= 10 &&
                                                 <button onClick={this.handleReasonSubmit}>Submit</button>
                                             }
                                         </Fragment>
                                     }
-                                </div>
+                                </div>                                
+                                {/*
                                 {reason.code === 'expensive' &&
                                     <div className="block">
                                         <h3>Don't worry!</h3>
@@ -160,6 +160,7 @@ export default class Cancellation extends React.Component {
                                         <button onClick={this.handleReasonSubmit}>Get Help</button>
                                     </div>
                                 }
+                                */}
                             </Fragment>
                         }
                         {!this.state.instance &&
@@ -172,13 +173,15 @@ export default class Cancellation extends React.Component {
                         {reason.code === 'expensive' &&
                             <Fragment>
                                 <h3>All set!</h3>
-                                <p>You are ready to go.</p>
+                                <p>Thanks for the feedback.</p>
                             </Fragment>
                         }
                         {(reason.code === 'difficult' || reason.code === 'other') &&
                             <Fragment>
-                                <h3>It's going to be OK!</h3>
-                                <p>Our customer service will be in touch soon to solve any problems you have.</p>
+                                <h3>All set!</h3>
+                                <p>Thanks for the feedback.</p>
+                                <p>We're sorry to see you, if there is anything we can do to help, shoot us an email at x _at_ risg.co</p>
+                                {/*
                                 <p>
                                     <b>Please schedule your meeting.</b>
                                 </p>
@@ -190,6 +193,7 @@ export default class Cancellation extends React.Component {
                                     </div>
                                     <iframe src="https://calendly.com/hai-at-grou-ps?embed_domain=www.calendly-embed.com&amp;embed_type=Inline" width="100%" height="100%" frameBorder="0"></iframe>
                                 </div>
+                                */}
                             </Fragment>
                         }
                     </Fragment>

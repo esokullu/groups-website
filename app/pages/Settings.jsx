@@ -84,7 +84,7 @@ export default class Settings extends React.Component {
                     {this.props.client.instances && this.props.client.instances.length > 0
                         ? <Fragment>
                             <Sidebar ref="sidebar">
-                                <div class="instance-selection">
+                                <div className="instance-selection">
                                     <h4>Current instance</h4>
                                     <div className="dropdown">
                                         <select onChange={this.handleInstanceChange} value={this.state.selectedInstanceIdx}>

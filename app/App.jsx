@@ -25,7 +25,7 @@ import checkSession from './scripts/checkSession.js';
 import destroySession from './scripts/destroySession.js';
 import getInstances from './scripts/getInstances.js';
 import getClient from './scripts/getClient.js';
-import checkModeration from './scripts/checkModeration.js';
+//import checkModeration from './scripts/checkModeration.js';
 import fetchAllMembers from './scripts/fetchAllMembers.js';
 import fetchModerationQueue from './scripts/fetchModerationQueue.js';
 import signup from '../app/scripts/signup';
@@ -86,7 +86,7 @@ export default class App extends React.Component {
                         getInstances(function (response) {
                             if (response.success && response.body) {
                                 const Instances = response.body.filter(function (item) {
-                                    return !item.is_groups
+                                    return item.is_groups
                                 });
                                 if (Instances.length > 0) {
                                     response.body.forEach(function (item) {
@@ -105,33 +105,10 @@ export default class App extends React.Component {
                                             moderated: false,
                                             pendingComments: []
                                         }
-                                        checkModeration(item.uuid, client.account.graphjsHash, function (response) {
-                                            if (response.success) {
-                                                instance.moderated = response.body;
-                                                fetchAllMembers(item.uuid, client.account.graphjsHash, function (response) {
-                                                    if (response.success) {
-                                                        instance.members = response.body ? response.body[0] : [];
-                                                        fetchModerationQueue(item.uuid, client.account.graphjsHash, function (response) {
-                                                            if (response.success) {
-                                                                instance.pendingComments = response.body;
-                                                            }
-
-                                                            client['instances'].push(instance);
-                                                            self.setState({
-                                                                client: client,
-                                                                print: generateRandomKey()
-                                                            });
-                                                        });
-                                                    }
-                                                });
-                                            }
-                                            else {
-                                                client['instances'].push(instance);
-                                                self.setState({
-                                                    client: client,
-                                                    print: generateRandomKey()
-                                                });
-                                            }
+                                        client['instances'].push(instance);
+                                        self.setState({
+                                            client: client,
+                                            print: generateRandomKey()
                                         });
                                     });
                                 } else {
