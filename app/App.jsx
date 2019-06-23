@@ -86,10 +86,12 @@ export default class App extends React.Component {
                         getInstances(function (response) {
                             if (response.success && response.body) {
                                 const Instances = response.body.filter(function (item) {
-                                    return true; // (item.is_groups);
+                                    return (item.is_groups);
                                 });
+                                let i = 0;
                                 if (Instances.length > 0) {
-                                    response.body.forEach(function (item) {
+                                    i++;
+                                    Instances.forEach(function (item) {
                                         let instance = {
                                             id: item.id,
                                             uuid: item.uuid,
@@ -107,10 +109,10 @@ export default class App extends React.Component {
                                         }
                                         if(item.is_groups)
                                             client['instances'].push(instance);
-                                        self.setState({
-                                            client: client,
-                                            print: generateRandomKey()
-                                        });
+                                            (Instances.length == i) && self.setState({
+                                                client: client,
+                                                print: generateRandomKey()
+                                            });
                                     });
                                 } else {
                                     self.setState({
