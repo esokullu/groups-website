@@ -62,6 +62,10 @@ export default class Subscriptions extends React.Component {
                         </h4>
                         <div className="properties">
                             <div>
+                                <b>Status:</b> 
+                                {(item.is_subscribed) ? 'Active' : 'Inactive'}
+                            </div>
+                            <div>
                                 <b>Theme:</b> {item.theme} <span style={{color: item.theme == 'dark' ? '#3c3c3c' : 'white'}}>&#9724;</span>
                             </div>
                             <div>

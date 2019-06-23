@@ -50,8 +50,13 @@ export default class Cancellation extends React.Component {
         });
         if(code!="other") {
             unsubscribe(this.state.instance.uuid, code, "", (response) => {
-                if(!response.success)  {
-                    //target.classList.remove('loading');
+                if(response.success) {
+                    target.classList.remove('loading');
+                    this.setState({
+                        done: true
+                    });
+                } else {
+                    target.classList.remove('loading');
                     alert('An unknown problem occured. Please try again.')
                 }
             });
