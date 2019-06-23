@@ -4,7 +4,6 @@ import {Link, Redirect} from 'react-router-dom';
 import Select from 'react-select';
 
 // Scripts
-import cancel from '~/scripts/cancel';
 import unsubscribe from '../../../scripts/unsubscribe';
 
 // Page: Settings > Account > Cancellation

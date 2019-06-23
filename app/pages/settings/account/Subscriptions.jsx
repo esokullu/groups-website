@@ -52,7 +52,7 @@ export default class Subscriptions extends React.Component {
                         {this.state.failMessages.map((failMessage, key) => <li key={key}>{failMessage}</li>)}
                     </ul>
                 </div>}
-                <p>{'You have ' + this.props.instances.length + ' Grou.ps site(s).'}</p>
+                <p>Your active and inactive Grou.ps site(s) are below:</p>
                 <ul>
                     {this.props.instances.map((item, key) =>
                     <li key={key}>

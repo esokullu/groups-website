@@ -86,7 +86,7 @@ export default class App extends React.Component {
                         getInstances(function (response) {
                             if (response.success && response.body) {
                                 const Instances = response.body.filter(function (item) {
-                                    return (item.is_groups)
+                                    return true; // (item.is_groups);
                                 });
                                 if (Instances.length > 0) {
                                     response.body.forEach(function (item) {
@@ -105,7 +105,8 @@ export default class App extends React.Component {
                                             moderated: false,
                                             pendingComments: []
                                         }
-                                        client['instances'].push(instance);
+                                        if(item.is_groups)
+                                            client['instances'].push(instance);
                                         self.setState({
                                             client: client,
                                             print: generateRandomKey()
