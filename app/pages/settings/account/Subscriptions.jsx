@@ -77,7 +77,7 @@ export default class Subscriptions extends React.Component {
                                 <b>URL:</b> {item.url}
                             </div>
                             <div>
-                                <b>Manage:</b> <a href="{item.selfServicePage}" target="_blank">{item.selfServicePage}</a>
+                                <b>Manage:</b> <a href={item.selfServicePage} target="_blank">{item.selfServicePage}</a>
                             </div>
                         </div>
                         {/*
