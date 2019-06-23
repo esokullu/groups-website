@@ -56,12 +56,12 @@ export default class Subscriptions extends React.Component {
                 <ul>
                     {this.props.instances.map((item, key) =>
                     <li key={key}>
-                        {item.is_subscribed &&
                         <h4>
                             {item.uuid}
-                            <a onClick={() => this.handleCancellation(item.id)}>&#10006;</a>
+                            {item.is_subscribed &&
+                                <a onClick={() => this.handleCancellation(item.id)}>&#10006;</a>
+                            }
                         </h4>
-                        }
                         <div className="properties">
                             <div>
                                 <b>Status:</b>  
