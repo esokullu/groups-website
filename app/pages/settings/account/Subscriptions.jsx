@@ -17,7 +17,7 @@ export default class Subscriptions extends React.Component {
         this.handleExistingInstance = this.handleExistingInstance.bind(this);
     }
     handleCancellation(id) {
-        if(window.confirm('Are you sure to cancel?')) {
+        if(window.confirm('Are you sure?')) {
             this.setState({
                 cancellation: {id}
             });
