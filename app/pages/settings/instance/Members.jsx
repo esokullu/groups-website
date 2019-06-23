@@ -18,7 +18,7 @@ export default class Members extends React.Component {
                 last_page: 1
             }
         }
-        this.pageLimit = 5;
+        this.pageLimit = 100;
         this.paginate = this.paginate.bind(this);
         this.deleteMember = this.deleteMember.bind(this);
     }

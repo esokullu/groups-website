@@ -17,7 +17,7 @@ export default class Tickets extends React.Component {
             loading: true,
             tickets: []
         }
-        this.pageLimit = 10;
+        this.pageLimit = 40;
         this.handlePage = this.handlePage.bind(this);
         this.getTickets = this.getTickets.bind(this);
         this.createTicket = this.createTicket.bind(this);

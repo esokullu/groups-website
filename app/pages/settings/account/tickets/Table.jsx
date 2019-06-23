@@ -5,7 +5,8 @@ const Table = (props) => (
     <div className="tickets-table block">
         {props.tickets.length > 0
             ? <Fragment>
-                <h3>{`You have ${props.pagination.total} ticket${props.pagination.total > 1 ? 's': ''}`}</h3>
+                {/*<h3>{`You have ${props.pagination.total} ticket${props.pagination.total > 1 ? 's': ''}`}</h3>*/}
+                <h3>Help</h3>
                 <table className="table">
                     <thead>
                         <tr>
