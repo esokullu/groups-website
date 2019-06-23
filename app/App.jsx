@@ -108,9 +108,10 @@ export default class App extends React.Component {
                                             color: item.color.charAt(0) === '#' ? item.color : '#' + item.color,
                                             hash: client.account.graphjsHash,
                                             moderated: false,
-                                            pendingComments: []
+                                            pendingComments: [],
+                                            selfServicePage: item.self_service_portal
                                         }
-                                        if(item.is_groups)
+                                        //if(item.is_groups)
                                             client['instances'].push(instance);
                                             (Instances.length == i) && self.setState({
                                                 client: client,
