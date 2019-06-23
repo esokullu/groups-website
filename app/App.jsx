@@ -85,13 +85,16 @@ export default class App extends React.Component {
                         };
                         getInstances(function (response) {
                             if (response.success && response.body) {
+                                /*
                                 const Instances = response.body.filter(function (item) {
                                     return (item.is_groups);
                                 });
+                                */
+                                const Instances = response.body;
                                 let i = 0;
                                 if (Instances.length > 0) {
-                                    i++;
                                     Instances.forEach(function (item) {
+                                        i++;
                                         let instance = {
                                             id: item.id,
                                             uuid: item.uuid,
