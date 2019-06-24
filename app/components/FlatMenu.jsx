@@ -18,7 +18,7 @@ export default class FlatMenu extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.data !== this.props.data) {
+        if (nextProps.selectedInstanceIdx !== this.props.selectedInstanceIdx) {
             nextProps.data &&
                 this.setState({
                     list: nextProps.data || [],

@@ -105,7 +105,8 @@ export default class Settings extends React.Component {
                                             slug: selectedInstance.name,
                                             title: selectedInstance.title,
                                         }
-                                    )} />
+                                    )}
+                                    selectedInstanceId={this.state.selectedInstanceIdx} />
                             </Sidebar>
                             {params.category === 'account' && (
                                 params.item
