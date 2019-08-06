@@ -25,7 +25,7 @@ export default class FAQ extends React.Component {
                 <section className="faq-wrapper">
                     <div className="container">
                         <h1>Contact Us</h1>
-                        <form action="https://formspree.io/business@groups-inc.com" method="POST" className="narrow options">
+                        <form action="https://formspree.io/business@risg.co" method="POST" className="narrow options">
                             <h3>Name *</h3>
                             <fieldset>
                                 <input ref="name" name="name" type="text" placeholder="Enter your name" />

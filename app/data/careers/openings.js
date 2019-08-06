@@ -8,7 +8,7 @@ const openings = [
             {
                 label: 'General Application',
                 content: (
-                    <p>We need all the help we can get to grow and change the web for better. If you believe you have a unique ability beyond our current openings, and drive for this mission, please <a href="mailto:business@groups-inc.com">get in touch</a> and let us know how we can work together. We love entrepreneurial spirit.</p>
+                    <p>We need all the help we can get to grow and change the web for better. If you believe you have a unique ability beyond our current openings, and drive for this mission, please <a href="mailto:business@risg.co">get in touch</a> and let us know how we can work together. We love entrepreneurial spirit.</p>
                 )
             },
             {
@@ -30,7 +30,7 @@ const openings = [
                             <li>Ability to transform customer needs into software</li>
                             <li>Understanding of software development processes</li>
                         </ul>
-                        <p>Sounds interesting? <a href="mailto:business@groups-inc.com">Apply here</a>.</p>
+                        <p>Sounds interesting? <a href="mailto:business@risg.co">Apply here</a>.</p>
                     </Fragment>
                 )
             },
@@ -50,7 +50,7 @@ const openings = [
                             <li>Experience in and comfortable with using spread sheets such as MS Excel and Google Sheets</li>
                             <li>Familiarity with HTML and CSS is a huge plus</li>
                         </ul>
-                        <p>Sounds interesting? <a href="mailto:business@groups-inc.com">Apply here</a>.</p>
+                        <p>Sounds interesting? <a href="mailto:business@risg.co">Apply here</a>.</p>
                     </Fragment>
                 )
             },
@@ -69,7 +69,7 @@ const openings = [
                             <li>Experience with REST APIs</li>
                             <li>Love of open source, social networking.</li>
                         </ul>
-                        <p>Sounds interesting? <a href="mailto:business@groups-inc.com">Apply here</a>.</p>
+                        <p>Sounds interesting? <a href="mailto:business@risg.co">Apply here</a>.</p>
                     </Fragment>
                 )
             },
@@ -88,7 +88,7 @@ const openings = [
                             <li>Experience in customer service/customer interaction</li>
                             <li>Familiarity with HTML and CSS is a huge plus</li>
                         </ul>
-                        <p>Sounds interesting? <a href="mailto:business@groups-inc.com">Apply here</a>.</p>
+                        <p>Sounds interesting? <a href="mailto:business@risg.co">Apply here</a>.</p>
                     </Fragment>
                 )
             }
