@@ -14,22 +14,22 @@ export default class TermsOfService extends React.Component {
                     <section className="terms-of-service">
                         <h1>Terms of Service</h1>
                         <div className="block">
-                            <h4>Grou.ps, INC. TERMS OF SERVICE</h4>
+                            <h4>Research in Social Graph TERMS OF SERVICE</h4>
                             <p>
                                 THESE TERMS OF SERVICE (“AGREEMENT”) DESCRIBE THE TERMS AND CONDITIONS ON
-                                WHICH Grou.ps, INC. (“Grou.ps”) PROVIDES ITS SERVICES TO ANY CUSTOMER
-                                ACCESSING Grou.ps’ PROPRIETARY SYSTEMS AND APPLICATION PROGRAMMING INTERFACES
+                                WHICH Research in Social Graph (“RISG”) PROVIDES ITS SERVICES TO ANY CUSTOMER
+                                ACCESSING RISG’ PROPRIETARY SYSTEMS AND APPLICATION PROGRAMMING INTERFACES
                                 (THE “API”) TO BUILD CUSTOMIZED SCALABLE NEWSFEEDS OR OTHERWISE RECEIVING THE
-                                BENEFIT OF Grou.ps SERVICES (THE “CUSTOMER” or “YOU”). BY INDICATING ACCEPTANCE
+                                BENEFIT OF RISG SERVICES (THE “CUSTOMER” or “YOU”). BY INDICATING ACCEPTANCE
                                 OF THIS AGREEMENT OR BY OTHERWISE USING THE SERVICE, CUSTOMER IS ENTERING INTO A
-                                LEGALLY BINDING AGREEMENT WITH Grou.ps. IF CUSTOMER DOES NOT AGREE TO THIS
+                                LEGALLY BINDING AGREEMENT WITH RISG. IF CUSTOMER DOES NOT AGREE TO THIS
                                 AGREEMENT, CUSTOMER MUST NOT COMPLETE THE ORDER PROCESS AND MUST NOT USE THE
                                 SERVICE.
                             </p>
                             <p>
                                 IF CUSTOMER OR THE THIRD-PARTY ON BEHALF OF WHOM CUSTOMER IS ACTING (ALSO, A
-                                “CUSTOMER”) AND Grou.ps HAVE ALREADY ENTERED A SEPARATE AGREEMENT GOVERNING
-                                PROVISION OF Grou.ps’ SERVICES THAT HAS BEEN SIGNED ON BEHALF OF BOTH Grou.ps
+                                “CUSTOMER”) AND RISG HAVE ALREADY ENTERED A SEPARATE AGREEMENT GOVERNING
+                                PROVISION OF RISG’ SERVICES THAT HAS BEEN SIGNED ON BEHALF OF BOTH RISG
                                 AND CUSTOMER, THEN THAT OTHER AGREEMENT SHALL APPLY IN PLACE OF THE TERMS
                                 HEREIN, NOTWITHSTANDING ANY CHECKBOX OR ELECTRONIC ACCEPTANCE REQUIRED IN ORDER
                                 TO USE THE SERVICE.
@@ -41,8 +41,8 @@ export default class TermsOfService extends React.Component {
                                 <li>
                                     <h4>Provision Generally.</h4>
                                     <p>
-                                        During the Term as defined in (Section 5.1) Grou.ps
-                                        will provide Customer with access to Grou.ps’ proprietary service that allows
+                                        During the Term as defined in (Section 5.1) RISG
+                                        will provide Customer with access to RISG’ proprietary service that allows
                                         users to build customized scalable social networking solutions via an API
                                         (collectively the “Service”) in accordance with the terms and conditions of this
                                         Agreement. In order to access and use the Service, Customer is responsible at
@@ -56,10 +56,10 @@ export default class TermsOfService extends React.Component {
                                     <h4>Grant of Rights.</h4>
                                     <p>
                                         Subject to the terms and conditions of this Agreement,
-                                        Grou.ps hereby grants to Customer a limited, non-exclusive, non-transferable
+                                        RISG hereby grants to Customer a limited, non-exclusive, non-transferable
                                         right to access and use the Service, solely for Customer’s internal business
                                         purposes during the Term. All rights not expressly granted to Customer are
-                                        reserved by Grou.ps and its licensors. There are no implied rights.
+                                        reserved by RISG and its licensors. There are no implied rights.
                                     </p>
                                 </li>
                                 <li>
@@ -80,7 +80,7 @@ export default class TermsOfService extends React.Component {
                                         regulations pertaining to data privacy; (e) None of the Customer Data (as
                                         defined herein) will contain any unlawful, defamatory, offensive, libelous,
                                         harassing, abusive, fraudulent, pornographic or obscene content or material; and
-                                        (f) Customer will provide Grou.ps with any information, records, or materials
+                                        (f) Customer will provide RISG with any information, records, or materials
                                         that we request to verify Customer’s compliance with the eligibility
                                         requirements set forth above and the terms and conditions of this Agreement.
                                     </p>
@@ -102,10 +102,10 @@ export default class TermsOfService extends React.Component {
                                         Service, or engage in any scraping, data-mining, harvesting, data aggregating or
                                         indexing of the Service. Customer shall keep all passwords and API Keys provided
                                         to it safe and secure, and shall be responsible for all use of the Service using
-                                        passwords or API keys issued to Customer. Customer shall notify Grou.ps
+                                        passwords or API keys issued to Customer. Customer shall notify RISG
                                         immediately of any actual or suspected unauthorized use of its passwords or API
                                         keys for the Service. Without limiting any of its other rights or remedies,
-                                        Grou.ps reserves the right to suspend access to the Service if Grou.ps
+                                        RISG reserves the right to suspend access to the Service if RISG
                                         reasonably believes that Customer has materially violated the restrictions and
                                         obligations in this Agreement (in which case, it shall provide Customer prompt
                                         written notice of such suspension).
@@ -114,56 +114,56 @@ export default class TermsOfService extends React.Component {
                                 <li>
                                     <h4>Customer Cooperation.</h4>
                                     <p>
-                                        Customer shall: (a) reasonably cooperate with Grou.ps
-                                        in all matters relating to the Service; (b) respond promptly to any Grou.ps
+                                        Customer shall: (a) reasonably cooperate with RISG
+                                        in all matters relating to the Service; (b) respond promptly to any RISG
                                         request to provide information, approvals, authorizations or decisions that are
-                                        reasonably necessary for Grou.ps to provide the Service in accordance with
+                                        reasonably necessary for RISG to provide the Service in accordance with
                                         this Agreement; and (c) provide such Customer materials or information as
-                                        Grou.ps may reasonably request to provide the Service and ensure that such
+                                        RISG may reasonably request to provide the Service and ensure that such
                                         materials or information are complete and accurate in all material respects.
                                     </p>
                                 </li>
                             </ol>
                         </div>
                         <div className="block">
-                            <h3>Grou.ps Technology.</h3>
+                            <h3>RISG Technology.</h3>
                             <p>
-                                In connection with providing the Service, Grou.ps and its licensors shall
-                                operate and support the hosted environment used by Grou.ps to provide the
-                                Service, including the Grou.ps Technology (as defined below), the server
+                                In connection with providing the Service, RISG and its licensors shall
+                                operate and support the hosted environment used by RISG to provide the
+                                Service, including the RISG Technology (as defined below), the server
                                 hardware, disk storage, firewall protection, server operating systems,
                                 management programs, web server programs, documentation and all other technology
-                                or information so used by Grou.ps. As used herein, “Grou.ps Technology”
-                                means all of Grou.ps’ proprietary technology (including software, hardware,
+                                or information so used by RISG. As used herein, “RISG Technology”
+                                means all of RISG’ proprietary technology (including software, hardware,
                                 products, processes, algorithms, user interfaces, know-how, techniques, designs
                                 and other tangible or intangible technical material or information) made
-                                available to Customer by Grou.ps in providing the Service.
+                                available to Customer by RISG in providing the Service.
                             </p>
                         </div>
                         <div className="block">
                             <h3>Ownership.</h3>
                             <p>
-                                Customer acknowledges and agrees that as between Grou.ps and Customer, all
+                                Customer acknowledges and agrees that as between RISG and Customer, all
                                 right, title and interest in and to the Service (including the data,
                                 information, text, images, designs, sound, music, marks, logos, compilations
                                 (meaning the collection, arrangement and assembly of information other than
                                 Customer Data) and other content on or made available through the Service, other
-                                than Customer Data), the Grou.ps Technology and all improvements and
+                                than Customer Data), the RISG Technology and all improvements and
                                 derivatives of the foregoing (including all intellectual property and
                                 proprietary rights embodied therein or associated therewith) are and shall
-                                remain owned by Grou.ps or its licensors, and this Agreement in no way conveys
-                                any right, title or interest in the Service or the Grou.ps Technology other
+                                remain owned by RISG or its licensors, and this Agreement in no way conveys
+                                any right, title or interest in the Service or the RISG Technology other
                                 than a limited right to use the Service in accordance with this Agreement.
-                                Grou.ps acknowledges and agrees that as between Customer and Grou.ps, all
+                                RISG acknowledges and agrees that as between Customer and RISG, all
                                 right, title and interest in and to the Customer Data are and shall remain owned
                                 by Customer or its licensors, and this Agreement in no way conveys any right,
                                 title or interest in the Customer Data other than a limited right to use the
                                 Customer Data in accordance with the terms and conditions herein. No right or
                                 license is granted hereunder to Customer under any trademarks, service marks,
-                                trade names or logos. Customer shall not remove any Grou.ps trademark, service
+                                trade names or logos. Customer shall not remove any RISG trademark, service
                                 mark or logo, or any proprietary notices or labels (including any copyright or
-                                trademark notices) from the Service. Grou.ps acknowledges and agrees that as
-                                between Customer and Grou.ps, all right, title and interest in and to the
+                                trademark notices) from the Service. RISG acknowledges and agrees that as
+                                between Customer and RISG, all right, title and interest in and to the
                                 Customer Data are and shall remain owned by Customer or its licensors, and this
                                 Agreement in no way conveys any right, title or interest in the Customer Data
                                 other than a limited right to use the Customer Data in accordance with the terms
@@ -177,15 +177,15 @@ export default class TermsOfService extends React.Component {
                                     <h4>Fees.</h4>
                                     <p>
                                         In consideration of the provision of the Services, Customer shall pay
-                                        Grou.ps the monthly fees pursuant to the fee schedule and Grou.ps service
+                                        RISG the monthly fees pursuant to the fee schedule and RISG service
                                         plan chosen by Customer at [https://grou.ps/pricing/] and make such payment
-                                        in accordance with the instructions and schedule provided for by Grou.ps.
+                                        in accordance with the instructions and schedule provided for by RISG.
                                     </p>
                                 </li>
                                 <li>
                                     <h4>Increases.</h4>
                                     <p>
-                                        Grou.ps reserves the right to increase its fees at any time on
+                                        RISG reserves the right to increase its fees at any time on
                                         30 days’ notice to Customer. If Customer objects to the fee increase, Customer
                                         may terminate the Service by written notice during such 30 day period. If
                                         Customer does not exercise its right of termination during such period, Customer
@@ -200,7 +200,7 @@ export default class TermsOfService extends React.Component {
                                         foreign, federal, state, local or other) associated with this Agreement, the
                                         Service, or Customer’s access to the Service. Customer shall be solely
                                         responsible for all such taxes, duties and charges (except for taxes imposed on
-                                        Grou.ps’ income), which may be invoiced by Grou.ps from time-to-time.
+                                        RISG’ income), which may be invoiced by RISG from time-to-time.
                                     </p>
                                 </li>
                                 <li>
@@ -208,7 +208,7 @@ export default class TermsOfService extends React.Component {
                                     <p>
                                         Customer shall pay interest on all late payments at the lesser
                                         of (a) 1.5% per month or (b) the highest rate permissible under applicable law,
-                                        calculated daily and compounded monthly. Customer shall reimburse Grou.ps for
+                                        calculated daily and compounded monthly. Customer shall reimburse RISG for
                                         all costs and expenses, including attorneys’ fees, incurred in collecting any
                                         unpaid amounts owed by Customer hereunder.
                                     </p>
@@ -226,10 +226,10 @@ export default class TermsOfService extends React.Component {
                                         period of the initial subscription selected by the Customer (the “Initial
                                         Term”). After the initial term of the contract (as specified in the proposal),
                                         the Customer may terminate this Agreement upon 30 day’s written notice to
-                                        Grou.ps. Grou.ps reserves the right to terminate this Agreement at any time
+                                        RISG. RISG reserves the right to terminate this Agreement at any time
                                         upon written notice to the Customer and shall repay to Customer any pro-rated
                                         portion of the fees paid to it in connection with the Services that the Customer
-                                        would have received but for Grou.ps’ cancellation. In the event that the
+                                        would have received but for RISG’ cancellation. In the event that the
                                         Agreement is not terminated as set forth herein it shall continue to
                                         automatically renew for the length of the Initial Term (a “Renewal Term”). The
                                         Initial Term and any Renewal Term is referred to herein as a “Subscription
@@ -249,7 +249,7 @@ export default class TermsOfService extends React.Component {
                                     <h4>Effects of Termination; Survival.</h4>
                                     <p>
                                         Upon any termination of this Agreement: (a)
-                                        all rights granted to Customer hereunder shall terminate and Grou.ps shall no
+                                        all rights granted to Customer hereunder shall terminate and RISG shall no
                                         longer provide access to the Service to Customer, and (b) Customer shall cease
                                         using the Service. Any obligations that have accrued prior to termination shall
                                         survive termination of this Agreement. In addition, the following Sections, as
@@ -267,19 +267,19 @@ export default class TermsOfService extends React.Component {
                                     <p>
                                         All data and information which the Customer inputs into the
                                         Service (the “Customer Data”) is stored in a private and secure fashion, and
-                                        will not be used by Grou.ps except as permitted herein. Customer hereby grants
-                                        to Grou.ps a limited, non-exclusive, non-transferable, royalty-free right to
+                                        will not be used by RISG except as permitted herein. Customer hereby grants
+                                        to RISG a limited, non-exclusive, non-transferable, royalty-free right to
                                         use, reproduce, manipulate, and display the Customer Data solely in connection
                                         with providing the Service to Customer, and improving, developing and marketing
-                                        the Service (provided that Grou.ps may only use anonymized and aggregated
-                                        Customer Data to improve, develop and market the Services). Grou.ps may
+                                        the Service (provided that RISG may only use anonymized and aggregated
+                                        Customer Data to improve, develop and market the Services). RISG may
                                         analyze Customer Data, and data of other customers, to create aggregated and
                                         anonymized statistics or data that do not identify Customer or any individual,
-                                        household, user, browser, or device and Grou.ps may during and after the Term
+                                        household, user, browser, or device and RISG may during and after the Term
                                         use and disclose such statistics or data in its discretion. Except as specified
                                         otherwise in this Agreement, Customer shall be solely responsible for providing,
                                         updating, uploading and maintaining all Customer Data. The content of Customer
-                                        Data shall be Customer’s sole responsibility. Grou.ps shall operate the
+                                        Data shall be Customer’s sole responsibility. RISG shall operate the
                                         Service in a manner that provides reasonable information security for Customer
                                         Data, using commercially reasonable data backup, security, and recovery
                                         protections.
@@ -289,19 +289,19 @@ export default class TermsOfService extends React.Component {
                                     <h4>Additional Customer Responsibilities.</h4>
                                     <p>
                                         Customer is solely responsible for all
-                                        Customer Data. Grou.ps does not guarantee the accuracy, integrity or quality
+                                        Customer Data. RISG does not guarantee the accuracy, integrity or quality
                                         of Customer Data. Customer shall not: (a) upload or otherwise make available to
-                                        Grou.ps any Customer Data that is unlawful or that violates the rights of any
-                                        third parties; (b) upload or otherwise make available to Grou.ps any Customer
+                                        RISG any Customer Data that is unlawful or that violates the rights of any
+                                        third parties; (b) upload or otherwise make available to RISG any Customer
                                         Data that Customer does not have a right to transmit due to any law, rule,
                                         regulation or other obligation; (c) use, upload or otherwise transmit any
                                         Customer Data that infringes any intellectual property or other proprietary
-                                        rights of any third party; (d) upload or otherwise make available to Grou.ps
+                                        rights of any third party; (d) upload or otherwise make available to RISG
                                         any material that contains software viruses or any other computer code, files or
                                         programs designed to interrupt, destroy, limit the functionality of any computer
                                         software or hardware or telecommunications equipment; (e) interfere with or
                                         disrupt the Service or servers or networks connected to the Service; (f) upload
-                                        or otherwise make available to Grou.ps any Customer Data that constitutes
+                                        or otherwise make available to RISG any Customer Data that constitutes
                                         protected health information subject to the Health Insurance Portability and
                                         Accountability Act or any regulation, rule or standards issued thereunder, or
                                         constitutes similarly protected information under any applicable state, rule or
@@ -334,19 +334,19 @@ export default class TermsOfService extends React.Component {
                                     </p>
                                 </li>
                                 <li>
-                                    <h4>Grou.ps Limited Warranty.</h4>
+                                    <h4>RISG Limited Warranty.</h4>
                                     <p>
-                                        Grou.ps further represents and warrants that
+                                        RISG further represents and warrants that
                                         (a) it will provide the Service in a competent and workmanlike manner; and (b)
                                         it owns or otherwise has sufficient rights (including without limitation all
                                         intellectual property rights thereto) to grant the licenses to Customer under
-                                        this Agreement. Grou.ps does not warrant that it will be able to correct all
+                                        this Agreement. RISG does not warrant that it will be able to correct all
                                         reported defects or that use of the Service will be uninterrupted or error free.
-                                        Grou.ps makes no warranty regarding features or services provided by any third
-                                        parties. Grou.ps retains the right to modify its services and the Grou.ps
-                                        Technology in its sole discretion. Customer’s sole remedy for Grou.ps’ breach
-                                        of the warranty in this paragraph shall be that Grou.ps shall remedy the
-                                        applicable error, or if Grou.ps is unable to do so in a timely manner, refund
+                                        RISG makes no warranty regarding features or services provided by any third
+                                        parties. RISG retains the right to modify its services and the RISG
+                                        Technology in its sole discretion. Customer’s sole remedy for RISG’ breach
+                                        of the warranty in this paragraph shall be that RISG shall remedy the
+                                        applicable error, or if RISG is unable to do so in a timely manner, refund
                                         to Customer actual damages up to a limit of the fees paid for the Service for
                                         the Subscription Term during which the breach of warranty occurred.
                                     </p>
@@ -355,7 +355,7 @@ export default class TermsOfService extends React.Component {
                                     <h4>Disclaimer.</h4>
                                     <p>
                                         EXCEPT FOR THE WARRANTIES SET FORTH IN SECTIONS 8.1-8.2 ABOVE,
-                                        Grou.ps MAKES NO REPRESENTATION OR WARRANTY WHATSOEVER, AND HEREBY DISCLAIMS
+                                        RISG MAKES NO REPRESENTATION OR WARRANTY WHATSOEVER, AND HEREBY DISCLAIMS
                                         ALL REPRESENTATIONS AND WARRANTIES WITH RESPECT TO THE SERVICE (IN EACH CASE
                                         WHETHER EXPRESS OR IMPLIED BY LAW, COURSE OF DEALING, COURSE OF PERFORMANCE,
                                         USAGE OF TRADE OR OTHERWISE), INCLUDING ANY WARRANTY (A) OF MERCHANTABILITY,
@@ -373,16 +373,16 @@ export default class TermsOfService extends React.Component {
                                         THIRD PARTY HOSTING PROVIDER (THE “HOSTING CONTRACTOR”) AND USES THIRD PARTY
                                         SERVER HARDWARE, DISK STORAGE, FIREWALL PROTECTION, SERVER OPERATING SYSTEMS,
                                         MANAGEMENT PROGRAMS, WEB SERVER PROGRAMS FOR DELIVERY OF THE SERVICES (THE
-                                        “HOSTING CONTRACTOR SERVICES”). ADDITIONALLY, Grou.ps USES THIRD PARTIES TO
-                                        HELP RECEIVE PAYMENTS (“PAYMENT PROCESSOR”). Grou.ps MAY CHANGE ITS HOSTING
+                                        “HOSTING CONTRACTOR SERVICES”). ADDITIONALLY, RISG USES THIRD PARTIES TO
+                                        HELP RECEIVE PAYMENTS (“PAYMENT PROCESSOR”). RISG MAY CHANGE ITS HOSTING
                                         CONTRACTOR AND PAYMENT PROCESSOR AT ANY TIME. YOUR USE OF THE SERVICE IS SUBJECT
                                         TO ANY RESTRICTIONS IMPOSED BY THE HOSTING CONTRACTOR AND THE PAYMENT PROCESSOR,
-                                        AS APPLICABLE. NOTWITHSTANDING ANY OTHER PROVISION OF THIS AGREEMENT, Grou.ps
+                                        AS APPLICABLE. NOTWITHSTANDING ANY OTHER PROVISION OF THIS AGREEMENT, RISG
                                         SHALL NOT BE LIABLE FOR ANY PROBLEMS, FAILURES, DEFECTS OR ERRORS WITH THE
                                         SERVICE TO THE EXTENT CAUSED BY THE HOSTING CONTRACTOR OR PAYMENT PROCESSOR.
                                         CUSTOMER ACKNOWLEDGES THAT THE FEES PAYABLE FOR THE SERVICE REFLECT THE FACT
-                                        THAT Grou.ps IS NOT RESPONSIBLE FOR THE ACTS AND OMISSIONS OF THE HOSTING
-                                        CONTRACTOR OR PAYMENT PROCESSOR, AND THAT Grou.ps COULD NOT AFFORD TO PROVIDE
+                                        THAT RISG IS NOT RESPONSIBLE FOR THE ACTS AND OMISSIONS OF THE HOSTING
+                                        CONTRACTOR OR PAYMENT PROCESSOR, AND THAT RISG COULD NOT AFFORD TO PROVIDE
                                         THE SERVICE AT THE PRICES OFFERED IF IT WERE RESPONSIBLE FOR THE ACTS OR
                                         OMISSIONS OF THE HOSTING CONTRACTOR OR PAYMENT PROCESSOR
                                     </p>
@@ -395,10 +395,10 @@ export default class TermsOfService extends React.Component {
                                 <li>
                                     <h4>Damages Cap.</h4>
                                     <p>
-                                        TO THE FULLEST EXTENT PERMISSIBLE BY LAW, Grou.ps’ TOTAL
+                                        TO THE FULLEST EXTENT PERMISSIBLE BY LAW, RISG’ TOTAL
                                         LIABILITY FOR ALL DAMAGES ARISING OUT OF OR RELATED TO THE SERVICE OR THIS
                                         AGREEMENT, WHETHER IN CONTRACT, TORT (INCLUDING NEGLIGENCE) OR OTHERWISE, SHALL
-                                        NOT EXCEED THE TOTAL AMOUNT OF FEES PAID BY CUSTOMER TO Grou.ps UNDER THIS
+                                        NOT EXCEED THE TOTAL AMOUNT OF FEES PAID BY CUSTOMER TO RISG UNDER THIS
                                         AGREEMENT WITH RESPECT TO THE THEN-CURRENT SUBSCRIPTION TERM.
                                     </p>
                                 </li>
@@ -420,7 +420,7 @@ export default class TermsOfService extends React.Component {
                                     <h4>Basis of the Bargain.</h4>
                                     <p>
                                         THE PARTIES AGREE THAT THE LIMITATIONS OF LIABILITY SET
-                                        FORTH IN THIS SECTION 8 ARE A FUNDAMENTAL BASIS OF THE BARGAIN, THAT Grou.ps
+                                        FORTH IN THIS SECTION 8 ARE A FUNDAMENTAL BASIS OF THE BARGAIN, THAT RISG
                                         HAS SET ITS FEES IN RELIANCE ON THE ENFORCEABILITY OF THESE PROVISIONS, AND THAT
                                         THEY SHALL APPLY NOTWITHSTANDING THAT ANY REMEDY SHALL FAIL ITS ESSENTIAL
                                         PURPOSE.
@@ -432,9 +432,9 @@ export default class TermsOfService extends React.Component {
                             <h3>Indemnification.</h3>
                             <ol>
                                 <li>
-                                    <h4>Grou.ps Indemnification.</h4>
+                                    <h4>RISG Indemnification.</h4>
                                     <p>
-                                        Grou.ps shall defend, indemnify and hold
+                                        RISG shall defend, indemnify and hold
                                         harmless Customer and its directors, officers, and employees (“Customer
                                         Indemnified Parties”) from and against any third party claims, actions,
                                         proceedings, demands, lawsuits, damages, liabilities and expenses (including
@@ -448,10 +448,10 @@ export default class TermsOfService extends React.Component {
                                     <h4>Customer Indemnification.</h4>
                                     <p>
                                         Customer shall defend, indemnify and hold harmless
-                                        Grou.ps and its directors, officers, employees, agents and providers
-                                        (“Grou.ps Indemnified Parties”) from and against any Claims based on the
+                                        RISG and its directors, officers, employees, agents and providers
+                                        (“RISG Indemnified Parties”) from and against any Claims based on the
                                         Customer Data and to the extent that such Claim does not arise out of any action
-                                        of Grou.ps in the manipulating and transmitting the Customer Data in a manner
+                                        of RISG in the manipulating and transmitting the Customer Data in a manner
                                         not related to the provision of the Services.
                                     </p>
                                 </li>
@@ -460,7 +460,7 @@ export default class TermsOfService extends React.Component {
                                     <p>
                                         As conditions of the indemnification obligations in
                                         Sections 9.1-9.2 above: (a) the applicable Customer Indemnified Party or
-                                        Grou.ps Indemnified Party (the “Indemnitee”) will provide the indemnifying
+                                        RISG Indemnified Party (the “Indemnitee”) will provide the indemnifying
                                         Party (the “Indemnitor”) with prompt written notice of any Claim for which
                                         indemnification is sought (provided that failure to so notify will not remove
                                         the Indemnitor’s indemnification obligations except to the extent it is
@@ -477,22 +477,22 @@ export default class TermsOfService extends React.Component {
                                 <li>
                                     <h4>Exclusions.</h4>
                                     <p>
-                                        Grou.ps’ obligations in Section 9.1 above shall not apply to
+                                        RISG’ obligations in Section 9.1 above shall not apply to
                                         any Claim to the extent arising from or relating to (a) misuse of the Service
-                                        not strictly in accordance with the documentation therefor, Grou.ps’
+                                        not strictly in accordance with the documentation therefor, RISG’
                                         instructions, and this Agreement; (b) any modification, alteration or conversion
-                                        of the Service not created or approved in writing by Grou.ps; (c) any
+                                        of the Service not created or approved in writing by RISG; (c) any
                                         combination of the Service with any computer, hardware, software or service not
-                                        provided by Grou.ps; (d) Grou.ps’ compliance with specifications or other
+                                        provided by RISG; (d) RISG’ compliance with specifications or other
                                         requirements of Customer; or (e) any third party data or Customer Data. If the
                                         Service is or may be subject to a Claim of Infringement described in Section 9.1
-                                        above, Grou.ps may, at its cost and sole discretion: (i) obtain the right for
+                                        above, RISG may, at its cost and sole discretion: (i) obtain the right for
                                         Customer to continue using the Service as contemplated herein; (ii) replace or
                                         modify the Service so that it becomes non-Infringing without substantially
                                         compromising its principal functions; or (iii) to the extent the foregoing are
                                         not commercially reasonable, terminate this Agreement and return to Customer any
                                         pre-paid fees for the Service associated with the then-current Subscription
-                                        Term. Grou.ps’ obligations in this Section 9 shall be Grou.ps’ sole
+                                        Term. RISG’ obligations in this Section 9 shall be RISG’ sole
                                         obligations, and Customer’s sole remedies, in the event of any Infringement of
                                         intellectual property or proprietary rights by or related to the Service.
                                     </p>
@@ -523,8 +523,8 @@ export default class TermsOfService extends React.Component {
                                         rightfully obtained by the Receiving Party from a third party without
                                         restriction on use or disclosure. In addition, (i) the terms and conditions of
                                         this Agreement shall be deemed to be Confidential Information of both Parties;
-                                        (ii) the Service and Grou.ps Technology shall be deemed Confidential
-                                        Information of Grou.ps, regardless of whether or not they are labeled or
+                                        (ii) the Service and RISG Technology shall be deemed Confidential
+                                        Information of RISG, regardless of whether or not they are labeled or
                                         identified, or would reasonably be considered confidential; and (iii) Customer
                                         Data shall be deemed Confidential Information of Customer.
                                     </p>
@@ -583,10 +583,10 @@ export default class TermsOfService extends React.Component {
                                     <h4>Feedback.</h4>
                                     <p>
                                         Notwithstanding the above or anything to the contrary herein, to
-                                        the extent that Customer at any time provides Grou.ps with any feedback or
+                                        the extent that Customer at any time provides RISG with any feedback or
                                         suggestions regarding the Service, including potential improvements or changes
                                         thereto (collectively, “Feedback”), the Feedback shall not be considered
-                                        Confidential Information of Customer, and Grou.ps may use, disclose and
+                                        Confidential Information of Customer, and RISG may use, disclose and
                                         exploit the Feedback in any manner it chooses. All Feedback provided by Customer
                                         is provided “AS IS” and without warranty or representation of any kind.
                                     </p>
@@ -608,10 +608,10 @@ export default class TermsOfService extends React.Component {
                                 <p>
                                     Customer may not assign this Agreement, or assign any of its
                                     rights or delegate any of its obligations under this Agreement, without the
-                                    prior written consent of Grou.ps. Any purported assignment or delegation in
+                                    prior written consent of RISG. Any purported assignment or delegation in
                                     violation of this paragraph is null and void. This Agreement will bind and inure
                                     to the benefit of each Party’s successor and permitted assigns. Notwithstanding
-                                    the foregoing, Grou.ps may assign this Agreement to any acquirer of all or
+                                    the foregoing, RISG may assign this Agreement to any acquirer of all or
                                     substantially all of its assets as they relate to this Agreement.
                                 </p>
                             </li>
@@ -628,7 +628,7 @@ export default class TermsOfService extends React.Component {
                             <li>
                                 <h4>Notices.</h4>
                                 <p>
-                                    Grou.ps may give any notices issued in connection with this
+                                    RISG may give any notices issued in connection with this
                                     Agreement by email to Customer at the email address given by Customer when
                                     creating its account, and such notices shall be effective upon confirmation of
                                     transmission to Customer.
@@ -637,11 +637,11 @@ export default class TermsOfService extends React.Component {
                             <li>
                                 <h4>Force Majeure.</h4>
                                 <p>
-                                    Grou.ps shall not be liable or responsible to Customer, nor
+                                    RISG shall not be liable or responsible to Customer, nor
                                     be considered to have defaulted or breached this Agreement, for any failure or
                                     delay in fulfilling or performing any provision of this Agreement to the extent
                                     such failure or delay is caused by or results from any act, circumstance or
-                                    other cause beyond the reasonable control of Grou.ps, including acts of God,
+                                    other cause beyond the reasonable control of RISG, including acts of God,
                                     flood, fire, earthquake, explosion, governmental actions, war, invasion or
                                     hostilities (whether war is declared or not), terrorist threats or acts, riot,
                                     or other civil unrest, national emergency, revolution, insurrection, epidemic,
@@ -654,10 +654,10 @@ export default class TermsOfService extends React.Component {
                             <li>
                                 <h4>Publicity.</h4>
                                 <p>
-                                    Grou.ps shall have the right to use Customer’s name and logo on
-                                    client lists published on Grou.ps’ website and in marketing materials.
-                                    Grou.ps may announce the relationship hereunder in a press release provided
-                                    that Grou.ps obtains Customer’s prior approval of the wording of the release
+                                    RISG shall have the right to use Customer’s name and logo on
+                                    client lists published on RISG’ website and in marketing materials.
+                                    RISG may announce the relationship hereunder in a press release provided
+                                    that RISG obtains Customer’s prior approval of the wording of the release
                                     (not unreasonably withheld).
                                 </p>
                             </li>
@@ -676,7 +676,7 @@ export default class TermsOfService extends React.Component {
                                     Any and all controversies, disputes, demands, counts,
                                     claims, or causes of action (including the interpretation and scope of this
                                     clause, and the arbitrability of the controversy, dispute, demand, count, claim,
-                                    or cause of action) between Customer and Grou.ps or its employees, agents,
+                                    or cause of action) between Customer and RISG or its employees, agents,
                                     successors, or assigns, will exclusively be settled through binding and
                                     confidential arbitration. Arbitration will be subject to the Federal Arbitration
                                     Act and not any state arbitration law. The arbitration will be conducted before
@@ -698,16 +698,16 @@ export default class TermsOfService extends React.Component {
                                     would.
                                 </p>
                                 <p>
-                                    Customer and Grou.ps agree as follows: (a) ANY CLAIMS BROUGHT BY A PARTY
+                                    Customer and RISG agree as follows: (a) ANY CLAIMS BROUGHT BY A PARTY
                                     MUST BE BROUGHT IN SUCH PARTY’S INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR
                                     CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING; (b) THE
                                     ARBITRATOR MAY NOT CONSOLIDATE MORE THAN ONE PERSON’S CLAIMS, MAY NOT OTHERWISE
                                     PRESIDE OVER ANY FORM OF A REPRESENTATIVE OR CLASS PROCEEDING, AND MAY NOT AWARD
                                     CLASS-WIDE RELIEF, (c) in the event that Customer is able to demonstrate that
                                     the costs of arbitration will be prohibitive as compared to costs of litigation,
-                                    Grou.ps will pay as much of your filing and hearing fees in connection with
+                                    RISG will pay as much of your filing and hearing fees in connection with
                                     the arbitration as the arbitrator deems necessary to prevent the arbitration
-                                    from being cost-prohibitive as compared to the cost of litigation, (d) Grou.ps
+                                    from being cost-prohibitive as compared to the cost of litigation, (d) RISG
                                     also reserves the right in its sole and exclusive discretion to assume
                                     responsibility for all of the costs of the arbitration; (e) the arbitrator will
                                     honor claims of privilege and privacy recognized at law; (f) the arbitration
@@ -721,7 +721,7 @@ export default class TermsOfService extends React.Component {
                                     be determined by the applicable law.
                                 </p>
                                 <p>
-                                    Notwithstanding the foregoing (i) either Customer or Grou.ps may bring an
+                                    Notwithstanding the foregoing (i) either Customer or RISG may bring an
                                     individual action in small claims court to the extent eligible, and (ii) either
                                     Party may seek emergency equitable relief before the state or federal courts
                                     located in Colorado in order to maintain the status quo pending arbitration, and

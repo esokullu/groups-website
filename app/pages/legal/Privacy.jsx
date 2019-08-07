@@ -16,23 +16,23 @@ export default class Privacy extends React.Component {
                         <div className="introduction block">
                             <h3>Introduction</h3>
                             <p>
-                                Grou.ps, Inc. (“us,” “we,” or ”Grou.ps”) is committed to respecting the
+                                Research in Social Graph (“us,” “we,” or ”RISG”) is committed to respecting the
                                 privacy rights of our customers (“Customers”) and their end users (“End Users”),
-                                as well as other users of the Grou.ps newsfeed API and related services
-                                (“Services”) and the Grou.ps websites, including (groups-inc.com) and any
+                                as well as other users of the RISG newsfeed API and related services
+                                (“Services”) and the RISG websites, including (groups-inc.com) and any
                                 successor sites (collectively, “Websites” and each individually, a “Website”).
                                 We created this privacy policy (“Privacy Policy”) to give you confidence as you
                                 use the Services and Websites, and to demonstrate our commitment to fair
                                 information practices and the protection of privacy. This Privacy Policy is only
                                 applicable to the Services and Websites, and not to any other websites that you
                                 may be able to access from the Services Websites or any websites of the partners
-                                or Customers of Grou.ps, each of which may have data collection, storage, and
+                                or Customers of RISG, each of which may have data collection, storage, and
                                 use practices and policies that differ materially from this Privacy Policy. Your
                                 use of the Websites and certain aspects of the Services are governed by this
                                 Privacy Policy and the Terms of Service and in some instances a Subscription
-                                Agreement by and between you and Grou.ps. The use of information collected
+                                Agreement by and between you and RISG. The use of information collected
                                 through our service shall be limited to the purpose of providing the service for
-                                which our Customer has engaged Grou.ps.
+                                which our Customer has engaged RISG.
                             </p>
                         </div>
                         <div className="block">
@@ -43,10 +43,10 @@ export default class Privacy extends React.Component {
                                 traffic data to learn more about visitors’ use of the Websites and to improve
                                 the quality of the content and functionality of the Websites, as well as to
                                 target our offerings to the people most interested in them based on their use of
-                                the Websites. In order to provide the Services to our Customers, Grou.ps
+                                the Websites. In order to provide the Services to our Customers, RISG
                                 collects certain information and data about End Users (“End User Information”).
-                                Grou.ps provides analyses of anonymized, aggregate End User Information to its
-                                Customers and to other third parties (“Analyzed Data”). Grou.ps takes
+                                RISG provides analyses of anonymized, aggregate End User Information to its
+                                Customers and to other third parties (“Analyzed Data”). RISG takes
                                 commercially reasonable efforts to ensure that Analyzed Data does not include
                                 any PII, as defined below
                             </p>
@@ -60,7 +60,7 @@ export default class Privacy extends React.Component {
                                 billing information such as credit card number. We receive and store any PII
                                 users enter on our Websites, send to us in an email or voluntarily provide to us
                                 in any other way. We may also collect PII that is necessary to fulfill
-                                Grou.ps’ legitimate interests, which will be described to you at the time of
+                                RISG’ legitimate interests, which will be described to you at the time of
                                 collection. We will use this information for the purposes of which it was
                                 collected.
                             </p>
@@ -70,7 +70,7 @@ export default class Privacy extends React.Component {
                             <p>
                                 In order for you to access certain Services, we may require you to provide us
                                 with certain PII, such as your name, phone number and e-mail address. You may
-                                also provide Grou.ps with certain optional information at your sole discretion
+                                also provide RISG with certain optional information at your sole discretion
                                 (“Optional Information”). For the purpose of this Privacy Policy, all Optional
                                 Information that you provide us will be deemed PII.
                             </p>
@@ -86,13 +86,13 @@ export default class Privacy extends React.Component {
                         <div className="block">
                             <h3>PII Collected via the Services</h3>
                             <p>
-                                Use of the Services does not require that Grou.ps’ customers provide to
-                                Grou.ps, and Grou.ps requests that its Customers do not provide to it, any
+                                Use of the Services does not require that RISG’ customers provide to
+                                RISG, and RISG requests that its Customers do not provide to it, any
                                 PII relating to their End Users. End Users should be aware, however, that
-                                Grou.ps’ Customers may request such information from End Users in order to
+                                RISG’ Customers may request such information from End Users in order to
                                 enable their use of and access to the Services and such PII may be included in
-                                the End User Information provided to Grou.ps. To the extent Grou.ps does
-                                receive any PII as part of the End User Information, Grou.ps shall make
+                                the End User Information provided to RISG. To the extent RISG does
+                                receive any PII as part of the End User Information, RISG shall make
                                 reasonable efforts, consistent with the terms of this Privacy Policy, to
                                 maintain the confidentiality of such PII.
                             </p>
@@ -116,7 +116,7 @@ export default class Privacy extends React.Component {
                             <h3>Cookies and Tracking technologies</h3>
                             <p>
                                 Technologies such as: cookies, beacons, tags and scripts are used by
-                                Grou.ps and our marketing partners, affiliates, analytics, and marketing
+                                RISG and our marketing partners, affiliates, analytics, and marketing
                                 service providers. These technologies are used in analyzing trends,
                                 administering the site, tracking users’ movements around the site and to gather
                                 demographic information about our user base as a whole. We may receive reports
@@ -142,9 +142,9 @@ export default class Privacy extends React.Component {
                         <div className="block">
                             <h3>Use of PII</h3>
                             <p>
-                                When you send e-mail or other communications to Grou.ps, we may retain
+                                When you send e-mail or other communications to RISG, we may retain
                                 those communications in order to process your inquiries, respond to your
-                                requests and improve our services. Grou.ps may also use PII for various
+                                requests and improve our services. RISG may also use PII for various
                                 purposes, including without limitation to:
                             </p>
                             <ul>
@@ -219,7 +219,7 @@ export default class Privacy extends React.Component {
                         <div className="block">
                             <h3>Information Sharing</h3>
                             <p>
-                                Grou.ps may share PII with any third parties in the following limited
+                                RISG may share PII with any third parties in the following limited
                                 circumstances:
                             </p>
                             <ul>
@@ -233,7 +233,7 @@ export default class Privacy extends React.Component {
                                 <li>
                                     <p>
                                         We may share your PII with companies that are affiliated with us (that is,
-                                        that control, are controlled by, or are under common control with Grou.ps).
+                                        that control, are controlled by, or are under common control with RISG).
                                     </p>
                                 </li>
                                 <li>
@@ -243,13 +243,13 @@ export default class Privacy extends React.Component {
                                         provide the requested Services and subject to this Privacy Policy. Such Partners
                                         shall be bound to uphold the same standards of security and confidentiality that
                                         we have promised to you in this Privacy Policy, and they will only use your PII
-                                        to carry out their specific business obligations to Grou.ps and to provide
+                                        to carry out their specific business obligations to RISG and to provide
                                         your requested Services.
                                     </p>
                                 </li>
                                 <li>
                                     <p>
-                                        If Grou.ps is involved in a merger, acquisition, or sale of all or a
+                                        If RISG is involved in a merger, acquisition, or sale of all or a
                                         portion of its assets, you will be notified via email and/or a prominent notice
                                         on our Website of any change in ownership or uses of your PII, as well as any
                                         choices you may have regarding your PII.
@@ -264,7 +264,7 @@ export default class Privacy extends React.Component {
                                 private and will not share it with third parties, unless we believe in good
                                 faith that disclosure of your PII or any other information we collect about you
                                 is necessary to: (1) comply with applicable laws, or a court order or other
-                                legal process; (2) protect the rights, property or safety of Grou.ps or
+                                legal process; (2) protect the rights, property or safety of RISG or
                                 another party; (3) enforce our Terms of Service (or applicable Subscription
                                 Agreement) or (4) respond to claims that any posting or other content violates
                                 the rights of third parties.
@@ -315,9 +315,9 @@ export default class Privacy extends React.Component {
                                 As a registered user of the Websites, you can modify or delete some of the
                                 PII you have included in your profile by logging in and accessing your account.
                                 You cannot, however, change your username once you have registered. Upon your
-                                request, Grou.ps will use commercially reasonable efforts to delete your
+                                request, RISG will use commercially reasonable efforts to delete your
                                 account and the PII in your profile; however, it may be impossible to remove
-                                your account without some residual information being retained by Grou.ps. We
+                                your account without some residual information being retained by RISG. We
                                 will respond to your request to access within 30 days. We may withhold
                                 information where the search for that information would require disproportionate
                                 effort or have a disproportionate effect to, for example, the cost of providing
@@ -355,7 +355,7 @@ export default class Privacy extends React.Component {
                         <div className="block">
                             <h3>International Operations</h3>
                             <p>
-                                Grou.ps is based in the United States of America. If you are from a country
+                                RISG is based in the United States of America. If you are from a country
                                 outside of the United States of America with laws governing data collection,
                                 use, and disclosure that may differ from U.S. law and you provide PII to us,
                                 please note that any PII that you provide to us may be transferred to the United
@@ -392,24 +392,24 @@ export default class Privacy extends React.Component {
                             <h3>Links to Other Websites</h3>
                             <p>
                                 Our Websites includes links to other websites whose privacy practices may
-                                differ from those of Grou.ps. If you submit PII to any of those sites, your
+                                differ from those of RISG. If you submit PII to any of those sites, your
                                 information is governed by their privacy statements. We encourage you to
                                 carefully read the privacy statement of any website you visit.
                             </p>
                         </div>
                         <div className="block">
-                            <h3>Information Related to Data Collected through the Grou.ps Service</h3>
+                            <h3>Information Related to Data Collected through the RISG Service</h3>
                             <p>
-                                Grou.ps collects information under the direction of its Customers, and has
+                                RISG collects information under the direction of its Customers, and has
                                 no direct relationship with the individuals whose personal data it processes.
-                                Where Grou.ps collects information on behalf of its Customers, Grou.ps shall
+                                Where RISG collects information on behalf of its Customers, RISG shall
                                 be considered the processor of such information.
                             </p>
                         </div>
                         <div className="block">
                             <h3>Service Provider, Sub-Processors/Onward Transfer</h3>
                             <p>
-                                Grou.ps may transfer PII to companies that help us provide our service.
+                                RISG may transfer PII to companies that help us provide our service.
                                 Transfers to subsequent third parties are covered by the provisions in this
                                 Privacy Policy regarding notice and agreements with our Customers.
                             </p>
@@ -417,18 +417,18 @@ export default class Privacy extends React.Component {
                         <div className="block">
                             <h3>Access to Data Controlled by our Customers</h3>
                             <p>
-                                Grou.ps has no direct relationship with the individuals whose personal data
+                                RISG has no direct relationship with the individuals whose personal data
                                 it processes. An individual who seeks access, or who seeks to correct, amend, or
-                                delete inaccurate data should direct his query to the Grou.ps’ Customer (the
-                                data controller). If the Customer requests Grou.ps to remove the data, we will
+                                delete inaccurate data should direct his query to the RISG’ Customer (the
+                                data controller). If the Customer requests RISG to remove the data, we will
                                 respond to their request within 30 business days.
                             </p>
                         </div>
                         <div className="block">
                             <h3>Data Retention</h3>
                             <p>
-                                Grou.ps will retain personal data we process on behalf of our Customers for
-                                as long as needed to provide services to our Customers. Grou.ps will also
+                                RISG will retain personal data we process on behalf of our Customers for
+                                as long as needed to provide services to our Customers. RISG will also
                                 retain and use this PII as necessary to comply with our legal obligations,
                                 resolve disputes, and enforce our agreements.
                             </p>

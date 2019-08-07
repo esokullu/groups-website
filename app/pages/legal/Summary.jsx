@@ -33,7 +33,7 @@ export default class Summary extends React.Component {
                                 <li>
                                     <h4>Uptime:</h4>
                                     <p>
-                                        The team behind Grou.ps, Inc. has vast experience with running high scalability
+                                        The team behind Research in Social Graph has vast experience with running high scalability
                                         websites. Every commit is unit tested, we use best practices for devops and our
                                         clients continuously run integration tests against the service. Uptime is
                                         something we take very seriously. However social software systems are complex, we will
