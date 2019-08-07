@@ -210,7 +210,7 @@ export default class Privacy extends React.Component {
                             <p>
                                 You may choose to stop receiving marketing emails or other informational
                                 emails from us by following the unsubscribe instructions included in these
-                                emails or you can contact us at <a href="mailto:cs@groups-inc.com">cs@groups-inc.com</a>. 
+                                emails or you can contact us at <a href="mailto:business@risg.co">business@risg.co</a>. 
                                 If you opt out, we may still send you non-marketing emails. Non-marketing 
                                 emails include emails about your account with us (if you have one) and 
                                 our business dealings with you.
@@ -331,7 +331,7 @@ export default class Privacy extends React.Component {
                                 We will retain your information for as long as your account is active or as
                                 needed to provide you services. If you wish to cancel your account or request
                                 that we no longer use your information to provide you services contact us 
-                                at <a href="mailto:cs@groups-inc.com">cs@groups-inc.com</a>. We will retain
+                                at <a href="mailto:business@risg.co">business@risg.co</a>. We will retain
                                 and use your information as necessary to comply with our legal obligations,
                                 resolve disputes, and enforce our agreements.
                             </p>
@@ -374,7 +374,7 @@ export default class Privacy extends React.Component {
                             </p>
                             <p>
                                 To request removal of your PII from our blog or community forum, contact us 
-                                at <a href="mailto:cs@groups-inc.com">cs@groups-inc.com</a>. In some cases,
+                                at <a href="mailto:business@risg.co">business@risg.co</a>. In some cases,
                                 we may not be able to remove your PII, in which case we will let you know if we
                                 are unable to do so and why.
                             </p>
@@ -385,7 +385,7 @@ export default class Privacy extends React.Component {
                                 We may display personal testimonials of satisfied customers on our site in
                                 addition to other endorsements. With your consent we may post your testimonial
                                 along with your name. If you wish to update or delete your testimonial, you can
-                                contact us at <a href="mailto:cs@groups-inc.com">cs@groups-inc.com</a>.
+                                contact us at <a href="mailto:business@risg.co">business@risg.co</a>.
                             </p>
                         </div>
                         <div className="block">
@@ -437,7 +437,7 @@ export default class Privacy extends React.Component {
                             <h3>Contacts</h3>
                             <p>
                                 If you have any comments, concerns or questions about this Privacy Policy,
-                                send us an email at <a href="mailto:cs@groups-inc.com">cs@groups-inc.com</a>
+                                send us an email at <a href="mailto:business@risg.co">business@risg.co</a>
                             </p>
                         </div>
                         <div className="block">
