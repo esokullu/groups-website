@@ -4,6 +4,7 @@ import {Redirect} from 'react-router-dom';
 
 // Components
 import Main from '~/components/Main';
+import SubscriptionNofication from '~/components/SubscriptionNotification';
 
 // Pages
 import Basics from './instance/Basics'; // Settings > Instance > Basics
@@ -93,6 +94,11 @@ export default class Instance extends React.Component {
             : <Main data-page="instance">
                 <div className="container">
                     <h1>{label}</h1>
+                    {
+                        this.state.configuration.subscription ?
+                            null
+                            : <SubscriptionNofication />
+                    }
                     {item === 'basics' &&
                         <Basics
                             configuration={this.state.configuration}
