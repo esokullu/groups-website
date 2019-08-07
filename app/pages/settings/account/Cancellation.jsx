@@ -18,13 +18,15 @@ export default class Cancellation extends React.Component {
         this.handleSelection = this.handleSelection.bind(this);
         this.handleReasonSubmit = this.handleReasonSubmit.bind(this);
         this.options = [
+            /*
             {
                 value: 'expensive',
                 label: 'It\'s expensive. I cannot afford it.'
             },
-            {
-                value: 'difficult',
-                label: 'It\'s difficult. I have trouble using it.'
+            */
+           {
+            value: 'bugs',
+            label: 'Encountered too many bugs. Gave up!'
             },
             {
                 value: 'other',
@@ -56,7 +58,10 @@ export default class Cancellation extends React.Component {
                     });
                 } else {
                     target.classList.remove('loading');
-                    alert('An unknown problem occured. Please try again.')
+                    console.log('An unknown problem occured. Please try again.');
+                    this.setState({
+                        done: true
+                    });
                 }
             });
         }
@@ -74,7 +79,10 @@ export default class Cancellation extends React.Component {
                 });
             } else {
                 target.classList.remove('loading');
-                alert('An unknown problem occured. Please try again.')
+                console.log('An unknown problem occured. Please try again.');
+                    this.setState({
+                        done: true
+                });
             }
         });
         
@@ -139,11 +147,10 @@ export default class Cancellation extends React.Component {
                                                         ? 'Please explain...'
                                                         : 'Please explain... (255 characters max.)'
                                                 } />
-                                            {reason.explanation && reason.explanation.length <= 10 &&
-                                                <button onClick={this.handleReasonSubmit}>Submit</button>
-                                            }
+                                            <button onClick={this.handleReasonSubmit}>Submit</button>
                                         </Fragment>
                                     }
+                                    
                                 </div>                                
                                 {/*
                                 {reason.code === 'expensive' &&
@@ -166,6 +173,17 @@ export default class Cancellation extends React.Component {
                                     </div>
                                 }
                                 */}
+                                {(reason.code === 'difficult'||reason.code === 'bugs')&&
+                                    <div className="block">
+                                        {/*
+                                        <p>
+                                            <b>We will be glad to solve your technical problems.</b>
+                                        </p>
+                                        <button onClick={this.handleReasonSubmit}>Get Help</button>
+                                        */}
+                                        <button onClick={this.handleReasonSubmit}>Submit</button>
+                                    </div>
+                                }
                             </Fragment>
                         }
                         {!this.state.instance &&
@@ -174,7 +192,15 @@ export default class Cancellation extends React.Component {
                             </div>
                         }
                     </Fragment>
-                    : <Fragment>
+                    : 
+                    
+                    <Fragment>
+                                <h3>All set!</h3>
+                                <p>Thanks for the feedback. <a href="/">Click to continue</a>.</p>
+                    </Fragment>
+                            
+                            /*
+                    <Fragment>
                         {reason.code === 'expensive' &&
                             <Fragment>
                                 <h3>All set!</h3>
@@ -198,10 +224,11 @@ export default class Cancellation extends React.Component {
                                     </div>
                                     <iframe src="https://calendly.com/hai-at-grou-ps?embed_domain=www.calendly-embed.com&amp;embed_type=Inline" width="100%" height="100%" frameBorder="0"></iframe>
                                 </div>
-                                */}
                             </Fragment>
+                            
                         }
                     </Fragment>
+                    */
                 }
             </section>
         )

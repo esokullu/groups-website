@@ -13,6 +13,7 @@ export default class Subscriptions extends React.Component {
             failMessages: []
         }
         this.handleCancellation = this.handleCancellation.bind(this);
+        this.handleReactivate = this.handleReactivate.bind(this);
         //this.handleNewInstance = this.handleNewInstance.bind(this);
         this.handleExistingInstance = this.handleExistingInstance.bind(this);
     }
@@ -22,6 +23,9 @@ export default class Subscriptions extends React.Component {
                 cancellation: {id}
             });
         }
+    }
+    handleReactivate(id) {
+        window.alert('Please contact us at business@risg.co');
     }
     /*
     handleNewInstance(event) {
@@ -58,9 +62,11 @@ export default class Subscriptions extends React.Component {
                     <li key={key}>
                         <h4>
                             {item.uuid}
-                            {item.is_subscribed &&
+                            {/*
+                            {!item.subscription &&
                                 <a onClick={() => this.handleCancellation(item.id)}>&#10006;</a>
                             }
+                            */}
                         </h4>
                         <div className="properties">
                             <div>
@@ -77,8 +83,11 @@ export default class Subscriptions extends React.Component {
                                 <b>URL:</b> {item.url}
                             </div>
                             <div>
-                                <b>Manage:</b> <a href={item.selfServicePage} target="_blank">{item.selfServicePage}</a>
-                            </div>
+                                    <b>Billing:</b>&nbsp;
+                                        <a href={item.selfServicePage} target="_blank">Update Payment</a> &nbsp;
+                                        {item.subscription && <span>&middot; &nbsp;<a onClick={() => this.handleCancellation(item.id)}>Cancel</a></span>}
+                                        {!item.subscription && <span>&middot; &nbsp;<a onClick={() => this.handleReactivate(item.id)}>Reactivate</a></span>}
+                                </div>
                         </div>
                         {/*
                         {item.subscription ||
