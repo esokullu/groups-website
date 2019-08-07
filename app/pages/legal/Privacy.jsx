@@ -19,7 +19,7 @@ export default class Privacy extends React.Component {
                                 Research in Social Graph (“us,” “we,” or ”RISG”) is committed to respecting the
                                 privacy rights of our customers (“Customers”) and their end users (“End Users”),
                                 as well as other users of the RISG newsfeed API and related services
-                                (“Services”) and the RISG websites, including (groups-inc.com) and any
+                                (“Services”) and the RISG websites, including (risg.co) and any
                                 successor sites (collectively, “Websites” and each individually, a “Website”).
                                 We created this privacy policy (“Privacy Policy”) to give you confidence as you
                                 use the Services and Websites, and to demonstrate our commitment to fair
