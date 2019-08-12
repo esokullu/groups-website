@@ -8,6 +8,7 @@ export default function(uuid, basics, callback) {
 		token: token,
 		groups_title: basics.title,
 		groups_description: basics.description,
+		groups_name: basics.groupsid,
 		theme: basics.theme,
 		color: basics.color
 	}, function(response) {

@@ -10,16 +10,22 @@ export default class Basics extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            groupsid: this.props.configuration.name || '',
             title: this.props.configuration.title || '',
             description: this.props.configuration.description || '',
             theme: this.props.configuration.theme,
             color: this.props.configuration.color
         }
+        this.updateIdInput = this.updateIdInput.bind(this);
         this.updateTitleInput = this.updateTitleInput.bind(this);
         this.updateDescriptionInput = this.updateDescriptionInput.bind(this);
         this.updateThemeInput = this.updateThemeInput.bind(this);
         this.updateColorInput = this.updateColorInput.bind(this);
         this.handleBasicsSubmit = this.handleBasicsSubmit.bind(this);
+    }
+    updateIdInput(event) {
+        let groupsid = event.target.value;
+        this.setState({groupsid});
     }
     updateTitleInput(event) {
         let title = event.target.value;
@@ -58,6 +64,17 @@ export default class Basics extends React.Component {
         return (
           <section className="basics">
               <form className="narrow options">
+                <fieldset className="groupsid">
+                      <h3>Group ID</h3>
+                      <input type="text" value="https://gr.ps/" readOnly={true} style={{width:'45%'}} />
+                      <input
+                          ref="title"
+                          type="text"
+                          value={this.state.groupsid}
+                          placeholder="Group ID"
+                          onChange={this.updateIdInput}
+                          style={{width:'55%'}} />
+                  </fieldset>
                   <fieldset className="title">
                       <h3>Title</h3>
                       <input

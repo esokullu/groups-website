@@ -60,6 +60,7 @@ export default class Instance extends React.Component {
                 configuration: {
                     slug: instance.name,
                     id: instance.id,
+                    name: instance.name,
                     uuid: instance.uuid,
                     title: instance.title,
                     theme: instance.theme,
