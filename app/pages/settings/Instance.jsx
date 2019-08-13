@@ -70,7 +70,8 @@ export default class Instance extends React.Component {
                     moderated: instance.moderated,
                     members: instance.members || {},
                     pendingComments: instance.pendingComments || [],
-                    hash: instance.hash
+                    hash: instance.hash,
+                    subscription: instance.subscription
                 }
             });
         } else {
