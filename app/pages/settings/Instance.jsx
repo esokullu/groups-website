@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom';
 
 // Components
 import Main from '~/components/Main';
-import SubscriptionNofication from '~/components/SubscriptionNotification';
+import SubscriptionNotification from '~/components/SubscriptionNotification';
 
 // Pages
 import Basics from './instance/Basics'; // Settings > Instance > Basics
@@ -55,6 +55,8 @@ export default class Instance extends React.Component {
     setItemProperties() {
         let {item, identifier} = this.props.params;
         let instance = this.props.instances.filter(instance => instance.name === identifier)[0];
+        let _email = this.props.email;
+        let _uid = this.props.uid;
         if(this.availablePages.includes(item) && instance) {
             this.setState({
                 configuration: {
@@ -71,7 +73,9 @@ export default class Instance extends React.Component {
                     members: instance.members || {},
                     pendingComments: instance.pendingComments || [],
                     hash: instance.hash,
-                    subscription: instance.subscription
+                    subscription: instance.subscription,
+                    email: _email,
+                    userId: _uid
                 }
             });
         } else {
@@ -99,7 +103,7 @@ export default class Instance extends React.Component {
                     {
                         this.state.configuration.subscription ?
                             null
-                            : <SubscriptionNofication />
+                            : <SubscriptionNotification userId={this.state.configuration.userId} uuid={this.state.configuration.uuid} email={this.state.configuration.email} />
                     }
                     {item === 'basics' &&
                         <Basics

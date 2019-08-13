@@ -4,6 +4,7 @@ import {Link, Redirect} from 'react-router-dom';
 
 // Scripts
 import unsubscribe from '~/scripts/unsubscribe';
+import resubscribe from '~/scripts/resubscribe';
 
 // Page: Settings > Account > Subscriptions
 export default class Subscriptions extends React.Component {
@@ -25,7 +26,11 @@ export default class Subscriptions extends React.Component {
         }
     }
     handleReactivate(id) {
-        window.alert('Please contact us at business@risg.co');
+        resubscribe(this.props.uuid, (response) => {
+            if(window.confirm('Reload the page?')) {
+                window.location.href="/settings";
+            }
+        });
     }
     /*
     handleNewInstance(event) {
@@ -108,10 +113,10 @@ export default class Subscriptions extends React.Component {
                     </li>
                     )}
                 </ul>
-                {/*<Link to="/setup">
-                    <button>Add New Instance</button>
-                </Link>*/
-                }
+                <p>&nbsp;</p>
+                <Link to={"/pay?email="+this.props.account.email}>
+                    <button>Create a new instance</button>
+                </Link>
             </section>
     }
 }

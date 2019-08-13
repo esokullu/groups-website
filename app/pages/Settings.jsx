@@ -123,6 +123,8 @@ export default class Settings extends React.Component {
                                 params.item
                                     ? <Instance
                                         instances={this.state.instances}
+                                        email={this.props.client.account.email}
+                                        uid={this.props.client.id}
                                         params={params}
                                         menu={this.state.menu}
                                         update={this.props.setClient} />

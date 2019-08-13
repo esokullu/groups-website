@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default class SubscriptionNofication extends React.Component {
+export default class SubscriptionNotification extends React.Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick() { 
+        window.location.href = "/settings/account/"+this.props.userId+"/subscriptions";
     }
     render() {
         return (
-            <p className="subscription-nofication">This instance is inactive, so the panel may not function properly. Create a new account or to reactivate please email business@risg.co</p>
+            <p className="subscription-notification">This instance is inactive, so the panel may not function properly. <a onClick={this.handleClick}>Click to revisit and reactivate</a> </p>
         )
     }
 }
