@@ -106,7 +106,7 @@ export default class Settings extends React.Component {
                                             title: selectedInstance.title,
                                         }
                                     )}
-                                    selectedInstanceId={this.state.selectedInstanceIdx} />
+                                    selectedInstanceIdx={this.state.selectedInstanceIdx} />
                             </Sidebar>
                             {params.category === 'account' && (
                                 params.item
