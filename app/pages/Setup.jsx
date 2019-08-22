@@ -752,7 +752,7 @@ export default class Setup extends React.Component {
                                                     name={digitIndex}
                                                     key={digitIndex}
                                                     ref={'verificationCode'+digitIndex}
-                                                    type="number"
+                                                    type="text"
                                                     value={this.state.verificationCode[digitIndex] ? this.state.verificationCode[digitIndex] : ""}
                                                 />
                                             ))
