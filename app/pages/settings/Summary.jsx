@@ -18,6 +18,9 @@ export default class Summary extends React.Component {
                         <div className="block">
                             <h3 id="information block">Welcome to your dashboard!</h3>
                             <p>Please select an item on the left menu to start.</p>
+                            <p>
+                                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RhGsK7I5EkI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </p>
                         </div>
                     </section>
                 </div>
