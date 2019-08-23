@@ -21,6 +21,9 @@ export default class Summary extends React.Component {
                             <p>
                                 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RhGsK7I5EkI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </p>
+                            <p>
+                                <a href="https://www.youtube.com/watch?v=RhGsK7I5EkI" target="_blank">Watch full-screen on YouTube</a>
+                            </p>
                         </div>
                     </section>
                 </div>
