@@ -837,7 +837,10 @@ export default class Setup extends React.Component {
                     <div className="container">
                         <h3>You're all set!</h3>
                         <p>
-                            You should get an email from us soon.
+                            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RhGsK7I5EkI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </p>
+                        <p>
+                            You should get an email from us soon with your admin credentials. Please note your network is an independent instance; therefore the password you use for this website will be different than the "admin" password on your new network.
                             <br />
                             Visit your network at <a href={'https://gr.ps/' + this.state.groupsId}>{'https://gr.ps/' + this.state.groupsId}</a>
                         </p>
