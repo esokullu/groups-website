@@ -12,6 +12,7 @@ export default class Members extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            groupsid: this.props.configuration.name || '',
             pagination: {
                 total: 0,
                 current_page: 1,
@@ -56,13 +57,22 @@ export default class Members extends React.Component {
         }
     }
     render() {
+        let address = "https://gr.ps/" + this.state.groupsid;
+        let password_page = "/settings/instances/" + this.state.initial_groupsid + "/password";
         return (
             <section className="members">
+                {/*
                 <Table
                     members={this.state.members}
                     pagination={this.state.pagination}
                     deleteMember={this.deleteMember}
                     paginate={this.paginate} />
+                */}
+                <p>You can manage the members from <a href={address}>your network</a>. To do so:</p>
+                <p>(1) Visit your <a href={address}>network</a></p>
+                <p>(2) Log in with the "admin" account provided at sign-up (<a href={password_page}>the password would be different from this account, c/o the Password page to see the admin password of the instance</a>.)</p>
+                <p>(3) Then, click the wheel icon as shown below:</p>
+                <p><img src="/app/images/screenshots/network-management.png" style={{width: "60%", height: "60%"}}></img></p>
             </section>
         )
     }

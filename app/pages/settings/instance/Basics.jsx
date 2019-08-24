@@ -10,6 +10,7 @@ export default class Basics extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            initial_groupsid: this.props.configuration.name || '',
             groupsid: this.props.configuration.name || '',
             title: this.props.configuration.title || '',
             description: this.props.configuration.description || '',
@@ -61,6 +62,8 @@ export default class Basics extends React.Component {
         });
     }
     render() {
+        let addr = "https://gr.ps/" + this.state.initial_groupsid;
+        let password_page = "/settings/instances/" + this.state.initial_groupsid + "/password";
         return (
           <section className="basics">
               <form className="narrow options">
@@ -125,6 +128,12 @@ export default class Basics extends React.Component {
                       </button>
                   </fieldset>
               </form>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>Please note, for more settings visit <a href={addr} target="_blank">your network</a>, log in with the "admin" account provided at sign-up (for the password c/o <a href={password_page}>Password</a> page) and click the wheel icon as shown below:</p>
+              <p><img src="/app/images/screenshots/network-management.png" style={{width: "60%", height: "60%"}}></img></p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
           </section>
         )
     }

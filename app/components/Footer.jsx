@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-export default class Footer extends React.Component {
+class Footer extends React.Component {
     constructor(props) {
         super(props);
         this.rand = this.rand.bind(this);
@@ -296,7 +296,8 @@ export default class Footer extends React.Component {
     render() {
         let year = new Date().getFullYear();
         let random_quote = this.randomQuote();
-        return (
+        let hideFooter =  this.props.location.pathname.includes('/settings') || this.props.location.pathname.includes('/setup') || this.props.location.pathname.includes('/pay');
+        return (hideFooter ? null : (
             <footer>
                 <img
                     className='clouds'
@@ -323,6 +324,8 @@ export default class Footer extends React.Component {
                     </div>
                 </div>
             </footer>
-        );
+        ));
     }
 }
+
+export default withRouter(props => <Footer {...props} />);
