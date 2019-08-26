@@ -33,6 +33,16 @@
 		<link rel="icon" type="image/png" href="/app/images/identity/icon.png">
 		<link rel="apple-touch-icon" href="/app/images/identity/icon-touch.png">
 		<script src="/app/vendor/simpleslider.js"></script>
+		<script>
+			(function (w,d,s,o,f,js,fjs) {
+			w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+			js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+			js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+			}(window, document, 'script', 'plausible', 'https://plausible.io/js/p.js'));
+
+			plausible('page')
+			plausible('trackPushState')
+		</script>
 	</head>
 	<body>
 		<div id="root"></div>
