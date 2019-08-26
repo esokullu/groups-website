@@ -20,6 +20,7 @@ const Careers = () => (
         <main>
             <div className="container">
                 <section className="introduction">
+                    <h4>All positions are currently filled. Thanks for your interest! Feel free to send a General Application for future review.</h4>
                     <p>Grou.ps is dedicated to giving an uncensored voice to online communities all around the world. We've been doing this for the last 12+ years, and we're here for decades more to come.</p>
                     <p>Grou.ps Inc. is ideal for job-seekers looking for both stability, and the startup culture, together at the same time. Some other unique benefits are:</p>
                     <ul>
