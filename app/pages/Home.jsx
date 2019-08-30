@@ -40,8 +40,8 @@ export default class Home extends React.Component {
             <Main id="home" data-page="home">
                 <Hero>
                     <Animation />
-                    <Headline title="Express Yourselves" subtitle="Create your censorship-free social network" />
-                    <p>Grou.ps provides a private and censorship-free open source social platform, where you actually own your own data.</p>
+                    <Headline title="Say it like it is!" subtitle="Join the world's first censorship-resilient social network" />
+                    <p>GroupsVille provides a decentralized and censorship-resilient social platform, where you actually own your data.</p>
                     <Link to="/setup" className="button">Let's get started!</Link>
                 </Hero>
                 <main>
@@ -78,7 +78,7 @@ export default class Home extends React.Component {
                             <ul>
                                 <li>
                                     <b>👌 Modern Design</b>
-                                    <p>Grou.ps v2 looks gorgeous and it's super-simple for you and your members to use. Plus, it's written in Bootstrap 4, so it's easy to find/make new responsive templates.</p>
+                                    <p>GroupsVille looks gorgeous and it's super-simple for you and your members to use. Plus, it's written in Bootstrap 4, so it's easy to find/make new responsive templates.</p>
                                 </li>
                                 <li>
                                     <b>😇 Open Source</b>
@@ -93,8 +93,8 @@ export default class Home extends React.Component {
                                     <p>$8 per month. No annuals, no hidden fees. Simple as can be. Service continuity guaranteed. We won’t sell or censor your data — ever.</p>
                                 </li>
                                 <li>
-                                    <b>👩‍🎤 Expressive</b>
-                                    <p>Host your community under your own domain name. Use HTML/CSS/Javascript and Bootstrap to further customize your network.</p>
+                                    <b>👩‍🎤 Humane Design</b>
+                                    <p>As a member of the Time Well Spent movement, .. no to brainhacking and manipulation.</p>
                                 </li>
                                 <li>
                                     <b>📦 Export/Import Data</b>
