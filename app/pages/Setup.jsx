@@ -175,9 +175,9 @@ export default class Setup extends React.Component {
     };
     getQuote(plan) {
         let defaultQuote = <p>
-            You pay $0 for one month. Then it's <b>$8</b> per month. Cancel anytime.
+            GroupsVille is free under 100 members, with no emails. You only pay $8/year to cover blockchain registration fees. Cancel anytime.
             <br />
-            <a onClick={() => this.toggleOverlay('free')}>Interested in free options?</a>
+            <a onClick={() => this.toggleOverlay('free')}>Learn more...</a>
         </p>;
         if(plan && plan !== '') {
             let details = paymentPlans[plan];
@@ -655,11 +655,11 @@ export default class Setup extends React.Component {
                 {this.state.steps[this.state.step].id == 'set-groups-id' &&
                 <section id="set-groups-id">
                     <div className="container">
-                        <h3>Let's start with your Grou.ps ID...</h3>
+                        <h3>Let's start with your group ID...</h3>
                         <div className="content">
                             <div className="input-with-prefix">
-                                <label>https://gr.ps/</label>
-                                <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="your_unique_group_name" />
+                                <label>https://groupsville.com/</label>
+                                <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="unique_id" />
                             </div>
                         </div>
                     </div>
@@ -821,10 +821,9 @@ export default class Setup extends React.Component {
                     <div ref="overlay-free" className="overlay" style={{display: 'none'}}>
                         <div className="container">
                             <div>
-                                <h1>Did somebody say "free option"?</h1>
-                                <p>TL;DR We don't offer free hosting, but the <a href="https://github.com/phonetworks/graphjs-server/tree/groupsv2" target="_blank">software</a> is free, so you can grab and <a href="https://github.com/phonetworks/graphjs-server/blob/groupsv2/README.md" target="_blank">host it on your own</a> easily.</p>
-                                <p>Every Grou.ps network is hosted on a dedicated instance; therefore there is a hosting fee associated with them. This architecture ensures the platform runs on the same <a href="https://github.com/phonetworks/graphjs-server/tree/groupsv2" target="_blank">free open source code that we've published on Github</a>, and gives you the flexibility to import/export data at any time you want. This way, you have the liberty to host the instance on your own. We believe this is important because it guarantees you can always get the best price should you decide to run the network on your own, and you control your data. Plus, this allows us to provide fanatical support to people who actually appreciate and pay for what we do.</p>
-                                <p>If you'd like to learn more about "hosting the instance on your own" option, check out the <a href="https://github.com/phonetworks/graphjs-server/blob/groupsv2/README.md" target="_blank">server</a> and <a href="https://github.com/phonetworks/grou-ps-v2/blob/master/README.md" target="_blank">client</a> docs. There is a one-click Heroku installer which allows you run the open source code (same as we do) on Salesforce's Heroku platform, which is free with limitations (the instances will be shut down after a few minutes of inactivity, and your network will fail during warm-up periods). Please note, there's no guarantee that Salesforce will always continue with this free option either. At some point, you may be forced to move. The history shows that free services tend to go premium  (<a href="https://www.emresokullu.com" target="_blank">been there done that 😔</a>) or sell your data (we're looking at you, Facebook) to survive.</p>
+                                <h1>What are the blockchain registration fees? Tell me more about pricing...</h1>
+                                <p>When we register your network's ownership on the blockchain, we pay Ethereum a certain amount of "gas fee." This constitutes the blockchain registration fees.</p>
+                                <p>Besides, if you reach more than 100 members, and/or start using some premium features, we will charge you on this credit card.</p>
                                 <br /><br /><br />
                                 <a onClick={() => this.toggleOverlay('free')}>← Go back to Payment</a>
                             </div>

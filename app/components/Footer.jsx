@@ -296,7 +296,7 @@ class Footer extends React.Component {
     render() {
         let year = new Date().getFullYear();
         let random_quote = this.randomQuote();
-        let hideFooter =  this.props.location.pathname.includes('/settings') || this.props.location.pathname.includes('/setup') || this.props.location.pathname.includes('/pay');
+        let hideFooter =  true; // this.props.location.pathname.includes('/settings') || this.props.location.pathname.includes('/setup') || this.props.location.pathname.includes('/pay');
         return (hideFooter ? null : (
             <footer>
                 <img

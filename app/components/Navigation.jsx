@@ -84,6 +84,7 @@ export default class Navigation extends React.Component {
         });
     }
     render() {
+        return ("")
         return (
             <nav id="navigation" className={'scroll' + (this.state.open ? ' open' : '')}>
                 <div className="container">

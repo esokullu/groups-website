@@ -6,10 +6,13 @@ import Hero from '~/components/Hero';
 import Headline from '~/components/Headline';
 import Animation from '~/components/Animation';
 
+import logout from '~/scripts/logout';
+
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.setActiveTab = this.setActiveTab.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
     componentDidMount() {
   		let sliders = document.getElementsByClassName('slider');
@@ -35,119 +38,73 @@ export default class Home extends React.Component {
         tabs[index - 1].classList.add('active');
         views[index - 1].classList.add('active');
     }
+    handleLogout() {
+        logout('id', function () {
+            console.log('Logged out!');
+        });
+    }
     render() {
         return (
             <Main id="home" data-page="home">
                 <Hero>
                     <Animation />
                     <Headline title="Say it like it is!" subtitle="Join the world's first censorship-resilient social network" />
-                    <p>GroupsVille provides a decentralized and censorship-resilient social platform, where you actually own your data.</p>
-                    <Link to="/setup" className="button">Let's get started!</Link>
+                    <p>The privacy-focused GroupsVille provides a decentralized and censorship-resilient social platform, where you actually own your data.</p>
+                    <Link to="/" className="button" style={{"width": "280px"}}>i have an invitation</Link>
+                    &nbsp;&nbsp;&nbsp;
+                    <Link to="/setup" className="button" style={{
+                        "display": "inline-block",
+                        "width": "280px",
+                        "marginTop": "1.5em",
+                        "backgroundColor": "#9e77ff"
+                    }}>Start a group...</Link>
+                    <p>Already a member? <a href="/login">Log in</a></p>
                 </Hero>
                 <main>
-                    <section className="introduction">
-                        <div className="container">
-                            <div className="preview">
-                                <div className="slider">
-                                    <img src="app/images/screenshots/home.png" />
-                                    <img src="app/images/screenshots/members.png" />
-                                    <img src="app/images/screenshots/forum.png" />
-                                    <img src="app/images/screenshots/theme.png" />
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    {/* 
-                    <section className="promotion">
-                        <div className="container">
-                            <Headline title="Welcoming Google+ users" subtitle="First month free. Service continuity guaranteed. " />
-                            <p>
-                                Services come and go. We’ve been in business for 10+ years continuous service.
 
-                                You retain the freedom to easily switch from Grou.ps SaaS to <a href="https://github.com/phonetworks/grou-ps-v2" target="_blank">self-hosted</a>. We do not believe in locking users into their choices.
-
-                            </p>
-                            <Link to="/setup" className="button">start free trial</Link>
-                        </div>
-                    </section>
-                    */}
                     <img className="separator" src="app/images/illustrations/character-left-separator.png" />
                     <section className="information">
                         <div className="container">
-                            <h3>Everything you need</h3>
+                            <h3>Think Graph! Think Different!</h3>
                             <ul>
                                 <li>
-                                    <b>👌 Modern Design</b>
-                                    <p>GroupsVille looks gorgeous and it's super-simple for you and your members to use. Plus, it's written in Bootstrap 4, so it's easy to find/make new responsive templates.</p>
+                                    <b>Camaraderie Network</b>
+                                    <p>GroupsVille's decentralized technology is designed to circumvent internet censorship all around the world. By using GroupsVille, you are helping the world become more open.
+                                        </p>
                                 </li>
                                 <li>
-                                    <b>😇 Open Source</b>
-                                    <p>Our code is open source. You can always start a hosted version here at Grou.ps, and if you're not happy with the service you can easily export your data and continue elsewhere - exactly where you left off.</p>
+                                    <b>Open Source</b>
+                                    <p>Our code is open source. You may always start a hosted version, and/or switch back and forth.</p>
+                                </li>
+                                
+                                <li>
+                                    <b>Ownership guaranteed on the blockchain</b>
+                                    <p>With GroupsVille, data ownership and portability is not just a marketing gimmick partially implemented. Your ownership is verified and registered in the Ethereum blockchain.</p>
                                 </li>
                                 <li>
-                                    <b>🤓 Developer-Friendly</b>
-                                    <p>Embed Grou.ps features in a single tag on your existing website, or access it programmatically via Javascript and/or mobile languages.</p>
+                                    <b>Humane Design</b>
+                                    <p>Time is well spent here at GroupsVille. We are committed to say no to excessive notifications, and algorithmic manipulative newsfeed design.</p>
                                 </li>
                                 <li>
-                                    <b>🤯 No Gimmicks Pricing</b>
-                                    <p>$8 per month. No annuals, no hidden fees. Simple as can be. Service continuity guaranteed. We won’t sell or censor your data — ever.</p>
+                                    <b>End-to-End Encrypted</b>
+                                    <p>With Groupsville, all data is encrypted in-transit, and at-still.</p>
                                 </li>
                                 <li>
-                                    <b>👩‍🎤 Humane Design</b>
-                                    <p>As a member of the Time Well Spent movement, .. no to brainhacking and manipulation.</p>
-                                </li>
-                                <li>
-                                    <b>📦 Export/Import Data</b>
-                                    <p>Your data is yours. You can always export and/or import your data with no vendor lock-in.</p>
+                                    <b>Extensible</b>
+                                    <p>Embed parts of your network in a single tag on your existing website, or access it programmatically.</p>
                                 </li>
                             </ul>
                         </div>
                     </section>
-                    <img className="separator" src="app/images/illustrations/character-middle-separator.png" />
-                    <section className="information">
-                        <div className="container">
-                            <h3>Privacy you have asked for</h3>
-                            <ul>
-                                <li>
-                                    <b>🇳🇱 Dutch Privacy</b>
-                                    <p>Grou.ps servers are located in the Netherlands, and in accordance with Dutch privacy laws, we commit to never disclosing any data unauthorized or tracking your usage.</p>
-                                </li>
-                                <li>
-                                    <b>🙈 Anonymous Accounts</b>
-                                    <p>In accordance with GDPR, we require only a valid email address to get you started. By default, we do not keep any IP logs which can be linked to your account. Your privacy comes first.</p>
-                                </li>
-                                <li>
-                                    <b>🧐 In-Transit Encryption</b>
-                                    <p>All communications are secured automatically with in-transit encryption. This means no 3rd party can intrude, decrypt and read your content. Grou.ps can be put behind Tor for additional security.</p>
-                                </li>
-                                <li>
-                                    <b>💵 Bitcoin Payments</b>
-                                    <p>This is 21<sup>st</sup> century. Pay your subscription fee by Bitcoin. Available only with Gold Annual plan.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                    <img className="separator" src="app/images/illustrations/character-right-separator.png" />
-                    {/*
-                    <section className="promotion">
-                        <div className="container">
-                            <h2>Welcoming Google+ users!</h2>
-                            <p>Service continuity guaranteed. Open source version available.</p>
-                            <button>start yours</button>*
-                            <p>&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p>&nbsp;</p>
-                        </div>
-                    </section>
-                    */}
-                    <section className="indication">
-                        <div className="container">
-                            <div className="brand">
-                                <img className="logo" src="app/images/identity/grou.ps-logo.svg" />
-                                <p>is proudly open source.</p>
-                            </div>
-                        </div>
-                    </section>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <center>&copy; 2019 Research in Social Graph (<a onClick={this.handleLogout}>log out</a>)</center>
                 </main>
             </Main>
         )
