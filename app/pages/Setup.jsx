@@ -63,10 +63,6 @@ export default class Setup extends React.Component {
                 },
                 {
                     id: 'set-credentials',
-                    label: 'Continue'
-                },
-                {
-                    id: 'set-payment',
                     label: 'Finish'
                 },
                 {
@@ -514,11 +510,12 @@ export default class Setup extends React.Component {
             return;
         }
         
-        let domain = 'https://gr.ps';
+        let domain = 'https://groupsville.com';
         const data = {
             groups_v2: 1, groups_name: groupsId, groups_title: name, groups_description: description,
             theme, color, site: domain + '/' + groupsId, mail: email, pass: password,
             name: holder, number, cvc, expiry: expiry.substr(0, 2)  + '/' + expiry.substr(2),
+            groupsville: 1,
             // Add address information if requested
             ...(this.state.paymentError
                 ? {billing_address, billing_city, billing_state, billing_zip, billing_country}
@@ -658,8 +655,8 @@ export default class Setup extends React.Component {
                         <h3>Let's start with your group ID...</h3>
                         <div className="content">
                             <div className="input-with-prefix">
-                                <label>https://groupsville.com/</label>
-                                <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="unique_id" />
+                                <label className="labelbig">https://groupsville.com/</label>
+                                <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="unique_id" className="small" />
                             </div>
                         </div>
                     </div>
@@ -696,7 +693,7 @@ export default class Setup extends React.Component {
                 {this.state.steps[this.state.step].id == 'set-description' &&
                 <section id="set-description">
                     <div className="container">
-                        <h3>What about name and description?</h3>
+                        <h3>What about the title and description?</h3>
                         <div className="content">
                             <div className="input-with-prefix">
                                 <label>Name</label>
@@ -774,19 +771,7 @@ export default class Setup extends React.Component {
                 <section id="set-payment">
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                     <div className="container">
-                        <h3>No Gimmicks Pricing!</h3>
-                        {this.getQuote(this.state.planType)}
-                        
-                        {/* <p>for a premium uninterrupted service experience. You may also use <a onClick={this.setPayment}>Paypal</a>.</p>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                                    <input type="hidden" name="cmd" value="_s-xclick" />
-                                    <input type="hidden" name="hosted_button_id" value="GKL77PW743J2W" />
-                                    <input type="hidden" name="on0" value="" />
-                                    <input type="hidden" name="currency_code" value="USD" />
-                                    <input type="hidden" name="os0" value={this.state.payment.charAt(0).toUpperCase() + this.state.payment.substr(1)} />
-                                    <input type="hidden" name="custom" value={this.state.email} />
-                                    <input id="charge" className="hidden" type="submit" />
-                        </form> */}
+                        <h3>It's FREE forever! Pay $8 for setup on the Ethereum blockchain!</h3>
                         <div className="double content">
                             <div className="left">
                                 <Cards

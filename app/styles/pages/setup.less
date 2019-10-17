@@ -153,7 +153,7 @@
                     float: left;
                 }
                 & > label, .label {
-                  width: 55%;
+                  width: 35%;
                   height: 2em;
                   padding-right: 1%;
                   font-size: 1.25em;
@@ -161,11 +161,24 @@
                   line-height: 2em;
                   text-align: right;
                 }
+                & > .labelbig {
+                    width: 55%;
+                    height: 2em;
+                    padding-right: 1%;
+                    font-size: 1.25em;
+                    .bold-font;
+                    line-height: 2em;
+                    text-align: right;
+                  }
                 & > input, .input {
+                    width: calc(65% - 1em);
+                    margin-left: 1em;
+                }
+                & > .small {
                     width: calc(45% - 1em);
                     margin-left: 1em;
                 }
-
+                
                 .input {
                     text-align: left;
                 }

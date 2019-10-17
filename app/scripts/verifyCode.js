@@ -12,7 +12,8 @@ export default function(groupsId, name, url, password, email, theme, color, veri
         mail: email,
         pass: password,
         verification: verification,
-        groups_v2: 1
+        groups_v2: 1,
+        groupsville: 1,
     }, function(response) {
         if(response.success) {
             login(email, password, function() {

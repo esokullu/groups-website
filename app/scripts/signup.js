@@ -9,7 +9,8 @@ export default function(groups_name, groups_title, site, pass, mail, theme, colo
         color: color,
         mail: mail,
         pass: pass,
-        groups_v2: 1
+        groups_v2: 1,
+        groupsville: 1,
     }, function(response) {
         if(response.success) {
             callback(false);

@@ -48,8 +48,11 @@ export default class Home extends React.Component {
             <Main id="home" data-page="home">
                 <Hero>
                     <Animation />
-                    <Headline title="Say it like it is!" subtitle="Join the world's first censorship-resilient social network" />
-                    <p>The privacy-focused GroupsVille provides a decentralized and censorship-resilient social platform, where you actually own your data.</p>
+                    {/*<Headline title="Say it like it is!" subtitle="Meet three new people everyday, on topics you care about" />*/}
+                    <Headline title="Say it like it is!" subtitle="Uncensorable Encrypted Group Sharing With Video-Calls" />
+                    {/*<p>This is not ano</p>*/}
+                    {/*<p>Uncensorable Encrypted Group Sharing With Video-Calls</p>*/}
+                    <p>The privacy-focused GroupsVille provides a decentralized and censorship-resistant social platform, where you actually own your data.</p>
                     <Link to="/" className="button" style={{"width": "280px"}}>i have an invitation</Link>
                     &nbsp;&nbsp;&nbsp;
                     <Link to="/setup" className="button" style={{
@@ -57,7 +60,7 @@ export default class Home extends React.Component {
                         "width": "280px",
                         "marginTop": "1.5em",
                         "backgroundColor": "#9e77ff"
-                    }}>Start a group...</Link>
+                    }}>Start a group for free...</Link>
                     <p>Already a member? <a href="/login">Log in</a></p>
                 </Hero>
                 <main>
@@ -87,7 +90,7 @@ export default class Home extends React.Component {
                                 </li>
                                 <li>
                                     <b>End-to-End Encrypted</b>
-                                    <p>With Groupsville, all data is encrypted in-transit, and at-still.</p>
+                                    <p>With Groupsville, all data is encrypted in-transit, and at-rest.</p>
                                 </li>
                                 <li>
                                     <b>Extensible</b>
@@ -99,7 +102,7 @@ export default class Home extends React.Component {
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
-                    <p>&nbsp;</p>
+                    <p style={{textAlign: "center"}}>[ <a href="https://www.scribd.com/document/430637730/GoBC-Whitepaper" target="_blank">Read the whitepaper</a> ]</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
