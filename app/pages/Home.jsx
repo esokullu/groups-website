@@ -53,10 +53,10 @@ export default class Home extends React.Component {
                     {/*<p>This is not ano</p>*/}
                     {/*<p>Uncensorable Encrypted Group Sharing With Video-Calls</p>*/}
                     {/*<p>The privacy-focused GroupsVille provides a decentralized and censorship-resistant social platform, where you actually own your data.</p>*/}
-                    <Link to="/" className="button" style={{"width": "280px","backgroundColor": "#9e77ff"}}>i have an invitation</Link>
-                    &nbsp;&nbsp;&nbsp;
+                    {/*<Link to="/" className="button" style={{"width": "280px","backgroundColor": "#9e77ff"}}>i have an invitation</Link>
+                    &nbsp;&nbsp;&nbsp;*/}
                     <Link to="/setup" className="button" style={{
-                        "display": "inline-block",
+                      //  "display": "inline-block",
                         "width": "280px",
                         "marginTop": "1.5em",
                         "backgroundColor": "#9e77ff"
