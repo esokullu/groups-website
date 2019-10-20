@@ -80,7 +80,7 @@ export default class Setup extends React.Component {
             email: '',
             password: '',
             verificationStatus: null,
-            verificationCode: '      ',
+            verificationCode: '',
             payment: 'monthly',
             failMessages: [],
             failModalMessages: [],
@@ -284,20 +284,20 @@ export default class Setup extends React.Component {
         let CurrentIndex = event.target.name;
         let { verificationCode } = this.state;
         let PrevRef = 'verificationCode' + (Number(CurrentIndex) - 1);
-        if(event.keyCode === 8 && currentValue === "" && verificationCode[CurrentIndex] === " " && this.refs[PrevRef]){
+        if(event.keyCode === 8 && currentValue === "" && this.refs[PrevRef]){
             this.refs[PrevRef].focus();
         }
     }
     changeverificationCode(event) {
-        let currentValue = event.currentTarget.value;
+        let currentValue = event.currentTarget.value.trim();
         let CurrentIndex = event.currentTarget.name;
         let { verificationCode } = this.state;
-        let NextRef = 'verificationCode' + (Number(CurrentIndex) + 1);
+        let NextRef = 'verificationCode' + (Number(CurrentIndex) + (currentValue.length >= 5 ? 5 : currentValue.length));
         if(currentValue && this.refs[NextRef]){
             this.refs[NextRef].focus();
         }
         verificationCode = verificationCode.split("")
-        verificationCode[CurrentIndex] = currentValue ? currentValue : " "
+        verificationCode[CurrentIndex] = currentValue ? currentValue : ""
         verificationCode = verificationCode.join("").substring(0, 6)
         this.setState({
             verificationCode
@@ -619,7 +619,7 @@ export default class Setup extends React.Component {
         this.setState({
             verificationStatus:null,
             failModalMessages:[],
-            verificationCode:'      '
+            verificationCode:''
         })
         let loadingButton = this.refs.loadingButton;
         ReactDOM.findDOMNode(loadingButton).classList.remove("fa", "fa-spinner", "fa-spin");
