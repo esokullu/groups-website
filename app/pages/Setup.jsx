@@ -568,8 +568,8 @@ export default class Setup extends React.Component {
         let loadingButton = this.refs.loadingButton;
         let domain = 'https://gr.ps';
         let groupsId = encodeURI(this.state.groupsId);
-        let name = encodeURI(this.state.name);
-        let description = encodeURI(this.state.description);
+        let name = (this.state.name);
+        let description = (this.state.description);
         let url = encodeURI(domain + '/' + this.state.groupsId);
         let theme = encodeURI(this.state.theme);
         let color = encodeURI(this.state.color);
