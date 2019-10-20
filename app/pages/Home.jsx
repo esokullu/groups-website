@@ -45,15 +45,15 @@ export default class Home extends React.Component {
     }
     render() {
         return (
-            <Main id="home" data-page="home">
+            <Main id="home" data-page="home" className="home">
                 <Hero>
                     <Animation />
                     {/*<Headline title="Say it like it is!" subtitle="Meet three new people everyday, on topics you care about" />*/}
-                    <Headline title="Say it like it is!" subtitle="Uncensorable Encrypted Group Sharing With Video-Calls" />
+                    <Headline title="Say it like it is!" subtitle="Secure Group Sharing &amp; Video-Calls" />
                     {/*<p>This is not ano</p>*/}
                     {/*<p>Uncensorable Encrypted Group Sharing With Video-Calls</p>*/}
-                    <p>The privacy-focused GroupsVille provides a decentralized and censorship-resistant social platform, where you actually own your data.</p>
-                    <Link to="/" className="button" style={{"width": "280px"}}>i have an invitation</Link>
+                    {/*<p>The privacy-focused GroupsVille provides a decentralized and censorship-resistant social platform, where you actually own your data.</p>*/}
+                    <Link to="/" className="button" style={{"width": "280px","backgroundColor": "#9e77ff"}}>i have an invitation</Link>
                     &nbsp;&nbsp;&nbsp;
                     <Link to="/setup" className="button" style={{
                         "display": "inline-block",
@@ -65,8 +65,8 @@ export default class Home extends React.Component {
                 </Hero>
                 <main>
 
-                    <img className="separator" src="app/images/illustrations/character-left-separator.png" />
-                    <section className="information">
+                    <img className="separator hidden" style={{display:"none"}} src="app/images/illustrations/character-left-separator.png" />
+                    <section className="information hidden" style={{display:"none"}}>
                         <div className="container">
                             <h3>Think Graph! Think Different!</h3>
                             <ul>
@@ -102,12 +102,9 @@ export default class Home extends React.Component {
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
-                    <p style={{textAlign: "center"}}>[ <a href="https://www.scribd.com/document/430637730/GoBC-Whitepaper" target="_blank">Read the whitepaper</a> ]</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <center>&copy; 2019 Research in Social Graph (<a onClick={this.handleLogout}>log out</a>)</center>
+                    <p style={{textAlign: "center", display:"none"}} class="hidden">[ <a href="https://www.scribd.com/document/430637730/GoBC-Whitepaper" target="_blank">Read the whitepaper</a> ]</p>
+
+                    <center >&copy; 2019 Research in Social Graph (<a onClick={this.handleLogout}>log out</a>)</center>
                 </main>
             </Main>
         )
