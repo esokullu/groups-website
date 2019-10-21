@@ -597,11 +597,12 @@ export default class Setup extends React.Component {
                 let lastStepLabel = this.refs.lastStepLabel;
                 let loadingButtonModal = this.refs.loadingButtonModal;
                 ReactDOM.findDOMNode(loadingButtonModal).classList.add("fa", "fa-spinner", "fa-spin");
-                ReactDOM.findDOMNode(lastStepLabel).innerText = "Processing...";
+                ReactDOM.findDOMNode(lastStepLabel).innerText = "Processing... (this may take a while)";
                 let verificationCode = encodeURI(this.state.verificationCode);
                 this.props.handleVerifyCode(groupsId, name, url, password, email, theme, color, verificationCode, description, function(error, response) {
                     ReactDOM.findDOMNode(loadingButtonModal).classList.remove("fa", "fa-spinner", "fa-spin");
                     if(error){
+                        ReactDOM.findDOMNode(lastStepLabel).innerText = "Finish";
                         let failModalMessages = [response.reason]
                         self.setState({
                             failModalMessages
