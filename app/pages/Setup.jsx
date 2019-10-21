@@ -594,8 +594,10 @@ export default class Setup extends React.Component {
             });
         } else if(self.state.verificationStatus === "display"){
             if(self.state.verificationCode){
+                let lastStepLabel = this.refs.lastStepLabel;
                 let loadingButtonModal = this.refs.loadingButtonModal;
                 ReactDOM.findDOMNode(loadingButtonModal).classList.add("fa", "fa-spinner", "fa-spin");
+                ReactDOM.findDOMNode(lastStepLabel).innerText = "Processing...";
                 let verificationCode = encodeURI(this.state.verificationCode);
                 this.props.handleVerifyCode(groupsId, name, url, password, email, theme, color, verificationCode, description, function(error, response) {
                     ReactDOM.findDOMNode(loadingButtonModal).classList.remove("fa", "fa-spinner", "fa-spin");
@@ -696,7 +698,7 @@ export default class Setup extends React.Component {
                         <h3>What about the title and description?</h3>
                         <div className="content">
                             <div className="input-with-prefix">
-                                <label>Name</label>
+                                <label>Title</label>
                                 <input ref="id" onChange={this.changeName} type="text" value={this.state.name} placeholder="My Group" />
                             </div>
                             <div className="input-with-prefix">
@@ -756,7 +758,7 @@ export default class Setup extends React.Component {
                                         }
                                         </div>
                                         <button ref="next" onClick={this.changeStep} className="next" data-step="next">
-                                            <i ref="loadingButtonModal"></i> <span>{this.state.steps[this.state.step].label}</span>
+                                            <i ref="loadingButtonModal"></i> <span ref="lastStepLabel">{this.state.steps[this.state.step].label}</span>
                                         </button>
                                         <small>Please check your SPAM folder if you can't find it.</small>
                                         <a onClick={this.closeModal}>Change Email</a>
