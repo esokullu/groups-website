@@ -21,8 +21,8 @@ const Careers = () => (
             <div className="container">
                 <section className="introduction">
                     <h4>All positions are currently filled. Thanks for your interest! Feel free to send a General Application for future review.</h4>
-                    <p>Grou.ps is dedicated to giving an uncensored voice to online communities all around the world. We've been doing this for the last 12+ years, and we're here for decades more to come.</p>
-                    <p>Grou.ps Inc. is ideal for job-seekers looking for both stability, and the startup culture, together at the same time. Some other unique benefits are:</p>
+                    <p>Groupsville is dedicated to giving an uncensored voice to online communities all around the world. We've been doing this for the last 12+ years, and we're here for decades more to come.</p>
+                    <p>Research in Social Graph is ideal for job-seekers looking for both stability, and the startup culture, together at the same time. Some other unique benefits are:</p>
                     <ul>
                         <li>We are distributed. Geographic boundaries won't limit you from participating.</li>
                         <li>All our work is open source and liberally licensed for derivatives.</li>

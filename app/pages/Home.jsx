@@ -40,9 +40,9 @@ export default class Home extends React.Component {
             <Main id="home" data-page="home">
                 <Hero>
                     <Animation />
-                    <Headline title="Express Yourselves" subtitle="Create your censorship-free social network" />
-                    <p>Grou.ps provides a private and censorship-free open source social platform, where you actually own your own data.</p>
-                    <Link to="/setup" className="button">Let's get started!</Link>
+                    <Headline title="Say it like it is!" subtitle="Secure Group Sharing &amp; Video-Calls" />
+                    <p>Groupsville provides a private and censorship-free open source social platform, where you actually own your own data.</p>
+                    <Link to="/setup" className="button">Start for free!</Link>
                 </Hero>
                 <main>
                     <section className="introduction">
@@ -57,77 +57,80 @@ export default class Home extends React.Component {
                             </div>
                         </div>
                     </section>
-                    {/* 
+                    
                     <section className="promotion">
                         <div className="container">
-                            <Headline title="Welcoming Google+ users" subtitle="First month free. Service continuity guaranteed. " />
+                            <Headline title="Welcoming Yahoo! Groups users" subtitle="" />
                             <p>
-                                Services come and go. We’ve been in business for 10+ years continuous service.
-
-                                You retain the freedom to easily switch from Grou.ps SaaS to <a href="https://github.com/phonetworks/grou-ps-v2" target="_blank">self-hosted</a>. We do not believe in locking users into their choices.
-
+                                Services come and go. We’ve been in business for 10+ years.
+                                Also since our code is fully open source, you retain the freedom to easily switch to the <a href="https://github.com/phonetworks/grou-ps-v2" target="_blank">self-hosted</a> version at anytime. No lock-ins.
                             </p>
                             <Link to="/setup" className="button">start free trial</Link>
                         </div>
                     </section>
-                    */}
+                    
                     <img className="separator" src="app/images/illustrations/character-left-separator.png" />
                     <section className="information">
                         <div className="container">
                             <h3>Everything you need</h3>
                             <ul>
                                 <li>
-                                    <b>👌 Modern Design</b>
-                                    <p>Grou.ps v2 looks gorgeous and it's super-simple for you and your members to use. Plus, it's written in Bootstrap 4, so it's easy to find/make new responsive templates.</p>
+                                    <b>Modern Design</b>
+                                    <p>Groupsville looks gorgeous and it's super-simple for you and your members to use. Plus, it's written in Bootstrap 4, so it's easy to find/make new responsive templates.</p>
                                 </li>
                                 <li>
-                                    <b>😇 Open Source</b>
-                                    <p>Our code is open source. You can always start a hosted version here at Grou.ps, and if you're not happy with the service you can easily export your data and continue elsewhere - exactly where you left off.</p>
+                                    <b>A Feed Like No Other</b>
+                                    <p>With Groupsville, say no to manipulative algorithmic newsfeeds which hook you to the service at the expense of your mental health. Our feed is natural and it is NOT exploitative.</p>
                                 </li>
+
                                 <li>
-                                    <b>🤓 Developer-Friendly</b>
-                                    <p>Embed Grou.ps features in a single tag on your existing website, or access it programmatically via Javascript and/or mobile languages.</p>
+                                    <b>No Gimmicks Pricing</b>
+                                    <p>$8 per month. No annuals, no hidden fees. Price waived for the first year if you reach 30 members as long as you post at least 10 pieces of contents every month.</p>
                                 </li>
+
                                 <li>
-                                    <b>🤯 No Gimmicks Pricing</b>
-                                    <p>$8 per month. No annuals, no hidden fees. Simple as can be. Service continuity guaranteed. We won’t sell or censor your data — ever.</p>
+                                    <b>Open Source</b>
+                                    <p>Our code is open source. You can always start a hosted version here at Groupsville, then if you're not happy for any reason, switch to your own servers and continue from where you left off.</p>
                                 </li>
-                                <li>
-                                    <b>👩‍🎤 Expressive</b>
-                                    <p>Host your community under your own domain name. Use HTML/CSS/Javascript and Bootstrap to further customize your network.</p>
-                                </li>
-                                <li>
-                                    <b>📦 Export/Import Data</b>
-                                    <p>Your data is yours. You can always export and/or import your data with no vendor lock-in.</p>
-                                </li>
+                                
                             </ul>
                         </div>
                     </section>
                     <img className="separator" src="app/images/illustrations/character-middle-separator.png" />
                     <section className="information">
                         <div className="container">
-                            <h3>Privacy you have asked for</h3>
+                            <h3>Privacy &amp; Security you have asked for</h3>
                             <ul>
+                            <li>
+                                <b>Camaraderie Network</b>
+                                <p>GroupsVille's decentralized technology is designed to circumvent internet state-sponsored censorship. By using GroupsVille, you are helping the world become more open.
+                                </p>
+                            </li>
+                                
                                 <li>
-                                    <b>🇳🇱 Dutch Privacy</b>
-                                    <p>Grou.ps servers are located in the Netherlands, and in accordance with Dutch privacy laws, we commit to never disclosing any data unauthorized or tracking your usage.</p>
+                                    <b>Ownership on the Blockchain</b>
+                                    <p>With GroupsVille, data ownership and portability is not just a marketing gimmick partially implemented. Your ownership is verified and registered in the Ethereum blockchain.</p>
                                 </li>
                                 <li>
-                                    <b>🙈 Anonymous Accounts</b>
-                                    <p>In accordance with GDPR, we require only a valid email address to get you started. By default, we do not keep any IP logs which can be linked to your account. Your privacy comes first.</p>
+                                    <b>End-to-End Encrypted</b>
+                                    <p>With Groupsville, all data is encrypted in-transit, and at-rest.</p>
                                 </li>
+{/*}
                                 <li>
-                                    <b>🧐 In-Transit Encryption</b>
-                                    <p>All communications are secured automatically with in-transit encryption. This means no 3rd party can intrude, decrypt and read your content. Grou.ps can be put behind Tor for additional security.</p>
+                                    <b>Monetize your network (SOON)</b>
+                                    <p>We know it's important to have solid financials and monetary incentives for a sustainable network. Groupsville allows you to collect payments.</p>
                                 </li>
+        */}                             
                                 <li>
-                                    <b>💵 Bitcoin Payments</b>
-                                    <p>This is 21<sup>st</sup> century. Pay your subscription fee by Bitcoin. Available only with Gold Annual plan.</p>
+                                    <b>Developer-Friendly</b>
+                                    <p>Embed Groupsville features in a single tag on your existing website, or access it programmatically via Javascript and/or mobile languages. </p>
                                 </li>
+
+
                             </ul>
                         </div>
                     </section>
-                    <img className="separator" src="app/images/illustrations/character-right-separator.png" />
+                    
                     {/*
                     <section className="promotion">
                         <div className="container">
@@ -140,14 +143,6 @@ export default class Home extends React.Component {
                         </div>
                     </section>
                     */}
-                    <section className="indication">
-                        <div className="container">
-                            <div className="brand">
-                                <img className="logo" src="app/images/identity/grou.ps-logo.svg" />
-                                <p>is proudly open source.</p>
-                            </div>
-                        </div>
-                    </section>
                 </main>
             </Main>
         )

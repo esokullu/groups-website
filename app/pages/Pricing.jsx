@@ -180,7 +180,7 @@ export default class Pricing extends React.Component {
                         */}
                     
                     <p>All plans come with a <strong>free trial</strong></p>
-                    <p>You may also download and run the free open source Grou.ps from <a href="https://github.com/phonetworks/grou-ps-v2"  target="_blank">https://github.com/phonetworks/grou-ps-v2</a>.</p>
+                    <p>You may also download and run the free open source Groupsville from <a href="https://github.com/phonetworks/grou-ps-v2"  target="_blank">https://github.com/phonetworks/grou-ps-v2</a>.</p>
                     <p>We also have enterprise accounts. Please <a href="https://risg.co/contact.html" target="_blank">contact</a> for more information.</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>

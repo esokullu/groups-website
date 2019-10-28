@@ -13,7 +13,7 @@ const Error = () => (
         <Hero>
             <img src="/app/images/illustrations/404.png" />
             <Headline title="Oops! It's a four-oh-four." subtitle="The page you requested is not found." />
-            <Link to="/">← Go back to Grou.ps home page</Link>
+            <Link to="/">← Go back to Groupsville home page</Link>
         </Hero>
     </Main>
 )

@@ -105,7 +105,7 @@ export default class Cancellation extends React.Component {
                                 <div className="block">
                                     <h3>We are sorry to hear that you are cancelling</h3>
                                     <p>
-                                        <b>You are about to cancel your Grou.ps site.</b>
+                                        <b>You are about to cancel your Groupsville site.</b>
                                         <br />
                                         <b>Site ID:</b> {instance.uuid}
                                     </p>

@@ -87,7 +87,7 @@ export default class Comparing extends React.Component {
             <Main id='comparing' data-page='comparing'>
                 <Hero>
                     <Animation animationConfig={animationConfig} />
-                    <Headline title="Grou.ps vs Facebook Groups" subtitle="Why pay $8/month, right?" />
+                    <Headline title="Groupsville vs Facebook Groups" subtitle="Why pay $8/month, right?" />
                     <a className="lightbox-toggle" onClick={() => this.toggleOverlay('compare')}>🔗 you may also compare with Buddypress, Mastodon and others...</a>
                 </Hero>
                 <main>
@@ -97,28 +97,30 @@ export default class Comparing extends React.Component {
                                 <div className="comparing-table-item keys">
                                     <div className="header">Specifications</div>
                                     <div className="features-list">
-                                        <Tooltip title="At Grou.ps, we don't show ads. But you're free to show advertising to your members." arrow="true">
+                                        <Tooltip title="At Groupsville, we don't show ads. But you're free to show advertising to your members." arrow="true">
                                             <div className="feature">Annoying Ads</div>
                                         </Tooltip>
+                                        {/*
                                         <Tooltip title="Our business model is straightforward. We charge a small subscription fee. Your data is yours. 😇" arrow="true">
                                             <div className="feature">Selling your data</div>
                                         </Tooltip>
-                                        <Tooltip title="Unlike Facebook Groups, Grou.ps is not one-size-fits-all. You can change the look'n feel of your network in click of a button." arrow="true">
+                                        */}
+                                        <Tooltip title="Unlike Facebook Groups, Groupsville is not one-size-fits-all. You can change the look'n feel of your network in click of a button." arrow="true">
                                             <div className="feature">Themes</div>
                                         </Tooltip>
-                                        <Tooltip title="In addition to themes, you may also fully customize your Grou.ps template. All changes are tracked via git, so it's easy to go back in time." arrow="true">
+                                        <Tooltip title="In addition to themes, you may also fully customize your Groupsville template. All changes are tracked via git, so it's easy to go back in time." arrow="true">
                                             <div className="feature">Full Template Editing</div>
                                         </Tooltip>
-                                        <Tooltip title="Exclusive to Grou.ps, you may port any page of your network to a Drupal/Wordpress site just by copy/pasting a simple HTML tag." arrow="true">
+                                        <Tooltip title="Exclusive to Groupsville, you may port any page of your network to a Drupal/Wordpress site just by copy/pasting a simple HTML tag." arrow="true">
                                             <div className="feature">Plug & Play Features</div>
                                         </Tooltip>
-                                        <Tooltip title="Grou.ps comes with rich API. Nothing like you've seen before. 💪" arrow="true">
+                                        <Tooltip title="Groupsville comes with rich API. Nothing like you've seen before. 💪" arrow="true">
                                             <div className="feature">Full API</div>
                                         </Tooltip>
-                                        <Tooltip title="With Grou.ps, it is possible to export the full database. Try that with Facebook Groups 🙄" arrow="true">
+                                        <Tooltip title="With Groupsville, it is possible to export the full database. Try that with Facebook Groups 🙄" arrow="true">
                                             <div className="feature">Data Export</div>
                                         </Tooltip>
-                                        <Tooltip title="Grou.ps is open source. So you can also run it on your own servers. Try that with Facebook Groups 🙄" arrow="true">
+                                        <Tooltip title="Groupsville is open source. So you can also run it on your own servers. Try that with Facebook Groups 🙄" arrow="true">
                                             <div className="feature">Open Source</div>
                                         </Tooltip>
                                         <Tooltip title="Put your group under your domain name, and earn reputation/SEO love for your own website, not Facebook!" arrow="true">
@@ -131,13 +133,12 @@ export default class Comparing extends React.Component {
                                 </div>
                                 <div className="comparing-table-item highlighted">
                                     <div className="header groups-logo">
-                                        <svg viewBox="0 -5 243 100">
-                                            <path fill="white" d="M228.757599,47.7543 C223.175779,47.7543 216.990519,45.56683 212.615579,42.02162 L215.557349,37.87297 C219.781429,41.04103 224.458089,42.85135 229.059319,42.85135 C233.735979,42.85135 237.130329,40.43759 237.130329,36.66609 L237.130329,36.51523 C237.130329,32.5928699 232.529099,31.0842699 227.399859,29.6510999 C221.290029,27.9162099 214.501329,25.8041699 214.501329,18.6383199 L214.501329,18.4874599 C214.501329,11.7741899 220.083149,7.3238198 227.777009,7.3238198 C232.529099,7.3238198 237.809199,8.9832798 241.806989,11.6233299 L239.166939,15.9982699 C235.546299,13.6599399 231.397649,12.2267699 227.626149,12.2267699 C223.024919,12.2267699 220.083149,14.6405299 220.083149,17.8840199 L220.083149,18.0348799 C220.083149,21.7309499 224.910669,23.1641199 230.115339,24.7481499 C236.149739,26.5584699 242.636719,28.8967999 242.636719,35.91179 L242.636719,36.06265 C242.636719,43.45479 236.526889,47.7543 228.757599,47.7543 Z M191.384209,42.62506 C198.927209,42.62506 205.112469,37.04324 205.112469,27.6144899 L205.112469,27.4636299 C205.112469,18.2611699 198.776349,12.3776299 191.384209,12.3776299 C184.142929,12.3776299 177.278799,18.4874599 177.278799,27.3881999 L177.278799,27.5390599 C177.278799,36.59066 184.142929,42.62506 191.384209,42.62506 Z M171.696979,59.9483293 L171.696979,8.0026898 L177.505089,8.0026898 L177.505089,15.8474099 C180.673149,11.1707499 185.274379,7.1729598 192.440229,7.1729598 C201.793549,7.1729598 211.071439,14.5650999 211.071439,27.3881999 C211.071439,40.28673 201.868979,47.82973 192.440229,47.82973 C185.198949,47.82973 180.522289,43.90737 177.505089,39.53243 L177.505089,59.9483293 L171.696979,59.9483293 Z M159.699997,47 L159.699997,41 L165.699997,41 L165.699997,47 L159.699997,47 Z M153.71,47 L142.72,47 L142.72,42.87 L142.58,42.87 C140.55,47.07 136.84,48.26 132.5,48.26 C128.23,48.26 123.89,46.79 121.09,43.36 C117.94,39.44 117.59,36.22 117.59,31.39 L117.59,8.15 L129.21,8.15 L129.21,29.64 C129.21,34.05 130.19,37.41 135.44,37.41 C140.27,37.41 142.09,33.98 142.09,29.5 L142.09,8.15 L153.71,8.15 L153.71,47 Z M102.53,27.54 C102.53,22.29 98.61,17.74 93.22,17.74 C87.83,17.74 83.91,22.29 83.91,27.54 C83.91,32.79 87.83,37.34 93.22,37.34 C98.61,37.34 102.53,32.79 102.53,27.54 Z M114.15,27.54 C114.15,39.44 105.12,48.19 93.22,48.19 C81.32,48.19 72.29,39.44 72.29,27.54 C72.29,15.64 81.32,6.89 93.22,6.89 C105.12,6.89 114.15,15.64 114.15,27.54 Z M70.92,18.51 C65.81,18.65 61.75,19.63 61.75,25.65 L61.75,47 L50.13,47 L50.13,8.15 L61.05,8.15 L61.05,12.28 L61.19,12.28 C63.22,8.29 66.44,6.82 70.92,6.82 L70.92,18.51 Z M15.077818,32.384707 C18.891321,36.1861774 25.073975,36.1861774 28.887478,32.384707 C32.700981,28.5832366 32.700981,22.4199211 28.887478,18.6180209 C25.073975,14.8165505 18.891321,14.8165505 15.077818,18.6180209 C11.264315,22.4199211 11.264315,28.5832366 15.077818,32.384707 Z M37.529098,82.925011 C42.737104,81.533947 45.827786,76.197449 44.432424,71.005773 C43.036632,65.8140971 37.683804,62.7332988 32.475368,64.1243637 C27.267792,65.5154285 24.17711,70.8514966 25.572472,76.043172 C26.967835,81.234848 32.321092,84.316076 37.529098,82.925011 Z M32.353752,7.5410707 L39.84711,0.1916758 L47.999257,8.1878278 L40.489569,15.5539825 C45.043083,23.5290772 43.86259,33.8049941 36.948091,40.5871336 C35.694543,41.8166167 34.323676,42.861312 32.870728,43.7212195 L35.41908,53.0491324 C44.737968,53.1690295 53.221444,59.3099986 55.752177,68.5738804 C58.804182,79.745373 52.044819,91.227997 40.655019,94.221558 C29.264789,97.215119 17.557412,90.585108 14.505406,79.414044 C11.966509,70.1205107 16.217486,60.611248 24.27638,55.9537377 L21.753812,46.7203674 C16.322342,46.696302 10.897748,44.6516043 6.753346,40.5871336 C-1.584449,32.4092021 -1.584449,19.1500377 6.753346,10.9716764 C13.690191,4.1684797 24.211919,3.0249445 32.353752,7.5410707 Z"></path>
-                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 95"><path d="M14.5778 32.193c3.8135 3.8015 9.9962 3.8015 13.8097 0 3.8135-3.8014 3.8135-9.9648 0-13.7667-3.8135-3.8014-9.9962-3.8014-13.8097 0-3.8135 3.8019-3.8135 9.9653 0 13.7667zm22.4513 50.5403c5.208-1.391 8.2987-6.7275 6.9033-11.9192-1.3958-5.1917-6.7486-8.2725-11.957-6.8814-5.2076 1.3911-8.2983 6.7271-6.9029 11.9188 1.3953 5.1917 6.7486 8.2729 11.9566 6.8818zM31.8538 7.3494L39.3471 0l8.1522 7.99615-7.5097 7.36615c4.5535 7.9751 3.373 18.251-3.5415 25.0332-1.2536 1.2294-2.6244 2.2741-4.0774 3.134l2.5484 9.328c9.3189.1199 17.8023 6.2608 20.3331 15.5247 3.052 11.1715-3.7074 22.6541-15.0972 25.6477-11.3902 2.9935-23.0976-3.6365-26.1496-14.8075-2.5389-9.2936 1.7121-18.8028 9.771-23.4603l-2.5226-9.2334c-5.4315-.0241-10.8561-2.0688-15.00045-6.1332-8.3378-8.178-8.3378-21.4371 0-29.6155C13.1902 3.9768 23.7119 2.83327 31.8538 7.3494z" fill="#fff"/><path d="M50.248 47H62.2V25.544c0-5.616 2.88-7.848 9-7.848h.432V5.672c-6.912 0-9 3.672-10.152 5.832V7.04H50.248V47zM73.5496 26.984c0 9.792 6.984 21.24 21.528 21.24 14.5444 0 21.5284-11.448 21.5284-21.24 0-9.792-6.984-21.24-21.5284-21.24-14.544 0-21.528 11.448-21.528 21.168v.072zm11.952 0c0-5.832 4.392-10.08 9.576-10.08 5.1844 0 9.5764 4.248 9.5764 10.08s-4.392 10.08-9.5764 10.08c-5.184 0-9.576-4.248-9.576-10.008v-.072zM160.383 7.04h-11.952v21.744c0 4.104-.936 8.352-6.912 8.352-5.4 0-6.336-3.888-6.336-8.28V7.04h-11.952v24.984c0 5.4 1.368 16.344 14.904 16.344 7.2 0 9.72-3.672 11.088-5.616V47h11.16V7.04zM169.008 60.32h11.952V43.4c1.44 1.512 4.824 4.968 12.024 4.968 11.376 0 19.44-9.432 19.44-20.952 0-9.288-5.328-21.744-19.513-21.744-6.12 0-10.079 2.736-12.671 5.76V7.04h-11.232v53.28zm31.463-33.264c0 5.04-3.743 10.152-10.007 10.152-2.808 0-5.329-1.152-7.129-2.952-1.8-1.8-2.879-4.32-2.879-7.128 0-2.88 1.08-5.472 2.808-7.272 1.8-1.872 4.32-3.024 7.2-3.024 6.552 0 10.007 5.472 10.007 10.152v.072zM247.939 18.272c-1.008-10.512-10.08-12.6-15.336-12.6-8.28 0-15.48 5.256-15.48 13.536 0 5.4 4.32 8.784 9.504 10.44 7.632 2.952 10.584 3.312 10.584 6.048 0 1.944-2.16 3.096-4.176 3.096-.504 0-4.032 0-4.536-3.672h-11.88c1.08 10.512 10.224 13.248 16.272 13.248 8.856 0 16.272-5.184 16.272-13.968 0-8.64-7.2-10.656-13.968-12.528-3.168-.936-6.12-2.16-6.12-3.96 0-1.08.864-2.664 3.384-2.664 3.528 0 3.672 2.16 3.744 3.024h11.736zM80.5229 87.4339c-.8418 0-1.5258-.8466-1.5258-2.2223 0-4.1799 3.1568-14.2857 3.1568-14.8148 0-1.0582-2.315-2.0106-4.5773-2.2222-1.6836-.1587-2.7885 0-3.4198 1.4286C72.8414 72.5661 71 80.873 71 86.5873 71 90.291 72.9993 95 76.8926 95c9.8386 0 16.3626-19.2064 16.6783-25.9788 0-1.6402-.7366-3.0159-2.7359-3.0159-2.7359 0-6.1031 7.1429-3.3146 10.2645-1.6836 4.9736-4.4195 11.1641-6.9975 11.1641zM98.5136 68.1217c-1.0523.0529-1.7889.4233-2.2624 1.4815-1.5784 3.5979-3.4198 14.6561-3.4198 18.3068 0 2.0106.947 7.09 6.9449 7.09 5.3667 0 8.9967-4.8677 11.0487-10.2645.368-.8466.789-2.8043.105-3.5979-.263-.2646-.631-.3704-.894-.3704-1.789 0-2.473 1.9048-2.841 2.963-.737 1.6931-1.526 3.1216-2.473 3.9682-.474.4233-1.052.7408-1.631.7408-1.684 0-2.157-1.6403-2.157-3.3863 0-4.0741 3.209-14.0741 3.209-14.6561 0-1.6931-4.4193-2.2751-5.6294-2.2751zm.4735-9.2064c-1.4206 2.8043-.8944 5.9789 1.2099 7.0371 2.526 1.4285 5.367-.8995 6.472-2.963 1.42-2.8042.894-5.9788-1.263-7.037-2.578-1.2699-5.261.7407-6.4189 2.9629z" fill="#fff"/><path d="M129.796 55c-1.052.0529-1.789.4233-2.262 1.4815-1.579 3.5979-6.419 26.3492-6.419 31.4285 0 2.0106.947 7.09 6.945 7.09 5.366 0 8.997-4.8677 11.048-10.2645.369-.8466.79-2.8043.106-3.5979-.263-.2646-.632-.3704-.895-.3704-1.789 0-2.473 1.9048-2.841 2.963-.736 1.6931-1.526 3.1216-2.473 3.9682-.473.4233-.999.7408-1.631.7408-1.683 0-2.157-1.6932-2.157-3.4392 0-5.1323 6.209-26.0317 6.209-27.7249 0-1.6931-4.42-2.2751-5.63-2.2751zm-14.205 0c-1.053.0529-1.789.4233-2.263 1.4815-1.578 3.5979-6.419 26.3492-6.419 31.4285 0 2.0106.737 7.09 6.419 7.09 6.156 0 7.524-7.672 5.945-7.672-.473 0-1.104 1.1112-2.104 1.1112-1.736 0-2.157-1.7461-2.157-3.545 0-5.1323 6.208-25.9789 6.208-27.6191 0-1.6931-4.419-2.2751-5.629-2.2751z" fill="#fff"/><path d="M158.79 80.7672c-1.578 0-2.262 1.4815-2.42 1.9048-1.473 3.8624-4.472 6.0317-7.734 6.0317-1.421 0-4.42-.582-5.525-3.2804 8.366 0 17.573-17.672 6.261-17.672-9.628 0-14.679 10.0529-14.679 16.5609 0 5.3439 3.42 10.6878 11.628 10.6878 10.891 0 16.257-14.2328 12.469-14.2328zm-10.628-6.5608c.737 0 .947.3174.947.7407V75c0 2.8571-4.051 6.0317-6.418 6.5608.42-3.7566 3.209-7.3544 5.471-7.3544z" fill="#fff"/></svg>
+                                        
                                     </div>
                                     <div className="features-list">
                                         <div className="feature">❌</div>
-                                        <div className="feature">❌</div>
+                                        
                                         <div className="feature">✅</div>
                                         <div className="feature">✅</div>
                                         <div className="feature">✅</div>
@@ -152,7 +153,7 @@ export default class Comparing extends React.Component {
                                     <div className="header">Facebook Groups</div>
                                     <div className="features-list">
                                         <div className="feature">✅</div>
-                                        <div className="feature">✅</div>
+                                        
                                         <div className="feature">❌</div>
                                         <div className="feature">❌</div>
                                         <div className="feature">❌</div>
@@ -173,22 +174,14 @@ export default class Comparing extends React.Component {
                             <Link to="/setup" className="button">start free trial</Link>
                         </div>
                     </section>
-                    <section className="indication">
-                        <div className="container">
-                            <div className="brand">
-                                <img className="logo" src="app/images/identity/grou.ps-logo.svg" />
-                                <p>is proudly open source.</p>
-                            </div>
-                        </div>
-                    </section>
                 </main>
                 <div ref="overlay-compare" className="overlay" style={{display: 'none'}}>
                     <div className="container">
                         <div>
                             <h1>Compare with others....</h1>
-                            <p>Grou.ps is not the only open source social networking software out there. There are many great efforts visioning the same, replacing Facebook with something more privacy-concerned. Buddypress, Mastodon are just a couple of some of your options.</p>
+                            <p>Groupsville is not the only open source social networking software out there. There are many great efforts visioning the same, replacing Facebook with something more privacy-concerned. Buddypress, Mastodon are just a couple of some of your options.</p>
                             <p>What sets us apart is our 10+ years in experience in building online communities, some with more than millions of members. Our social software is created in a unique scale-out architecture which ensures your network will perform seamlessly  once it reaches huge amounts of traffic, following and popularity. Plus, it will cost much less than others to operate. </p>
-                            <p>How do we do that? Grou.ps is written in a unique way with an in-memory graph datastore. This is *NOT* like anything you've seen before. Thus, the difference between Grou.ps and other open source stacks is similar to the difference between hosting files on a regular disk vs OpenStack, or MySQL vs MongoDB. Also, we look cooler - we think :)</p>
+                            <p>How do we do that? Groupsville is written in a unique way with an in-memory graph datastore. This is *NOT* like anything you've seen before. Thus, the difference between Groupsville and other open source stacks is similar to the difference between hosting files on a regular disk vs OpenStack, or MySQL vs MongoDB. Also, we look cooler - we think :)</p>
                             <p>For more information, check out https://github.com/phonetworks/pho-microkernel and https://github.com/phonetworks/benchmarks for benchmarks.</p>
                             <br /><br /><br />
                             <a onClick={() => this.toggleOverlay('compare')}>Close This</a>

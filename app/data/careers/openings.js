@@ -21,7 +21,7 @@ const openings = [
                 label: 'Product Manager',
                 content: (
                     <Fragment>
-                        <p>We need entrepreneurial, well-educated generalists to lead and grow our products such as Grou.ps, Internal Tools, GraphJS Mobile etc.</p>
+                        <p>We need entrepreneurial, well-educated generalists to lead and grow our products such as Groupsville, Internal Tools, GraphJS Mobile etc.</p>
                         <p>General Requirements:</p>
                         <ul>
                             <li>Entrepreneurial experience, and/or MBA</li>
