@@ -13,5 +13,5 @@ For production, run:
 ## Branches
 
 * master:  for Grou.ps (subscription, $8/month)
-* groupsville: for GroupsVille (decentralized, one-time $8)
+* groupsville: for Groupsville (decentralized, one-time $8)
 * grouproulette: fork of groupsville, own operated.

@@ -103,13 +103,13 @@ export default class Home extends React.Component {
                             <ul>
                             <li>
                                 <b>Camaraderie Network</b>
-                                <p>GroupsVille's decentralized technology is designed to circumvent internet state-sponsored censorship. By using GroupsVille, you are helping the world become more open.
+                                <p>Groupsville's decentralized technology is designed to circumvent internet state-sponsored censorship. By using Groupsville, you are helping the world become more open.
                                 </p>
                             </li>
                                 
                                 <li>
                                     <b>Ownership on the Blockchain</b>
-                                    <p>With GroupsVille, data ownership and portability is not just a marketing gimmick partially implemented. Your ownership is verified and registered in the Ethereum blockchain.</p>
+                                    <p>With Groupsville, data ownership and portability is not just a marketing gimmick partially implemented. Your ownership is verified and registered in the Ethereum blockchain.</p>
                                 </li>
                                 <li>
                                     <b>End-to-End Encrypted</b>
