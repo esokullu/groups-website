@@ -103,7 +103,7 @@ export default class Home extends React.Component {
                             <ul>
                             <li>
                                 <b>Camaraderie Network</b>
-                                <p>Groupsville's decentralized technology is designed to circumvent internet state-sponsored censorship. By using Groupsville, you are helping the world become more open.
+                                <p>Groupsville's decentralized technology is designed to circumvent the state-sponsored internet censorship. By using Groupsville, you are helping the world become more open.
                                 </p>
                             </li>
                                 
