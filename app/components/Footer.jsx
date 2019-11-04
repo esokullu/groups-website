@@ -309,7 +309,7 @@ class Footer extends React.Component {
                     <div className='links'>
                         <span className='credit'>
                             &copy; {year}{' '}
-                            <a href='javascript:void(0)'>
+                            <a href="https://risg.co" target="_blank">
                                 Research in Social Graph Corporation
                             </a>
                         </span>
