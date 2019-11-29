@@ -175,7 +175,7 @@ export default class Setup extends React.Component {
     };
     getQuote(plan) {
         let defaultQuote = <p>
-            You pay nothing for the first month. Then it's <b>$8</b> per month. Cancel anytime.
+            You pay nothing for the first month. Then it's <b>$8</b> per <strike>month</strike> year (for Black Friday week). Cancel anytime.
             <br />
             First-year fee will be waived if you invite no less than 30 members and keep posting at least 5 pieces of contents on your website every month.
             {/*
