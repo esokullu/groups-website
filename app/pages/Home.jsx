@@ -58,6 +58,7 @@ export default class Home extends React.Component {
                         </div>
                     </section>
                     
+                    {/*
                     <section className="promotion">
                         <div className="container">
                             <Headline title="Welcoming Yahoo! Groups users" subtitle="" />
@@ -68,6 +69,7 @@ export default class Home extends React.Component {
                             <Link to="/setup" className="button">start free trial</Link>
                         </div>
                     </section>
+                    */}
                     
                     <img className="separator" src="app/images/illustrations/character-left-separator.png" />
                     <section className="information">
