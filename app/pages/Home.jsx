@@ -82,7 +82,7 @@ export default class Home extends React.Component {
                                 </li>
                                 <li>
                                     <b>A Feed Like No Other</b>
-                                    <p>With Groupsville, say no to manipulative algorithmic newsfeeds which hook you to the service at the expense of your mental health. Our feed is natural and it is NOT exploitative.</p>
+                                    <p>With Groupsville, say no to manipulative algorithmic newsfeeds which hook you to the service at the expense of your mental health. Our feed is simply time-based, hence it is NOT exploitative.</p>
                                 </li>
 
                                 <li>
@@ -103,6 +103,7 @@ export default class Home extends React.Component {
                         <div className="container">
                             <h3>Privacy &amp; Security you have asked for</h3>
                             <ul>
+                                {/*}
                             <li>
                                 <b>Camaraderie Network</b>
                                 <p>Groupsville's decentralized technology is designed to circumvent the state-sponsored internet censorship. By using Groupsville, you are helping the world become more open.
@@ -113,9 +114,10 @@ export default class Home extends React.Component {
                                     <b>Ownership on the Blockchain</b>
                                     <p>With Groupsville, data ownership and portability is not just a marketing gimmick partially implemented. Your ownership is verified and registered in the Ethereum blockchain.</p>
                                 </li>
+                */}
                                 <li>
-                                    <b>End-to-End Encrypted</b>
-                                    <p>With Groupsville, all data is encrypted in-transit, and at-rest.</p>
+                                    <b>Secure Encrypted Traffic</b>
+                                    <p>With Groupsville, all your communications are encrypted in-transit via SSL. We follow strict regulations to protect your data at-rest and we'll never sell your information.</p>
                                 </li>
 {/*}
                                 <li>
