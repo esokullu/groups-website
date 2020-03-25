@@ -107,13 +107,18 @@ export default class Navigation extends React.Component {
                                 Compare
                             </NavLink>
                         </li>
-
+                        <li>
+                            <NavLink className="docs" exact to="/docs" activeClassName="active" onClick={this.handleToggle}>
+                                Docs
+                            </NavLink>
+                        </li>
+                        {/*
                         <li>
                             <a href="https://github.com/phonetworks/grou-ps-v2" target="_blank">
                                 Open Source
                             </a>
                         </li>
-                        {/* <li>
+                         <li>
                             <NavLink className="pricing" to="/pricing" activeClassName="active" onClick={this.handleToggle}>
                                 Pricing
                             </NavLink>
