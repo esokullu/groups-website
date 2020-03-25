@@ -1,0 +1,68 @@
+.code-container {
+    position: relative;
+    .copy-btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 6em;
+        opacity: 0.4;
+        text-transform: initial;
+    }
+}
+xmp.code {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    padding: 1.5em;
+    font-size: 1.2em;
+    line-height: 150%;
+    .border-radius(@border-radius-small);
+    background-color: white;
+    .box-shadow(0 0 15px 0 fade(black, 5%));
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    .tag {
+        display: block;
+        width: 100%;
+        color: @text-color-normal;
+        &:first-of-type {
+            display: inline;
+        }
+    }
+    .atn {
+        color: @primary-color;
+        &::before {
+            content: "\A\00a0\00a0\00a0\00a0";
+        }
+    }
+    .pun {
+        color: @secondary-color;
+    }
+    .pln {
+        color: @text-color-strong;
+    }
+    .atv {
+        color: @secondary-color;
+    }
+    .kwd {
+        color: @primary-color;
+    }
+    .str {
+        color: @text-color-normal;
+        word-break: break-all;
+    }
+    .com {
+        color: @text-color-weak;
+    }
+    .lit {
+        color: @primary-color;
+    }
+    .typ {
+        color: @primary-color;
+        & + .pun {
+            & + .pln {
+                color: @secondary-color;
+            }
+        }
+    }
+}

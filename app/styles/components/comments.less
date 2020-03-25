@@ -1,0 +1,37 @@
+.comments {
+    padding: 2.5em;
+    border-top: 2px solid @primary-color;
+    background-color: white;
+    graphjs-comments {
+        .graphjs-content {
+            .graphjs-synopsis {
+                color: @secondary-color !important;
+            }
+            .graphjs-comment {
+                textarea {
+                    background-color: fade(black, 2.5%);
+                }
+                button {
+                    .background-color-states(@primary-color);
+                    &.graphjs-blockage {
+                        .background-color-states(transparent) !important;
+                    }
+                }
+            }
+            .graphjs-blocked {
+                height: 5em !important;
+                & > * {
+                    display: none !important;
+                    &.graphjs-blockage {
+                        display: inline-block !important;
+                        margin: 0 !important;
+                        .regular-font !important;
+                    }
+                }
+            }
+        }
+        graphjs-promo {
+            display: none !important;
+        }
+    }
+}

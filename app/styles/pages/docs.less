@@ -1,3 +1,296 @@
 .faq-wrapper {
     margin-top: 2em;
 }
+
+#docs {
+    display: inline-block;
+    width: 100%;
+    background-color: @shade-color;
+    & > main {
+        .improve {
+            float: right;
+            padding-bottom: .25em;
+            color: @default-color;
+            border-bottom: 1px dotted @default-color;
+            .clearfix;
+            & > * {
+                height: 1em;
+            }
+            img {
+                float: left;
+                width: 1em;
+                margin-right: .375em;
+            }
+            span {
+                float: left;
+                vertical-align: middle;
+            }
+        }
+        section {
+            display: block;
+            margin-bottom: 2.5em;
+            .clearfix;
+        }
+        .summary,.integrations {
+            line-height: 1.75em;
+            b, strong {
+                color: @text-color-strong;
+            }
+            & > .markdown {
+                & > * {
+                    margin: 0;
+                    margin-bottom: .5em;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+            }
+            .block {
+                margin-bottom: 2.5em;
+                & > * {
+                    &:last-child {
+                      margin-bottom: 0;
+                    }
+                }
+                p {
+                    line-height: 1.75em;
+                }
+                iframe{
+                    width: 100%;
+                    max-width: 50em;
+                    margin: 0;
+                    margin-top: 1em;
+                    margin-bottom: 0;
+                    border: none;
+                    border: 1em solid white;
+                    .box-shadow(0 0 0.75em fade(black, 10%));
+                    border-radius: @border-radius-small;
+                }
+                .code-block {
+                    padding: .2em .5em .3em .5em;
+                    color: @primary-color;
+                    font-size: .85em;
+                    .border-radius(@border-radius-medium);
+                    background-color: white;
+                    .box-shadow(0 0 15px 0 fade(black, 5%));
+                    word-wrap: break-word;
+                    white-space: pre-wrap;
+                }
+                div.code-block {
+                    margin: 2em 0 0;
+                    padding: 1em 1.5em;
+                    color: @text-color-normal;
+                    font-size: 1.1em;
+                    line-height: 150%;
+                    background-color: white;
+                }
+            }
+        }
+        .demo {
+            width: 100%;
+            & > * {
+                margin: 0;
+                margin-bottom: .5em; // Creates eye comfort
+            }
+        }
+        .code {
+            width: 100%;
+            xmp {
+                &.code {
+                    .tag {
+                        display: inline-block;
+                        width: auto;
+                    }
+                    .atn {
+                        &::before {
+                            display: none;
+                        }
+                    }
+                    .typ {
+                        &::before {
+                            content: "\00a0\00a0\00a0\00a0";
+                        }
+                    }
+                    .str {
+                        & + .pln {
+                            & + .pun {
+                                &::before {
+                                    content: "\00a0\00a0\00a0\00a0";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .options {
+            max-width: 50em;
+            margin-bottom: 1em; // Compansates margin-bottom created by fieldset
+            form {
+                width: 100%;
+                fieldset {
+                    float: left;
+                    position: relative;
+                    width: 47.5%;
+                    height: 4em;
+                    margin: 0;
+                    margin-bottom: 1.5em;
+                    .no-padding;
+                    border: none;
+                    &:nth-child(even) {
+                        margin-left: 5%;
+                    }
+                    legend {
+                        float: left;
+                        width: auto;
+                        font-size: 1.2em;
+                        .bold-font;
+                        margin-bottom: .5em;
+                        text-align: left;
+                        & + input[type="checkbox"] {
+                            margin: .1em 0 .1em .25em;
+                            height: .8em;
+                        }
+                    }
+                    input[type="checkbox"] {
+                        display: inline-block;
+                        float: left;
+                        max-width: 1.5em;
+                        max-height: 1.5em;
+                        margin: 0;
+                    }
+                    input[type="text"], input[type="password"] {
+                        position: relative;
+                        margin: 0;
+                        &::placeholder {
+                            opacity: .5;
+                        }
+                    }
+                    .radiobutton {
+                        display: inline-block;
+                        width: 100%;
+                        height: 2.5em;
+                        padding: .75em 0;
+                        line-height: 1em;
+                    }
+                    span {
+                        height: 1em;
+                    }
+                    input[type="radio"] {
+                        display: inline-block;
+                        float: left;
+                        height: inherit;
+                        max-width: 1.5em;
+                        margin: 0;
+                        margin-right: .15em;
+                        .no-padding;
+                        & + label {
+                            float: left;
+                            height: inherit;
+                            margin-right: 2.5%;
+                            .icon {
+                                position: relative;
+                                top: -0.25em;
+                                height: .5em;
+                                font-size: 2em;
+                                line-height: .5em;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        pre {
+            padding: 0;
+            border: none;
+            & + button {
+                margin-bottom: 2em;
+                .background-color-states(rgb(93, 60, 246)) !important;
+            }
+        }
+        .response {
+            padding-top: 1.5em;
+        }
+    }
+}
+.specs-tooltip{
+    float: left;
+    margin-top: -2px;
+    margin-left: 2px;
+    margin-right: 5px;
+    button {
+        background:#697b8c;
+        font-size: 0.6em;
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        font-family: sans-serif;
+        border-radius:100%;
+    }
+}
+.up {
+    & ~ #docs {
+        aside {
+            top: 0;
+            padding-top: 0;
+            .menu {
+                top: 0;
+                height: 100%;
+                padding-bottom: calc(2em + 16.5em);
+            }
+            & > a {
+                top: 1.75em !important;
+            }
+        }
+    }
+}
+
+/* Window Width < 480 */
+@media only screen and (max-width: 479px) {
+    #docs {
+        & > main {
+            width: 100%;
+            margin-left: 0;
+            padding: 2.5em 1.5em 2.5em 4em;
+            .options {
+                width: 100%;
+                max-width: none;
+                &.narrow {
+                    max-width: none;
+                }
+                form {
+                    fieldset {
+                        width: 100%;
+                        margin-left: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 480 ≤ Window Width < 768 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    #docs {
+        & > main {
+            width: 100%;
+            margin-left: 0;
+            padding: 2.5em 1.5em 2.5em 4em;
+            .options {
+                width: 100%;
+                max-width: none;
+                &.narrow {
+                    max-width: none;
+                }
+                form {
+                    fieldset {
+                        width: 100%;
+                        margin-left: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}

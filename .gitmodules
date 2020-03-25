@@ -1,0 +1,3 @@
+[submodule "app/pages/docs/data"]
+	path = app/pages/docs/data
+	url = https://github.com/phonetworks/graphjs-docs.git
