@@ -49,7 +49,7 @@ export default class Integrations extends React.Component {
                             </p>
                             <ol>
                                 <li>Present your existing users to GraphJS (using <span className="code-block">tokenSignup</span> call)</li>
-                                <li>Make sure each new user on your platform is presented to GraphJS (again, using tokenSignup call)</li>
+                                <li>Make sure each new user on your platform is presented to GraphJS, using tokenSignup call. More information is available below.</li>
                                 <li>Every time you will present a GraphJS tag on a page that is shown to your logged in users, create a token with the "secret key" provided to you, and initialize GraphJS with that parameter.</li>
                             </ol>
                             <h4>About your single sign-on key</h4>
@@ -66,6 +66,16 @@ export default class Integrations extends React.Component {
                             <p>&nbsp;</p>
                             <p>You may  use single sign-on not only with tags but with call functions as well. Just generate a token and use tokenLogin call to sign your users in automatically.</p>
                             <p>Should you have any questions, please contact us at <a href="http://risg.co/contact.html" target="_blank">http://risg.co/contact.html</a>, we'd love to hear more about your use case.</p>
+
+                            <h4>Presenting your users to GraphJS</h4>
+                            <p>This is pretty simple. All you need to do, on the server-side, is to go through your database in a while loop and:</p>
+                            <ol>
+                                    <li>Fetch all users</li>
+                                    <li>Compute "token" for each user, as described above.</li>
+                                    <li>Make a GET request to https://accounts.graphjs.com/getComments?public_id=$YOUR-PUBLIC-ID$&username=$THEIR_USERNAME$&email=$THEIR_EMAIL$&token=$THEIR_COMPUTED_TOKEN$ for each user.</li>
+                            </ol>
+                            <p>The piece of code that handles this GET request on the server-side can be found on <a href="https://github.com/phonetworks/graphjs-server/blob/0edb106f69ac012e0b174ea5d44bdeb6e376ad1c/src/GraphJS/Controllers/AuthenticationController.php#L32" target="_blank">Github</a>.</p>
+                            <p>If you're hosting the GraphJS Server on your own, you should change https://accounts.graphjs.com to your domain name.</p>
                         </div>}
                         {item === "react-graphjs" && <div className="block">
                             <h3>GraphJS in React</h3>
