@@ -47,6 +47,10 @@ export default class Code extends React.Component {
             code = this.generateSingleSignonCode(this.props.id, this.props.specs);
             language = 'php';
         }
+        else if(this.props.type == 'single-signon-js') {
+            code = this.generateSingleSignonJSCode(this.props.id, this.props.specs);
+            language = 'js';
+        }
         this.setState({
             code: code,
             language: language
@@ -76,6 +80,9 @@ export default class Code extends React.Component {
         else if(nextProps.type == 'single-signon') {
             code = this.generateSingleSignonCode(nextProps.id, nextProps.specs);
         }
+        else if(nextProps.type == 'single-signon-js') {
+            code = this.generateSingleSignonJSCode(nextProps.id, nextProps.specs);
+        }
         return (this.state.code != code) || (this.state.loading != nextState.loading) || (this.state.copyStatus != nextState.copyStatus);
     }
     componentWillReceiveProps(nextProps) {
@@ -103,6 +110,9 @@ export default class Code extends React.Component {
         else if(nextProps.type == 'single-signon') {
             code = this.generateSingleSignonCode(nextProps.id, nextProps.specs);
             language = 'php';
+        }
+        else if(nextProps.type == 'single-signon-js') {
+            code = this.generateSingleSignonJSCode(nextProps.id, nextProps.specs);
         }
         this.setState({
             code: code,
@@ -189,6 +199,9 @@ export default class Code extends React.Component {
     }
     generateSingleSignonCode() {
         return '<?php\npublic static function encrypt(string $message, string $key): string\{\n\t$key = \\base64_decode($key);\n\t$nonce = \\random_bytes(\n\t\tSODIUM_CRYPTO_SECRETBOX_NONCEBYTES\n\t);\n\t$cipher = \\base64_encode(\n\t\t$nonce.\n\t\t\\sodium_crypto_secretbox(\n\t\t\t$message,\n\t\t\t$nonce,\n\t\t\t$key\n\t\t)\n\t);\n\t\\sodium_memzero($message);\n\t\\sodium_memzero($key);\n\treturn $cipher;\n}\n?>';
+    }
+    generateSingleSignonJSCode() {
+        return "var { secretbox, randomBytes } = require('tweetnacl');\nvar {\n  decodeUTF8,\n  encodeBase64,\n  encodeUTF8,\n  decodeBase64\n} = require('tweetnacl-util');\n\nconst newNonce = () => randomBytes(secretbox.nonceLength);\n\nconst encrypt = (username, key) => {\n\tconst keyUint8Array = decodeBase64(key);\n\tconst nonce = newNonce();\n\tconst messageUint8 = decodeUTF8(username);\n\tconst box = secretbox(messageUint8, nonce, keyUint8Array);\n\tconst fullMessage = new Uint8Array(nonce.length + box.length);\n\tfullMessage.set(nonce);\n\tfullMessage.set(box, nonce.length);\n\tconst base64FullMessage = encodeBase64(fullMessage);\n\treturn base64FullMessage;\n};\n\nconst decrypt = (messageWithNonce, key) => {\n\tconst keyUint8Array = decodeBase64(key);\n\tconst messageWithNonceAsUint8Array = decodeBase64(messageWithNonce);\n\tconst nonce = messageWithNonceAsUint8Array.slice(0, secretbox.nonceLength);\n\tconst message = messageWithNonceAsUint8Array.slice(\n\t\tsecretbox.nonceLength,\n\t\tmessageWithNonce.length\n\t);\n\tconst decrypted = secretbox.open(message, nonce, keyUint8Array);\n\tif (!decrypted) {\n\t\tthrow new Error('Could not decrypt message');\n\t}\n\t\n\tconst base64DecryptedMessage = encodeUTF8(decrypted);\n\treturn base64DecryptedMessage;\n};";
     }
     copyHandler(e) {
         e.preventDefault();

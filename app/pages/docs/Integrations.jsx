@@ -76,6 +76,10 @@ export default class Integrations extends React.Component {
                             </ol>
                             <p>The piece of code that handles this GET request on the server-side can be found on <a href="https://github.com/phonetworks/graphjs-server/blob/0edb106f69ac012e0b174ea5d44bdeb6e376ad1c/src/GraphJS/Controllers/AuthenticationController.php#L32" target="_blank">Github</a>.</p>
                             <p>If you're hosting the GraphJS Server on your own, you should change https://accounts.graphjs.com to your domain name.</p>
+                            <h3>Encrypting username in NodeJS:</h3>
+                            <p>Using Javascript we can easyly generate a <span className="code-block">token</span> using the following encrypt method by passing username and SSO key:</p>
+                            <Code type="single-signon-js"></Code>
+                            <p>Using above encrypt method you can generate a token that can be passed to <span className="code-block">tokenSignup</span> and <span className="code-block">tokenLogin</span> calls</p>
                         </div>}
                         {item === "react-graphjs" && <div className="block">
                             <h3>GraphJS in React</h3>
