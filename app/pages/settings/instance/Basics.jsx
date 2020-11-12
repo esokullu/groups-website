@@ -62,14 +62,14 @@ export default class Basics extends React.Component {
         });
     }
     render() {
-        let addr = "https://gr.ps/" + this.state.initial_groupsid;
+        let addr = "https://groups2.com/" + this.state.initial_groupsid;
         let password_page = "/settings/instances/" + this.state.initial_groupsid + "/password";
         return (
           <section className="basics">
               <form className="narrow options">
                 <fieldset className="groupsid">
                       <h3>Group ID</h3>
-                      <input type="text" value="https://gr.ps/" readOnly={true} style={{width:'45%'}} />
+                      <input type="text" value="https://groups2.com/" readOnly={true} style={{width:'45%'}} />
                       <input
                           ref="title"
                           type="text"

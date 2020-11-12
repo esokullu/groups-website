@@ -48,7 +48,7 @@ const menu = (account = {}, instance = {}) => ([
     {
         label: 'Visit',
         id: 'visit',
-        content: <a href={'https://gr.ps/' + instance.slug} target="_blank">Visit</a>,
+        content: <a href={'https://groups2.com/' + instance.slug} target="_blank">Visit</a>,
         type: 'top-level-item',
     },
     {

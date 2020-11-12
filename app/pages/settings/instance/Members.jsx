@@ -57,7 +57,7 @@ export default class Members extends React.Component {
         }
     }
     render() {
-        let address = "https://gr.ps/" + this.state.groupsid;
+        let address = "https://groups2.com/" + this.state.groupsid;
         let password_page = "/settings/instances/" + this.state.initial_groupsid + "/password";
         return (
             <section className="members">

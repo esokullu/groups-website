@@ -518,7 +518,7 @@ export default class Setup extends React.Component {
             return;
         }
         
-        let domain = 'https://gr.ps';
+        let domain = 'https://groups2.com';
         const data = {
             groups_v2: 1, groups_name: groupsId, groups_title: name, groups_description: description,
             theme, color, site: domain + '/' + groupsId, mail: email, pass: password,
@@ -568,12 +568,12 @@ export default class Setup extends React.Component {
         })
     }
     redirectToNetwork() {
-        let domain = 'https://gr.ps';
+        let domain = 'https://groups2.com';
         window.location.href = domain + '/' + this.state.groupsId;
     }
     createInstance() {
         let loadingButton = this.refs.loadingButton;
-        let domain = 'https://gr.ps';
+        let domain = 'https://groups2.com';
         let groupsId = encodeURI(this.state.groupsId);
         let name = encodeURI(this.state.name);
         let description = encodeURI(this.state.description);
@@ -662,7 +662,7 @@ export default class Setup extends React.Component {
                         <h3>Let's start with your Groupsville ID...</h3>
                         <div className="content">
                             <div className="input-with-prefix">
-                                <label>https://gr.ps/</label>
+                                <label>https://groups2.com/</label>
                                 <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="your_unique_group_name" />
                             </div>
                         </div>
@@ -846,7 +846,7 @@ export default class Setup extends React.Component {
                         <p>
                             You should get an email from us soon with your admin credentials. Please note your network is an independent instance; therefore the password you use for this website will be different than the "admin" password on your new network.
                             <br />
-                            Visit your network at <a href={'https://gr.ps/' + this.state.groupsId}>{'https://gr.ps/' + this.state.groupsId}</a>
+                            Visit your network at <a href={'https://groups2.com/' + this.state.groupsId}>{'https://groups2.com/' + this.state.groupsId}</a>
                         </p>
                     </div>
                 </section>
