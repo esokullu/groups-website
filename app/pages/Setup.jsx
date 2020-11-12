@@ -663,7 +663,7 @@ export default class Setup extends React.Component {
                         <div className="content">
                             <div className="input-with-prefix">
                                 <label>https://groups2.com/</label>
-                                <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="your_unique_group_name" />
+                                <input ref="id" onChange={this.changeGroupsId} type="text" value={this.state.groupsId} placeholder="group_name" />
                             </div>
                         </div>
                     </div>
