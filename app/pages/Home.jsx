@@ -98,55 +98,7 @@ export default class Home extends React.Component {
                             </ul>
                         </div>
                     </section>
-                    <img className="separator" src="app/images/illustrations/character-middle-separator.png" />
-                    <section className="information">
-                        <div className="container">
-                            <h3>Privacy &amp; Security you have asked for</h3>
-                            <ul>
-                                {/*}
-                            <li>
-                                <b>Camaraderie Network</b>
-                                <p>Groupsville's decentralized technology is designed to circumvent the state-sponsored internet censorship. By using Groupsville, you are helping the world become more open.
-                                </p>
-                            </li>
-                                
-                                <li>
-                                    <b>Ownership on the Blockchain</b>
-                                    <p>With Groupsville, data ownership and portability is not just a marketing gimmick partially implemented. Your ownership is verified and registered in the Ethereum blockchain.</p>
-                                </li>
-                */}
-                                <li>
-                                    <b>Secure Encrypted Traffic</b>
-                                    <p>With Groupsville, all your communications are encrypted in-transit via SSL. We follow strict regulations to protect your data at-rest and we'll never sell your information.</p>
-                                </li>
-{/*}
-                                <li>
-                                    <b>Monetize your network (SOON)</b>
-                                    <p>We know it's important to have solid financials and monetary incentives for a sustainable network. Groupsville allows you to collect payments.</p>
-                                </li>
-        */}                             
-                                <li>
-                                    <b>Developer-Friendly</b>
-                                    <p>Embed Groupsville features in a single tag on your existing website, or access it programmatically via Javascript and/or mobile languages. </p>
-                                </li>
-
-
-                            </ul>
-                        </div>
-                    </section>
                     
-                    {/*
-                    <section className="promotion">
-                        <div className="container">
-                            <h2>Welcoming Google+ users!</h2>
-                            <p>Service continuity guaranteed. Open source version available.</p>
-                            <button>start yours</button>*
-                            <p>&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p>&nbsp;</p>
-                        </div>
-                    </section>
-                    */}
                 </main>
             </Main>
         )
